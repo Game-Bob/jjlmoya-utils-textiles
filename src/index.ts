@@ -7,6 +7,7 @@ export { StainChemistryComponent, StainChemistrySEO, StainChemistryBibliography 
 export { BurnTestComponent, BurnTestSEO, BurnTestBibliography } from './tool/burnTest';
 export { FiberPrepComponent, FiberPrepSEO, FiberPrepBibliography } from './tool/fiberPrep';
 export { ShoeSizeConverterComponent, ShoeSizeConverterSEO, ShoeSizeConverterBibliography } from './tool/shoeSizeConverter';
+export { ClothingSizeConverterComponent, ClothingSizeConverterSEO, ClothingSizeConverterBibliography } from './tool/clothingSizeConverter';
 
 export type {
   KnownLocale,
