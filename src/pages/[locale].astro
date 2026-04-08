@@ -1,7 +1,7 @@
 ---
 import PreviewLayout from '../layouts/PreviewLayout.astro';
 import PreviewNavSidebar from '../components/PreviewNavSidebar.astro';
-import { templateCategory, ALL_TOOLS } from '../index';
+import { textilesCategory, ALL_TOOLS } from '../index';
 import { Icon } from 'astro-icon/components';
 import type { KnownLocale, ToolLocaleContent } from '../types';
 
@@ -12,13 +12,15 @@ export async function getStaticPaths() {
 
 const { locale: currentLocale } = Astro.params as { locale: KnownLocale };
 
-const categoryContent = await templateCategory.i18n[currentLocale]!();
+const categoryContent = await textilesCategory.i18n[currentLocale]!();
 
 const tools = ALL_TOOLS || [];
 
 const toolsWithContent = tools.length > 0
   ? await Promise.all(
-      tools.map(async ({ entry, Component }) => {
+      tools
+        .filter((t) => t && t.entry)
+        .map(async ({ entry, Component }) => {
         const languages = Object.keys(entry.i18n);
         const localeEntries = await Promise.all(
           languages.map(async (l) => {
@@ -64,7 +66,7 @@ const toolsWithContent = tools.length > 0
   />
   <div class="dashboard">
     <header class="preview-header">
-      <span class="badge">preview · @jjlmoya/utils-template</span>
+      <span class="badge">preview · @jjlmoya/utils-textiles</span>
       <h1>{categoryContent.title}</h1>
       <p>{categoryContent.description}</p>
     </header>

@@ -1,0 +1,703 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { FabricTruthUI } from './ui';
+
+interface Props {
+  ui: FabricTruthUI;
+}
+
+const { ui } = Astro.props;
+
+const fiberData = (ui?.fiberData as Record<string, any>) || {};
+const fibers = Object.entries(fiberData)
+  .map(([id, data]) => ({
+    id,
+    name: (data as any).name || id
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<div class="fabric-truth-container" id="fabric-truth-root">
+  <div class="card-wrapper">
+    <div class="composition-section">
+      <h2 class="section-title">
+        <Icon name="mdi:tag-text-outline" class="title-icon" />
+        {ui.composition}
+      </h2>
+      <p class="section-description">{ui.description}</p>
+
+      <div id="composition-rows" class="rows-container"></div>
+
+      <div class="controls-footer">
+        <button id="add-row-btn" class="btn-add">
+          <Icon name="mdi:plus" class="btn-icon" />
+          {ui.addFiber}
+        </button>
+        <div id="total-indicator" class="total-badge">
+          {ui.total}: <span id="total-val">0</span>%
+        </div>
+      </div>
+    </div>
+
+    <div class="results-section">
+      <div id="empty-state" class="empty-state">
+        <Icon name="mdi:alert-circle-outline" class="empty-icon" />
+        <p id="validation-msg"></p>
+        <p id="total-helper" class="empty-helper"></p>
+      </div>
+
+      <div id="result-content" class="result-content hidden">
+        <div id="verdict-card" class="verdict-card">
+          <div class="verdict-content">
+            <span class="verdict-meta">{ui.verdict}</span>
+            <h3 id="verdict-label" class="verdict-label">Calidad Natural</h3>
+            <p id="verdict-description" class="verdict-desc">Prenda transpirable y duradera.</p>
+          </div>
+          <div class="verdict-icon">
+            <Icon name="mdi:check-decagram" />
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-header">
+              <Icon name="mdi:wind-power" />
+              <span>{ui.breathability}</span>
+            </div>
+            <div class="stat-bar">
+              <div id="stat-breathability" class="stat-fill"></div>
+            </div>
+            <div id="stat-val-breathability" class="stat-value">0/10</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <Icon name="mdi:shield-check" />
+              <span>{ui.durability}</span>
+            </div>
+            <div class="stat-bar">
+              <div id="stat-durability" class="stat-fill"></div>
+            </div>
+            <div id="stat-val-durability" class="stat-value">0/10</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <Icon name="mdi:fire-circle" />
+              <span>{ui.warmth}</span>
+            </div>
+            <div class="stat-bar">
+              <div id="stat-warmth" class="stat-fill"></div>
+            </div>
+            <div id="stat-val-warmth" class="stat-value">0/10</div>
+          </div>
+        </div>
+
+        <div class="care-warning">
+          <Icon name="mdi:alert-circle" />
+          <div>
+            <h4>{ui.careWarning}</h4>
+            <p id="care-warning">Sigue siempre las instrucciones de la etiqueta.</p>
+          </div>
+        </div>
+
+        <p class="disclaimer" id="disclaimer">{ui.disclaimer}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<datalist id="perc-list">
+  <option value="100">100%</option>
+  <option value="95">95%</option>
+  <option value="80">80%</option>
+  <option value="50">50%</option>
+  <option value="30">30%</option>
+  <option value="10">10%</option>
+  <option value="5">5%</option>
+  <option value="2">2%</option>
+</datalist>
+
+<template id="fiber-row-template">
+  <div class="fiber-row">
+    <select class="fiber-select">
+      {fibers.map((f) => <option value={f.id}>{f.name}</option>)}
+    </select>
+    <div class="fiber-perc-wrapper">
+      <input type="number" min="0" max="100" step="1" placeholder="0" list="perc-list" class="fiber-perc" />
+      <span class="perc-symbol">%</span>
+    </div>
+    <button class="remove-row-btn">
+      <Icon name="mdi:close-circle-outline" />
+    </button>
+  </div>
+</template>
+
+<script define:vars={{ ui }} is:inline>
+  window.__fabricUI = ui;
+</script>
+
+<script>
+  import { FabricEngine } from './logic';
+  import type { CompositionRow } from './logic';
+  import type { FabricTruthUI } from './ui';
+
+  const COLORS: Record<string, string> = {
+    red: 'color-red',
+    amber: 'color-amber',
+    yellow: 'color-yellow',
+    emerald: 'color-emerald',
+    blue: 'color-blue',
+    indigo: 'color-indigo',
+    gray: 'color-gray',
+  };
+
+  function updateDisplay(composition: CompositionRow[], total: number, uiData: FabricTruthUI) {
+    const emptyState = document.getElementById('empty-state');
+    const resultContent = document.getElementById('result-content');
+    const validationMsg = document.getElementById('validation-msg');
+    const verdictLabel = document.getElementById('verdict-label');
+    const verdictDescription = document.getElementById('verdict-description');
+    const verdictCard = document.getElementById('verdict-card');
+    const careWarning = document.getElementById('care-warning');
+
+    if (total !== 100) {
+      emptyState?.classList.remove('hidden');
+      resultContent?.classList.add('hidden');
+      if (validationMsg) validationMsg.textContent = uiData.validationError;
+      return;
+    }
+
+    emptyState?.classList.add('hidden');
+    resultContent?.classList.remove('hidden');
+
+    const fiberData = (uiData.fiberData as any) || {};
+    const verdict = FabricEngine.calculateVerdict(composition, fiberData, uiData.verdicts);
+    const averages = FabricEngine.getAverages(composition, fiberData);
+    const warning = FabricEngine.getCareWarning(composition, uiData.careWarnings as Record<string, string>);
+
+    if (verdictLabel) verdictLabel.textContent = verdict.label;
+    if (verdictDescription) verdictDescription.textContent = verdict.description;
+    if (verdictCard) verdictCard.className = `verdict-card ${COLORS[verdict.color] || COLORS.gray}`;
+    if (careWarning) careWarning.textContent = warning;
+
+    ['breathability', 'durability', 'warmth'].forEach((key) => {
+      const val = averages[key[0] as 'b' | 'd' | 'w'];
+      const bar = document.getElementById(`stat-${key}`);
+      const text = document.getElementById(`stat-val-${key}`);
+      if (bar) bar.style.width = `${val * 10}%`;
+      if (text) text.textContent = `${val.toFixed(1)}/10`;
+    });
+  }
+
+  function updateAnalysis() {
+    const uiData = (window as unknown as { __fabricUI: FabricTruthUI }).__fabricUI;
+    const container = document.getElementById('composition-rows');
+    const totalVal = document.getElementById('total-val');
+    const totalIndicator = document.getElementById('total-indicator');
+    const totalHelper = document.getElementById('total-helper');
+
+    const rows = container?.querySelectorAll('.fiber-row');
+    if (!rows) return;
+
+    const composition: CompositionRow[] = Array.from(rows).map((row) => ({
+      fiberId: (row.querySelector('.fiber-select') as HTMLSelectElement).value,
+      percentage: parseFloat((row.querySelector('.fiber-perc') as HTMLInputElement).value) || 0,
+    })).filter((c) => c.percentage > 0);
+
+    const total = composition.reduce((acc, c) => acc + c.percentage, 0);
+
+    if (totalVal) totalVal.textContent = total.toString();
+    if (totalIndicator) {
+      totalIndicator.className = 'total-badge';
+      if (total === 100) totalIndicator.classList.add('total-complete');
+      else if (total > 100) totalIndicator.classList.add('total-error');
+    }
+
+    if (totalHelper) {
+      totalHelper.textContent = total === 100 ? '' : `${uiData.actualTotal}: ${total}%`;
+    }
+
+    updateDisplay(composition, total, uiData);
+  }
+
+  function addRow() {
+    const container = document.getElementById('composition-rows');
+    const template = document.getElementById('fiber-row-template') as HTMLTemplateElement;
+    if (!template || !container) return;
+
+    const currentTotal = Array.from(container.querySelectorAll('.fiber-row'))
+      .reduce((acc, r) => acc + (parseFloat((r.querySelector('.fiber-perc') as HTMLInputElement).value) || 0), 0);
+
+    const row = (template.content.cloneNode(true) as HTMLElement).querySelector('.fiber-row') as HTMLElement;
+    const select = row.querySelector('.fiber-select') as HTMLSelectElement;
+    const input = row.querySelector('.fiber-perc') as HTMLInputElement;
+
+    if (container.children.length === 0) {
+      select.value = 'cotton';
+      input.value = '100';
+    } else {
+      input.value = Math.max(0, 100 - currentTotal).toString();
+    }
+
+    [select, input].forEach((el) => el.addEventListener('input', updateAnalysis));
+    row.querySelector('.remove-row-btn')?.addEventListener('click', () => {
+      row.remove();
+      updateAnalysis();
+    });
+
+    container.appendChild(row);
+    updateAnalysis();
+  }
+
+  function initFabricTruth() {
+    const root = document.getElementById('fabric-truth-root');
+    if (!root) return;
+    const addBtn = document.getElementById('add-row-btn');
+    addBtn?.addEventListener('click', addRow);
+    const container = document.getElementById('composition-rows');
+    if (container && container.children.length === 0) addRow();
+  }
+
+  function startInit() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFabricTruth);
+    } else {
+      setTimeout(initFabricTruth, 100);
+    }
+    document.addEventListener('astro:page-load', initFabricTruth);
+  }
+
+  startInit();
+</script>
+
+<style>
+  .fabric-truth-container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .card-wrapper {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .composition-section {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-main);
+  }
+
+  .title-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #6366f1;
+  }
+
+  .section-description {
+    color: var(--text-muted);
+    margin: 0 0 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .rows-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .fiber-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    animation: slideIn 0.3s ease;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .fiber-select {
+    flex: 1;
+    min-width: 150px;
+    background: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    color: var(--text-main);
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .fiber-select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+
+  .fiber-perc-wrapper {
+    position: relative;
+    width: 120px;
+  }
+
+  .fiber-perc {
+    width: 100%;
+    background: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 0.75rem 2.5rem 0.75rem 0.75rem;
+    color: var(--text-main);
+    font-weight: 500;
+  }
+
+  .fiber-perc:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+
+  .perc-symbol {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-weight: bold;
+    pointer-events: none;
+  }
+
+  .remove-row-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+  }
+
+  .remove-row-btn:hover {
+    color: #ef4444;
+  }
+
+  .controls-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-add {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    color: var(--text-main);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-add:hover {
+    background: var(--bg-surface);
+    border-color: #6366f1;
+  }
+
+  .btn-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .total-badge {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    font-family: monospace;
+    background: var(--bg-page);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+  }
+
+  :global(.total-badge.total-complete) {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border-color: #10b981;
+  }
+
+  :global(.total-badge.total-error) {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-color: #ef4444;
+    animation: pulse 0.5s;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .results-section {
+    padding: 2rem;
+    background: var(--bg-page);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .empty-icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1rem;
+    color: var(--border-color);
+  }
+
+  .empty-state p {
+    margin: 0.5rem 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .empty-helper {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-top: 0.25rem !important;
+  }
+
+  .result-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeIn 0.5s ease;
+  }
+
+  :global(.result-content.hidden) {
+    display: none;
+  }
+
+  :global(.empty-state.hidden) {
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .verdict-card {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border-left: 4px solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    min-height: 100px;
+  }
+
+  :global(.verdict-card.color-red) {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-left-color: #dc2626;
+  }
+
+  :global(.verdict-card.color-amber) {
+    background: rgba(251, 146, 60, 0.1);
+    color: #f97316;
+    border-left-color: #ea580c;
+  }
+
+  :global(.verdict-card.color-yellow) {
+    background: rgba(234, 179, 8, 0.1);
+    color: #ca8a04;
+    border-left-color: #b45309;
+  }
+
+  :global(.verdict-card.color-emerald) {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border-left-color: #047857;
+  }
+
+  :global(.verdict-card.color-blue) {
+    background: rgba(59, 130, 246, 0.1);
+    color: #2563eb;
+    border-left-color: #1d4ed8;
+  }
+
+  :global(.verdict-card.color-indigo) {
+    background: rgba(99, 102, 241, 0.1);
+    color: #4f46e5;
+    border-left-color: #4338ca;
+  }
+
+  :global(.verdict-card.color-gray) {
+    background: rgba(107, 114, 128, 0.1);
+    color: #6b7280;
+    border-left-color: #4b5563;
+  }
+
+  .verdict-content {
+    flex: 1;
+  }
+
+  .verdict-meta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+  }
+
+  .verdict-label {
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin: 0.5rem 0;
+  }
+
+  .verdict-desc {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
+  }
+
+  .verdict-icon {
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background: var(--bg-surface);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+  }
+
+  .stat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  .stat-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-fill {
+    height: 100%;
+    background: currentColor;
+    transition: width 1s ease;
+    width: 0%;
+  }
+
+  .stat-card:nth-child(1) .stat-fill {
+    background: #10b981;
+  }
+
+  .stat-card:nth-child(2) .stat-fill {
+    background: #3b82f6;
+  }
+
+  .stat-card:nth-child(3) .stat-fill {
+    background: #f97316;
+  }
+
+  .stat-value {
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: monospace;
+    text-align: right;
+    color: var(--text-muted);
+  }
+
+  .care-warning {
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 146, 60, 0.3);
+    padding: 1rem;
+    border-radius: 0.75rem;
+    display: flex;
+    gap: 0.75rem;
+    color: #b45309;
+  }
+
+  .care-warning svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .care-warning h4 {
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin: 0 0 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .care-warning p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .disclaimer {
+    text-align: center;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin: 0;
+  }
+</style>

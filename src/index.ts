@@ -1,6 +1,9 @@
 export { textilesCategory } from './category';
 export { default as textilesCategorySEO } from './category/seo.astro';
 
+export { FabricTruthComponent, FabricTruthSEO, FabricTruthBibliography } from './tool/fabricTruth';
+export { LaundryGuideComponent, LaundryGuideSEO, LaundryGuideBibliography } from './tool/laundryGuide';
+
 export type {
   KnownLocale,
   FAQItem,
