@@ -1,0 +1,437 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { ShoeSizeConverterUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const sizeUI = ui as ShoeSizeConverterUI;
+---
+
+<div class="shoe-converter">
+  <div class="converter-card">
+    <div class="gender-selector">
+      <button class="gender-btn gender-btn-men active" data-gender="men" title={sizeUI.genderMenTitle ?? 'Men'}>
+        <Icon name="mdi:gender-male" />
+      </button>
+      <button class="gender-btn gender-btn-women" data-gender="women" title={sizeUI.genderWomenTitle ?? 'Women'}>
+        <Icon name="mdi:gender-female" />
+      </button>
+    </div>
+
+    <div class="size-section">
+      <div class="field-group">
+        <label class="field-label" for="origin-region">{sizeUI.regionLabel ?? 'Your Size System'}</label>
+        <div class="select-wrap">
+          <select id="origin-region" class="region-select">
+            <option value="EU">{sizeUI.regionEU ?? 'Europe (EU)'}</option>
+            <option value="US">{sizeUI.regionUS ?? 'United States (US)'}</option>
+            <option value="UK">{sizeUI.regionUK ?? 'United Kingdom (UK)'}</option>
+            <option value="CM">{sizeUI.regionCM ?? 'Mondopoint (CM)'}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="size-grid-container">
+        <div class="grid-header">
+          <h3>{sizeUI.gridTitle ?? 'Select Your Size'}</h3>
+          <p>{sizeUI.gridDesc ?? 'Click to see international equivalences'}</p>
+        </div>
+        <div class="size-grid" id="quick-grid"></div>
+      </div>
+    </div>
+
+    <div class="results-container">
+      <div class="result-card">
+        <span class="result-label" id="label-1">-</span>
+        <span class="result-value" id="val-1">-</span>
+        <span class="result-unit hidden" id="unit-1">{sizeUI.unitCM ?? 'cm'}</span>
+      </div>
+      <div class="result-card">
+        <span class="result-label" id="label-2">-</span>
+        <span class="result-value" id="val-2">-</span>
+        <span class="result-unit hidden" id="unit-2">{sizeUI.unitCM ?? 'cm'}</span>
+      </div>
+      <div class="result-card">
+        <span class="result-label" id="label-3">-</span>
+        <span class="result-value" id="val-3">-</span>
+        <span class="result-unit hidden" id="unit-3">{sizeUI.unitCM ?? 'cm'}</span>
+      </div>
+    </div>
+
+    <div class="info-banner">
+      <Icon name="mdi:information-outline" />
+      <p set:html={sizeUI.infoBannerHtml ?? ''} />
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ ui }} is:inline>
+  window.__shoeSizeUI = ui;
+</script>
+
+<script>
+  import type { ShoeSizeConverterUI } from './ui';
+  import type { SizeMapping, ShoeSizeRegion } from './logic';
+
+  const rawUI = (window as unknown as { __shoeSizeUI: ShoeSizeConverterUI }).__shoeSizeUI;
+
+  const dataMap: Record<string, SizeMapping[]> = {
+    men: rawUI.menData,
+    women: rawUI.womenData,
+  };
+
+  const labels: Record<ShoeSizeRegion, string> = {
+    EU: rawUI.labelEU,
+    US: rawUI.labelUS,
+    UK: rawUI.labelUK,
+    CM: rawUI.labelCM,
+  };
+
+  let currentGender = 'men';
+  let currentOrigin: ShoeSizeRegion = 'EU';
+  let currentSize = '';
+
+  function getEl(id: string): HTMLElement | null {
+    return document.getElementById(id);
+  }
+
+  function setElText(id: string, text: string) {
+    const el = getEl(id);
+    if (el) el.textContent = text;
+  }
+
+  function updateResults(mapping: SizeMapping) {
+    const regions = (['EU', 'US', 'UK', 'CM'] as ShoeSizeRegion[]).filter(
+      (r) => r !== currentOrigin,
+    );
+    regions.forEach((region, i) => {
+      const idx = i + 1;
+      setElText(`val-${idx}`, mapping[region]);
+      setElText(`label-${idx}`, labels[region]);
+      const unitEl = getEl(`unit-${idx}`);
+      if (unitEl) unitEl.classList.toggle('hidden', region !== 'CM');
+    });
+  }
+
+  function makeCell(item: SizeMapping): HTMLDivElement {
+    const cellValue = item[currentOrigin];
+    const cell = document.createElement('div');
+    cell.className = `size-cell${cellValue === currentSize ? ' active' : ''}`;
+    cell.textContent = cellValue;
+    cell.addEventListener('click', () => {
+      currentSize = cellValue;
+      updateResults(item);
+      renderGrid();
+    });
+    return cell;
+  }
+
+  function renderGrid() {
+    const grid = getEl('quick-grid');
+    if (!grid) return;
+    const data = dataMap[currentGender];
+    grid.innerHTML = '';
+    data.forEach((item) => grid.appendChild(makeCell(item)));
+  }
+
+  function initGrid() {
+    const data = dataMap[currentGender];
+    if (data.length > 0) {
+      currentSize = data[0][currentOrigin];
+      updateResults(data[0]);
+    }
+    renderGrid();
+  }
+
+  function init() {
+    const genderBtns = document.querySelectorAll('[data-gender]');
+    genderBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        genderBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentGender = (btn as HTMLElement).dataset.gender ?? 'men';
+        currentSize = '';
+        initGrid();
+      });
+    });
+
+    const originSelect = getEl('origin-region') as HTMLSelectElement | null;
+    originSelect?.addEventListener('change', () => {
+      currentOrigin = originSelect.value as ShoeSizeRegion;
+      currentSize = '';
+      initGrid();
+    });
+
+    initGrid();
+  }
+
+  function startInit() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      setTimeout(init, 100);
+    }
+    document.addEventListener('astro:page-load', init);
+  }
+
+  startInit();
+</script>
+
+<style>
+  .shoe-converter {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 1rem 4rem;
+  }
+
+  .converter-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 2.5rem;
+    padding: 3rem;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .theme-dark .converter-card {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .gender-selector {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .gender-btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 2rem;
+    border: 2px solid transparent;
+    background: var(--bg-page);
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+  }
+
+  .gender-btn svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .gender-btn-men.active {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: #3b82f6;
+    color: #3b82f6;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .gender-btn-women.active {
+    background: rgba(244, 63, 94, 0.08);
+    border-color: #f43f5e;
+    color: #f43f5e;
+    box-shadow: 0 10px 25px rgba(244, 63, 94, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .size-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .field-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .select-wrap {
+    position: relative;
+  }
+
+  .select-wrap::after {
+    content: '▾';
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--text-muted);
+    font-size: 1rem;
+  }
+
+  .region-select {
+    appearance: none;
+    width: 100%;
+    background: var(--bg-page);
+    border: 1.5px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 0.875rem 2.75rem 0.875rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+
+  .region-select:focus {
+    border-color: #3b82f6;
+  }
+
+  .size-grid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .grid-header {
+    text-align: center;
+  }
+
+  .grid-header h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0 0 0.5rem;
+  }
+
+  .grid-header p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .size-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+    gap: 0.75rem;
+  }
+
+  :global(.size-cell) {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  :global(.size-cell:hover) {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    transform: scale(1.05);
+  }
+
+  :global(.size-cell.active) {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.25);
+  }
+
+  .results-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    background: var(--bg-page);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid var(--border-color);
+  }
+
+  .result-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .result-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .result-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    line-height: 1;
+  }
+
+  .result-unit {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-top: 0.25rem;
+  }
+
+  .result-unit.hidden {
+    display: none;
+  }
+
+  .info-banner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: rgba(3, 105, 161, 0.06);
+    border-radius: 1.25rem;
+    color: #0369a1;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .theme-dark .info-banner {
+    background: rgba(3, 105, 161, 0.1);
+    color: #7dd3fc;
+  }
+
+  .info-banner svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .info-banner p {
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    .converter-card {
+      padding: 1.5rem;
+      gap: 2rem;
+    }
+
+    .results-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

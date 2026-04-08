@@ -6,6 +6,7 @@ export { LaundryGuideComponent, LaundryGuideSEO, LaundryGuideBibliography } from
 export { StainChemistryComponent, StainChemistrySEO, StainChemistryBibliography } from './tool/stainChemistry';
 export { BurnTestComponent, BurnTestSEO, BurnTestBibliography } from './tool/burnTest';
 export { FiberPrepComponent, FiberPrepSEO, FiberPrepBibliography } from './tool/fiberPrep';
+export { ShoeSizeConverterComponent, ShoeSizeConverterSEO, ShoeSizeConverterBibliography } from './tool/shoeSizeConverter';
 
 export type {
   KnownLocale,
