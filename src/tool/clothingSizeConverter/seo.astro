@@ -3,6 +3,7 @@ import {
   SEOTitle,
   SEOCard,
   SEOTip,
+  SEOList,
   SEOArticle
 } from '@jjlmoya/utils-shared';
 import { clothingSizeConverter } from './index';
@@ -27,7 +28,7 @@ const { seo } = content;
       case 'paragraph':
         return <p set:html={section.html} />;
       case 'list':
-        return null;
+        return <SEOList items={section.items} />;
       case 'card':
         return <SEOCard title={section.title} icon={section.icon}><Fragment set:html={section.html} /></SEOCard>;
       case 'tip':
