@@ -1,0 +1,602 @@
+---
+import { Icon } from 'astro-icon/components';
+import type { BurnTestUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const burnUI = ui as BurnTestUI;
+const fibers = Object.entries(burnUI.fiberData ?? {});
+---
+
+<div class="burn-wizard" id="burn-wizard-root">
+  <div class="icon-cache" aria-hidden="true">
+    {fibers.map(([id, fiber]) => (
+      <div id={`icon-cache-${id}`}>
+        <Icon name={fiber.icon} />
+      </div>
+    ))}
+  </div>
+
+  <div class="wizard-card">
+    <div class="wizard-header">
+      <div class="header-left">
+        <div class="header-badge">
+          <Icon name="mdi:test-tube" />
+        </div>
+        <div class="header-info">
+          <span class="investigation-label">{burnUI.investigationLabel ?? 'INVESTIGATION'}</span>
+          <span class="step-indicator" id="step-indicator">...</span>
+        </div>
+      </div>
+      <button class="reset-btn hidden" id="reset-btn">
+        <Icon name="mdi:refresh" />
+        <span>{burnUI.resetLabel ?? 'RESET'}</span>
+      </button>
+    </div>
+
+    <div class="wizard-content">
+      <div id="question-view" class="question-view">
+        <h3 id="question-title" class="question-title">...</h3>
+        <div class="options-grid" id="options-grid"></div>
+      </div>
+
+      <div id="result-view" class="result-view hidden">
+        <div class="result-icon-wrap">
+          <div class="result-icon-container" id="result-icon-container">
+            <Icon name="mdi:microscope" />
+          </div>
+        </div>
+        <div class="result-meta">
+          <span class="positive-id">{burnUI.positiveId ?? 'POSITIVE IDENTIFICATION'}</span>
+          <h2 id="result-name" class="result-name">...</h2>
+        </div>
+        <div class="result-desc" id="result-desc"></div>
+      </div>
+    </div>
+
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-bar" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <div class="safety-note">
+    <div class="safety-icon">
+      <Icon name="mdi:shield-alert" />
+    </div>
+    <div class="safety-text">
+      <h5 class="safety-title">{burnUI.safetyTitle ?? 'Safety Protocol'}</h5>
+      <p>{burnUI.safetyText ?? ''}</p>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ ui }} is:inline>
+  window.__burnTestUI = ui;
+</script>
+
+<script>
+  import type { BurnTestUI, BurnTestEntry, BurnTestFiber } from './ui';
+
+  type BurnTestStep = 'flame' | 'odor' | 'residue' | 'smoke';
+  const STEPS: BurnTestStep[] = ['flame', 'odor', 'residue', 'smoke'];
+
+  const rawUI = (window as unknown as { __burnTestUI: BurnTestUI }).__burnTestUI;
+  const { fiberData, burnTestData, questions, stepPrefix, stepCompleted } = rawUI;
+  const { flameLabel, odorLabel, residueLabel, identifiedAs } = rawUI;
+
+  let candidates: BurnTestEntry[] = [...burnTestData];
+
+  function getEl(id: string): HTMLElement | null {
+    return document.getElementById(id);
+  }
+
+  function getNextDiscriminator(): BurnTestStep | null {
+    if (candidates.length === burnTestData.length) return STEPS[0];
+    return STEPS.find((s) => new Set(candidates.map((c) => c[s])).size > 1) ?? null;
+  }
+
+  function updateProgress(pct: number) {
+    const bar = getEl('progress-bar');
+    if (bar) bar.style.width = `${pct}%`;
+  }
+
+  function animateTitle(disc: BurnTestStep) {
+    const el = getEl('question-title');
+    if (!el) return;
+    el.style.opacity = '0';
+    setTimeout(() => {
+      el.textContent = questions[disc];
+      el.style.opacity = '1';
+    }, 300);
+  }
+
+  function makeOptionBtn(opt: string, index: number, disc: BurnTestStep): HTMLButtonElement {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.style.animationDelay = `${index * 0.1}s`;
+    btn.textContent = opt;
+    btn.onclick = () => selectOption(disc, opt);
+    return btn;
+  }
+
+  function buildOptions(disc: BurnTestStep) {
+    const grid = getEl('options-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
+    const opts = [...new Set(candidates.map((c) => c[disc]))];
+    opts.forEach((opt, i) => grid.appendChild(makeOptionBtn(opt, i, disc)));
+  }
+
+  function buildResultDetail(result: BurnTestEntry): string {
+    const fiber: BurnTestFiber | undefined = fiberData[result.fiberId];
+    const name = fiber?.name ?? result.fiberId;
+    return `<div class="result-details">
+      <p class="result-id-text">${identifiedAs} <strong>${name}</strong>.</p>
+      <div class="result-attrs">
+        <div class="attr-row attr-flame">
+          <span class="attr-label">${flameLabel}</span>
+          <span class="attr-value">${result.flame}</span>
+        </div>
+        <div class="attr-row attr-odor">
+          <span class="attr-label">${odorLabel}</span>
+          <span class="attr-value">${result.odor}</span>
+        </div>
+        <div class="attr-row attr-residue">
+          <span class="attr-label">${residueLabel}</span>
+          <span class="attr-value">${result.residue}</span>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function showResultIcon(fiberId: string) {
+    const cached = getEl(`icon-cache-${fiberId}`);
+    const container = getEl('result-icon-container');
+    if (!cached || !container) return;
+    container.innerHTML = cached.innerHTML;
+    const svg = container.querySelector('svg');
+    if (svg) {
+      svg.style.width = '1em';
+      svg.style.height = '1em';
+    }
+  }
+
+  function showResult(result: BurnTestEntry) {
+    const fiber = fiberData[result.fiberId];
+    if (!fiber) return;
+    getEl('question-view')?.classList.add('hidden');
+    getEl('result-view')?.classList.remove('hidden');
+    getEl('reset-btn')?.classList.remove('hidden');
+    updateProgress(100);
+    const nameEl = getEl('result-name');
+    if (nameEl) nameEl.textContent = fiber.name;
+    const descEl = getEl('result-desc');
+    if (descEl) descEl.innerHTML = buildResultDetail(result);
+    const indEl = getEl('step-indicator');
+    if (indEl) indEl.textContent = stepCompleted;
+    showResultIcon(result.fiberId);
+  }
+
+  function renderStep() {
+    if (candidates.length === 1) { showResult(candidates[0]); return; }
+    const disc = getNextDiscriminator();
+    if (!disc) { showResult(candidates[0]); return; }
+    animateTitle(disc);
+    const indEl = getEl('step-indicator');
+    if (indEl) indEl.textContent = `${stepPrefix} ${STEPS.indexOf(disc) + 1}`;
+    buildOptions(disc);
+    getEl('reset-btn')?.classList.toggle('hidden', candidates.length === burnTestData.length);
+    updateProgress((STEPS.indexOf(disc) / STEPS.length) * 100);
+  }
+
+  function selectOption(attr: BurnTestStep, value: string) {
+    candidates = candidates.filter((c) => c[attr] === value);
+    renderStep();
+  }
+
+  function init() {
+    candidates = [...burnTestData];
+    getEl('reset-btn')?.classList.add('hidden');
+    getEl('result-view')?.classList.add('hidden');
+    getEl('question-view')?.classList.remove('hidden');
+    renderStep();
+    updateProgress(0);
+  }
+
+  getEl('reset-btn')?.addEventListener('click', init);
+
+  function startInit() {
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      setTimeout(init, 100);
+    }
+    document.addEventListener('astro:page-load', init);
+  }
+
+  startInit();
+</script>
+
+<style>
+  .burn-wizard {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .icon-cache {
+    display: none;
+  }
+
+  .wizard-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .theme-dark .wizard-card {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  }
+
+  .wizard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: var(--bg-page);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .header-badge {
+    width: 2rem;
+    height: 2rem;
+    background: linear-gradient(135deg, #6366f1, #7c3aed);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  }
+
+  .header-badge svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .header-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .investigation-label {
+    font-size: 0.55rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+  }
+
+  .step-indicator {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .reset-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    border-radius: 9999px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.625rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .reset-btn:hover {
+    background: rgba(249, 115, 22, 0.05);
+    color: #f97316;
+    border-color: #f97316;
+  }
+
+  .reset-btn svg {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.5s;
+  }
+
+  .reset-btn:hover svg {
+    transform: rotate(180deg);
+  }
+
+  .reset-btn.hidden {
+    display: none;
+  }
+
+  .wizard-content {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .question-view {
+    width: 100%;
+  }
+
+  .question-view.hidden {
+    display: none;
+  }
+
+  .question-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    margin: 0 0 1.5rem;
+    transition: opacity 0.3s ease;
+  }
+
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  :global(.option-btn) {
+    text-align: left;
+    padding: 1rem;
+    background: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: fade-in-up 0.5s ease-out forwards;
+    opacity: 0;
+    line-height: 1.4;
+  }
+
+  :global(.option-btn:hover) {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.05);
+    color: var(--text-main);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .result-view {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    animation: fade-in 0.5s ease;
+  }
+
+  .result-view.hidden {
+    display: none;
+  }
+
+  .result-icon-wrap {
+    position: relative;
+  }
+
+  .result-icon-container {
+    width: 6rem;
+    height: 6rem;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    box-shadow: 0 25px 50px rgba(99, 102, 241, 0.4);
+    position: relative;
+    z-index: 1;
+  }
+
+  .result-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .positive-id {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(16, 185, 129, 0.08);
+    color: #10b981;
+    font-size: 0.55rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .result-name {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-main);
+    margin: 0;
+  }
+
+  .result-desc {
+    background: var(--bg-page);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+    text-align: left;
+  }
+
+  :global(.result-details) {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  :global(.result-id-text) {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin: 0;
+  }
+
+  :global(.result-attrs) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  :global(.attr-row) {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    border-left: 2px solid var(--border-color);
+  }
+
+  :global(.attr-flame) {
+    border-left-color: #f97316;
+  }
+
+  :global(.attr-odor) {
+    border-left-color: #6366f1;
+  }
+
+  :global(.attr-residue) {
+    border-left-color: #94a3b8;
+  }
+
+  :global(.attr-label) {
+    font-size: 0.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+  }
+
+  :global(.attr-value) {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .progress-track {
+    height: 0.25rem;
+    background: var(--bg-page);
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #ec4899);
+    transition: width 0.7s ease-out;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  }
+
+  .safety-note {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid #ef4444;
+    border-radius: 0.75rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .safety-icon {
+    background: rgba(239, 68, 68, 0.08);
+    color: #ef4444;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .safety-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .safety-title {
+    font-size: 0.625rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #ef4444;
+    margin: 0 0 0.25rem;
+  }
+
+  .safety-text p {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .options-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .result-name {
+      font-size: 1.75rem;
+    }
+
+    .wizard-content {
+      padding: 1rem;
+    }
+  }
+</style>
