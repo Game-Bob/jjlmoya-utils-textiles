@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'veracidad-textil';
-const title = 'Análisis de Calidad Textil | Veracidad Textil';
+const title = 'Veracidad Textil: Análisis de Calidad de Fibras';
 const description = 'Descubre la calidad real de tus prendas analizando su composición. ¿Es algodón real o plástico caro? Análisis científico de fibras.';
 
 const faqData = [
@@ -287,7 +287,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
 const faqSchema: WithContext<FAQPage> = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: content.faq.map((item) => ({
+  mainEntity: faqData.map((item) => ({
     '@type': 'Question',
     name: item.question,
     acceptedAnswer: { '@type': 'Answer', text: item.answer },
@@ -299,7 +299,7 @@ const howToSchema: WithContext<HowTo> = {
   '@type': 'HowTo',
   name: title,
   description: description,
-  step: content.howTo.map((step) => ({
+  step: howToData.map((step) => ({
     '@type': 'HowToStep',
     name: step.name,
     text: step.text,

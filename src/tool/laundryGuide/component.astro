@@ -1,12 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components';
+import type { TextileData } from './logic';
+
 interface Props {
-  ui?: Record<string, any>;
+  ui?: Record<string, unknown>;
 }
 
 const { ui = {} } = Astro.props;
-const textileData = (ui.textileData as Record<string, any>) || {};
-const fibers = Object.entries(textileData).map(([id, data]) => ({ id, ...data as any }));
+const textileData = (ui.textileData as Record<string, TextileData>) ?? {};
+const fibers = Object.entries(textileData).map(([id, data]) => ({ id, ...data }));
 ---
 
 <div class="laundry-guide-container" id="laundry-guide-root">
@@ -100,39 +102,37 @@ const fibers = Object.entries(textileData).map(([id, data]) => ({ id, ...data as
 <script>
   import type { TextileData } from './logic';
 
-  function updateCareUI(data: TextileData) {
-    const careState = document.getElementById('care-state');
-    const welcomeState = document.getElementById('welcome-state');
-    const fName = document.getElementById('fiber-name');
+  function setText(id: string, value: string) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value;
+  }
+
+  function renderFiberIcon(data: TextileData) {
     const fIcon = document.getElementById('header-icon');
-    const fTemp = document.getElementById('max-temp');
-    const fIron = document.getElementById('ironing-info');
-    const fDry = document.getElementById('drying-info');
+    if (!fIcon) return;
+    fIcon.setAttribute('name', data.icon);
+    (fIcon as HTMLElement).style.color = data.color;
+  }
+
+  function renderDonts(data: TextileData) {
     const fDonts = document.getElementById('donts-list');
-    const fSos = document.getElementById('sos-info');
-    const fDesc = document.getElementById('fiber-description');
+    if (!fDonts) return;
+    fDonts.innerHTML = data.donts
+      .map((d: string) => `<li><span class="dont-bullet"></span>${d}</li>`)
+      .join('');
+  }
 
-    welcomeState?.classList.add('hidden');
-    careState?.classList.remove('hidden');
-
-    if (fIcon) {
-      fIcon.setAttribute('name', data.icon);
-      (fIcon as HTMLElement).style.color = data.color;
-    }
-
-    if (fName) fName.textContent = data.name;
-    if (fTemp) fTemp.textContent = data.maxTemp;
-    if (fIron) fIron.textContent = data.ironing;
-    if (fDry) fDry.textContent = data.drying;
-
-    if (fDonts) {
-      fDonts.innerHTML = data.donts
-        .map((d: string) => `<li><span class="dont-bullet"></span>${d}</li>`)
-        .join('');
-    }
-
-    if (fSos) fSos.textContent = data.sos;
-    if (fDesc) fDesc.textContent = data.description;
+  function updateCareUI(data: TextileData) {
+    document.getElementById('welcome-state')?.classList.add('hidden');
+    document.getElementById('care-state')?.classList.remove('hidden');
+    renderFiberIcon(data);
+    setText('fiber-name', data.name);
+    setText('max-temp', data.maxTemp);
+    setText('ironing-info', data.ironing);
+    setText('drying-info', data.drying);
+    setText('sos-info', data.sos);
+    setText('fiber-description', data.description);
+    renderDonts(data);
   }
 
   function initLaundryGuide() {
@@ -281,14 +281,14 @@ const fibers = Object.entries(textileData).map(([id, data]) => ({ id, ...data as
   .care-display {
     width: 100%;
     max-width: 600px;
-    animation: fadeIn 0.3s ease;
+    animation: fade-in 0.3s ease;
   }
 
   .care-display.hidden {
     display: none;
   }
 
-  @keyframes fadeIn {
+  @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
   }

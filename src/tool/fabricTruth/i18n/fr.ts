@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'verite-textile';
-const title = 'Analyse de la Qualité Textile | Vérité Textile';
+const title = 'Vérité Textile: Analyse de la Qualité des Fibres';
 const description = 'Découvrez la qualité réelle de vos vêtements en analysant leur composition. Est-ce du vrai coton ou du plastique coûteux ? Analyse scientifique des fibres.';
 
 const faqData = [

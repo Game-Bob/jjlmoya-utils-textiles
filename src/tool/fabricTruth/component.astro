@@ -8,11 +8,11 @@ interface Props {
 
 const { ui } = Astro.props;
 
-const fiberData = (ui?.fiberData as Record<string, any>) || {};
+const fiberData = ui?.fiberData ?? {};
 const fibers = Object.entries(fiberData)
   .map(([id, data]) => ({
     id,
-    name: (data as any).name || id
+    name: data.name || id
   }))
   .sort((a, b) => a.name.localeCompare(b.name));
 ---
@@ -152,14 +152,39 @@ const fibers = Object.entries(fiberData)
     gray: 'color-gray',
   };
 
-  function updateDisplay(composition: CompositionRow[], total: number, uiData: FabricTruthUI) {
-    const emptyState = document.getElementById('empty-state');
-    const resultContent = document.getElementById('result-content');
-    const validationMsg = document.getElementById('validation-msg');
+  function renderStats(averages: { b: number; d: number; w: number }) {
+    (['breathability', 'durability', 'warmth'] as const).forEach((key) => {
+      const val = averages[key[0] as 'b' | 'd' | 'w'];
+      const bar = document.getElementById(`stat-${key}`);
+      const text = document.getElementById(`stat-val-${key}`);
+      if (bar) bar.style.width = `${val * 10}%`;
+      if (text) text.textContent = `${val.toFixed(1)}/10`;
+    });
+  }
+
+  function renderVerdict(composition: CompositionRow[], uiData: FabricTruthUI) {
     const verdictLabel = document.getElementById('verdict-label');
     const verdictDescription = document.getElementById('verdict-description');
     const verdictCard = document.getElementById('verdict-card');
     const careWarning = document.getElementById('care-warning');
+
+    const { fiberData, verdicts } = uiData;
+    const careWarnings = uiData.careWarnings as Record<string, string>;
+    const verdict = FabricEngine.calculateVerdict(composition, fiberData, verdicts);
+    const averages = FabricEngine.getAverages(composition, fiberData);
+    const warning = FabricEngine.getCareWarning(composition, careWarnings);
+
+    if (verdictLabel) verdictLabel.textContent = verdict.label;
+    if (verdictDescription) verdictDescription.textContent = verdict.description;
+    if (verdictCard) verdictCard.className = `verdict-card ${COLORS[verdict.color] ?? COLORS.gray}`;
+    if (careWarning) careWarning.textContent = warning;
+    renderStats(averages);
+  }
+
+  function updateDisplay(composition: CompositionRow[], total: number, uiData: FabricTruthUI) {
+    const emptyState = document.getElementById('empty-state');
+    const resultContent = document.getElementById('result-content');
+    const validationMsg = document.getElementById('validation-msg');
 
     if (total !== 100) {
       emptyState?.classList.remove('hidden');
@@ -170,31 +195,22 @@ const fibers = Object.entries(fiberData)
 
     emptyState?.classList.add('hidden');
     resultContent?.classList.remove('hidden');
+    renderVerdict(composition, uiData);
+  }
 
-    const fiberData = (uiData.fiberData as any) || {};
-    const verdict = FabricEngine.calculateVerdict(composition, fiberData, uiData.verdicts);
-    const averages = FabricEngine.getAverages(composition, fiberData);
-    const warning = FabricEngine.getCareWarning(composition, uiData.careWarnings as Record<string, string>);
-
-    if (verdictLabel) verdictLabel.textContent = verdict.label;
-    if (verdictDescription) verdictDescription.textContent = verdict.description;
-    if (verdictCard) verdictCard.className = `verdict-card ${COLORS[verdict.color] || COLORS.gray}`;
-    if (careWarning) careWarning.textContent = warning;
-
-    ['breathability', 'durability', 'warmth'].forEach((key) => {
-      const val = averages[key[0] as 'b' | 'd' | 'w'];
-      const bar = document.getElementById(`stat-${key}`);
-      const text = document.getElementById(`stat-val-${key}`);
-      if (bar) bar.style.width = `${val * 10}%`;
-      if (text) text.textContent = `${val.toFixed(1)}/10`;
-    });
+  function updateTotalBadge(total: number) {
+    const totalVal = document.getElementById('total-val');
+    const totalIndicator = document.getElementById('total-indicator');
+    if (totalVal) totalVal.textContent = total.toString();
+    if (!totalIndicator) return;
+    totalIndicator.className = 'total-badge';
+    if (total === 100) totalIndicator.classList.add('total-complete');
+    if (total > 100) totalIndicator.classList.add('total-error');
   }
 
   function updateAnalysis() {
     const uiData = (window as unknown as { __fabricUI: FabricTruthUI }).__fabricUI;
     const container = document.getElementById('composition-rows');
-    const totalVal = document.getElementById('total-val');
-    const totalIndicator = document.getElementById('total-indicator');
     const totalHelper = document.getElementById('total-helper');
 
     const rows = container?.querySelectorAll('.fiber-row');
@@ -207,17 +223,8 @@ const fibers = Object.entries(fiberData)
 
     const total = composition.reduce((acc, c) => acc + c.percentage, 0);
 
-    if (totalVal) totalVal.textContent = total.toString();
-    if (totalIndicator) {
-      totalIndicator.className = 'total-badge';
-      if (total === 100) totalIndicator.classList.add('total-complete');
-      else if (total > 100) totalIndicator.classList.add('total-error');
-    }
-
-    if (totalHelper) {
-      totalHelper.textContent = total === 100 ? '' : `${uiData.actualTotal}: ${total}%`;
-    }
-
+    updateTotalBadge(total);
+    if (totalHelper) totalHelper.textContent = total === 100 ? '' : `${uiData.actualTotal}: ${total}%`;
     updateDisplay(composition, total, uiData);
   }
 
@@ -323,10 +330,10 @@ const fibers = Object.entries(fiberData)
     display: flex;
     gap: 0.75rem;
     align-items: center;
-    animation: slideIn 0.3s ease;
+    animation: slide-in 0.3s ease;
   }
 
-  @keyframes slideIn {
+  @keyframes slide-in {
     from {
       opacity: 0;
       transform: translateX(-10px);
@@ -439,7 +446,6 @@ const fibers = Object.entries(fiberData)
     padding: 0.75rem 1.5rem;
     border-radius: 0.75rem;
     font-weight: 600;
-    font-family: monospace;
     background: var(--bg-page);
     color: var(--text-muted);
     border: 1px solid var(--border-color);
@@ -491,14 +497,14 @@ const fibers = Object.entries(fiberData)
     font-size: 0.85rem;
     font-style: italic;
     color: var(--text-muted);
-    margin-top: 0.25rem !important;
+    margin-top: 0.25rem;
   }
 
   .result-content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    animation: fadeIn 0.5s ease;
+    animation: fade-in 0.5s ease;
   }
 
   :global(.result-content.hidden) {
@@ -509,7 +515,7 @@ const fibers = Object.entries(fiberData)
     display: none;
   }
 
-  @keyframes fadeIn {
+  @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
   }
@@ -637,7 +643,7 @@ const fibers = Object.entries(fiberData)
 
   .stat-fill {
     height: 100%;
-    background: currentColor;
+    background: currentcolor;
     transition: width 1s ease;
     width: 0%;
   }
@@ -657,7 +663,6 @@ const fibers = Object.entries(fiberData)
   .stat-value {
     font-size: 0.85rem;
     font-weight: 600;
-    font-family: monospace;
     text-align: right;
     color: var(--text-muted);
   }

@@ -18,15 +18,25 @@ export interface Verdict {
   color: string;
 }
 
+type VerdictMap = Record<string, { label: string; description: string }>;
+
+function safeVerdict(key: string, verdictData: VerdictMap, color: string): Verdict {
+  return {
+    label: verdictData[key]?.label ?? '!',
+    description: verdictData[key]?.description ?? '',
+    color,
+  };
+}
+
 export class FabricEngine {
   private static getPercentage(composition: CompositionRow[], filter: (r: CompositionRow) => boolean): number {
     return composition.filter(filter).reduce((acc, r) => acc + r.percentage, 0);
   }
 
   static calculateVerdict(
-    composition: CompositionRow[], 
+    composition: CompositionRow[],
     fiberData: Record<string, TextileFiber> = {},
-    verdictData: Record<string, { label: string; description: string }> = {}
+    verdictData: VerdictMap = {},
   ): Verdict {
     const total = composition.reduce((acc, row) => acc + row.percentage, 0);
     if (total === 0) return { label: '...', description: '...', color: 'gray' };
@@ -37,24 +47,32 @@ export class FabricEngine {
     const noble = this.getPercentage(composition, (r) => !!fiberData[r.fiberId]?.isNoble);
     const synthetic = this.getPercentage(composition, (r) => fiberData[r.fiberId]?.family === 'synthetic');
 
-    if (polyAcrylic > 50) return { label: verdictData.plasticy?.label || '!', description: verdictData.plasticy?.description || '', color: 'red' };
-    if (noble > 0 && noble < 10) return { label: verdictData.hook?.label || '!', description: verdictData.hook?.description || '', color: 'amber' };
-    if (viscoseModal > 30) return { label: verdictData.fragile?.label || '!', description: verdictData.fragile?.description || '', color: 'yellow' };
-    if (natural > 70) return { label: verdictData.natural?.label || '!', description: verdictData.natural?.description || '', color: 'emerald' };
-    if (synthetic > 80) return { label: verdictData.technical?.label || '!', description: verdictData.technical?.description || '', color: 'red' };
-    if (noble >= 50) return { label: verdictData.luxury?.label || '!', description: verdictData.luxury?.description || '', color: 'indigo' };
+    const rules: Array<[boolean, string, string]> = [
+      [polyAcrylic > 50, 'plasticy', 'red'],
+      [noble > 0 && noble < 10, 'hook', 'amber'],
+      [viscoseModal > 30, 'fragile', 'yellow'],
+      [natural > 70, 'natural', 'emerald'],
+      [synthetic > 80, 'technical', 'red'],
+      [noble >= 50, 'luxury', 'indigo'],
+    ];
 
-    return { label: verdictData.balanced?.label || '!', description: verdictData.balanced?.description || '', color: 'blue' };
+    const match = rules.find(([cond]) => cond);
+    return match ? safeVerdict(match[1], verdictData, match[2]) : safeVerdict('balanced', verdictData, 'blue');
   }
 
   static getCareWarning(composition: CompositionRow[], careWarnings: Record<string, string> = {}): string {
-    const hasAny = (ids: string[]) => composition.some((c) => ids.includes(c.fiberId));
     if (composition.length === 0) return '';
-    if (hasAny(['silk', 'cashmere'])) return careWarnings.delicate || '';
-    if (hasAny(['wool', 'alpaca', 'merino', 'mohair', 'angora'])) return careWarnings.wool || '';
-    if (composition.some((c) => c.fiberId === 'linen')) return careWarnings.linen || '';
-    if (hasAny(['viscose', 'modal'])) return careWarnings.semisynthetic || '';
-    return careWarnings.standard || '';
+
+    const hasAny = (ids: string[]) => composition.some((c) => ids.includes(c.fiberId));
+    const lookups: Array<[boolean, string]> = [
+      [hasAny(['silk', 'cashmere']), 'delicate'],
+      [hasAny(['wool', 'alpaca', 'merino', 'mohair', 'angora']), 'wool'],
+      [hasAny(['linen']), 'linen'],
+      [hasAny(['viscose', 'modal']), 'semisynthetic'],
+    ];
+
+    const match = lookups.find(([cond]) => cond);
+    return match ? (careWarnings[match[1]] ?? '') : (careWarnings.standard ?? '');
   }
 
   static getAverages(composition: CompositionRow[], fiberData: Record<string, TextileFiber> = {}) {

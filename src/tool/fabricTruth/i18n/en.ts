@@ -3,7 +3,7 @@ import type { ToolLocaleContent } from '../../../types';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'fabric-truthfulness';
-const title = 'Textile Quality Analysis | Fabric Truthfulness';
+const title = 'Fabric Truthfulness: Textile Quality Analysis';
 const description = 'Discover the real quality of your garments by analyzing their composition. Is it real cotton or expensive plastic? Scientific fiber analysis.';
 
 const faqData = [
