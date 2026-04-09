@@ -1,14 +1,14 @@
 ---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { sewingPatternScaler } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'es' } = Astro.props;
+const content = await sewingPatternScaler.i18n[locale]?.();
 ---
-<ul>
-  <li>
-    <a href="https://www.scribd.com/document/696165843/patronaje-las-bases-by-teresa-gilewska" target="_blank" rel="noopener noreferrer">
-      Patronaje: Las Bases - Teresa Gilewska
-    </a>
-  </li>
-  <li>
-    <a href="https://download.e-bookshelf.de/download/0000/5989/88/L-G-0000598988-0002339537.pdf" target="_blank" rel="noopener noreferrer">
-      Metric Pattern Cutting for Women's Wear - Winifred Aldrich
-    </a>
-  </li>
-</ul>
+
+{content && <SharedBibliography links={content.bibliography} />}

@@ -1,34 +1,14 @@
 ---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { burnTest } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'es' } = Astro.props;
+const content = await burnTest.i18n[locale]?.();
 ---
-<div class="bibliography">
-  <h3>References</h3>
-  <ul>
-    <li><a href="https://members.aatcc.org/store/tm20/485/" target="_blank">AATCC TM20: Fiber Analysis - Qualitative</a></li>
-    <li><a href="https://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular41e3.pdf" target="_blank">Textile Fibers: Identification and Testing - NIST</a></li>
-    <li><a href="https://fabricmartfabrics.com/pages/burn-test-chart" target="_blank">Burn Test Chart for Fiber Identification - Fabric Mart</a></li>
-  </ul>
-</div>
-<style>
-  .bibliography {
-    padding: 1rem 0;
-  }
-  .bibliography h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  .bibliography ul {
-    list-style: none;
-    padding: 0;
-  }
-  .bibliography li {
-    margin-bottom: 0.5rem;
-  }
-  .bibliography a {
-    color: #6366f1;
-    text-decoration: none;
-  }
-  .bibliography a:hover {
-    text-decoration: underline;
-  }
-</style>
+
+{content && <SharedBibliography links={content.bibliography} />}

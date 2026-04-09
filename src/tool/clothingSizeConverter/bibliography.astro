@@ -1,34 +1,14 @@
 ---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { clothingSizeConverter } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'es' } = Astro.props;
+const content = await clothingSizeConverter.i18n[locale]?.();
 ---
-<div class="bibliography">
-  <h3>References</h3>
-  <ul>
-    <li><a href="https://www.iso.org/standard/68644.html" target="_blank">ISO 3635: Clothing Sizes - Official Standard</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Clothing_size" target="_blank">Clothing Size Standards - Wikipedia</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Clothing_size#International_variations" target="_blank">International Clothing Size Conversion - Wikipedia</a></li>
-  </ul>
-</div>
-<style>
-  .bibliography {
-    padding: 1rem 0;
-  }
-  .bibliography h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  .bibliography ul {
-    list-style: none;
-    padding: 0;
-  }
-  .bibliography li {
-    margin-bottom: 0.5rem;
-  }
-  .bibliography a {
-    color: #6366f1;
-    text-decoration: none;
-  }
-  .bibliography a:hover {
-    text-decoration: underline;
-  }
-</style>
+
+{content && <SharedBibliography links={content.bibliography} />}

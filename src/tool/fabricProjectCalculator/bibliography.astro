@@ -1,19 +1,14 @@
 ---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { fabricProjectCalculator } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'es' } = Astro.props;
+const content = await fabricProjectCalculator.i18n[locale]?.();
 ---
-<ul>
-  <li>
-    <a href="https://www.threadsmagazine.com/forum/measuring-fabric" target="_blank" rel="noopener noreferrer">
-      Fabric Estimation Guide - Threads Magazine
-    </a>
-  </li>
-  <li>
-    <a href="https://www.seamwork.com/sewing-tutorials/the-anatomy-of-a-sewing-pattern" target="_blank" rel="noopener noreferrer">
-      How much fabric do I need? - Seamwork
-    </a>
-  </li>
-  <li>
-    <a href="https://www.textileschool.com/209/fabric-consumption-in-garment-making/" target="_blank" rel="noopener noreferrer">
-      Standard Fabric Consumption Charts - Textile School
-    </a>
-  </li>
-</ul>
+
+{content && <SharedBibliography links={content.bibliography} />}

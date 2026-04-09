@@ -1,7 +1,7 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 
-const slug = 'dimensionneur-patron-couture';
+const slug = 'guide-lavage-textile';
 const title = 'Dimensionneur de Patron de Couture en Ligne';
 const description = 'Ajustez n\'importe quel patron de couture à vos mesures réelles. Calculateur de mise à l\'échelle différentielle avec prévisualisation du patron mis à jour.';
 

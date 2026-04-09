@@ -1,40 +1,14 @@
 ---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { fabricTruth } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'es' } = Astro.props;
+const content = await fabricTruth.i18n[locale]?.();
 ---
 
-<div class="space-y-4">
-  <a
-    href="https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="block p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-indigo-500 dark:hover:border-indigo-400 transition-colors"
-  >
-    <p class="font-semibold text-slate-900 dark:text-white">FTC - Guía de Etiquetado Textil</p>
-    <p class="text-sm text-slate-600 dark:text-slate-400">
-      Regulaciones oficiales sobre etiquetado de fibras textiles en EE.UU.
-    </p>
-  </a>
-
-  <a
-    href="https://ec.europa.eu/growth/tools-databases/nando/"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="block p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-indigo-500 dark:hover:border-indigo-400 transition-colors"
-  >
-    <p class="font-semibold text-slate-900 dark:text-white">Comisión Europea - Regulación Textil</p>
-    <p class="text-sm text-slate-600 dark:text-slate-400">
-      Base de datos de regulaciones textiles de la UE
-    </p>
-  </a>
-
-  <a
-    href="https://www.iso.org/standard/60465.html"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="block p-4 bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 hover:border-indigo-500 dark:hover:border-indigo-400 transition-colors"
-  >
-    <p class="font-semibold text-slate-900 dark:text-white">ISO 3758:2012 - Símbolos de Cuidado Textil</p>
-    <p class="text-sm text-slate-600 dark:text-slate-400">
-      Estándar internacional para símbolos de mantenimiento textil
-    </p>
-  </a>
-</div>
+{content && <SharedBibliography links={content.bibliography} />}

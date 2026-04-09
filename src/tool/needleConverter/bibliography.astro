@@ -1,14 +1,14 @@
 ---
+import { Bibliography as SharedBibliography } from '@jjlmoya/utils-shared';
+import { needleConverter } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'es' } = Astro.props;
+const content = await needleConverter.i18n[locale]?.();
 ---
-<ul>
-  <li>
-    <a href="https://www.craftyarncouncil.com/standards/hooks-and-needles" target="_blank" rel="noopener noreferrer">
-      Craft Yarn Council: Needle and Hook Size Chart
-    </a>
-  </li>
-  <li>
-    <a href="https://knowledge.bsigroup.com/products/textile-machinery-knitting-machines-number-of-needles-for-circular-knitting-machines-of-large-nominal-diameter" target="_blank" rel="noopener noreferrer">
-      British Standards Institution: Textiles - Marking of Knitting Needles
-    </a>
-  </li>
-</ul>
+
+{content && <SharedBibliography links={content.bibliography} />}
