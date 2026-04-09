@@ -1,10 +1,68 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 
+const slug = 'laundry-guide';
+const title = 'Textile Care Guide: How to Wash Every Fabric Type';
+const description = 'Scientific guide to washing and caring for cotton, wool, silk, linen, and synthetics. Prevent shrinkage, fading, and damage with proper care instructions.';
+
+const faqData = [
+  {
+    question: 'How do I prevent colors from fading?',
+    answer: 'Wash in cold water (maximum 30°C), turn garments inside out, use detergent for dark colors, and avoid direct sunlight when drying.',
+  },
+  {
+    question: 'Can I wash wool in a washing machine?',
+    answer: 'Yes, but only with a wool cycle (cold water, gentle agitation). Use wool-specific detergent and never use a regular cycle.',
+  },
+  {
+    question: 'Why is my silk getting water stains?',
+    answer: 'Silk reacts to water minerals. Use distilled water for the final rinse or lightly rub the stain with pure silk fabric.',
+  },
+];
+
+const howToData = [
+  { name: 'Check the label', text: 'Always read the care instructions on the garment label before washing.' },
+  { name: 'Sort by fiber type', text: 'Wash natural fibers separately from synthetics when possible.' },
+  { name: 'Choose water temperature', text: 'Use cold water for delicate fabrics and hot water only for sturdy materials.' },
+];
+
+const faqSchema: WithContext<FAQPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+
+const howToSchema: WithContext<HowTo> = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description: description,
+  step: howToData.map((step) => ({
+    '@type': 'HowToStep',
+    name: step.name,
+    text: step.text,
+  })),
+};
+
+const appSchema: WithContext<SoftwareApplication> = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: title,
+  description: description,
+  applicationCategory: 'UtilityApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  inLanguage: 'en',
+};
+
 export const content: ToolLocaleContent = {
-  slug: 'laundry-guide',
-  title: 'Textile Care Guide: How to Wash Every Fabric Type',
-  description: 'Scientific guide to washing and caring for cotton, wool, silk, linen, and synthetics. Prevent shrinkage, fading, and damage with proper care instructions.',
+  slug,
+  title,
+  description,
   ui: {
     selectMaterialTitle: 'Select Fabric',
     selectMaterialPrompt: 'Select a fabric to see care instructions',
@@ -206,64 +264,12 @@ export const content: ToolLocaleContent = {
     { type: 'paragraph', html: '"Buy less, choose better, and make it last." A well-cared-for garment can last decades. A neglected one, months.' },
   ],
   faqTitle: 'Frequently Asked Questions',
-  faq: [
-    {
-      question: 'How do I prevent colors from fading?',
-      answer: 'Wash in cold water (maximum 30°C), turn garments inside out, use detergent for dark colors, and avoid direct sunlight when drying.',
-    },
-    {
-      question: 'Can I wash wool in a washing machine?',
-      answer: 'Yes, but only with a wool cycle (cold water, gentle agitation). Use wool-specific detergent and never use a regular cycle.',
-    },
-    {
-      question: 'Why is my silk getting water stains?',
-      answer: 'Silk reacts to water minerals. Use distilled water for the final rinse or lightly rub the stain with pure silk fabric.',
-    },
-  ],
+  faq: faqData,
   bibliographyTitle: 'References',
   bibliography: [
     { name: 'ISO 3758 - Textile Care Symbols', url: 'https://www.iso.org/standard/60465.html' },
     { name: 'FTC - Textile Care Labels', url: 'https://www.ftc.gov/' },
   ],
-  howTo: [
-    { name: 'Check the label', text: 'Always read the care instructions on the garment label before washing.' },
-    { name: 'Sort by fiber type', text: 'Wash natural fibers separately from synthetics when possible.' },
-    { name: 'Choose water temperature', text: 'Use cold water for delicate fabrics and hot water only for sturdy materials.' },
-  ],
-  schemas: [],
+  howTo: howToData,
+  schemas: [faqSchema, howToSchema, appSchema],
 };
-
-const laundryFaqSchemaEn: WithContext<FAQPage> = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: content.faq.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-  })),
-};
-
-const laundryHowToSchemaEn: WithContext<HowTo> = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: content.title,
-  description: content.description,
-  step: content.howTo.map((step) => ({
-    '@type': 'HowToStep',
-    name: step.name,
-    text: step.text,
-  })),
-};
-
-const laundryAppSchemaEn: WithContext<SoftwareApplication> = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: content.title,
-  description: content.description,
-  applicationCategory: 'UtilityApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'en',
-};
-
-content.schemas = [laundryFaqSchemaEn, laundryHowToSchemaEn, laundryAppSchemaEn];

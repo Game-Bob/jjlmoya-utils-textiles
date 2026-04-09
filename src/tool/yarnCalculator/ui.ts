@@ -1,0 +1,42 @@
+export interface YarnCalculatorUI {
+  sectionProject: string;
+  sectionSize: string;
+  sectionWeight: string;
+  sectionPattern: string;
+  sectionBall: string;
+  labelCables: string;
+  labelGrams: string;
+  labelMeters: string;
+  weightFine: string;
+  weightMedium: string;
+  weightThick: string;
+  weightXXL: string;
+  projectSweater: string;
+  projectScarf: string;
+  projectHat: string;
+  projectSocks: string;
+  projectBlanket: string;
+  projectCardigan: string;
+  statPrefix: string;
+  statSuffix: string;
+  statNote: string;
+  ballsFormatSingular: string;
+  ballsFormatPlural: string;
+  ballsDetailFormat: string;
+  alertTitle: string;
+  alertText: string;
+  schemeSleeveLabel: string;
+  schemeSleeveEach: string;
+  schemeBodyLabel: string;
+  schemeTotalHat: string;
+  schemeTotalFlat: string;
+  schemeTotalSocks: string;
+  sizeLabels: {
+    sweater: string[];
+    cardigan: string[];
+    hat: string[];
+    scarf: string[];
+    socks: string[];
+    blanket: string[];
+  };
+}

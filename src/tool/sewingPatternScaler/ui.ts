@@ -1,0 +1,29 @@
+export interface SewingPatternScalerUI {
+  labelSystem: string;
+  modeStandard: string;
+  modeCustom: string;
+  labelPatternSize: string;
+  labelTargetSize: string;
+  labelOriginMeasures: string;
+  labelTargetMeasures: string;
+  labelEase: string;
+  labelChest: string;
+  labelWaist: string;
+  labelHips: string;
+  labelLength: string;
+  resBust: string;
+  resWaist: string;
+  resHips: string;
+  resLength: string;
+  actionLatAdd: string;
+  actionLatRemove: string;
+  actionLatSuffix: string;
+  actionLatNote: string;
+  actionLenExtend: string;
+  actionLenShorten: string;
+  actionLenNote: string;
+  legendOriginal: string;
+  legendUpdated: string;
+  warnText: string;
+  sizePrefix: string;
+}

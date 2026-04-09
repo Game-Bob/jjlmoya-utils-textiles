@@ -1,0 +1,914 @@
+---
+import type { FabricProjectCalculatorUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const calcUI = ui as FabricProjectCalculatorUI;
+---
+
+<div class="fabric-calculator-card" id="fabric-calc-app">
+  <aside class="fabric-sidebar">
+    <div class="config-group">
+      <h3>{calcUI.sectionProject}</h3>
+      <div class="fabric-field">
+        <label>{calcUI.labelGarmentType}</label>
+        <select id="garment-type" class="fabric-select">
+          <option value="skirt">{calcUI.garmentSkirt}</option>
+          <option value="pants">{calcUI.garmentPants}</option>
+          <option value="dress">{calcUI.garmentDress}</option>
+          <option value="shirt">{calcUI.garmentShirt}</option>
+          <option value="coat">{calcUI.garmentCoat}</option>
+          <option value="tote">{calcUI.garmentTote}</option>
+        </select>
+      </div>
+      <div class="fabric-field">
+        <label>{calcUI.labelSize}</label>
+        <div class="preset-group" id="size-presets">
+          <button class="preset-pill" data-val="xs_core">{calcUI.sizeXS}</button>
+          <button class="preset-pill active" data-val="m_core">{calcUI.sizeM}</button>
+          <button class="preset-pill" data-val="xl_core">{calcUI.sizeXL}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="config-group">
+      <h3>{calcUI.sectionMaterial}</h3>
+      <div class="fabric-field">
+        <label>{calcUI.labelFabricWidth}</label>
+        <select id="fabric-width" class="fabric-select">
+          <option value="90">{calcUI.width90}</option>
+          <option value="115">{calcUI.width115}</option>
+          <option value="140" selected>{calcUI.width140}</option>
+          <option value="150">{calcUI.width150}</option>
+        </select>
+      </div>
+      <div class="fabric-field">
+        <label>{calcUI.labelSeamAllowance}</label>
+        <div class="shop-stepper">
+          <button class="step-btn" id="sub-allow">−</button>
+          <input type="number" id="seam-allowance" class="fabric-input" value="1.5" step="0.5" min="0" max="5" />
+          <button class="step-btn" id="add-allow">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-actions">
+      <button id="btn-clear-f" class="f-btn f-seco">{calcUI.btnClear}</button>
+      <button id="btn-share-f" class="f-btn f-prim">{calcUI.btnShare}</button>
+    </div>
+  </aside>
+
+  <main class="fabric-main">
+    <div id="warning-msg" class="warning-banner"></div>
+
+    <section class="magic-result-area">
+      <span class="result-lbl">{calcUI.resultLabel}</span>
+      <div class="val"><span id="main-meters">1.40</span><span class="unit">{calcUI.resultUnit}</span></div>
+      <div class="advice-tag" id="shop-advice"></div>
+    </section>
+
+    <div class="layout-container">
+      <div class="canvas-wrapper">
+        <div class="scheme-area">
+          <div class="ruler" id="ruler-col"></div>
+          <div id="fabric-board-box" class="fabric-board">
+            <div class="board-empty-state">{calcUI.boardEmpty}</div>
+          </div>
+        </div>
+        <div class="scheme-info" id="board-desc"></div>
+      </div>
+    </div>
+
+    <section class="merch-section">
+      <div class="merch-header">
+        <h3 class="merch-title">{calcUI.merchTitle}</h3>
+        <button id="copy-list-btn" class="copy-list-btn">{calcUI.btnCopyList}</button>
+      </div>
+      <ul id="check-list" class="merceria-checklist"></ul>
+    </section>
+  </main>
+</div>
+
+<script define:vars={{ ui }} is:inline>
+  window.__toolUI = ui;
+</script>
+
+<script>
+  import type { FabricProjectCalculatorUI } from './ui';
+  import type { PieceRow } from './logic';
+  import {
+    isSerialCut, computeMeters, shopAdviceMeters, getRulerStep,
+    PIECE_ROWS, CONSUMPTION_MATRIX, SIZE_MULTS, SIZE_MIN_WIDTHS,
+  } from './logic';
+
+  declare global {
+    interface Window {
+      __toolUI: FabricProjectCalculatorUI;
+    }
+  }
+
+  type PieceNameKey = keyof FabricProjectCalculatorUI['pieceNames'];
+
+  const PIECE_COLORS = [
+    'rgba(196, 181, 253, 0.55)',
+    'rgba(165, 180, 252, 0.55)',
+    'rgba(139, 92, 246, 0.30)',
+    'rgba(167, 139, 250, 0.45)',
+    'rgba(129, 140, 248, 0.45)',
+    'rgba(110, 231, 183, 0.40)',
+  ];
+
+  const PIECE_BORDERS = [
+    'rgba(139, 92, 246, 0.50)',
+    'rgba(99, 102, 241, 0.50)',
+    'rgba(139, 92, 246, 0.70)',
+    'rgba(124, 58, 237, 0.50)',
+    'rgba(79, 70, 229, 0.50)',
+    'rgba(16, 185, 129, 0.50)',
+  ];
+
+  let activeSize = 'm_core';
+
+  function getNum(id: string): number {
+    const el = document.getElementById(id) as HTMLInputElement | null;
+    return parseFloat(el?.value || '0') || 0;
+  }
+
+  function getStr(id: string): string {
+    const el = document.getElementById(id) as HTMLInputElement | null;
+    return el?.value || '';
+  }
+
+  function setText(id: string, text: string): void {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  function flashBtn(id: string, flashText: string): void {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    const orig = btn.textContent;
+    btn.textContent = flashText;
+    setTimeout(() => { if (btn) btn.textContent = orig; }, 2000);
+  }
+
+  function buildPieceEl(nameKey: string, w: number, fold: boolean, col: number): HTMLDivElement {
+    const el = document.createElement('div');
+    el.className = `piece-block${fold ? ' piece-fold' : ''}`;
+    el.style.width = `${w * 100}%`;
+    el.style.background = PIECE_COLORS[col];
+    el.style.borderColor = PIECE_BORDERS[col];
+    const nameEl = document.createElement('span');
+    nameEl.className = 'piece-name';
+    nameEl.textContent = window.__toolUI.pieceNames[nameKey as PieceNameKey] || nameKey;
+    el.appendChild(nameEl);
+    if (fold) {
+      const foldEl = document.createElement('div');
+      foldEl.className = 'fold-indicator';
+      foldEl.textContent = window.__toolUI.foldLabel;
+      el.appendChild(foldEl);
+    }
+    return el;
+  }
+
+  function buildRowEl(row: PieceRow): HTMLDivElement {
+    const rowEl = document.createElement('div');
+    rowEl.className = 'piece-row';
+    rowEl.style.flex = `0 0 ${row.h * 100}%`;
+    row.pieces.forEach((spec) => {
+      rowEl.appendChild(buildPieceEl(spec.nameKey, spec.w, spec.fold ?? false, spec.col));
+    });
+    return rowEl;
+  }
+
+  function renderBoard(type: string, board: HTMLElement): void {
+    board.innerHTML = '';
+    const rows = PIECE_ROWS[type];
+    if (!rows?.length) {
+      const empty = document.createElement('div');
+      empty.className = 'board-empty-state';
+      empty.textContent = window.__toolUI.boardEmpty;
+      board.appendChild(empty);
+      return;
+    }
+    rows.forEach((row) => board.appendChild(buildRowEl(row)));
+  }
+
+  function renderRuler(totalMeters: number): void {
+    const ruler = document.getElementById('ruler-col');
+    if (!ruler) return;
+    ruler.innerHTML = '';
+    const step = getRulerStep(totalMeters);
+    let mark = 0;
+    while (mark <= totalMeters + 0.001) {
+      const markEl = document.createElement('div');
+      markEl.className = 'ruler-mark';
+      markEl.style.top = `${(mark / totalMeters) * 100}%`;
+      const label = document.createElement('span');
+      label.textContent = `${mark.toFixed(step < 0.5 ? 2 : 1)}m`;
+      markEl.appendChild(label);
+      ruler.appendChild(markEl);
+      mark = parseFloat((mark + step).toFixed(3));
+    }
+  }
+
+  function renderLayout(type: string, width: number, meters: number): void {
+    const board = document.getElementById('fabric-board-box');
+    if (!board) return;
+    renderBoard(type, board);
+    renderRuler(meters);
+    const desc = document.getElementById('board-desc');
+    if (desc) {
+      desc.textContent = window.__toolUI.boardDescFormat
+        .replace('{w}', String(width))
+        .replace('{m}', meters.toFixed(2));
+    }
+  }
+
+  function updateWarning(serial: boolean, width: string): void {
+    const el = document.getElementById('warning-msg');
+    if (!el) return;
+    el.style.display = serial ? 'block' : 'none';
+    if (serial) el.textContent = window.__toolUI.warningSerialFormat.replace('{w}', width);
+  }
+
+  function updateResult(meters: number): void {
+    setText('main-meters', meters.toFixed(2));
+    const store = shopAdviceMeters(meters);
+    const advice = document.getElementById('shop-advice');
+    if (advice) advice.textContent = window.__toolUI.shopAdviceFormat.replace('{m}', store.toFixed(2));
+  }
+
+  function updateChecklist(type: string): void {
+    const checks = document.getElementById('check-list');
+    if (!checks) return;
+    const u = window.__toolUI;
+    const extra = u.garmentMerceria[type as keyof typeof u.garmentMerceria] || '';
+    const extras = extra.split(',').map((s) => s.trim()).filter(Boolean);
+    const items = [u.checklistThread, ...extras];
+    checks.innerHTML = '';
+    items.forEach((text) => {
+      const li = document.createElement('li');
+      li.className = 'merch-item';
+      li.innerHTML = `<span class="merch-dot" aria-hidden="true">◆</span>${text}`;
+      checks.appendChild(li);
+    });
+  }
+
+  function updateUrl(): void {
+    const p = new URLSearchParams();
+    p.set('g', getStr('garment-type'));
+    p.set('s', activeSize);
+    p.set('w', getStr('fabric-width'));
+    p.set('a', getStr('seam-allowance'));
+    window.history.replaceState({}, '', `${window.location.pathname}?${p.toString()}`);
+  }
+
+  function calculate(): void {
+    const type = getStr('garment-type');
+    const width = getStr('fabric-width');
+    const allowCm = getNum('seam-allowance');
+    const widthInt = parseInt(width);
+    const base = CONSUMPTION_MATRIX[type]?.[width] || 1.5;
+    const mult = SIZE_MULTS[activeSize] ?? 1.0;
+    const minW = SIZE_MIN_WIDTHS[activeSize] ?? 55;
+    const serial = isSerialCut(minW, widthInt, type);
+    const meters = computeMeters(base, mult, serial, allowCm);
+    updateWarning(serial, width);
+    updateResult(meters);
+    renderLayout(type, widthInt, meters);
+    updateChecklist(type);
+    updateUrl();
+  }
+
+  function handleSizeClick(e: Event): void {
+    const btn = (e.target as HTMLElement).closest('.preset-pill');
+    if (!btn) return;
+    document.getElementById('size-presets')?.querySelectorAll('.preset-pill').forEach((b) => {
+      b.classList.remove('active');
+    });
+    btn.classList.add('active');
+    activeSize = btn.getAttribute('data-val') || 'm_core';
+    calculate();
+  }
+
+  function stepAllowance(delta: number): void {
+    const el = document.getElementById('seam-allowance') as HTMLInputElement | null;
+    if (!el) return;
+    const clamped = Math.min(5, Math.max(0, (parseFloat(el.value) || 1.5) + delta));
+    el.value = String(clamped);
+    calculate();
+  }
+
+  function handleClear(): void {
+    const garment = document.getElementById('garment-type') as HTMLSelectElement | null;
+    const width = document.getElementById('fabric-width') as HTMLSelectElement | null;
+    const allow = document.getElementById('seam-allowance') as HTMLInputElement | null;
+    if (garment) garment.value = 'skirt';
+    if (width) width.value = '140';
+    if (allow) allow.value = '1.5';
+    activeSize = 'm_core';
+    document.getElementById('size-presets')?.querySelectorAll('.preset-pill').forEach((b) => {
+      b.classList.toggle('active', b.getAttribute('data-val') === 'm_core');
+    });
+    calculate();
+  }
+
+  function handleCopyList(): void {
+    const checks = document.getElementById('check-list');
+    const lines = Array.from(checks?.querySelectorAll('.merch-item') || [])
+      .map((li) => '• ' + (li.textContent || '').replace('◆', '').trim());
+    navigator.clipboard.writeText(lines.join('\n'));
+    flashBtn('copy-list-btn', window.__toolUI.btnCopied);
+  }
+
+  function restoreEl(q: URLSearchParams, param: string, id: string, def: string): void {
+    if (!q.has(param)) return;
+    const el = document.getElementById(id) as HTMLInputElement | null;
+    if (el) el.value = q.get(param) || def;
+  }
+
+  function restoreInputs(q: URLSearchParams): void {
+    restoreEl(q, 'g', 'garment-type', 'skirt');
+    restoreEl(q, 'w', 'fabric-width', '140');
+    restoreEl(q, 'a', 'seam-allowance', '1.5');
+  }
+
+  function restoreSize(q: URLSearchParams): void {
+    if (!q.has('s')) return;
+    activeSize = q.get('s') || 'm_core';
+    document.getElementById('size-presets')?.querySelectorAll('.preset-pill').forEach((b) => {
+      b.classList.toggle('active', b.getAttribute('data-val') === activeSize);
+    });
+  }
+
+  function attachListeners(): void {
+    document.getElementById('size-presets')?.addEventListener('click', handleSizeClick);
+    document.getElementById('sub-allow')?.addEventListener('click', () => stepAllowance(-0.5));
+    document.getElementById('add-allow')?.addEventListener('click', () => stepAllowance(0.5));
+    document.getElementById('btn-clear-f')?.addEventListener('click', handleClear);
+    document.getElementById('btn-share-f')?.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href);
+      flashBtn('btn-share-f', window.__toolUI.btnCopied);
+    });
+    document.getElementById('copy-list-btn')?.addEventListener('click', handleCopyList);
+    ['garment-type', 'fabric-width', 'seam-allowance'].forEach((id) => {
+      document.getElementById(id)?.addEventListener('input', calculate);
+    });
+  }
+
+  function init(): void {
+    const q = new URLSearchParams(window.location.search);
+    restoreInputs(q);
+    restoreSize(q);
+    attachListeners();
+    calculate();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .fabric-calculator-card {
+    --f-p: #4f46e5;
+    --f-a: #818cf8;
+    --f-side: rgba(79, 70, 229, 0.04);
+
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    max-width: 1200px;
+    width: 95%;
+    margin: 2rem auto;
+    background: var(--bg-surface);
+    backdrop-filter: blur(25px);
+    border-radius: 32px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15);
+    color: var(--text-main);
+  }
+
+  .theme-dark .fabric-calculator-card {
+    --f-side: rgba(255, 255, 255, 0.03);
+  }
+
+  .fabric-sidebar {
+    background: var(--f-side);
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-right: 1px solid var(--border-color);
+  }
+
+  .config-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .config-group h3 {
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    color: var(--f-p);
+    margin: 0;
+  }
+
+  .fabric-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .fabric-field label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06rem;
+    color: var(--text-muted);
+  }
+
+  .fabric-select {
+    width: 100%;
+    padding: 0.85rem 3rem 0.85rem 1.1rem;
+    border-radius: 14px;
+    border: 1.5px solid var(--border-color);
+    background: var(--bg-surface);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: inherit;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234F46E5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  .fabric-select:focus {
+    border-color: var(--f-p);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  }
+
+  .shop-stepper {
+    display: grid;
+    grid-template-columns: 48px 1fr 48px;
+    align-items: center;
+    background: var(--bg-surface);
+    border-radius: 14px;
+    border: 1.5px solid var(--border-color);
+    overflow: hidden;
+    height: 50px;
+    max-width: 190px;
+  }
+
+  .step-btn {
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: var(--f-p);
+    font-size: 1.6rem;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s, color 0.15s;
+    flex-shrink: 0;
+  }
+
+  .step-btn:hover {
+    background: var(--f-p);
+    color: white;
+  }
+
+  .fabric-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 800;
+    color: inherit;
+    padding: 0;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .preset-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .preset-pill {
+    padding: 0.75rem 0;
+    border-radius: 12px;
+    border: 1.5px solid rgba(79, 70, 229, 0.25);
+    background: rgba(79, 70, 229, 0.06);
+    font-size: 0.72rem;
+    font-weight: 900;
+    color: var(--f-p);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+  }
+
+  .theme-dark .preset-pill {
+    background: rgba(79, 70, 229, 0.08);
+    border-color: rgba(129, 140, 248, 0.3);
+    color: var(--f-a);
+  }
+
+  .preset-pill:hover {
+    background: rgba(79, 70, 229, 0.12);
+    border-color: var(--f-p);
+  }
+
+  .preset-pill.active {
+    background: var(--f-p);
+    color: white;
+    border-color: var(--f-p);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+  }
+
+  .btn-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  .f-btn {
+    height: 50px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .f-seco {
+    background: var(--bg-muted);
+    color: var(--text-muted);
+    border: 1.5px solid var(--border-color);
+  }
+
+  .f-seco:hover {
+    filter: brightness(0.95);
+  }
+
+  .f-prim {
+    background: var(--f-p);
+    color: white;
+  }
+
+  .f-prim:hover {
+    filter: brightness(1.1);
+  }
+
+  .fabric-main {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    min-width: 0;
+  }
+
+  .magic-result-area {
+    background: linear-gradient(145deg, rgba(79, 70, 229, 0.07), rgba(129, 140, 248, 0.03));
+    padding: 2.5rem 2rem;
+    border-radius: 28px;
+    border: 1px solid rgba(79, 70, 229, 0.12);
+  }
+
+  .result-lbl {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.12rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .magic-result-area .val {
+    font-size: 6rem;
+    font-weight: 950;
+    letter-spacing: -5px;
+    color: var(--f-p);
+    line-height: 0.85;
+  }
+
+  .magic-result-area .unit {
+    font-size: 1.75rem;
+    font-weight: 900;
+    opacity: 0.4;
+    margin-left: 0.5rem;
+  }
+
+  .advice-tag {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 0.85rem 2rem;
+    background: rgba(79, 70, 229, 0.1);
+    border: 1.5px solid rgba(79, 70, 229, 0.22);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--f-p);
+  }
+
+  .theme-dark .advice-tag {
+    background: rgba(129, 140, 248, 0.12);
+    border-color: rgba(129, 140, 248, 0.25);
+    color: var(--f-a);
+  }
+
+  .layout-container {
+    min-width: 0;
+  }
+
+  .canvas-wrapper {
+    background: var(--bg-muted);
+    padding: 24px 24px 14px 12px;
+    border-radius: 28px;
+  }
+
+  .scheme-area {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .ruler {
+    width: 34px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  :global(.ruler-mark) {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-start;
+    transform: translateY(-50%);
+  }
+
+  :global(.ruler-mark::before) {
+    content: '';
+    width: 8px;
+    height: 1.5px;
+    background: var(--text-muted);
+    flex-shrink: 0;
+    margin-top: 0.42em;
+    margin-right: 4px;
+  }
+
+  :global(.ruler-mark span) {
+    font-size: 0.58rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .fabric-board {
+    flex: 1;
+    height: 300px;
+    background: var(--bg-surface);
+    border: 2.5px solid var(--f-p);
+    padding: 6px 6px 28px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  :global(.piece-row) {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    flex-shrink: 0;
+    align-items: stretch;
+  }
+
+  :global(.piece-block) {
+    border-radius: 4px;
+    border: 1.5px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 4px 8px;
+    overflow: hidden;
+    min-width: 0;
+    transition: filter 0.15s;
+  }
+
+  :global(.piece-block:hover) {
+    filter: brightness(1.08);
+  }
+
+  :global(.piece-name) {
+    font-size: 0.62rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+
+  :global(.piece-fold) {
+    border-left: 3px dashed rgba(79, 70, 229, 0.65);
+  }
+
+  :global(.fold-indicator) {
+    font-size: 0.48rem;
+    font-weight: 800;
+    color: rgba(79, 70, 229, 0.75);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 2px;
+  }
+
+  :global(.board-empty-state) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .scheme-info {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-top: 0.6rem;
+    text-align: right;
+  }
+
+  .merch-section {
+    min-width: 0;
+  }
+
+  .merch-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .merch-title {
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.18rem;
+    color: var(--f-p);
+    margin: 0;
+  }
+
+  .copy-list-btn {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--f-p);
+    background: rgba(79, 70, 229, 0.08);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+    border-radius: 8px;
+    padding: 0.35rem 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .copy-list-btn:hover {
+    background: rgba(79, 70, 229, 0.15);
+  }
+
+  .merceria-checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  :global(.merch-item) {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  :global(.merch-dot) {
+    color: var(--f-p);
+    font-size: 0.5rem;
+    flex-shrink: 0;
+    opacity: 0.65;
+  }
+
+  .warning-banner {
+    display: none;
+    background: #fff7ed;
+    color: #c2410c;
+    border: 1.5px solid #fed7aa;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1100px) {
+    .fabric-calculator-card {
+      grid-template-columns: 1fr;
+      width: 100%;
+      border-radius: 1rem;
+      margin: 0;
+    }
+
+    .fabric-sidebar {
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.75rem 1.5rem;
+    }
+
+    .btn-actions {
+      margin-top: 1rem;
+    }
+
+    .fabric-main {
+      padding: 2rem 1.5rem;
+      gap: 2rem;
+    }
+
+    .magic-result-area .val {
+      font-size: 4.5rem;
+      letter-spacing: -3px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .fabric-sidebar {
+      padding: 1.25rem;
+    }
+
+    .fabric-main {
+      padding: 1.25rem;
+      gap: 1.5rem;
+    }
+
+    .magic-result-area {
+      padding: 1.5rem 1.25rem;
+      border-radius: 1rem;
+    }
+
+    .magic-result-area .val {
+      font-size: 3rem;
+      letter-spacing: -2px;
+    }
+
+    .magic-result-area .unit {
+      font-size: 1.2rem;
+    }
+
+    .advice-tag {
+      font-size: 0.875rem;
+      padding: 0.7rem 1.25rem;
+    }
+
+    .canvas-wrapper {
+      padding: 14px 14px 10px 8px;
+      border-radius: 16px;
+    }
+
+    .fabric-board {
+      height: 220px;
+      padding-bottom: 20px;
+    }
+  }
+</style>

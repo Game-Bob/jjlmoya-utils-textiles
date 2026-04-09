@@ -1,0 +1,40 @@
+---
+import {
+  SEOTitle,
+  SEOCard,
+  SEOTip,
+  SEOList,
+  SEOArticle
+} from '@jjlmoya/utils-shared';
+import { knittingGauge } from './index';
+import type { KnownLocale } from '../../types';
+
+interface Props {
+  locale?: KnownLocale;
+}
+
+const { locale = 'es' } = Astro.props;
+const content = await knittingGauge.i18n[locale]?.();
+if (!content) return null;
+
+const { seo } = content;
+---
+
+<SEOArticle>
+  {seo.map((section: any) => {
+    switch (section.type) {
+      case 'title':
+        return <SEOTitle title={section.text} level={section.level || 2} />;
+      case 'paragraph':
+        return <p set:html={section.html} />;
+      case 'list':
+        return <SEOList items={section.items} />;
+      case 'card':
+        return <SEOCard title={section.title} icon={section.icon}><Fragment set:html={section.html} /></SEOCard>;
+      case 'tip':
+        return <SEOTip title={section.title}><Fragment set:html={section.html} /></SEOTip>;
+      default:
+        return null;
+    }
+  })}
+</SEOArticle>

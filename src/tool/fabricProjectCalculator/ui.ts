@@ -1,0 +1,57 @@
+export interface FabricProjectCalculatorUI {
+  sectionProject: string;
+  sectionMaterial: string;
+  labelGarmentType: string;
+  labelSize: string;
+  labelFabricWidth: string;
+  labelSeamAllowance: string;
+  garmentSkirt: string;
+  garmentPants: string;
+  garmentDress: string;
+  garmentShirt: string;
+  garmentCoat: string;
+  garmentTote: string;
+  garmentMerceria: {
+    skirt: string;
+    pants: string;
+    dress: string;
+    shirt: string;
+    coat: string;
+    tote: string;
+  };
+  sizeXS: string;
+  sizeM: string;
+  sizeXL: string;
+  width90: string;
+  width115: string;
+  width140: string;
+  width150: string;
+  btnClear: string;
+  btnShare: string;
+  btnCopied: string;
+  btnCopyList: string;
+  resultLabel: string;
+  resultUnit: string;
+  shopAdviceFormat: string;
+  boardEmpty: string;
+  boardDescFormat: string;
+  merchTitle: string;
+  checklistThread: string;
+  warningSerialFormat: string;
+  foldLabel: string;
+  pieceNames: {
+    front: string;
+    back: string;
+    waistband: string;
+    waistbelt: string;
+    sleeve: string;
+    collar: string;
+    cuffs: string;
+    facings: string;
+    lapels: string;
+    pocket: string;
+    body: string;
+    handleA: string;
+    handleB: string;
+  };
+}

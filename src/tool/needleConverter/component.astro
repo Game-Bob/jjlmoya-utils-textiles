@@ -1,0 +1,518 @@
+---
+import type { NeedleConverterUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const needleUI = ui as NeedleConverterUI;
+---
+
+<div class="needle-wrapper" id="master-needle">
+  <div class="needle-card">
+    <div class="card-sidebar">
+      <span class="label-tiny">{needleUI.labelSystem}</span>
+      <div class="mode-toggle" id="needle-mode">
+        <button class="toggle-btn active" data-type="knitting">{needleUI.modeKnitting}</button>
+        <button class="toggle-btn" data-type="crochet">{needleUI.modeCrochet}</button>
+      </div>
+
+      <span class="label-tiny">{needleUI.calibratorLabel}</span>
+      <div class="calibration-area">
+        <div class="hole-selector" id="hole-picker"></div>
+      </div>
+
+      <p class="calibrator-desc">{needleUI.calibratorDesc}</p>
+    </div>
+
+    <div class="card-main">
+      <div class="conversion-grid">
+        <div class="system-card">
+          <span class="val-large" id="res-mm">4.0</span>
+          <span class="val-tag">{needleUI.tagMetric}</span>
+        </div>
+        <div class="system-card">
+          <span class="val-large" id="res-us">6</span>
+          <span class="val-tag">{needleUI.tagUS}</span>
+        </div>
+        <div class="system-card">
+          <span class="val-large" id="res-uk">8</span>
+          <span class="val-tag">{needleUI.tagUK}</span>
+        </div>
+      </div>
+
+      <div class="yarn-box">
+        <div class="yarn-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M16.6,16.89C16.14,17.35 15.39,17.35 14.93,16.89C14.47,16.43 14.47,15.68 14.93,15.22C15.39,14.76 16.14,14.76 16.6,15.22C17.06,15.68 17.06,16.43 16.6,16.89M12,14C10.9,14 10,13.1 10,12C10,10.9 10.9,10 12,10C13.1,10 14,10.9 14,12C14,13.1 13.1,14 12,14M9.07,16.89C8.61,17.35 7.86,17.35 7.4,16.89C6.94,16.43 6.94,15.68 7.4,15.22C7.86,14.76 8.61,14.76 9.07,15.22C9.53,15.68 9.53,16.43 9.07,16.89M12,7.5C14.48,7.5 16.5,9.52 16.5,12C16.5,14.48 14.48,16.5 12,16.5C9.52,16.5 7.5,14.48 7.5,12C7.5,9.52 9.52,7.5 12,7.5Z"/></svg>
+        </div>
+        <div class="yarn-content">
+          <span class="yarn-label">{needleUI.yarnLabel}</span>
+          <span class="yarn-name" id="yarn-desc">DK / Light Worsted</span>
+          <span class="yarn-wpi" id="yarn-wpi">11-13 WPI</span>
+        </div>
+      </div>
+
+      <div class="table-section">
+        <span class="label-tiny">{needleUI.tableSectionLabel}</span>
+        <div class="needle-table-wrapper">
+          <table class="needle-table">
+            <thead>
+              <tr>
+                <th>{needleUI.tableMetric}</th>
+                <th>{needleUI.tableUS}</th>
+                <th>{needleUI.tableUK}</th>
+                <th>{needleUI.tableYarn}</th>
+              </tr>
+            </thead>
+            <tbody id="needle-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ ui }} is:inline>
+  window.__needleConverterUI = ui;
+</script>
+
+<script>
+  import type { NeedleConverterUI } from './ui';
+  import { NEEDLE_DATA, DEFAULT_IDX } from './logic';
+
+  declare global {
+    interface Window { __needleConverterUI: NeedleConverterUI; }
+  }
+
+  let currentIdx = DEFAULT_IDX;
+  let currentType = 'knitting';
+
+  function setText(id: string, v: string): void {
+    const el = document.getElementById(id);
+    if (el) el.innerText = v;
+  }
+
+  function buildHoleEl(mm: number, idx: number): HTMLDivElement {
+    const hole = document.createElement('div');
+    hole.className = `needle-hole${idx === currentIdx ? ' active' : ''}`;
+    hole.style.setProperty('--size-px', `${mm * 4}px`);
+    const lbl = document.createElement('span');
+    lbl.className = 'hole-label';
+    lbl.textContent = String(mm);
+    hole.appendChild(lbl);
+    hole.addEventListener('click', () => { currentIdx = idx; run(); });
+    return hole;
+  }
+
+  function renderHoles(): void {
+    const picker = document.getElementById('hole-picker');
+    if (!picker) return;
+    picker.innerHTML = '';
+    NEEDLE_DATA.forEach((item, idx) => picker.appendChild(buildHoleEl(item.mm, idx)));
+    const active = picker.children[currentIdx] as HTMLElement | undefined;
+    if (active) {
+      picker.scrollTo({ left: active.offsetLeft - picker.offsetWidth / 2 + active.offsetWidth / 2, behavior: 'smooth' });
+    }
+  }
+
+  function buildRowEl(idx: number): HTMLTableRowElement {
+    const item = NEEDLE_DATA[idx];
+    const tr = document.createElement('tr');
+    tr.style.cursor = 'pointer';
+    if (idx === currentIdx) tr.classList.add('active');
+    const us = currentType === 'knitting' ? item.usK : item.usC;
+    tr.innerHTML = `<td style="font-weight:700">${item.mm.toFixed(1)}</td><td>${us}</td><td>${item.uk}</td>` +
+      `<td style="font-size:11px;text-transform:uppercase;letter-spacing:0.05em">${item.yarn}</td>`;
+    tr.addEventListener('click', () => { currentIdx = idx; run(); });
+    return tr;
+  }
+
+  function renderTable(): void {
+    const body = document.getElementById('needle-body');
+    if (!body) return;
+    body.innerHTML = '';
+    NEEDLE_DATA.forEach((_, idx) => body.appendChild(buildRowEl(idx)));
+  }
+
+  function updateDisplay(): void {
+    const item = NEEDLE_DATA[currentIdx];
+    const ui = window.__needleConverterUI;
+    setText('res-mm', item.mm.toFixed(1));
+    setText('res-us', currentType === 'knitting' ? item.usK : item.usC);
+    setText('res-uk', item.uk);
+    setText('yarn-desc', item.yarn);
+    setText('yarn-wpi', ui.wpiFormat.replace('{wpi}', item.wpi));
+  }
+
+  function run(): void {
+    updateDisplay();
+    renderHoles();
+    renderTable();
+  }
+
+  function attachListeners(): void {
+    const btns = document.querySelectorAll<HTMLElement>('#needle-mode button');
+    btns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentType = btn.dataset.type || 'knitting';
+        run();
+      });
+    });
+  }
+
+  function init(): void {
+    attachListeners();
+    run();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .needle-wrapper {
+    padding: 1.5rem 0;
+    width: 100%;
+  }
+
+  .needle-card {
+    --nc-p: #3b82f6;
+    --nc-s: #0ea5e9;
+
+    background: var(--bg-surface);
+    color: var(--text-main);
+    width: calc(100% - 24px);
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  @media (min-width: 1024px) {
+    .needle-card {
+      flex-direction: row;
+    }
+  }
+
+  .card-sidebar {
+    flex: 0 0 auto;
+    padding: 24px;
+    width: 100%;
+    background: var(--bg-surface);
+  }
+
+  @media (min-width: 1024px) {
+    .card-sidebar {
+      width: 400px;
+      padding: 40px;
+      border-right: 1px solid var(--border-color);
+    }
+  }
+
+  .card-main {
+    flex: 1 1 auto;
+    padding: 24px;
+    background: var(--bg-surface);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    min-width: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .card-main {
+      padding: 40px;
+    }
+  }
+
+  .label-tiny {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .mode-toggle {
+    display: flex;
+    background: var(--bg-muted);
+    padding: 4px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+  }
+
+  .toggle-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .toggle-btn.active {
+    background: var(--bg-surface);
+    color: var(--text-main);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  .calibration-area {
+    background: var(--bg-muted);
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hole-selector {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 30px 10px;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+  }
+
+  .hole-selector::-webkit-scrollbar {
+    display: none;
+  }
+
+  :global(.needle-hole) {
+    flex: 0 0 auto;
+    width: 64px;
+    height: 64px;
+    background: var(--bg-surface);
+    border: 1.5px solid var(--border-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    scroll-snap-align: center;
+  }
+
+  :global(.needle-hole::after) {
+    content: '';
+    position: absolute;
+    width: var(--size-px);
+    height: var(--size-px);
+    background: var(--text-main);
+    border-radius: 50%;
+    opacity: 0.1;
+    transition: transform 0.3s ease;
+  }
+
+  :global(.needle-hole.active) {
+    border-color: var(--nc-p);
+    background: rgba(59, 130, 246, 0.08);
+    transform: scale(1.15);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.15);
+  }
+
+  :global(.needle-hole.active::after) {
+    opacity: 1;
+    background: var(--nc-p);
+    transform: scale(1.05);
+  }
+
+  :global(.hole-label) {
+    position: absolute;
+    bottom: -28px;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  :global(.needle-hole.active .hole-label) {
+    color: var(--nc-p);
+  }
+
+  .calibrator-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .conversion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .system-card {
+    background: var(--bg-muted);
+    border-radius: 20px;
+    padding: 24px 16px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.2s;
+  }
+
+  .val-large {
+    display: block;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .val-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+
+  .yarn-box {
+    background: #f0f9ff;
+    border-left: 4px solid var(--nc-s);
+    padding: 28px;
+    border-radius: 16px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .theme-dark .yarn-box {
+    background: #082f49;
+  }
+
+  .yarn-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--bg-surface);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--nc-s);
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  .yarn-content {
+    flex: 1;
+  }
+
+  .yarn-label {
+    font-size: 9px;
+    font-weight: 800;
+    color: #0284c7;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .theme-dark .yarn-label {
+    color: #7dd3fc;
+  }
+
+  .yarn-name {
+    display: block;
+    font-size: 17px;
+    font-weight: 800;
+    color: #075985;
+  }
+
+  .theme-dark .yarn-name {
+    color: #bae6fd;
+  }
+
+  .yarn-wpi {
+    display: block;
+    font-size: 12px;
+    color: #0369a1;
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  .theme-dark .yarn-wpi {
+    color: #7dd3fc;
+  }
+
+  .table-section {
+    border-top: 1px solid var(--border-color);
+    padding-top: 40px;
+  }
+
+  .needle-table-wrapper {
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+  }
+
+  .needle-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .needle-table th {
+    background: var(--bg-muted);
+    padding: 16px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .needle-table :global(td) {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-muted);
+    transition: all 0.2s;
+  }
+
+  .needle-table :global(tbody tr:nth-child(even) td) {
+    background: rgba(0, 0, 0, 0.02);
+  }
+
+  .theme-dark .needle-table :global(tbody tr:nth-child(even) td) {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .needle-table :global(tr:hover td) {
+    background: var(--bg-muted);
+  }
+
+  .needle-table :global(tr.active td) {
+    background: rgba(59, 130, 246, 0.05);
+    color: var(--nc-p);
+    font-weight: 700;
+  }
+
+  .needle-table :global(tr.active td:first-child) {
+    box-shadow: inset 4px 0 0 var(--nc-p);
+  }
+
+  .theme-dark .needle-table :global(tr.active td) {
+    background: rgba(59, 130, 246, 0.1);
+  }
+</style>

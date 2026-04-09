@@ -44,7 +44,38 @@ const howToData = [
   },
 ];
 
+const faqSchema: WithContext<FAQPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
 
+const howToSchema: WithContext<HowTo> = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description: description,
+  step: howToData.map((step) => ({
+    '@type': 'HowToStep',
+    name: step.name,
+    text: step.text,
+  })),
+};
+
+const appSchema: WithContext<SoftwareApplication> = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: title,
+  description: description,
+  applicationCategory: 'UtilityApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  inLanguage: 'es',
+};
 
 export const content: ToolLocaleContent<FabricTruthUI> = {
   slug,
@@ -281,40 +312,5 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
       text: 'Revisa el informe generado para entender si tu prenda es transpirable, duradera o si requiere cuidados especiales por su composición sintética.',
     },
   ],
-  schemas: [],
+  schemas: [faqSchema, howToSchema, appSchema],
 };
-
-const faqSchema: WithContext<FAQPage> = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqData.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-  })),
-};
-
-const howToSchema: WithContext<HowTo> = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: title,
-  description: description,
-  step: howToData.map((step) => ({
-    '@type': 'HowToStep',
-    name: step.name,
-    text: step.text,
-  })),
-};
-
-const appSchema: WithContext<SoftwareApplication> = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: title,
-  description: description,
-  applicationCategory: 'UtilityApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'es',
-};
-
-content.schemas = [faqSchema, howToSchema, appSchema];

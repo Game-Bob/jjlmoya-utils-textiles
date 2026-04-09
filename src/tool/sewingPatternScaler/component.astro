@@ -1,0 +1,550 @@
+---
+import type { SewingPatternScalerUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const scalerUI = ui as SewingPatternScalerUI;
+const SIZES = ['36', '38', '40', '42', '44', '46'];
+---
+
+<div class="scaler-wrapper" id="master-scaler">
+  <div class="scaler-card">
+    <div class="card-left">
+      <span class="label-tiny">{scalerUI.labelSystem}</span>
+      <div class="segmented-control" id="mode-selector">
+        <button class="segment-btn active" data-mode="standard">{scalerUI.modeStandard}</button>
+        <button class="segment-btn" data-mode="custom">{scalerUI.modeCustom}</button>
+      </div>
+
+      <div id="warn-area" class="warn-banner hidden">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="flex-shrink:0"><path d="M12,2L1,21H23L12,2M12,6L19.53,19H4.47L12,6M11,10V14H13V10H11M11,16V18H13V16H11Z"/></svg>
+        <span>{scalerUI.warnText}</span>
+      </div>
+
+      <div id="standard-grid">
+        <div class="input-grid">
+          <div class="input-group">
+            <label class="label-tiny">{scalerUI.labelPatternSize}</label>
+            <select id="origin-size" class="form-input form-select">
+              {SIZES.map((s) => <option value={s} selected={s === '38'}>{scalerUI.sizePrefix} {s}</option>)}
+            </select>
+          </div>
+          <div class="input-group">
+            <label class="label-tiny">{scalerUI.labelTargetSize}</label>
+            <select id="target-size" class="form-input form-select">
+              {SIZES.map((s) => <option value={s} selected={s === '42'}>{scalerUI.sizePrefix} {s}</option>)}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="custom-grid" class="hidden">
+        <span class="label-tiny">{scalerUI.labelOriginMeasures}</span>
+        <div class="input-grid">
+          <div class="input-item"><label class="label-tiny">{scalerUI.labelChest}</label><input type="number" id="origin-chest" class="form-input" value="88" /></div>
+          <div class="input-item"><label class="label-tiny">{scalerUI.labelWaist}</label><input type="number" id="origin-waist" class="form-input" value="68" /></div>
+          <div class="input-item"><label class="label-tiny">{scalerUI.labelHips}</label><input type="number" id="origin-hips" class="form-input" value="94" /></div>
+          <div class="input-item"><label class="label-tiny">{scalerUI.labelLength}</label><input type="number" id="origin-length" class="form-input" value="60" /></div>
+        </div>
+        <span class="label-tiny target-lbl">{scalerUI.labelTargetMeasures}</span>
+        <div class="input-grid">
+          <div class="input-item"><label class="label-tiny">{scalerUI.labelChest}</label><input type="number" id="target-chest" class="form-input" value="96" /></div>
+          <div class="input-item"><label class="label-tiny">{scalerUI.labelWaist}</label><input type="number" id="target-waist" class="form-input" value="76" /></div>
+          <div class="input-item"><label class="label-tiny">{scalerUI.labelHips}</label><input type="number" id="target-hips" class="form-input" value="102" /></div>
+          <div class="input-item"><label class="label-tiny">{scalerUI.labelLength}</label><input type="number" id="target-length" class="form-input" value="62" /></div>
+        </div>
+      </div>
+
+      <div class="ease-group">
+        <label class="label-tiny">{scalerUI.labelEase}</label>
+        <input type="number" id="ease-val" class="form-input" value="4" />
+      </div>
+    </div>
+
+    <div class="card-right">
+      <div class="viz-container">
+        <canvas id="scaler-canvas"></canvas>
+        <div class="legend-box">
+          <div class="legend-item"><span class="ln-o"></span><span>{scalerUI.legendOriginal}</span></div>
+          <div class="legend-item"><span class="ln-s"></span><span>{scalerUI.legendUpdated}</span></div>
+        </div>
+      </div>
+
+      <div class="action-strip" id="action-pills"></div>
+
+      <div class="totals-section">
+        <div class="totals-grid">
+          <div class="total-card"><span class="total-val" id="res-c">100.0</span><span class="total-tag">{scalerUI.resBust}</span></div>
+          <div class="total-card"><span class="total-val" id="res-w">80.0</span><span class="total-tag">{scalerUI.resWaist}</span></div>
+          <div class="total-card"><span class="total-val" id="res-h">106.0</span><span class="total-tag">{scalerUI.resHips}</span></div>
+          <div class="total-card"><span class="total-val" id="res-l">62.0</span><span class="total-tag">{scalerUI.resLength}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ ui }} is:inline>
+  window.__scalerUI = ui;
+</script>
+
+<script>
+  import type { SewingPatternScalerUI } from './ui';
+  import type { MeasureSet } from './logic';
+  import { getStandardMeasures, computeResult, computeLateralAdj, computeLengthAdj, isLargeScale } from './logic';
+
+  declare global {
+    interface Window { __scalerUI: SewingPatternScalerUI; }
+  }
+
+  const SVG1 = `<svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M7 2H17C18.11 2 19 2.9 19 4V20C19 21.11 18.11 22 17 22H7C5.9 22 5 21.11 5 20V4C5 2.9 5.9 2 7 2M7 4V20H17V4H7M9 6H12V8H9V6M9 10H15V12H9V10M9 14H12V16H9V14Z"/></svg>`;
+  const SVG2 = `<svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M19,3L13,9L15,11L19,7L21,9V3M13,10C12.5,10.5 12.5,11.5 13,12L15,14L19,10L13,10M3,17V21H7L19,9L15,5L3,17M6.12,19.88L5,18.76L16.06,7.7L17.18,8.82L6.12,19.88Z"/></svg>`;
+
+  function getNum(id: string): number {
+    return parseFloat((document.getElementById(id) as HTMLInputElement | null)?.value || '0') || 0;
+  }
+
+  function setText(id: string, v: string): void {
+    const el = document.getElementById(id);
+    if (el) el.innerText = v;
+  }
+
+  function getMode(): string {
+    const active = document.querySelector<HTMLElement>('#mode-selector .active');
+    return active?.dataset.mode || 'standard';
+  }
+
+  function getMeasures(pfx: string, mode: string): MeasureSet {
+    if (mode === 'standard') {
+      const el = document.getElementById(`${pfx}-size`) as HTMLSelectElement | null;
+      return getStandardMeasures(el?.value || '38');
+    }
+    const f = (id: string) => getNum(`${pfx}-${id}`);
+    return { chest: f('chest'), waist: f('waist'), hips: f('hips'), length: f('length') };
+  }
+
+  function buildActionHtml(lat: number, len: number, ui: SewingPatternScalerUI): string {
+    const latPos = lat >= 0;
+    const lenPos = len >= 0;
+    const latVerb = latPos ? ui.actionLatAdd : ui.actionLatRemove;
+    const lenVerb = lenPos ? ui.actionLenExtend : ui.actionLenShorten;
+    const latCls = latPos ? 'action-val-pos' : 'action-val-neg';
+    const lenCls = lenPos ? 'action-val-pos' : 'action-val-neg';
+    const latStr = `${latPos ? '+' : ''}${lat}`;
+    const lenStr = `${lenPos ? '+' : ''}${len}`;
+    return `<div class="action-pill"><div class="icon-box">${SVG1}</div><div class="action-content">` +
+      `<span class="action-text">${latVerb} <strong class="${latCls}">${latStr} cm</strong> ${ui.actionLatSuffix}</span>` +
+      `<span class="action-note">${ui.actionLatNote}</span></div></div>` +
+      `<div class="action-pill"><div class="icon-box">${SVG2}</div><div class="action-content">` +
+      `<span class="action-text">${lenVerb} <strong class="${lenCls}">${lenStr} cm</strong></span>` +
+      `<span class="action-note">${ui.actionLenNote}</span></div></div>`;
+  }
+
+  interface ShapeOpts { s: number; cX: number; cY: number; }
+
+  function drawShape(ctx: CanvasRenderingContext2D, d: MeasureSet, isO: boolean, opts: ShapeOpts): void {
+    const { s, cX, cY } = opts;
+    ctx.beginPath();
+    ctx.lineWidth = isO ? 1.5 : 3;
+    ctx.strokeStyle = isO ? 'rgba(148, 163, 184, 0.5)' : '#4f46e5';
+    if (isO) ctx.setLineDash([12, 10]); else ctx.setLineDash([]);
+    const cW = d.chest * s / 4;
+    const wW = d.waist * s / 4;
+    const hW = d.hips * s / 4;
+    const len = d.length * s;
+    const neckW = 2 * s;
+    const shldW = 5.5 * s;
+    ctx.moveTo(cX, cY);
+    ctx.quadraticCurveTo(cX - neckW * 0.8, cY, cX - neckW, cY + s);
+    ctx.lineTo(cX - shldW - d.chest * 0.04 * s / 4, cY + s * 0.2);
+    ctx.quadraticCurveTo(cX - shldW * 0.7 - d.chest * 0.12 * s / 4, cY + s * 2.5, cX - cW, cY + len * 0.4);
+    ctx.lineTo(cX - wW, cY + len * 0.65);
+    ctx.lineTo(cX - hW, cY + len);
+    ctx.lineTo(cX, cY + len);
+    ctx.lineTo(cX, cY);
+    ctx.stroke();
+  }
+
+  function draw(org: MeasureSet, tgt: MeasureSet): void {
+    const canvas = document.getElementById('scaler-canvas') as HTMLCanvasElement | null;
+    const ctx = canvas?.getContext('2d');
+    if (!canvas || !ctx) return;
+    const dpr = window.devicePixelRatio || 1;
+    const par = canvas.parentElement;
+    if (!par) return;
+    const w = par.clientWidth;
+    const h = par.clientHeight;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, w, h);
+    const maxV = Math.max(org.chest, tgt.chest, org.length, tgt.length, 100);
+    const s = Math.min(w, h) * 0.85 / maxV;
+    const opts = { s, cX: w / 2, cY: h * 0.08 };
+    drawShape(ctx, org, true, opts);
+    drawShape(ctx, tgt, false, opts);
+  }
+
+  function run(): void {
+    const mode = getMode();
+    const ease = getNum('ease-val');
+    const org = getMeasures('origin', mode);
+    const tgt = getMeasures('target', mode);
+    const res = computeResult(tgt, ease);
+    const ui = window.__scalerUI;
+    setText('res-c', res.c.toFixed(1));
+    setText('res-w', res.w.toFixed(1));
+    setText('res-h', res.h.toFixed(1));
+    setText('res-l', res.l.toFixed(1));
+    const lat = computeLateralAdj(org.chest, tgt.chest);
+    const len = computeLengthAdj(org.length, tgt.length);
+    const pils = document.getElementById('action-pills');
+    if (pils) pils.innerHTML = buildActionHtml(lat, len, ui);
+    draw(org, tgt);
+    const warn = document.getElementById('warn-area');
+    if (warn) warn.classList.toggle('hidden', !isLargeScale(org.chest, tgt.chest));
+  }
+
+  function attachListeners(): void {
+    const modeBtns = document.querySelectorAll<HTMLElement>('#mode-selector button');
+    modeBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        modeBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const mode = btn.dataset.mode || 'standard';
+        document.getElementById('standard-grid')?.classList.toggle('hidden', mode !== 'standard');
+        document.getElementById('custom-grid')?.classList.toggle('hidden', mode === 'standard');
+        run();
+      });
+    });
+    window.addEventListener('resize', run);
+    document.querySelectorAll('input, select').forEach((i) => i.addEventListener('input', run));
+  }
+
+  function init(): void {
+    attachListeners();
+    run();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .scaler-wrapper {
+    padding: 1.5rem 0;
+    width: 100%;
+  }
+
+  .scaler-card {
+    --sp-p: #4f46e5;
+
+    background: var(--bg-surface);
+    color: var(--text-main);
+    width: calc(100% - 24px);
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  @media (min-width: 1024px) {
+    .scaler-card { flex-direction: row; }
+  }
+
+  .card-left {
+    flex: 0 0 auto;
+    padding: 24px;
+    width: 100%;
+    background: var(--bg-surface);
+  }
+
+  @media (min-width: 1024px) {
+    .card-left {
+      width: 380px;
+      padding: 40px;
+      border-right: 1px solid var(--border-color);
+    }
+  }
+
+  .card-right {
+    flex: 1 1 auto;
+    padding: 24px;
+    background: var(--bg-surface);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 0;
+  }
+
+  @media (min-width: 1024px) {
+    .card-right {
+      padding: 40px;
+      gap: 32px;
+    }
+  }
+
+  .label-tiny {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .segmented-control {
+    display: flex;
+    background: var(--bg-muted);
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 24px;
+  }
+
+  .segment-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .segment-btn.active {
+    color: var(--text-main);
+    background: var(--bg-surface);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  }
+
+  .input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .form-input {
+    width: 100%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--text-main);
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--sp-p);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.06);
+  }
+
+  .form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 12px;
+    padding-right: 28px;
+  }
+
+  .target-lbl {
+    margin-top: 16px;
+  }
+
+  .ease-group {
+    margin-top: 24px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+  }
+
+  .viz-container {
+    background: var(--bg-muted);
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-radius: 12px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid var(--border-color);
+  }
+
+  @media (min-width: 768px) {
+    .viz-container { aspect-ratio: 16/9; }
+  }
+
+  .theme-dark .viz-container {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+
+  #scaler-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .legend-box {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    display: flex;
+    gap: 12px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .ln-o {
+    width: 10px;
+    height: 1px;
+    border: 1px dashed var(--border-color);
+  }
+
+  .ln-s {
+    width: 10px;
+    height: 2px;
+    background: var(--sp-p);
+  }
+
+  .action-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  :global(.action-pill) {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  :global(.icon-box) {
+    width: 44px;
+    height: 44px;
+    background: var(--bg-muted);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sp-p);
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+
+  :global(.action-content) { flex: 1; }
+
+  :global(.action-text) {
+    display: block;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  :global(.action-text strong) { font-weight: 700; }
+
+  :global(.action-val-pos) { color: var(--sp-p); }
+
+  :global(.action-val-neg) { color: #f87171; }
+
+  :global(.action-note) {
+    display: block;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .totals-section {
+    background: var(--bg-muted);
+    border-radius: 10px;
+    padding: 24px;
+  }
+
+  .totals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @media (min-width: 640px) {
+    .totals-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .total-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .total-val {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  .total-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  .warn-banner {
+    background: #fefce8;
+    border-left: 3px solid #ca8a04;
+    color: #854d0e;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .theme-dark .warn-banner {
+    background: #451a03;
+    border-left-color: #fbbf24;
+    color: #fbbf24;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>

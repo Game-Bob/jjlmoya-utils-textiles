@@ -1,0 +1,792 @@
+---
+import type { YarnCalculatorUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const yarnUI = ui as YarnCalculatorUI;
+const initLabels = yarnUI.sizeLabels?.sweater ?? ['S', 'M', 'L', 'XL'];
+---
+
+<script define:vars={{ ui }} is:inline>
+  window.__yarnCalcUI = ui;
+</script>
+
+<div class="yc-wrapper" id="yarn-calc">
+  <div class="yc-card">
+    <div class="yc-sidebar">
+      <div class="input-block">
+        <span class="section-label">{yarnUI.sectionProject}</span>
+        <div class="project-grid" id="project-selector">
+          <div class="project-item active" data-id="sweater">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+            <span>{yarnUI.projectSweater}</span>
+          </div>
+          <div class="project-item" data-id="scarf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M8 8a4 4 0 1 1 8 0M8 12a4 4 0 1 1 8 0M8 16a4 4 0 1 1 8 0"/></svg>
+            <span>{yarnUI.projectScarf}</span>
+          </div>
+          <div class="project-item" data-id="hat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-10 10c0 4.42 5.5 8 10 8s10-3.58 10-8A10 10 0 0 0 12 2zM12 4v4M12 12v4"/></svg>
+            <span>{yarnUI.projectHat}</span>
+          </div>
+          <div class="project-item" data-id="socks">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12V4a2 2 0 0 1 2-2h4l4 12h6v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4l-2-6z"/></svg>
+            <span>{yarnUI.projectSocks}</span>
+          </div>
+          <div class="project-item" data-id="blanket">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="4"/></svg>
+            <span>{yarnUI.projectBlanket}</span>
+          </div>
+          <div class="project-item" data-id="cardigan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23zM12 8v12"/></svg>
+            <span>{yarnUI.projectCardigan}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <span class="section-label">{yarnUI.sectionSize}</span>
+        <div class="pill-selector" id="size-selector">
+          <button class="pill-btn active" data-val="s">{initLabels[0]}</button>
+          <button class="pill-btn" data-val="m">{initLabels[1]}</button>
+          <button class="pill-btn" data-val="l">{initLabels[2]}</button>
+          <button class="pill-btn" data-val="xl">{initLabels[3]}</button>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <span class="section-label">{yarnUI.sectionWeight}</span>
+        <div class="pill-selector" id="weight-selector">
+          <button class="pill-btn active" data-val="fingering">{yarnUI.weightFine}</button>
+          <button class="pill-btn" data-val="dk">{yarnUI.weightMedium}</button>
+          <button class="pill-btn" data-val="worsted">{yarnUI.weightThick}</button>
+          <button class="pill-btn" data-val="bulky">{yarnUI.weightXXL}</button>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <span class="section-label">{yarnUI.sectionPattern}</span>
+        <div class="switch-row" id="cable-switch">
+          <span class="cable-label">{yarnUI.labelCables}</span>
+          <div class="switch-toggle"></div>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <span class="section-label">{yarnUI.sectionBall}</span>
+        <div class="custom-input-box">
+          <div class="ball-grid">
+            <div>
+              <label class="label-tiny">{yarnUI.labelGrams}</label>
+              <input type="number" id="ball-weight" class="custom-input" value="100" />
+            </div>
+            <div>
+              <label class="label-tiny">{yarnUI.labelMeters}</label>
+              <input type="number" id="ball-meters" class="custom-input" value="200" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="yc-main">
+      <div class="results-panel">
+        <div class="main-stat">
+          <span class="stat-prefix">{yarnUI.statPrefix}</span>
+          <div class="stat-row">
+            <span class="stat-value" id="total-meters">1.250</span>
+            <span class="stat-suffix">{yarnUI.statSuffix}</span>
+          </div>
+          <p class="stat-note">{yarnUI.statNote}</p>
+        </div>
+
+        <div class="balls-cta">
+          <div class="balls-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.11,18 17,18M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.11,18 7,18M7,16L7.1,15.93L8.5,13.43L15.33,13.43C16.08,13.43 16.74,13.04 17.11,12.44L21.43,4.6L19.7,3.65L15.33,11.43L8.7,11.43L3.1,1.11L1,1.11V3.11H3L6.6,10.66L5.25,13.11C5.1,13.41 5,13.7 5,14C5,15.11 5.89,16 7,16H19V14H7.42C7.28,14 7.16,13.89 7.16,13.74V13.71L8.1,12H15.55C16.3,12 16.96,11.61 17.33,11.01L22.25,2.11L20.52,1.11L15.55,10H8.38L4.62,3H1V5H3.14L6.9,12L5.25,15.11C5.1,15.41 5,15.7 5,16C5,17.11 5.89,18 7,18H19V16H7.42C7.28,16 7.16,15.89 7.16,15.74Z"/></svg>
+          </div>
+          <span class="balls-count" id="total-balls">—</span>
+          <span class="balls-desc" id="balls-detail">—</span>
+        </div>
+
+        <div class="panic-alert">
+          <div class="alert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v2m0 4h.01M5.93 21h12.14a2 2 0 0 0 1.73-3L13.73 4a2 2 0 0 0-3.46 0L4.2 18a2 2 0 0 0 1.73 3z"/></svg>
+          </div>
+          <div>
+            <strong>{yarnUI.alertTitle}</strong> {yarnUI.alertText}
+          </div>
+        </div>
+
+        <div class="garment-scheme">
+          <div class="scheme-container" id="scheme-draw">
+            <svg width="320" height="240" viewBox="0 0 200 160" id="main-svg"></svg>
+            <div id="lbl-left" class="scheme-label" style="opacity: 0"></div>
+            <div id="lbl-right" class="scheme-label" style="opacity: 0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { PROJECTS, WEIGHT_IDX, computeTotal, computeBalls, parseParam } from './logic';
+  import type { SizeKey, WeightKey } from './logic';
+  import type { YarnCalculatorUI } from './ui';
+
+  let ui: YarnCalculatorUI;
+  const state = {
+    project: 'sweater',
+    size: 'm' as SizeKey,
+    weight: 'fingering' as WeightKey,
+    cables: false,
+    ballW: 100,
+    ballM: 200,
+  };
+
+  interface SchemeEls {
+    svg: Element;
+    lblLeft: HTMLElement;
+    lblRight: HTMLElement;
+  }
+
+  function setText(id: string, v: string) {
+    const el = document.getElementById(id);
+    if (el) (el as HTMLElement).innerText = v;
+  }
+
+  function updateQuery() {
+    const p = new URLSearchParams();
+    p.set('p', state.project); p.set('s', state.size); p.set('w', state.weight);
+    p.set('c', state.cables ? '1' : '0'); p.set('bw', String(state.ballW)); p.set('bm', String(state.ballM));
+    window.history.replaceState({}, '', `${window.location.pathname}?${p.toString()}`);
+  }
+
+  function getSchemeEls(): SchemeEls | null {
+    const svg = document.getElementById('main-svg');
+    const lblLeft = document.getElementById('lbl-left') as HTMLElement | null;
+    const lblRight = document.getElementById('lbl-right') as HTMLElement | null;
+    if (!svg || !lblLeft || !lblRight) return null;
+    svg.innerHTML = '';
+    lblLeft.style.opacity = '0'; lblRight.style.opacity = '0';
+    return { svg, lblLeft, lblRight };
+  }
+
+  function setSweaterScheme(els: SchemeEls, bM: number, sMTotal: number) {
+    els.svg.innerHTML = `
+      <line class="scheme-callout" x1="10" y1="35" x2="55" y2="75"/>
+      <circle class="scheme-dot" cx="55" cy="75" r="3"/>
+      <line class="scheme-callout" x1="190" y1="90" x2="130" y2="100"/>
+      <circle class="scheme-dot" cx="130" cy="100" r="3"/>
+      <rect class="scheme-item filled" x="60" y="40" width="80" height="100"/>
+      <path class="scheme-item filled" d="M60 40 L30 100 L50 110 L60 60 Z"/>
+      <path class="scheme-item filled" d="M140 40 L170 100 L150 110 L140 60 Z"/>
+    `;
+    els.lblLeft.style.cssText = 'opacity:1; top:10%; left:5%';
+    els.lblLeft.innerHTML = `<span>${ui.schemeSleeveLabel}</span><strong>${sMTotal}m</strong><em>${Math.round(sMTotal / 2)}m ${ui.schemeSleeveEach}</em>`;
+    els.lblRight.style.cssText = 'opacity:1; top:50%; right:5%';
+    els.lblRight.innerHTML = `<span>${ui.schemeBodyLabel}</span><strong>${bM}m</strong>`;
+  }
+
+  function setHatScheme(els: SchemeEls, total: number) {
+    els.svg.innerHTML = `
+      <line class="scheme-callout" x1="190" y1="60" x2="120" y2="70"/>
+      <circle class="scheme-dot" cx="120" cy="70" r="3"/>
+      <path class="scheme-item filled" d="M60 130 Q 60 40, 100 40 Q 140 40, 140 130 Z"/>
+    `;
+    els.lblRight.style.cssText = 'opacity:1; top:25%; right:10%';
+    els.lblRight.innerHTML = `<span>${ui.schemeTotalHat}</span><strong>${total}m</strong>`;
+  }
+
+  function setFlatScheme(els: SchemeEls, total: number) {
+    els.svg.innerHTML = `
+      <line class="scheme-callout" x1="190" y1="60" x2="120" y2="80"/>
+      <circle class="scheme-dot" cx="120" cy="80" r="3"/>
+      <rect class="scheme-item filled" x="40" y="60" width="120" height="60"/>
+    `;
+    els.lblRight.style.cssText = 'opacity:1; top:20%; right:10%';
+    els.lblRight.innerHTML = `<span>${ui.schemeTotalFlat}</span><strong>${total}m</strong>`;
+  }
+
+  function setSocksScheme(els: SchemeEls, total: number) {
+    els.svg.innerHTML = `
+      <line class="scheme-callout" x1="190" y1="50" x2="100" y2="80"/>
+      <circle class="scheme-dot" cx="100" cy="80" r="3"/>
+      <path class="scheme-item filled" d="M80 40 L80 120 L120 120 L120 100 L100 100 L100 40 Z"/>
+    `;
+    els.lblRight.style.cssText = 'opacity:1; top:15%; right:10%';
+    els.lblRight.innerHTML = `<span>${ui.schemeTotalSocks}</span><strong>${total}m</strong>`;
+  }
+
+  function drawScheme(total: number, parts: { body: number; sleeves: number }) {
+    const els = getSchemeEls();
+    if (!els) return;
+    const bM = Math.round(total * parts.body);
+    const sMTotal = Math.round(total * parts.sleeves);
+    if (state.project === 'sweater' || state.project === 'cardigan') setSweaterScheme(els, bM, sMTotal);
+    else if (state.project === 'hat') setHatScheme(els, total);
+    else if (state.project === 'scarf' || state.project === 'blanket') setFlatScheme(els, total);
+    else if (state.project === 'socks') setSocksScheme(els, total);
+  }
+
+  function calculate() {
+    const proj = PROJECTS[state.project];
+    const totalM = computeTotal(proj[state.size][WEIGHT_IDX[state.weight]], state.cables);
+    const balls = computeBalls(totalM, state.ballM);
+    setText('total-meters', totalM.toLocaleString());
+    const fmt = balls > 1 ? ui.ballsFormatPlural : ui.ballsFormatSingular;
+    setText('total-balls', fmt.replace('{n}', String(balls)));
+    setText('balls-detail', ui.ballsDetailFormat.replace('{w}', String(state.ballW)).replace('{m}', String(state.ballM)));
+    drawScheme(totalM, proj.parts);
+    updateQuery();
+  }
+
+  function updateSizeLabels() {
+    const btns = document.querySelectorAll('#size-selector .pill-btn');
+    const labels = ui.sizeLabels[state.project as keyof typeof ui.sizeLabels] ?? ['S', 'M', 'L', 'XL'];
+    btns.forEach((btn, idx) => { (btn as HTMLElement).innerText = labels[idx] ?? ''; });
+  }
+
+  function attachProjectItems() {
+    const items = document.querySelectorAll('.project-item');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        items.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        state.project = (item as HTMLElement).dataset.id ?? 'sweater';
+        updateSizeLabels();
+        calculate();
+      });
+    });
+  }
+
+  function attachSizeWeight() {
+    const sBtns = document.querySelectorAll('#size-selector .pill-btn');
+    sBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        sBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.size = ((btn as HTMLElement).dataset.val ?? 'm') as SizeKey;
+        calculate();
+      });
+    });
+    const wBtns = document.querySelectorAll('#weight-selector .pill-btn');
+    wBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        wBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state.weight = ((btn as HTMLElement).dataset.val ?? 'fingering') as WeightKey;
+        calculate();
+      });
+    });
+  }
+
+  function attachCableAndBalls() {
+    const cRow = document.getElementById('cable-switch');
+    cRow?.addEventListener('click', () => {
+      cRow.classList.toggle('active');
+      state.cables = cRow.classList.contains('active');
+      calculate();
+    });
+    const bW = document.getElementById('ball-weight') as HTMLInputElement | null;
+    const bM = document.getElementById('ball-meters') as HTMLInputElement | null;
+    [bW, bM].forEach(el => el?.addEventListener('input', e => {
+      const val = parseInt((e.target as HTMLInputElement).value) || 1;
+      if (el?.id === 'ball-weight') state.ballW = val; else state.ballM = val;
+      calculate();
+    }));
+  }
+
+  function restoreState() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('p')) state.project = params.get('p') ?? state.project;
+    if (params.has('s')) state.size = (params.get('s') ?? state.size) as SizeKey;
+    if (params.has('w')) state.weight = (params.get('w') ?? state.weight) as WeightKey;
+    if (params.has('c')) state.cables = params.get('c') === '1';
+    state.ballW = parseParam(params, 'bw', 100);
+    state.ballM = parseParam(params, 'bm', 200);
+  }
+
+  function syncDomToState() {
+    document.querySelectorAll('.project-item').forEach(i => {
+      i.classList.toggle('active', (i as HTMLElement).dataset.id === state.project);
+    });
+    document.querySelectorAll('#size-selector .pill-btn').forEach(btn => {
+      btn.classList.toggle('active', (btn as HTMLElement).dataset.val === state.size);
+    });
+    document.querySelectorAll('#weight-selector .pill-btn').forEach(btn => {
+      btn.classList.toggle('active', (btn as HTMLElement).dataset.val === state.weight);
+    });
+    document.getElementById('cable-switch')?.classList.toggle('active', state.cables);
+    const bW = document.getElementById('ball-weight') as HTMLInputElement | null;
+    const bM = document.getElementById('ball-meters') as HTMLInputElement | null;
+    if (bW) bW.value = String(state.ballW);
+    if (bM) bM.value = String(state.ballM);
+  }
+
+  function init() {
+    const savedUI = (window as Record<string, unknown>).__yarnCalcUI as YarnCalculatorUI | undefined;
+    if (!savedUI) return;
+    ui = savedUI;
+    restoreState();
+    syncDomToState();
+    attachProjectItems();
+    attachSizeWeight();
+    attachCableAndBalls();
+    updateSizeLabels();
+    calculate();
+  }
+
+  document.addEventListener('astro:page-load', init);
+  init();
+</script>
+
+<style>
+  .yc-wrapper {
+    --yc-p: #10b981;
+
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .yc-card {
+    background: var(--bg-surface);
+    width: calc(100% - 24px);
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: var(--text-main);
+  }
+
+  @media (min-width: 1024px) {
+    .yc-card {
+      flex-direction: row;
+      min-height: 700px;
+    }
+  }
+
+  .yc-sidebar {
+    flex: 0 0 auto;
+    width: 100%;
+    background: var(--bg-surface);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    .yc-sidebar {
+      width: 440px;
+      padding: 48px;
+      border-right: 1px solid var(--border-color);
+      overflow-y: auto;
+    }
+  }
+
+  .yc-main {
+    flex: 1;
+    background: var(--bg-surface);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 1024px) {
+    .yc-main {
+      padding: 64px 48px;
+    }
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .project-item {
+    aspect-ratio: 1;
+    background: var(--bg-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    gap: 8px;
+  }
+
+  .project-item svg {
+    width: 32px;
+    height: 32px;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .project-item span {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+  }
+
+  .project-item.active {
+    background: #f0fdf4;
+    border-color: var(--yc-p);
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1);
+  }
+
+  .project-item.active svg {
+    color: var(--yc-p);
+  }
+
+  .project-item.active span {
+    color: #065f46;
+  }
+
+  .input-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pill-selector {
+    display: flex;
+    background: var(--bg-muted);
+    padding: 4px;
+    border-radius: 12px;
+    margin-top: 4px;
+  }
+
+  .pill-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+
+  .pill-btn.active {
+    background: var(--yc-p);
+    color: #fff;
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+  }
+
+  .custom-input-box {
+    background: var(--bg-muted);
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+  }
+
+  .ball-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .label-tiny {
+    font-size: 9px;
+    font-weight: 800;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .custom-input {
+    width: 100%;
+    padding: 14px 16px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+    transition: all 0.2s;
+  }
+
+  .custom-input:focus {
+    outline: none;
+    border-color: var(--yc-p);
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+  }
+
+  .switch-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: var(--bg-muted);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+  }
+
+  .cable-label {
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .switch-toggle {
+    width: 44px;
+    height: 24px;
+    background: var(--border-color);
+    border-radius: 100px;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .switch-toggle::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    transition: all 0.3s;
+  }
+
+  .switch-row.active {
+    border-color: var(--yc-p);
+    background: #f0fdf4;
+  }
+
+  .switch-row.active .switch-toggle {
+    background: var(--yc-p);
+  }
+
+  .switch-row.active .switch-toggle::before {
+    transform: translateX(20px);
+  }
+
+  .results-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-stat {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .stat-prefix {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .stat-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .stat-value {
+    font-size: 96px;
+    font-weight: 950;
+    color: var(--text-main);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+
+  .stat-suffix {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--text-muted);
+    margin-left: 8px;
+  }
+
+  .stat-note {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  .balls-cta {
+    background: var(--yc-p);
+    color: #fff;
+    padding: 40px;
+    border-radius: 32px;
+    text-align: center;
+    box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.4);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .balls-icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+    opacity: 0.9;
+  }
+
+  .balls-count {
+    display: block;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .balls-desc {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.8;
+  }
+
+  .panic-alert {
+    margin-top: 32px;
+    display: flex;
+    gap: 16px;
+    padding: 24px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 20px;
+    color: #92400e;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .alert-icon {
+    flex-shrink: 0;
+    color: #f59e0b;
+    width: 20px;
+  }
+
+  .garment-scheme {
+    margin-top: 48px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 48px;
+  }
+
+  .scheme-container {
+    background: var(--bg-muted);
+    border-radius: 24px;
+    padding: 64px 48px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-height: 340px;
+    overflow: hidden;
+  }
+
+  :global(.scheme-item) {
+    stroke-width: 4;
+    fill: none;
+    stroke: var(--border-color);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  :global(.scheme-item.filled) {
+    stroke: var(--yc-p);
+    fill: #10b98108;
+  }
+
+  :global(.scheme-callout) {
+    stroke: var(--yc-p);
+    stroke-width: 2;
+    fill: none;
+    transition: all 0.4s ease;
+    stroke-dasharray: 6 3;
+    opacity: 0.7;
+  }
+
+  :global(.scheme-dot) {
+    fill: var(--yc-p);
+    transition: all 0.4s ease;
+  }
+
+  .scheme-label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px 16px;
+    background: var(--bg-surface);
+    border: 1.5px solid var(--border-color);
+    border-left: 4px solid var(--yc-p);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px -4px rgba(16, 185, 129, 0.1);
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 10;
+  }
+
+  .scheme-label :global(span) {
+    font-size: 9px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .scheme-label :global(strong) {
+    color: var(--text-main);
+    font-weight: 950;
+    font-size: 15px;
+  }
+
+  .scheme-label :global(em) {
+    font-size: 11px;
+    font-style: normal;
+    color: var(--yc-p);
+    font-weight: 800;
+    margin-top: 2px;
+  }
+
+  .theme-dark .project-item.active {
+    background: #064e3b;
+  }
+
+  .theme-dark .project-item.active span {
+    color: #6ee7b7;
+  }
+
+  .theme-dark .switch-row.active {
+    background: #064e3b;
+  }
+
+  .theme-dark .panic-alert {
+    background: #451a03;
+    border-color: #d97706;
+    color: #fbbf24;
+  }
+
+  .theme-dark .scheme-container {
+    background: var(--bg-surface);
+  }
+</style>

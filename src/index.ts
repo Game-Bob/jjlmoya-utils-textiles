@@ -8,6 +8,11 @@ export { BurnTestComponent, BurnTestSEO, BurnTestBibliography } from './tool/bur
 export { FiberPrepComponent, FiberPrepSEO, FiberPrepBibliography } from './tool/fiberPrep';
 export { ShoeSizeConverterComponent, ShoeSizeConverterSEO, ShoeSizeConverterBibliography } from './tool/shoeSizeConverter';
 export { ClothingSizeConverterComponent, ClothingSizeConverterSEO, ClothingSizeConverterBibliography } from './tool/clothingSizeConverter';
+export { KnittingGaugeComponent, KnittingGaugeSEO, KnittingGaugeBibliography } from './tool/knittingGauge';
+export { FabricProjectCalculatorComponent, FabricProjectCalculatorSEO, FabricProjectCalculatorBibliography } from './tool/fabricProjectCalculator';
+export { SewingPatternScalerComponent, SewingPatternScalerSEO, SewingPatternScalerBibliography } from './tool/sewingPatternScaler';
+export { NeedleConverterComponent, NeedleConverterSEO, NeedleConverterBibliography } from './tool/needleConverter';
+export { YarnCalculatorComponent, YarnCalculatorSEO, YarnCalculatorBibliography } from './tool/yarnCalculator';
 
 export type {
   KnownLocale,

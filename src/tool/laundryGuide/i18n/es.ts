@@ -1,10 +1,68 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
 
+const slug = 'guia-lavado-textil';
+const title = 'Guía de Cuidado Textil: Cómo Lavar Cada Tipo de Fibra';
+const description = 'Guía científica para lavar y cuidar algodón, lana, seda, lino y sintéticos. Previene encogimientos, descoloramiento y daños con instrucciones precisas.';
+
+const faqData = [
+  {
+    question: '¿Cómo evito que los colores se desvanezcan?',
+    answer: 'Lava en agua fría (máximo 30°C), vuelve las prendas al revés, usa detergente para ropa oscura, y evita el sol directo al secar.',
+  },
+  {
+    question: '¿Puedo lavar lana en lavadora?',
+    answer: 'Sí, pero solo con ciclo de lana (agua fría, agitación suave). Usa detergente específico para lana y nunca un ciclo normal.',
+  },
+  {
+    question: '¿Por qué mi seda se mancha con agua?',
+    answer: 'La seda reacciona a los minerales del agua. Usa agua destilada en el último aclarado o frota suavemente la mancha con seda pura.',
+  },
+];
+
+const howToData = [
+  { name: 'Revisa la etiqueta', text: 'Siempre lee las instrucciones de cuidado en la etiqueta antes de lavar.' },
+  { name: 'Ordena por tipo de fibra', text: 'Lava fibras naturales por separado de las sintéticas cuando sea posible.' },
+  { name: 'Elige la temperatura de agua', text: 'Usa agua fría para telas delicadas y agua caliente solo para materiales resistentes.' },
+];
+
+const faqSchema: WithContext<FAQPage> = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+
+const howToSchema: WithContext<HowTo> = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: title,
+  description: description,
+  step: howToData.map((step) => ({
+    '@type': 'HowToStep',
+    name: step.name,
+    text: step.text,
+  })),
+};
+
+const appSchema: WithContext<SoftwareApplication> = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: title,
+  description: description,
+  applicationCategory: 'UtilityApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  inLanguage: 'es',
+};
+
 export const content: ToolLocaleContent = {
-  slug: 'guia-lavado-textil',
-  title: 'Guía de Cuidado Textil: Cómo Lavar Cada Tipo de Fibra',
-  description: 'Guía científica para lavar y cuidar algodón, lana, seda, lino y sintéticos. Previene encogimientos, descoloramiento y daños con instrucciones precisas.',
+  slug,
+  title,
+  description,
   ui: {
     selectMaterialTitle: 'Selecciona el Material',
     selectMaterialPrompt: 'Selecciona un tejido para ver su guía de cuidado',
@@ -206,64 +264,12 @@ export const content: ToolLocaleContent = {
     { type: 'paragraph', html: '"Comprar menos, elegir mejor y hacerlo durar." Una prenda bien cuidada puede durar décadas. Una prenda maltratada, meses.' },
   ],
   faqTitle: 'Preguntas Frecuentes',
-  faq: [
-    {
-      question: '¿Cómo evito que los colores se desvanezcan?',
-      answer: 'Lava en agua fría (máximo 30°C), vuelve las prendas al revés, usa detergente para ropa oscura, y evita el sol directo al secar.',
-    },
-    {
-      question: '¿Puedo lavar lana en lavadora?',
-      answer: 'Sí, pero solo con ciclo de lana (agua fría, agitación suave). Usa detergente específico para lana y nunca un ciclo normal.',
-    },
-    {
-      question: '¿Por qué mi seda se mancha con agua?',
-      answer: 'La seda reacciona a los minerales del agua. Usa agua destilada en el último aclarado o frota suavemente la mancha con seda pura.',
-    },
-  ],
+  faq: faqData,
   bibliographyTitle: 'Referencias',
   bibliography: [
     { name: 'ISO 3758 - Símbolos de Cuidado Textil', url: 'https://www.iso.org/standard/60465.html' },
     { name: 'Guía de Etiquetado Textil', url: 'https://www.ftc.gov/' },
   ],
-  howTo: [
-    { name: 'Revisa la etiqueta', text: 'Siempre lee las instrucciones de cuidado en la etiqueta antes de lavar.' },
-    { name: 'Ordena por tipo de fibra', text: 'Lava fibras naturales por separado de las sintéticas cuando sea posible.' },
-    { name: 'Elige la temperatura de agua', text: 'Usa agua fría para telas delicadas y agua caliente solo para materiales resistentes.' },
-  ],
-  schemas: [],
+  howTo: howToData,
+  schemas: [faqSchema, howToSchema, appSchema],
 };
-
-const laundryFaqSchema: WithContext<FAQPage> = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: content.faq.map((item) => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-  })),
-};
-
-const laundryHowToSchema: WithContext<HowTo> = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: content.title,
-  description: content.description,
-  step: content.howTo.map((step) => ({
-    '@type': 'HowToStep',
-    name: step.name,
-    text: step.text,
-  })),
-};
-
-const laundryAppSchema: WithContext<SoftwareApplication> = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: content.title,
-  description: content.description,
-  applicationCategory: 'UtilityApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  inLanguage: 'es',
-};
-
-content.schemas = [laundryFaqSchema, laundryHowToSchema, laundryAppSchema];
