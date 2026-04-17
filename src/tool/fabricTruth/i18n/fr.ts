@@ -256,7 +256,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'paragraph', html: 'Même le meilleur vêtement au monde peut être ruiné par un seul lavage inapproprié. Voici les règles d\'or universelles :' },
     { type: 'tip', title: 'L\'Eau Froide est Votre Amie', html: '90 % des vêtements n\'ont pas besoin de plus de 30°C. La chaleur dégrade les fibres élastiques et rétrécit les fibres naturelles.' },
     { type: 'tip', title: 'Moins, c\'est Mieux (Detergent)', html: 'L\'excès de savon laisse des résidus qui attirent la saleté et rendent les vêtements raides.' },
-    { type: 'tip', title: 'Sèche-linge : L\'Ennemi Subtil', html: 'Les peluches que vous voyez dans le filtre du sèche-linge sont des morceaux de vos vêtements qui se sont détachés par friction et chaleur.' },
+    { type: 'tip', title: 'Seche linge : LEnnemi Subtil', html: 'Les peluches que vous voyez dans le filtre du sèche-linge sont des morceaux de vos vêtements qui se sont détachés par friction et chaleur.' },
     { type: 'tip', title: 'Lavage à l\'envers', html: 'Protège la couleur et les broderies du frottement avec le tambour et d\'autres vêtements.' },
     { type: 'paragraph', html: '"Acheter moins, choisir mieux et faire durer." — Ce calculateur est votre première étape vers une garde-robe consciente et de haute qualité.' },
   ],
