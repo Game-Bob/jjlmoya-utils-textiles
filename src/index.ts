@@ -1,18 +1,18 @@
 export { textilesCategory } from './category';
 export const textilesCategorySEO = () => import('./category/seo.astro').then((m) => m.default);
 
-export { FabricTruthComponent, FabricTruthSEO, FabricTruthBibliography, FABRIC_TRUTH_TOOL } from './tool/fabricTruth';
-export { LaundryGuideComponent, LaundryGuideSEO, LaundryGuideBibliography, LAUNDRY_GUIDE_TOOL } from './tool/laundryGuide';
-export { StainChemistryComponent, StainChemistrySEO, StainChemistryBibliography, STAIN_CHEMISTRY_TOOL } from './tool/stainChemistry';
-export { BurnTestComponent, BurnTestSEO, BurnTestBibliography, BURN_TEST_TOOL } from './tool/burnTest';
-export { FiberPrepComponent, FiberPrepSEO, FiberPrepBibliography, FIBER_PREP_TOOL } from './tool/fiberPrep';
-export { ShoeSizeConverterComponent, ShoeSizeConverterSEO, ShoeSizeConverterBibliography, SHOE_SIZE_CONVERTER_TOOL } from './tool/shoeSizeConverter';
-export { ClothingSizeConverterComponent, ClothingSizeConverterSEO, ClothingSizeConverterBibliography, CLOTHING_SIZE_CONVERTER_TOOL } from './tool/clothingSizeConverter';
-export { KnittingGaugeComponent, KnittingGaugeSEO, KnittingGaugeBibliography, KNITTING_GAUGE_TOOL } from './tool/knittingGauge';
-export { FabricProjectCalculatorComponent, FabricProjectCalculatorSEO, FabricProjectCalculatorBibliography, FABRIC_PROJECT_CALCULATOR_TOOL } from './tool/fabricProjectCalculator';
-export { SewingPatternScalerComponent, SewingPatternScalerSEO, SewingPatternScalerBibliography, SEWING_PATTERN_SCALER_TOOL } from './tool/sewingPatternScaler';
-export { NeedleConverterComponent, NeedleConverterSEO, NeedleConverterBibliography, NEEDLE_CONVERTER_TOOL } from './tool/needleConverter';
-export { YarnCalculatorComponent, YarnCalculatorSEO, YarnCalculatorBibliography, YARN_CALCULATOR_TOOL } from './tool/yarnCalculator';
+export { FABRIC_TRUTH_TOOL } from './tool/fabricTruth';
+export { LAUNDRY_GUIDE_TOOL } from './tool/laundryGuide';
+export { STAIN_CHEMISTRY_TOOL } from './tool/stainChemistry';
+export { BURN_TEST_TOOL } from './tool/burnTest';
+export { FIBER_PREP_TOOL } from './tool/fiberPrep';
+export { SHOE_SIZE_CONVERTER_TOOL } from './tool/shoeSizeConverter';
+export { CLOTHING_SIZE_CONVERTER_TOOL } from './tool/clothingSizeConverter';
+export { KNITTING_GAUGE_TOOL } from './tool/knittingGauge';
+export { FABRIC_PROJECT_CALCULATOR_TOOL } from './tool/fabricProjectCalculator';
+export { SEWING_PATTERN_SCALER_TOOL } from './tool/sewingPatternScaler';
+export { NEEDLE_CONVERTER_TOOL } from './tool/needleConverter';
+export { YARN_CALCULATOR_TOOL } from './tool/yarnCalculator';
 
 export type {
   KnownLocale,
