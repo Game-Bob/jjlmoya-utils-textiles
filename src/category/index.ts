@@ -1,32 +1,32 @@
 import type { TextilesCategoryEntry } from '../types';
-import { FABRIC_TRUTH_TOOL } from '../tool/fabricTruth/entry';
-import { LAUNDRY_GUIDE_TOOL } from '../tool/laundryGuide/entry';
-import { STAIN_CHEMISTRY_TOOL } from '../tool/stainChemistry/entry';
-import { BURN_TEST_TOOL } from '../tool/burnTest/entry';
-import { FIBER_PREP_TOOL } from '../tool/fiberPrep/entry';
-import { SHOE_SIZE_CONVERTER_TOOL } from '../tool/shoeSizeConverter/entry';
-import { CLOTHING_SIZE_CONVERTER_TOOL } from '../tool/clothingSizeConverter/entry';
-import { KNITTING_GAUGE_TOOL } from '../tool/knittingGauge/entry';
-import { FABRIC_PROJECT_CALCULATOR_TOOL } from '../tool/fabricProjectCalculator/entry';
-import { SEWING_PATTERN_SCALER_TOOL } from '../tool/sewingPatternScaler/entry';
-import { NEEDLE_CONVERTER_TOOL } from '../tool/needleConverter/entry';
-import { YARN_CALCULATOR_TOOL } from '../tool/yarnCalculator/entry';
+import { fabricTruth } from '../tool/fabricTruth/entry';
+import { laundryGuide } from '../tool/laundryGuide/entry';
+import { stainChemistry } from '../tool/stainChemistry/entry';
+import { burnTest } from '../tool/burnTest/entry';
+import { fiberPrep } from '../tool/fiberPrep/entry';
+import { shoeSizeConverter } from '../tool/shoeSizeConverter/entry';
+import { clothingSizeConverter } from '../tool/clothingSizeConverter/entry';
+import { knittingGauge } from '../tool/knittingGauge/entry';
+import { fabricProjectCalculator } from '../tool/fabricProjectCalculator/entry';
+import { sewingPatternScaler } from '../tool/sewingPatternScaler/entry';
+import { needleConverter } from '../tool/needleConverter/entry';
+import { yarnCalculator } from '../tool/yarnCalculator/entry';
 
 export const textilesCategory: TextilesCategoryEntry = {
   icon: 'mdi:texture',
   tools: [
-    FABRIC_TRUTH_TOOL,
-    LAUNDRY_GUIDE_TOOL,
-    STAIN_CHEMISTRY_TOOL,
-    BURN_TEST_TOOL,
-    FIBER_PREP_TOOL,
-    SHOE_SIZE_CONVERTER_TOOL,
-    CLOTHING_SIZE_CONVERTER_TOOL,
-    KNITTING_GAUGE_TOOL,
-    FABRIC_PROJECT_CALCULATOR_TOOL,
-    SEWING_PATTERN_SCALER_TOOL,
-    NEEDLE_CONVERTER_TOOL,
-    YARN_CALCULATOR_TOOL,
+    fabricTruth,
+    laundryGuide,
+    stainChemistry,
+    burnTest,
+    fiberPrep,
+    shoeSizeConverter,
+    clothingSizeConverter,
+    knittingGauge,
+    fabricProjectCalculator,
+    sewingPatternScaler,
+    needleConverter,
+    yarnCalculator,
   ],
   i18n: {
     es: () => import('./i18n/es').then((m) => m.content),
@@ -46,4 +46,3 @@ export const textilesCategory: TextilesCategoryEntry = {
     zh: () => import('./i18n/zh').then((m) => m.content),
   },
 };
-
