@@ -1,3 +1,4 @@
+export { ALL_ENTRIES } from './entries';
 import type { ToolDefinition } from './types';
 import { FABRIC_TRUTH_TOOL } from './tool/fabricTruth/index';
 import { LAUNDRY_GUIDE_TOOL } from './tool/laundryGuide/index';
@@ -15,4 +16,3 @@ import { YARN_CALCULATOR_TOOL } from './tool/yarnCalculator/index';
 export const ALL_TOOLS: ToolDefinition[] = [FABRIC_TRUTH_TOOL, LAUNDRY_GUIDE_TOOL, STAIN_CHEMISTRY_TOOL, BURN_TEST_TOOL, FIBER_PREP_TOOL, SHOE_SIZE_CONVERTER_TOOL, CLOTHING_SIZE_CONVERTER_TOOL, KNITTING_GAUGE_TOOL, FABRIC_PROJECT_CALCULATOR_TOOL, SEWING_PATTERN_SCALER_TOOL, NEEDLE_CONVERTER_TOOL, YARN_CALCULATOR_TOOL];
 
 
-export const ALL_ENTRIES = ALL_TOOLS.map(t => t.entry);

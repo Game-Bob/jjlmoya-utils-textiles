@@ -1,16 +1,16 @@
 import type { TextilesCategoryEntry } from '../types';
-import { FABRIC_TRUTH_TOOL } from '../tool/fabricTruth';
-import { LAUNDRY_GUIDE_TOOL } from '../tool/laundryGuide';
-import { STAIN_CHEMISTRY_TOOL } from '../tool/stainChemistry';
-import { BURN_TEST_TOOL } from '../tool/burnTest';
-import { FIBER_PREP_TOOL } from '../tool/fiberPrep';
-import { SHOE_SIZE_CONVERTER_TOOL } from '../tool/shoeSizeConverter';
-import { CLOTHING_SIZE_CONVERTER_TOOL } from '../tool/clothingSizeConverter';
-import { KNITTING_GAUGE_TOOL } from '../tool/knittingGauge';
-import { FABRIC_PROJECT_CALCULATOR_TOOL } from '../tool/fabricProjectCalculator';
-import { SEWING_PATTERN_SCALER_TOOL } from '../tool/sewingPatternScaler';
-import { NEEDLE_CONVERTER_TOOL } from '../tool/needleConverter';
-import { YARN_CALCULATOR_TOOL } from '../tool/yarnCalculator';
+import { FABRIC_TRUTH_TOOL } from '../tool/fabricTruth/entry';
+import { LAUNDRY_GUIDE_TOOL } from '../tool/laundryGuide/entry';
+import { STAIN_CHEMISTRY_TOOL } from '../tool/stainChemistry/entry';
+import { BURN_TEST_TOOL } from '../tool/burnTest/entry';
+import { FIBER_PREP_TOOL } from '../tool/fiberPrep/entry';
+import { SHOE_SIZE_CONVERTER_TOOL } from '../tool/shoeSizeConverter/entry';
+import { CLOTHING_SIZE_CONVERTER_TOOL } from '../tool/clothingSizeConverter/entry';
+import { KNITTING_GAUGE_TOOL } from '../tool/knittingGauge/entry';
+import { FABRIC_PROJECT_CALCULATOR_TOOL } from '../tool/fabricProjectCalculator/entry';
+import { SEWING_PATTERN_SCALER_TOOL } from '../tool/sewingPatternScaler/entry';
+import { NEEDLE_CONVERTER_TOOL } from '../tool/needleConverter/entry';
+import { YARN_CALCULATOR_TOOL } from '../tool/yarnCalculator/entry';
 
 export const textilesCategory: TextilesCategoryEntry = {
   icon: 'mdi:texture',
