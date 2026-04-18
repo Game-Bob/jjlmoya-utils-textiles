@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import FabricTruthComponent from './component.astro';
-import FabricTruthSEO from './seo.astro';
-import FabricTruthBibliography from './bibliography.astro';
 
 import type { FabricTruthUI } from './ui';
 
@@ -32,11 +29,10 @@ export const fabricTruth: TextilesToolEntry<FabricTruthUI> = {
   },
 };
 
-export { FabricTruthComponent, FabricTruthSEO, FabricTruthBibliography };
 
 export const FABRIC_TRUTH_TOOL: ToolDefinition = {
   entry: fabricTruth,
-  Component: FabricTruthComponent,
-  SEOComponent: FabricTruthSEO,
-  BibliographyComponent: FabricTruthBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

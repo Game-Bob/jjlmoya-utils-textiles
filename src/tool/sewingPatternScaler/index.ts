@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import SewingPatternScalerComponent from './component.astro';
-import SewingPatternScalerSEO from './seo.astro';
-import SewingPatternScalerBibliography from './bibliography.astro';
 
 import type { SewingPatternScalerUI } from './ui';
 
@@ -32,11 +29,10 @@ export const sewingPatternScaler: TextilesToolEntry<SewingPatternScalerUI> = {
   },
 };
 
-export { SewingPatternScalerComponent, SewingPatternScalerSEO, SewingPatternScalerBibliography };
 
 export const SEWING_PATTERN_SCALER_TOOL: ToolDefinition = {
   entry: sewingPatternScaler,
-  Component: SewingPatternScalerComponent,
-  SEOComponent: SewingPatternScalerSEO,
-  BibliographyComponent: SewingPatternScalerBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import KnittingGaugeComponent from './component.astro';
-import KnittingGaugeSEO from './seo.astro';
-import KnittingGaugeBibliography from './bibliography.astro';
 
 import type { KnittingGaugeUI } from './ui';
 
@@ -32,11 +29,10 @@ export const knittingGauge: TextilesToolEntry<KnittingGaugeUI> = {
   },
 };
 
-export { KnittingGaugeComponent, KnittingGaugeSEO, KnittingGaugeBibliography };
 
 export const KNITTING_GAUGE_TOOL: ToolDefinition = {
   entry: knittingGauge,
-  Component: KnittingGaugeComponent,
-  SEOComponent: KnittingGaugeSEO,
-  BibliographyComponent: KnittingGaugeBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

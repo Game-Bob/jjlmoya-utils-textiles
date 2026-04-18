@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import NeedleConverterComponent from './component.astro';
-import NeedleConverterSEO from './seo.astro';
-import NeedleConverterBibliography from './bibliography.astro';
 
 import type { NeedleConverterUI } from './ui';
 
@@ -32,11 +29,10 @@ export const needleConverter: TextilesToolEntry<NeedleConverterUI> = {
   },
 };
 
-export { NeedleConverterComponent, NeedleConverterSEO, NeedleConverterBibliography };
 
 export const NEEDLE_CONVERTER_TOOL: ToolDefinition = {
   entry: needleConverter,
-  Component: NeedleConverterComponent,
-  SEOComponent: NeedleConverterSEO,
-  BibliographyComponent: NeedleConverterBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

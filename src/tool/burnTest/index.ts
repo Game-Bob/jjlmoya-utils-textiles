@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import BurnTestComponent from './component.astro';
-import BurnTestSEO from './seo.astro';
-import BurnTestBibliography from './bibliography.astro';
 
 import type { BurnTestUI } from './ui';
 
@@ -32,11 +29,10 @@ export const burnTest: TextilesToolEntry<BurnTestUI> = {
   },
 };
 
-export { BurnTestComponent, BurnTestSEO, BurnTestBibliography };
 
 export const BURN_TEST_TOOL: ToolDefinition = {
   entry: burnTest,
-  Component: BurnTestComponent,
-  SEOComponent: BurnTestSEO,
-  BibliographyComponent: BurnTestBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

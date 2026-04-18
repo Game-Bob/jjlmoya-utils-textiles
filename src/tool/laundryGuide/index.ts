@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolDefinition } from '../../types';
-import LaundryGuideComponent from './component.astro';
-import LaundryGuideSEO from './seo.astro';
-import LaundryGuideBibliography from './bibliography.astro';
 export const laundryGuide: TextilesToolEntry = {
   id: 'laundry-guide',
   icons: {
@@ -27,11 +24,10 @@ export const laundryGuide: TextilesToolEntry = {
   },
 };
 
-export { LaundryGuideComponent, LaundryGuideSEO, LaundryGuideBibliography };
 
 export const LAUNDRY_GUIDE_TOOL: ToolDefinition = {
   entry: laundryGuide,
-  Component: LaundryGuideComponent,
-  SEOComponent: LaundryGuideSEO,
-  BibliographyComponent: LaundryGuideBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

@@ -1,5 +1,5 @@
 export { textilesCategory } from './category';
-export { default as textilesCategorySEO } from './category/seo.astro';
+export const textilesCategorySEO = () => import('./category/seo.astro').then((m) => m.default);
 
 export { FabricTruthComponent, FabricTruthSEO, FabricTruthBibliography, FABRIC_TRUTH_TOOL } from './tool/fabricTruth';
 export { LaundryGuideComponent, LaundryGuideSEO, LaundryGuideBibliography, LAUNDRY_GUIDE_TOOL } from './tool/laundryGuide';

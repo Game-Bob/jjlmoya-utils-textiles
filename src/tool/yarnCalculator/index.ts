@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import YarnCalculatorComponent from './component.astro';
-import YarnCalculatorSEO from './seo.astro';
-import YarnCalculatorBibliography from './bibliography.astro';
 
 import type { YarnCalculatorUI } from './ui';
 
@@ -32,11 +29,10 @@ export const yarnCalculator: TextilesToolEntry<YarnCalculatorUI> = {
   },
 };
 
-export { YarnCalculatorComponent, YarnCalculatorSEO, YarnCalculatorBibliography };
 
 export const YARN_CALCULATOR_TOOL: ToolDefinition = {
   entry: yarnCalculator,
-  Component: YarnCalculatorComponent,
-  SEOComponent: YarnCalculatorSEO,
-  BibliographyComponent: YarnCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

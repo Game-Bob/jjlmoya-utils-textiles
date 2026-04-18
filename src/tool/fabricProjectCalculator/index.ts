@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import FabricProjectCalculatorComponent from './component.astro';
-import FabricProjectCalculatorSEO from './seo.astro';
-import FabricProjectCalculatorBibliography from './bibliography.astro';
 
 import type { FabricProjectCalculatorUI } from './ui';
 
@@ -32,11 +29,10 @@ export const fabricProjectCalculator: TextilesToolEntry<FabricProjectCalculatorU
   },
 };
 
-export { FabricProjectCalculatorComponent, FabricProjectCalculatorSEO, FabricProjectCalculatorBibliography };
 
 export const FABRIC_PROJECT_CALCULATOR_TOOL: ToolDefinition = {
   entry: fabricProjectCalculator,
-  Component: FabricProjectCalculatorComponent,
-  SEOComponent: FabricProjectCalculatorSEO,
-  BibliographyComponent: FabricProjectCalculatorBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

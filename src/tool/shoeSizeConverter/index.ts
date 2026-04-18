@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import ShoeSizeConverterComponent from './component.astro';
-import ShoeSizeConverterSEO from './seo.astro';
-import ShoeSizeConverterBibliography from './bibliography.astro';
 
 import type { ShoeSizeConverterUI } from './ui';
 
@@ -32,11 +29,10 @@ export const shoeSizeConverter: TextilesToolEntry<ShoeSizeConverterUI> = {
   },
 };
 
-export { ShoeSizeConverterComponent, ShoeSizeConverterSEO, ShoeSizeConverterBibliography };
 
 export const SHOE_SIZE_CONVERTER_TOOL: ToolDefinition = {
   entry: shoeSizeConverter,
-  Component: ShoeSizeConverterComponent,
-  SEOComponent: ShoeSizeConverterSEO,
-  BibliographyComponent: ShoeSizeConverterBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

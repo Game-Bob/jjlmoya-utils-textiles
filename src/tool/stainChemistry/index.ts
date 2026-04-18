@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import StainChemistryComponent from './component.astro';
-import StainChemistrySEO from './seo.astro';
-import StainChemistryBibliography from './bibliography.astro';
 
 import type { StainChemistryUI } from './ui';
 
@@ -32,11 +29,10 @@ export const stainChemistry: TextilesToolEntry<StainChemistryUI> = {
   },
 };
 
-export { StainChemistryComponent, StainChemistrySEO, StainChemistryBibliography };
 
 export const STAIN_CHEMISTRY_TOOL: ToolDefinition = {
   entry: stainChemistry,
-  Component: StainChemistryComponent,
-  SEOComponent: StainChemistrySEO,
-  BibliographyComponent: StainChemistryBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };

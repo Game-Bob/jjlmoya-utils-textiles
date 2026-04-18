@@ -1,7 +1,4 @@
 import type { TextilesToolEntry, ToolLocaleContent, ToolDefinition } from '../../types';
-import FiberPrepComponent from './component.astro';
-import FiberPrepSEO from './seo.astro';
-import FiberPrepBibliography from './bibliography.astro';
 
 import type { FiberPrepUI } from './ui';
 
@@ -32,11 +29,10 @@ export const fiberPrep: TextilesToolEntry<FiberPrepUI> = {
   },
 };
 
-export { FiberPrepComponent, FiberPrepSEO, FiberPrepBibliography };
 
 export const FIBER_PREP_TOOL: ToolDefinition = {
   entry: fiberPrep,
-  Component: FiberPrepComponent,
-  SEOComponent: FiberPrepSEO,
-  BibliographyComponent: FiberPrepBibliography,
+  Component: () => import('./component.astro'),
+  SEOComponent: () => import('./seo.astro'),
+  BibliographyComponent: () => import('./bibliography.astro'),
 };
