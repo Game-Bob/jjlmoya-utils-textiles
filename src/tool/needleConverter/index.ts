@@ -1,3 +1,4 @@
+import { needleConverter } from './entry';
 export * from './entry';
 export const NEEDLE_CONVERTER_TOOL: ToolDefinition = {
   entry: needleConverter,

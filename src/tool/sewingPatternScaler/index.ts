@@ -1,3 +1,4 @@
+import { sewingPatternScaler } from './entry';
 export * from './entry';
 export const SEWING_PATTERN_SCALER_TOOL: ToolDefinition = {
   entry: sewingPatternScaler,

@@ -1,3 +1,4 @@
+import { yarnCalculator } from './entry';
 export * from './entry';
 export const YARN_CALCULATOR_TOOL: ToolDefinition = {
   entry: yarnCalculator,

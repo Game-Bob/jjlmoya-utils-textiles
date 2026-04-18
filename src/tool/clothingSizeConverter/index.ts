@@ -1,3 +1,4 @@
+import { clothingSizeConverter } from './entry';
 export * from './entry';
 export const CLOTHING_SIZE_CONVERTER_TOOL: ToolDefinition = {
   entry: clothingSizeConverter,
