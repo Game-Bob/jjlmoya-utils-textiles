@@ -171,13 +171,13 @@
     transition: all 0.2s;
   }
 
-  :global(.total-badge.total-complete) {
+  .total-badge.total-complete {
     background: rgba(16, 185, 129, 0.1);
     color: #10b981;
     border-color: #10b981;
   }
 
-  :global(.total-badge.total-error) {
+  .total-badge.total-error {
     background: rgba(239, 68, 68, 0.1);
     color: #ef4444;
     border-color: #ef4444;
@@ -226,11 +226,11 @@
     animation: fade-in 0.5s ease;
   }
 
-  :global(.result-content.hidden) {
+  .result-content.hidden {
     display: none;
   }
 
-  :global(.empty-state.hidden) {
+  .empty-state.hidden {
     display: none;
   }
 
@@ -250,43 +250,43 @@
     min-height: 100px;
   }
 
-  :global(.verdict-card.color-red) {
+  .verdict-card.color-red {
     background: rgba(239, 68, 68, 0.1);
     color: #ef4444;
     border-left-color: #dc2626;
   }
 
-  :global(.verdict-card.color-amber) {
+  .verdict-card.color-amber {
     background: rgba(251, 146, 60, 0.1);
     color: #f97316;
     border-left-color: #ea580c;
   }
 
-  :global(.verdict-card.color-yellow) {
+  .verdict-card.color-yellow {
     background: rgba(234, 179, 8, 0.1);
     color: #ca8a04;
     border-left-color: #b45309;
   }
 
-  :global(.verdict-card.color-emerald) {
+  .verdict-card.color-emerald {
     background: rgba(16, 185, 129, 0.1);
     color: #059669;
     border-left-color: #047857;
   }
 
-  :global(.verdict-card.color-blue) {
+  .verdict-card.color-blue {
     background: rgba(59, 130, 246, 0.1);
     color: #2563eb;
     border-left-color: #1d4ed8;
   }
 
-  :global(.verdict-card.color-indigo) {
+  .verdict-card.color-indigo {
     background: rgba(99, 102, 241, 0.1);
     color: #4f46e5;
     border-left-color: #4338ca;
   }
 
-  :global(.verdict-card.color-gray) {
+  .verdict-card.color-gray {
     background: rgba(107, 114, 128, 0.1);
     color: #6b7280;
     border-left-color: #4b5563;

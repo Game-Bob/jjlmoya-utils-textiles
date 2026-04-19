@@ -357,19 +357,19 @@
     overflow: hidden;
   }
 
-  :global(.scheme-item) {
+  .scheme-item {
     stroke-width: 4;
     fill: none;
     stroke: var(--border-color);
     transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
   }
 
-  :global(.scheme-item.filled) {
+  .scheme-item.filled {
     stroke: var(--yc-p);
     fill: #10b98108;
   }
 
-  :global(.scheme-callout) {
+  .scheme-callout {
     stroke: var(--yc-p);
     stroke-width: 2;
     fill: none;
@@ -378,7 +378,7 @@
     opacity: 0.7;
   }
 
-  :global(.scheme-dot) {
+  .scheme-dot {
     fill: var(--yc-p);
     transition: all 0.4s ease;
   }
@@ -399,7 +399,7 @@
     z-index: 10;
   }
 
-  .scheme-label :global(span) {
+  .scheme-label span {
     font-size: 9px;
     font-weight: 900;
     text-transform: uppercase;
@@ -407,13 +407,13 @@
     color: var(--text-muted);
   }
 
-  .scheme-label :global(strong) {
+  .scheme-label strong {
     color: var(--text-main);
     font-weight: 950;
     font-size: 15px;
   }
 
-  .scheme-label :global(em) {
+  .scheme-label em {
     font-size: 11px;
     font-style: normal;
     color: var(--yc-p);

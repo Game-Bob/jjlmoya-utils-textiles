@@ -205,7 +205,7 @@
     gap: 12px;
   }
 
-  :global(.action-pill) {
+  .action-pill {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: 16px;
@@ -215,7 +215,7 @@
     gap: 16px;
   }
 
-  :global(.icon-box) {
+  .icon-box {
     width: 44px;
     height: 44px;
     background: var(--bg-muted);
@@ -228,21 +228,21 @@
     flex-shrink: 0;
   }
 
-  :global(.action-content) { flex: 1; }
+  .action-content { flex: 1; }
 
-  :global(.action-text) {
+  .action-text {
     display: block;
     font-size: 14px;
     color: var(--text-muted);
   }
 
-  :global(.action-text strong) { font-weight: 700; }
+  .action-text strong { font-weight: 700; }
 
-  :global(.action-val-pos) { color: var(--sp-p); }
+  .action-val-pos { color: var(--sp-p); }
 
-  :global(.action-val-neg) { color: #f87171; }
+  .action-val-neg { color: #f87171; }
 
-  :global(.action-note) {
+  .action-note {
     display: block;
     font-size: 10px;
     color: var(--text-muted);

@@ -119,7 +119,7 @@
     display: none;
   }
 
-  :global(.needle-hole) {
+  .needle-hole {
     flex: 0 0 auto;
     width: 64px;
     height: 64px;
@@ -135,7 +135,7 @@
     scroll-snap-align: center;
   }
 
-  :global(.needle-hole::after) {
+  .needle-hole::after {
     content: '';
     position: absolute;
     width: var(--size-px);
@@ -146,20 +146,20 @@
     transition: transform 0.3s ease;
   }
 
-  :global(.needle-hole.active) {
+  .needle-hole.active {
     border-color: var(--nc-p);
     background: rgba(59, 130, 246, 0.08);
     transform: scale(1.15);
     box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.15);
   }
 
-  :global(.needle-hole.active::after) {
+  .needle-hole.active::after {
     opacity: 1;
     background: var(--nc-p);
     transform: scale(1.05);
   }
 
-  :global(.hole-label) {
+  .hole-label {
     position: absolute;
     bottom: -28px;
     font-size: 11px;
@@ -168,7 +168,7 @@
     transition: color 0.2s;
   }
 
-  :global(.needle-hole.active .hole-label) {
+  .needle-hole.active .hole-label {
     color: var(--nc-p);
   }
 
@@ -308,35 +308,35 @@
     border-bottom: 1px solid var(--border-color);
   }
 
-  .needle-table :global(td) {
+  .needle-table td {
     padding: 16px;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-muted);
     transition: all 0.2s;
   }
 
-  .needle-table :global(tbody tr:nth-child(even) td) {
+  .needle-table tbody tr:nth-child(even td) {
     background: rgba(0, 0, 0, 0.02);
   }
 
-  .theme-dark .needle-table :global(tbody tr:nth-child(even) td) {
+  .theme-dark .needle-table tbody tr:nth-child(even td) {
     background: rgba(255, 255, 255, 0.02);
   }
 
-  .needle-table :global(tr:hover td) {
+  .needle-table tr:hover td {
     background: var(--bg-muted);
   }
 
-  .needle-table :global(tr.active td) {
+  .needle-table tr.active td {
     background: rgba(59, 130, 246, 0.05);
     color: var(--nc-p);
     font-weight: 700;
   }
 
-  .needle-table :global(tr.active td:first-child) {
+  .needle-table tr.active td:first-child {
     box-shadow: inset 4px 0 0 var(--nc-p);
   }
 
-  .theme-dark .needle-table :global(tr.active td) {
+  .theme-dark .needle-table tr.active td {
     background: rgba(59, 130, 246, 0.1);
   }

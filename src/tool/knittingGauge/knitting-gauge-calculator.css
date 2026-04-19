@@ -24,7 +24,7 @@
     color: #444;
   }
 
-  :global(.theme-dark) .knitting-gauge-card {
+  .theme-dark .knitting-gauge-card {
     --gauge-primary: #ff7e7e;
     --gauge-secondary: #2d2d30;
     --gauge-accent: #ffa4a4;
@@ -124,7 +124,7 @@
     color: inherit;
   }
 
-  :global(.theme-dark) .stepper-btn {
+  .theme-dark .stepper-btn {
     background: rgba(255, 255, 255, 0.04);
   }
 
@@ -277,7 +277,7 @@
     justify-content: center;
   }
 
-  :global(.theme-dark) .info-icon {
+  .theme-dark .info-icon {
     background: rgba(255, 255, 255, 0.12);
   }
 
@@ -310,7 +310,7 @@
     pointer-events: none;
   }
 
-  :global(.theme-dark) [data-tooltip]::before {
+  .theme-dark [data-tooltip]::before {
     background: #1f2937;
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
@@ -329,7 +329,7 @@
     display: none;
   }
 
-  :global(.theme-dark) .yarn-calc-extra {
+  .theme-dark .yarn-calc-extra {
     background: rgba(255, 126, 126, 0.08);
     border-color: rgba(255, 126, 126, 0.15);
   }
@@ -355,7 +355,7 @@
     border: 1px solid #fde68a;
   }
 
-  :global(.theme-dark) .alert-card-warn {
+  .theme-dark .alert-card-warn {
     background: rgba(245, 158, 11, 0.15);
     color: #fbbf24;
     border-color: rgba(245, 158, 11, 0.3);
@@ -367,7 +367,7 @@
     border: 1px solid #fecaca;
   }
 
-  :global(.theme-dark) .alert-card-err {
+  .theme-dark .alert-card-err {
     background: rgba(239, 68, 68, 0.15);
     color: #f87171;
     border-color: rgba(239, 68, 68, 0.3);
@@ -408,7 +408,7 @@
     color: inherit;
   }
 
-  :global(.theme-dark) .ui-btn-secondary {
+  .theme-dark .ui-btn-secondary {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.15);
   }
@@ -417,7 +417,7 @@
     background: rgba(0, 0, 0, 0.08);
   }
 
-  :global(.theme-dark) .ui-btn-secondary:hover {
+  .theme-dark .ui-btn-secondary:hover {
     background: rgba(255, 255, 255, 0.12);
   }
 

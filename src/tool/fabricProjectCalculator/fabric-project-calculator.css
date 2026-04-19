@@ -284,7 +284,7 @@
     position: relative;
   }
 
-  :global(.ruler-mark) {
+  .ruler-mark {
     position: absolute;
     left: 0;
     right: 0;
@@ -293,7 +293,7 @@
     transform: translateY(-50%);
   }
 
-  :global(.ruler-mark::before) {
+  .ruler-mark::before {
     content: '';
     width: 8px;
     height: 1.5px;
@@ -303,7 +303,7 @@
     margin-right: 4px;
   }
 
-  :global(.ruler-mark span) {
+  .ruler-mark span {
     font-size: 0.58rem;
     font-weight: 700;
     color: var(--text-muted);
@@ -325,7 +325,7 @@
     border-radius: 4px;
   }
 
-  :global(.piece-row) {
+  .piece-row {
     display: flex;
     flex-direction: row;
     gap: 4px;
@@ -333,7 +333,7 @@
     align-items: stretch;
   }
 
-  :global(.piece-block) {
+  .piece-block {
     border-radius: 4px;
     border: 1.5px solid;
     display: flex;
@@ -346,11 +346,11 @@
     transition: filter 0.15s;
   }
 
-  :global(.piece-block:hover) {
+  .piece-block:hover {
     filter: brightness(1.08);
   }
 
-  :global(.piece-name) {
+  .piece-name {
     font-size: 0.62rem;
     font-weight: 800;
     color: var(--text-main);
@@ -361,11 +361,11 @@
     width: 100%;
   }
 
-  :global(.piece-fold) {
+  .piece-fold {
     border-left: 3px dashed rgba(79, 70, 229, 0.65);
   }
 
-  :global(.fold-indicator) {
+  .fold-indicator {
     font-size: 0.48rem;
     font-weight: 800;
     color: rgba(79, 70, 229, 0.75);
@@ -374,7 +374,7 @@
     margin-top: 2px;
   }
 
-  :global(.board-empty-state) {
+  .board-empty-state {
     flex: 1;
     display: flex;
     align-items: center;
@@ -441,7 +441,7 @@
     gap: 0.6rem;
   }
 
-  :global(.merch-item) {
+  .merch-item {
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -450,7 +450,7 @@
     color: var(--text-main);
   }
 
-  :global(.merch-dot) {
+  .merch-dot {
     color: var(--f-p);
     font-size: 0.5rem;
     flex-shrink: 0;

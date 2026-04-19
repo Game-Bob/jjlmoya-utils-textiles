@@ -94,7 +94,7 @@
     animation: fade-in 0.4s ease;
   }
 
-  :global(.protocol-display.hidden) {
+  .protocol-display.hidden {
     display: none;
   }
 
@@ -339,7 +339,7 @@
     animation: pulse-warning 4s ease infinite;
   }
 
-  :global(.warning-card.hidden) {
+  .warning-card.hidden {
     display: none;
   }
 
@@ -436,7 +436,7 @@
     background: var(--bg-page);
   }
 
-  :global(.empty-state.hidden) {
+  .empty-state.hidden {
     display: none;
   }
 
