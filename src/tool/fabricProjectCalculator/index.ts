@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { fabricProjectCalculator } from './entry';
 export * from './entry';
 export const FABRIC_PROJECT_CALCULATOR_TOOL: ToolDefinition = {

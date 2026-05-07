@@ -1,3 +1,4 @@
+import type { ToolDefinition } from '../../types';
 import { fiberPrep } from './entry';
 export * from './entry';
 export const FIBER_PREP_TOOL: ToolDefinition = {
