@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'textil-tvattrad';
 const title = 'Guide för Textilvård: Så tvättar du varje fibertyp';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Fett:</strong> Använd diskmedel eller galltvål före tvätt. Aldrig varmt vatten (fixerar fläcken).', '<strong>Bläck:</strong> Isopropanol för syntetmaterial; kallt vatten för naturfiber.', '<strong>Blod:</strong> ALLTID kallt vatten. Värme fixerar det permanent.', '<strong>Vin/Dryck:</strong> Omedelbart kallt vatten, följt av salt för att suga upp vätskan.'] },
     { type: 'paragraph', html: '"Köp mindre, välj bättre och låt det hålla." Ett välskött plagg kan hålla i årtionden. Ett misskött plagg bara i månader.' },
   ],
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Referenser',
-  bibliography: [
-    { name: 'ISO 3758 - Textilvårdssymboler', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Guide för textilmarkning', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'tekstil-gercekleri-elyaf-analizi';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Tersinden Yıkama', html: 'Rengi ve nakışları tamburla ve diğer giysilerle temastan korur.' },
     { type: 'paragraph', html: '"Az al, iyi seç ve uzun ömürlü kıl." — Bu analizör, bilinçli ve yüksek kaliteli bir gardıroba giden ilk adımınızdır.' },
   ],
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Referanslar',
-  bibliography: [
-    {
-      name: 'FTC - Tekstil Etiketleme Rehberi',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Avrupa Komisyonu - Tekstil Düzenlemesi',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Tekstil Bakım Sembolleri',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

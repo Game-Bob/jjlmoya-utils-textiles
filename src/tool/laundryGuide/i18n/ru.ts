@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'rukovodstvo-po-uhodu-za-tekstilem';
 const title = 'Руководство по уходу за текстилем: Как стирать каждый тип волокна';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Жиры:</strong> Используйте сухое мыло перед стиркой. Никогда не используйте горячую воду (закрепляет пятно).', '<strong>Чернила/Ручка:</strong> Изопропиловый спирт для синтетики; холодная вода для натуральных тканей.', '<strong>Кровь:</strong> ВСЕГДА холодная вода. Тепло закрепляет ее навсегда.', '<strong>Вино/Напитки:</strong> Немедленно холодная вода, затем соль для впитывания.'] },
     { type: 'paragraph', html: '"Покупайте меньше, выбирайте лучше и делайте так, чтобы вещь служила долго." Хорошо ухоженная вещь может служить десятилетиями. Плохо обработанная — месяцы.' },
   ],
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Источники',
-  bibliography: [
-    { name: 'ISO 3758 - Символы по уходу за текстилем', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Руководство по маркировке текстиля', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

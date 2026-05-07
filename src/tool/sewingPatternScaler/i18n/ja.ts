@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { SewingPatternScalerUI } from '../ui';
 
 const slug = 'sewing-pattern-scaler';
@@ -77,19 +78,8 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '参考文献',
-  bibliography: [
-    {
-      name: 'Patronaje: Las Bases - Teresa Gilewska',
-      url: 'https://www.scribd.com/document/696165843/patronaje-las-bases-by-teresa-gilewska',
-    },
-    {
-      name: 'Metric Pattern Cutting for Women\'s Wear - Winifred Aldrich',
-      url: 'https://download.e-bookshelf.de/download/0000/5989/88/L-G-0000598988-0002339537.pdf',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

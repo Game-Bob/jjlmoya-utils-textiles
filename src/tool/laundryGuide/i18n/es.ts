@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'guia-lavado-textil';
 const title = 'Guía de Cuidado Textil: Cómo Lavar Cada Tipo de Fibra';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Grasas:</strong> Usa jabón en seco antes de lavar. Nunca agua caliente (fija la mancha).', '<strong>Tinta/Bolígrafo:</strong> Alcohol isopropílico para sintéticos; agua fría para naturales.', '<strong>Sangre:</strong> Agua fría SIEMPRE. El calor lo fija permanentemente.', '<strong>Vino/Bebidas:</strong> Agua fría inmediatamente, seguida de sal para absorber.'] },
     { type: 'paragraph', html: '"Comprar menos, elegir mejor y hacerlo durar." Una prenda bien cuidada puede durar décadas. Una prenda maltratada, meses.' },
   ],
-  faqTitle: 'Preguntas Frecuentes',
   faq: faqData,
-  bibliographyTitle: 'Referencias',
-  bibliography: [
-    { name: 'ISO 3758 - Símbolos de Cuidado Textil', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Guía de Etiquetado Textil', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

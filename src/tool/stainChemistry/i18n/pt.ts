@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { StainChemistryUI } from '../ui';
 
 const slug = 'protocolo-quimico-manchas-texteis';
@@ -278,23 +279,8 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
       html: 'O <strong>álcool isopropílico</strong> é mais estável, mas em sintéticos tingidos pode arrastar o próprio pigmento. Recomendamos sempre o "teste da bainha" numa zona não visível antes do tratamento principal.',
     },
   ],
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    {
-      name: 'AATCC - Association for Advancing Color Technology and Chemistry',
-      url: 'https://www.aatcc.org',
-    },
-    {
-      name: 'Kissa, E. — Textile Auxiliaries',
-      url: 'https://www.springer.com/gp/book/9783642057328',
-    },
-    {
-      name: 'ISO 105 — Textiles: Tests for Colour Fastness',
-      url: 'https://www.iso.org/standard/72682.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

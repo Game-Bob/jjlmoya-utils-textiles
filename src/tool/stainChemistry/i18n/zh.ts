@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { StainChemistryUI } from '../ui';
 
 const slug = 'stain-chemical-protocol';
@@ -273,23 +274,8 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
       html: '<strong>异丙基酒精</strong>相对更稳定，但在染色的合成纤维上可能会带走色素本身。我们建议在正式处理前，始终先在“内锁边”等隐蔽区域进行测试。',
     },
   ],
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '参考文献',
-  bibliography: [
-    {
-      name: 'AATCC - 美国纺织化学家与染色家协会',
-      url: 'https://www.aatcc.org',
-    },
-    {
-      name: 'Kissa, E. — 纺织助剂',
-      url: 'https://www.springer.com/gp/book/9783642057328',
-    },
-    {
-      name: 'ISO 105 — 纺织品：色牢度试验',
-      url: 'https://www.iso.org/standard/72682.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

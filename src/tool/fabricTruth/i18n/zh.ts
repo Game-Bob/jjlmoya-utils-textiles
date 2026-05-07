@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'fabric-truthfulness';
@@ -264,23 +265,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: '反面洗涤', html: '保护颜色和绣花免受滚筒和其他衣物的磨擦。' },
     { type: 'paragraph', html: '“买得少一点，选得好一点，穿得久一点。” —— 这个分析工具是您迈向理性、高品质衣橱的第一步。' },
   ],
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '参考文献',
-  bibliography: [
-    {
-      name: 'FTC - 纺织纤维产品指南',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: '欧盟委员会 - 纺织品法规',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - 纺织品维护标签符号',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

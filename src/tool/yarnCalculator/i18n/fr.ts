@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { YarnCalculatorUI } from '../ui';
 
 const slug = 'calculateur-laine';
@@ -86,23 +87,8 @@ export const content: ToolLocaleContent<YarnCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    {
-      name: 'Craft Yarn Council: Standard Yarn Weights & Yardages',
-      url: 'https://www.craftyarncouncil.com/standards/yarn-weight-system',
-    },
-    {
-      name: 'Interweave Essentials: Yarn Substitution and Estimation',
-      url: 'https://www.interweave.com/article/knitting/yarn-substitution-angelina-take-two/',
-    },
-    {
-      name: 'The Woolery: Fibers and Calculation of Yarn Usage',
-      url: 'https://woolery.com/blogs/the-woolery-blog/yarn-weight-charts-helpful-guide/',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

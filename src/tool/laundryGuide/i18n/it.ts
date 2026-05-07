@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'guida-lavaggio-tessile';
 const title = 'Guida alla Cura Tessile: Come Lavare Ogni Tipo di Fibra';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Grassi:</strong> Usa sapone a secco prima del lavaggio. Mai acqua calda (fissa la macchia).', '<strong>Inchiostro/Penna:</strong> Alcol isopropilico per i sintetici; acqua fredda per i naturali.', '<strong>Sangue:</strong> Acqua fredda SEMPRE. Il calore fissa la macchia permanentemente.', '<strong>Vino/Bevande:</strong> Acqua fredda immediatamente, seguita da sale per assorbire.'] },
     { type: 'paragraph', html: '"Comprare meno, scegliere meglio e farlo durare." Un capo ben curato può durare decenni. Un capo maltrattato, mesi.' },
   ],
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Riferimenti',
-  bibliography: [
-    { name: 'ISO 3758 - Simboli di Cura Tessile', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Guida all\'Etichettatura Tessile', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

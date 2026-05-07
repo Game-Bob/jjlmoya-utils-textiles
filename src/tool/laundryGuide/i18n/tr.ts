@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'tekstil-bakim-kilavuzu';
 const title = 'Tekstil Bakım Kılavuzu: Her Lif Türü Nasıl Yıkanır';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Yağlar:</strong> Yıkamadan önce kuru sabun kullanın. Asla sıcak su kullanmayın (lekeyi sabitler).', '<strong>Mürekkep/Tükenmez Kalem:</strong> Sentetikler için izopropil alkol; doğallar için soğuk su.', '<strong>Kan:</strong> HER ZAMAN soğuk su. Isı onu kalıcı olarak sabitler.', '<strong>Şarap/İçecekler:</strong> Hemen soğuk su, ardından emmesi için tuz.'] },
     { type: 'paragraph', html: '"Daha az al, daha iyi seç ve uzun süre dayanmasını sağla." İyi bakılan bir giysi on yıllarca dayanabilir. Kötü davranılan bir giysi ise aylar sürer.' },
   ],
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Referanslar',
-  bibliography: [
-    { name: 'ISO 3758 - Tekstil Bakım Sembolleri', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Tekstil Etiketleme Kılavuzu', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

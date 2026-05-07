@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FiberPrepUI } from '../ui';
 
 const slug = 'preparation-fibres-teinture-naturelle';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<FiberPrepUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Questions Fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    {
-      name: 'La Escuela Artesana - Atelier de Teintures Naturelles sur Laine',
-      url: 'https://laescuelaartesana.com/taller-de-tintes-naturales-sobre-lana/',
-    },
-    {
-      name: 'Tatiana Sarasa (@tatianasarasa) - Artiste Textile et Teintures Naturelles',
-      url: 'https://www.instagram.com/tatianasarasa/',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

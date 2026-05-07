@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'pravda-o-tkani-analiz-kachestva-volokon';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Стирка наизнанку', html: 'Защищает цвет и вышивку от трения о барабан и другие вещи.' },
     { type: 'paragraph', html: '"Покупать меньше, выбирать лучше и делать так, чтобы вещь служила долго". — Этот анализатор — ваш первый шаг к осознанному и высококачественному гардеробу.' },
   ],
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Библиография',
-  bibliography: [
-    {
-      name: 'FTC - Руководство по маркировке текстиля',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Европейская комиссия - Регулирование текстиля',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Символы по уходу за текстилем',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

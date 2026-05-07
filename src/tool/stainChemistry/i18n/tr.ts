@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { StainChemistryUI } from '../ui';
 
 const slug = 'tekstil-leke-kimyasi-protokolu';
@@ -278,23 +279,8 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
       html: '<strong>İzopropil alkol</strong> daha stabildir ancak boyalı sentetiklerde pigmentin kendisini sürükleyebilir. Ana işlemden önce her zaman görünmeyen bir bölgede "kenar kıvrımı testi" yapılmasını öneririz.',
     },
   ],
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynakça',
-  bibliography: [
-    {
-      name: 'AATCC - Association for Advancing Color Technology and Chemistry',
-      url: 'https://www.aatcc.org',
-    },
-    {
-      name: 'Kissa, E. — Textile Auxiliaries',
-      url: 'https://www.springer.com/gp/book/9783642057328',
-    },
-    {
-      name: 'ISO 105 — Textiles: Tests for Colour Fastness',
-      url: 'https://www.iso.org/standard/72682.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

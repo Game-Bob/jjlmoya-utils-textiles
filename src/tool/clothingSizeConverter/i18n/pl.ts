@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { ClothingSizeConverterUI } from '../ui';
 
 const slug = 'miedzynarodowy-konwerter-rozmiarow-odziezy';
@@ -206,17 +207,8 @@ export const content: ToolLocaleContent<ClothingSizeConverterUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Najczęściej Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    { name: 'ISO 3635: Rozmiary odzieży - Oficjalny standard', url: 'https://www.iso.org/standard/68644.html' },
-    { name: 'Standardy rozmiarów ubrań - Wikipedia', url: 'https://pl.wikipedia.org/wiki/Rozmiar_odzie%C5%BCy' },
-    {
-      name: 'Międzynarodowa konwersja rozmiarów - Wikipedia',
-      url: 'https://en.wikipedia.org/wiki/Clothing_size#International_variations',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

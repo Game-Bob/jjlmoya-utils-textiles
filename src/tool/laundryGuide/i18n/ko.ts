@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'laundry-guide';
 const title = '섬유별 세탁 가이드: 소재별 올바른 세탁 및 관리 방법';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>기름기:</strong> 세탁 전 전처리 세제를 사용하세요. 절대 뜨거운 물을 쓰지 마세요(얼룩을 고착시킴).', '<strong>잉크/볼펜:</strong> 합성 섬유는 소독용 알코올, 천연 섬유는 찬물.', '<strong>혈액:</strong> 언제나 찬물. 열은 혈액을 영구적으로 고착시킵니다.', '<strong>와인/음료:</strong> 즉시 찬물로 씻어내고 소금을 뿌려 흡수시키세요.'] },
     { type: 'paragraph', html: '"적게 사고, 더 잘 고르고, 오래 입으세요." 잘 관리된 옷은 수십 년을 가지만, 잘못 다루면 몇 달 만에 사라집니다.' },
   ],
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '참고 문헌',
-  bibliography: [
-    { name: 'ISO 3758 - 섬유 관리 기호', url: 'https://www.iso.org/standard/60465.html' },
-    { name: '의류 라벨 가이드', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

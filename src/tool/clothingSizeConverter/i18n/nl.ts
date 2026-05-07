@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { ClothingSizeConverterUI } from '../ui';
 
 const slug = 'internationale-kledingmaten-omzetter';
@@ -206,17 +207,8 @@ export const content: ToolLocaleContent<ClothingSizeConverterUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bibliografie',
-  bibliography: [
-    { name: 'ISO 3635: Kledingmaten - Officiële Standaard', url: 'https://www.iso.org/standard/68644.html' },
-    { name: 'Kledingmaat Standaarden - Wikipedia', url: 'https://nl.wikipedia.org/wiki/Confectiemaat' },
-    {
-      name: 'Internationale Kledingmaten Conversie - Wikipedia',
-      url: 'https://en.wikipedia.org/wiki/Clothing_size#International_variations',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricProjectCalculatorUI } from '../ui';
 
 const slug = 'kalkulator-tkaniny-projekt';
@@ -86,23 +87,8 @@ export const content: ToolLocaleContent<FabricProjectCalculatorUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Najczęściej Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    {
-      name: 'Fabric Estimation Guide - Threads Magazine',
-      url: 'https://www.threadsmagazine.com/forum/measuring-fabric',
-    },
-    {
-      name: 'How much fabric do I need? - Seamwork',
-      url: 'https://www.seamwork.com/sewing-tutorials/the-anatomy-of-a-sewing-pattern',
-    },
-    {
-      name: 'Standard Fabric Consumption Charts - Textile School',
-      url: 'https://www.textileschool.com/209/fabric-consumption-in-garment-making/',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

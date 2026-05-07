@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'guide-lavage-textile';
 const title = 'Dimensionneur de Patron de Couture en Ligne';
@@ -279,13 +280,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Graisses :</strong> Utilisez du savon sec avant le lavage. Jamais d\'eau chaude (fixe la tache).', '<strong>Encre/Stylo :</strong> Alcool isopropylique pour les synthétiques ; eau froide pour les naturelles.', '<strong>Sang :</strong> Eau froide TOUJOURS. La chaleur la fixe définitivement.', '<strong>Vin/Boissons :</strong> Eau froide immédiatement, suivie de sel pour absorber.'] },
     { type: 'paragraph', html: '"Acheter moins, choisir mieux et le faire durer." Un vêtement bien entretenu peut durer des décennies. Un négligé, quelques mois.' },
   ],
-  faqTitle: 'Questions Fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    { name: 'ISO 3758 - Symboles d\'Entretien Textile', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'FTC - Guide d\'Étiquetage Textile', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { StainChemistryUI } from '../ui';
 
 const slug = 'textielvlekken-chemisch-protocol';
@@ -278,23 +279,8 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
       html: '<strong>Isopropylalcohol</strong> is stabieler, maar op geverfde synthetische stoffen kan het het pigment zelf meeslepen. We raden altijd de "zoomtest" aan op een onopvallende plek voor de hoofdbehandeling.',
     },
   ],
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bibliografie',
-  bibliography: [
-    {
-      name: 'AATCC - Association for Advancing Color Technology and Chemistry',
-      url: 'https://www.aatcc.org',
-    },
-    {
-      name: 'Kissa, E. — Textile Auxiliaries',
-      url: 'https://www.springer.com/gp/book/9783642057328',
-    },
-    {
-      name: 'ISO 105 — Textiles: Tests for Colour Fastness',
-      url: 'https://www.iso.org/standard/72682.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'prawda-tekstylna-analiza-wlokien';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Pranie na lewej stronie', html: 'Chroni kolor i hafty przed ocieraniem o bęben i inne ubrania.' },
     { type: 'paragraph', html: '"Kupuj mniej, wybieraj lepiej i spraw, by służyło długo." — Ten analizator to Twój pierwszy krok w stronę świadomej i wysokiej jakości garderoby.' },
   ],
-  faqTitle: 'Często zadawane pytania',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    {
-      name: 'FTC - Przewodnik po etykietowaniu tekstyliów',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Komisja Europejska - Regulacje dotyczące tekstyliów',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Symbole konserwacji tekstyliów',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

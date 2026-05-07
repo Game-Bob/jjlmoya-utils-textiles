@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'fabric-truthfulness';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: '뒤집어서 세탁하기', html: '세탁조나 다른 옷과의 마찰로부터 색상과 자수를 보호합니다.' },
     { type: 'paragraph', html: '"적게 사고, 더 잘 고르고, 오래 입기." —— 이 분석 도구는 의식 있고 수준 높은 옷장을 향한 첫걸음입니다.' },
   ],
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '참고 문헌',
-  bibliography: [
-    {
-      name: 'FTC - 섬유 제품 라벨링 가이드',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: '유럽 위원회 - 섬유 규제',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - 섬유 관리 기호',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

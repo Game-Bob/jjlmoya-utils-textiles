@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { StainChemistryUI } from '../ui';
 
 const slug = 'khimicheskij-protokol-udaleniya-pyaten';
@@ -278,23 +279,8 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
       html: '<strong>Изопропиловый спирт</strong> более стабилен, но на окрашенной синтетике он может вымывать сам пигмент. Мы всегда рекомендуем проводить «тест на шве» на незаметном участке перед основной обработкой.',
     },
   ],
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Библиография',
-  bibliography: [
-    {
-      name: 'AATCC - Association for Advancing Color Technology and Chemistry',
-      url: 'https://www.aatcc.org',
-    },
-    {
-      name: 'Kissa, E. — Textile Auxiliaries',
-      url: 'https://www.springer.com/gp/book/9783642057328',
-    },
-    {
-      name: 'ISO 105 — Textiles: Tests for Colour Fastness',
-      url: 'https://www.iso.org/standard/72682.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

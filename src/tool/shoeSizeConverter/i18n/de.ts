@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { ShoeSizeConverterUI } from '../ui';
 
 const slug = 'schuhgroessen-umrechner';
@@ -77,14 +78,8 @@ export const content: ToolLocaleContent<ShoeSizeConverterUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Literaturhinweise',
-  bibliography: [
-    { name: 'Schuhgröße - Wikipedia', url: 'https://de.wikipedia.org/wiki/Schuhgröße' },
-    { name: 'ISO 9407: Shoe sizes - Mondopoint system', url: 'https://www.iso.org/standard/17157.html' },
-    { name: 'Shoe size conversion - Zappos', url: 'https://www.zappos.com/c/shoe-size-conversion' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

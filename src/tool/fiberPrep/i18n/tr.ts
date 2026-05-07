@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FiberPrepUI } from '../ui';
 
 const slug = 'elyaflarin-boyamaya-hazirlanmasi';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<FiberPrepUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynakça',
-  bibliography: [
-    {
-      name: 'La Escuela Artesana - Taller de Tintes Naturales sobre Lana',
-      url: 'https://laescuelaartesana.com/taller-de-tintes-naturales-sobre-lana/',
-    },
-    {
-      name: 'Tatiana Sarasa (@tatianasarasa) - Tekstil Sanatçısı ve Doğal Boyalar',
-      url: 'https://www.instagram.com/tatianasarasa/',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

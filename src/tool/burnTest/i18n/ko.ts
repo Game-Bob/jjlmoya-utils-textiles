@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { BurnTestUI } from '../ui';
 
 const slug = 'textile-burn-test';
@@ -114,23 +115,8 @@ export const content: ToolLocaleContent<BurnTestUI> = {
   slug,
   title,
   description,
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '참고 문헌',
-  bibliography: [
-    {
-      name: 'AATCC TM20: Fiber Analysis - Qualitative',
-      url: 'https://members.aatcc.org/store/tm20/485/',
-    },
-    {
-      name: 'Textile Fibers: Identification and Testing - NIST',
-      url: 'https://nvlpubs.nist.gov/nistpubs/Legacy/circ/nbscircular41e3.pdf',
-    },
-    {
-      name: 'Burn Test Chart for Fiber Identification - Fabric Mart',
-      url: 'https://fabricmartfabrics.com/pages/burn-test-chart',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

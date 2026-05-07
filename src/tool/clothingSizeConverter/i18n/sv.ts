@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { ClothingSizeConverterUI } from '../ui';
 
 const slug = 'internationell-storlekskonverterare-klader';
@@ -206,17 +207,8 @@ export const content: ToolLocaleContent<ClothingSizeConverterUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Bibliografi',
-  bibliography: [
-    { name: 'ISO 3635: Klädstorlekar - Officiell Standard', url: 'https://www.iso.org/standard/68644.html' },
-    { name: 'Standarder för Klädstorlekar - Wikipedia', url: 'https://sv.wikipedia.org/wiki/Kl%C3%A4dstorlek' },
-    {
-      name: 'Internationell Storlekskonvertering - Wikipedia',
-      url: 'https://en.wikipedia.org/wiki/Clothing_size#International_variations',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

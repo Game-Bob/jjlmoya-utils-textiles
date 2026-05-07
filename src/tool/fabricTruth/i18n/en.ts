@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'fabric-truthfulness';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Inside Out Washing', html: 'Protects color and embroidery from rubbing against the drum and other garments.' },
     { type: 'paragraph', html: '"Buy less, choose better, and make it last." — This calculator is your first step towards a conscious and high-quality wardrobe.' },
   ],
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Bibliography',
-  bibliography: [
-    {
-      name: 'FTC - Textile Labeling Guide',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'European Commission - Textile Regulation',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Textile Care Symbols',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

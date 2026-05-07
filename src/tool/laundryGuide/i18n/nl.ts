@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'textielverzorgingsgids';
 const title = 'Gids voor Textielverzorging: Hoe elk type vezel te wassen';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Vetten:</strong> Gebruik droge zeep voor het wassen. Nooit heet water (zet de vlek vast).', '<strong>Inkt/Pen:</strong> Isopropylalcohol voor synthetische stoffen; koud water voor natuurlijke stoffen.', '<strong>Bloed:</strong> ALTIJD koud water. Hitte zet het permanent vast.', '<strong>Wijn/Dranken:</strong> Onmiddellijk koud water, gevolgd door zout om te absorberen.'] },
     { type: 'paragraph', html: '"Koop minder, kies beter en laat het lang meegaan." Een goed verzorgd kledingstuk kan decennia meegaan. Een slecht behandeld stuk, maanden.' },
   ],
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Verwijzingen',
-  bibliography: [
-    { name: 'ISO 3758 - Textielverzorgingssymbolen', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Gids voor Textieletikettering', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { StainChemistryUI } from '../ui';
 
 const slug = 'protocole-chimique-taches';
@@ -288,23 +289,8 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
       html: 'L\'<strong>alcool isopropylique</strong> est plus stable, mais sur les synthétiques teints, il peut entraîner le pigment lui-même. Nous recommandons toujours le "test de l\'ourlet" sur une zone cachée avant le traitement principal.',
     },
   ],
-  faqTitle: 'Questions Fréquentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    {
-      name: 'AATCC — Association for Advancing Color Technology and Chemistry',
-      url: 'https://www.aatcc.org',
-    },
-    {
-      name: 'Kissa, E. — Textile Auxiliaries',
-      url: 'https://www.springer.com/gp/book/9783642057328',
-    },
-    {
-      name: 'ISO 105 — Tests de solidité des coloris',
-      url: 'https://www.iso.org/standard/72682.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

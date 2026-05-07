@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'verite-textile';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Lavage à l\'envers', html: 'Protège la couleur et les broderies du frottement avec le tambour et d\'autres vêtements.' },
     { type: 'paragraph', html: '"Acheter moins, choisir mieux et faire durer." — Ce calculateur est votre première étape vers une garde-robe consciente et de haute qualité.' },
   ],
-  faqTitle: 'Foire Aux Questions',
   faq: faqData,
-  bibliographyTitle: 'Bibliographie',
-  bibliography: [
-    {
-      name: 'FTC - Guide d\'Étiquetage Textile',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Commission Européenne - Réglementation Textile',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Symboles d\'Entretien Textile',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

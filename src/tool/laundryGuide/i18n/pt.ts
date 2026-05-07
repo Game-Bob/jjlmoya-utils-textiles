@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'guia-lavagem-textil';
 const title = 'Guia de Cuidados Têxteis: Como Lavar Cada Tipo de Fibra';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Gorduras:</strong> Use sabão a seco antes de lavar. Nunca água quente (fixa a mancha).', '<strong>Tinta/Caneta:</strong> Álcool isopropílico para sintéticos; água fria para naturais.', '<strong>Sangue:</strong> Água fria SEMPRE. O calor fixa-o permanentemente.', '<strong>Vinho/Bebidas:</strong> Água fria imediatamente, seguida de sal para absorver.'] },
     { type: 'paragraph', html: '"Comprar menos, escolher melhor e fazer durar." Uma peça bem cuidada pode durar décadas. Uma peça maltratada, meses.' },
   ],
-  faqTitle: 'Perguntas Frequentes',
   faq: faqData,
-  bibliographyTitle: 'Referências',
-  bibliography: [
-    { name: 'ISO 3758 - Símbolos de Cuidados Têxteis', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Guia de Etiquetagem Têxtil', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

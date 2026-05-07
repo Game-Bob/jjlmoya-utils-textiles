@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FiberPrepUI } from '../ui';
 
 const slug = 'podgotovka-volokon-krashenie';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<FiberPrepUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Часто задаваемые вопросы',
   faq: faqData,
-  bibliographyTitle: 'Библиография',
-  bibliography: [
-    {
-      name: 'La Escuela Artesana - Taller de Tintes Naturales sobre Lana',
-      url: 'https://laescuelaartesana.com/taller-de-tintes-naturales-sobre-lana/',
-    },
-    {
-      name: 'Tatiana Sarasa (@tatianasarasa) - Artista Textil и Natural Dyes',
-      url: 'https://www.instagram.com/tatianasarasa/',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

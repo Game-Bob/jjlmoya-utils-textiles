@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { ClothingSizeConverterUI } from '../ui';
 
 const slug = 'uluslararasi-giysi-beden-donusturucu';
@@ -206,17 +207,8 @@ export const content: ToolLocaleContent<ClothingSizeConverterUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Sıkça Sorulan Sorular',
   faq: faqData,
-  bibliographyTitle: 'Kaynakça',
-  bibliography: [
-    { name: 'ISO 3635: Giysi Bedenleri - Resmi Standart', url: 'https://www.iso.org/standard/68644.html' },
-    { name: 'Giysi Beden Standartları - Wikipedia', url: 'https://tr.wikipedia.org/wiki/Beden_tablosu' },
-    {
-      name: 'Uluslararası Beden Dönüşümü - Wikipedia',
-      url: 'https://en.wikipedia.org/wiki/Clothing_size#International_variations',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

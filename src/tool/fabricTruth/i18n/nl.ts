@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'textiel-waarheid-vezelkwaliteit-analyse';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Binnenstebuiten Wassen', html: 'Beschermt kleur en borduursels tegen wrijving met de trommel och andere kledingstappen.' },
     { type: 'paragraph', html: '"Koop minder, kies beter en laat het lang meegaan." — Deze analysator is je eerste stap naar een bewuste en hoogwaardige garderobe.' },
   ],
-  faqTitle: 'Veelgestelde Vragen',
   faq: faqData,
-  bibliographyTitle: 'Bibliografie',
-  bibliography: [
-    {
-      name: 'FTC - Gids voor Textieletikettering',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Europese Commissie - Textielverordening',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Symbolen voor Textielverzorging',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

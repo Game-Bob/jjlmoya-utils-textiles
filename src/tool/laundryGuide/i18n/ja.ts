@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'laundry-guide';
 const title = '繊維別お手入れガイド：素材に合わせた正しい洗濯方法';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>油汚れ：</strong> 洗濯前に中性洗剤（原液）をつけておきます。お湯は汚れを固めてしまうので厳禁です。', '<strong>インク・ボールペン：</strong> 合成繊維には無水エタノール、天然繊維には冷水。', '<strong>血液：</strong> 必ず冷水で。熱はタンパク質を固め、一生取れないシミにします。', '<strong>ワイン・飲料：</strong> すぐに冷水で洗い、塩で水分を吸い取らせます。'] },
     { type: 'paragraph', html: '「少なく買い、良いものを選び、長持ちさせる」。大切にお手入れされた服は何十年も着られます。不適切に扱われた服は、数ヶ月で寿命を迎えます。' },
   ],
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '参考文献',
-  bibliography: [
-    { name: 'ISO 3758 - テキスタイルケアシンボル', url: 'https://www.iso.org/standard/60465.html' },
-    { name: '衣類・繊維製品の表示ガイド', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

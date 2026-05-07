@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'textil-wahrheit-faseranalyse';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Auf links waschen', html: 'Schützt Farben und Stickereien vor der Reibung mit der Trommel und anderen Kleidungsstücken.' },
     { type: 'paragraph', html: '"Weniger kaufen, besser wählen und langlebig machen." — Dieser Analysator ist Ihr erster Schritt zu einem bewussten und hochwertigen Kleiderschrank.' },
   ],
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Literaturhinweise',
-  bibliography: [
-    {
-      name: 'FTC - Leitfaden zur Textilkennzeichnung',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Europäische Kommission - Textilregulierung',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Textilpflegesymbole',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

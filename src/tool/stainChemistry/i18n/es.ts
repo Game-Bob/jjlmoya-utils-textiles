@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { StainChemistryUI } from '../ui';
 
 const slug = 'protocolo-quimico-manchas';
@@ -278,23 +279,8 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
       html: 'El <strong>alcohol isopropílico</strong> es más estable, pero en sintéticos teñidos puede arrastrar el propio pigmento. Recomendamos siempre la "prueba del dobladillo" en una zona no visible antes del tratamiento principal.',
     },
   ],
-  faqTitle: 'Preguntas Frecuentes',
   faq: faqData,
-  bibliographyTitle: 'Bibliografía',
-  bibliography: [
-    {
-      name: 'AATCC - Association for Advancing Color Technology and Chemistry',
-      url: 'https://www.aatcc.org',
-    },
-    {
-      name: 'Kissa, E. — Textile Auxiliaries',
-      url: 'https://www.springer.com/gp/book/9783642057328',
-    },
-    {
-      name: 'ISO 105 — Textiles: Tests for Colour Fastness',
-      url: 'https://www.iso.org/standard/72682.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

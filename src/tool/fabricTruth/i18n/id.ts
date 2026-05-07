@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'kejujuran-tekstil-analisis-serat';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Cuci dengan Posisi Terbalik', html: 'Melindungi warna dan sulaman dari gesekan dengan drum mesin cuci dan pakaian lainnya.' },
     { type: 'paragraph', html: '"Beli lebih sedikit, pilih lebih baik, dan buat bertahan lama." — Alat analisis ini adalah langkah pertama Anda menuju lemari pakaian yang sadar dan berkualitas tinggi.' },
   ],
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
   faq: faqData,
-  bibliographyTitle: 'Referensi',
-  bibliography: [
-    {
-      name: 'FTC - Panduan Pelabelan Tekstil',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Komisi Eropa - Regulasi Tekstil',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Simbol Perawatan Tekstil',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

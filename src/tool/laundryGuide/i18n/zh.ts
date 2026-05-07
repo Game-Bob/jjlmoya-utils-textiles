@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'laundry-guide';
 const title = '纺织品护理指南：如何洗涤每种纤维类型';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>油脂：</strong> 洗涤前使用干皂，严禁用热水（会固化污渍）。', '<strong>墨水/圆珠笔：</strong> 合成纤维用异丙醇；天然纤维用冷水。', '<strong>血迹：</strong> 务必使用冷水。热量会使其永久固化。', '<strong>红酒/饮料：</strong> 立即冷水冲洗，然后撒盐吸收。'] },
     { type: 'paragraph', html: '“少买，优选，使之长久。” 护理得当的衣服可以穿几十年，护理不当的只能穿几个月。' },
   ],
-  faqTitle: '常见问题',
   faq: faqData,
-  bibliographyTitle: '参考资料',
-  bibliography: [
-    { name: 'ISO 3758 - 纺织品护理符号', url: 'https://www.iso.org/standard/60465.html' },
-    { name: '纺织品标签指南', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

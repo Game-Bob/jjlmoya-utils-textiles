@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'przewodnik-pielegnacji-tekstyliow';
 const title = 'Przewodnik po Pielęgnacji Tekstyliów: Jak Prać Każdy Rodzaj Włókna';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Tłuszcze:</strong> Użyj mydła na sucho przed praniem. Nigdy gorącej wody (utrwala plamę).', '<strong>Atrament/Długopis:</strong> Alkohol izopropylowy dla syntetyków; zimna woda dla naturalnych.', '<strong>Krew:</strong> ZAWSZE zimna woda. Ciepło utrwala ją na stałe.', '<strong>Wino/Napoje:</strong> Natychmiast zimna woda, a następnie sól do wchłonięcia.'] },
     { type: 'paragraph', html: '"Kupuj mniej, wybieraj lepiej i spraw, by trwało." Dobrze zadbane ubranie może służyć dekady. Zle traktowane — miesiące.' },
   ],
-  faqTitle: 'Najczęściej Zadawane Pytania',
   faq: faqData,
-  bibliographyTitle: 'Źródła',
-  bibliography: [
-    { name: 'ISO 3758 - Symbole Pielęgnacji Tekstyliów', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Przewodnik po Etykietowaniu Tekstyliów', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

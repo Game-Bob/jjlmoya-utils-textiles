@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'panduan-mencuci-tekstil';
 const title = 'Panduan Perawatan Tekstil: Cara Mencuci Setiap Jenis Serat';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Lemak:</strong> Gunakan sabun kering (dry soap) sebelum cuci. Jangan gunakan air panas (akan memantapkan noda).', '<strong>Tinta/Pulpen:</strong> Alkohol isopropil untuk sintetis; air dingin untuk alami.', '<strong>Darah:</strong> SELALU air dingin. Panas akan memantapkannya secara permanen.', '<strong>Anggur/Minuman:</strong> Air dingin segera, diikuti garam untuk menyerap.'] },
     { type: 'paragraph', html: '"Beli lebih sedikit, pilih lebih baik, dan buatlah awet." Pakaian yang dirawat dengan baik bisa bertahan puluhan tahun. Pakaian yang disalahartikan, hanya bertahan berbulan-bulan.' },
   ],
-  faqTitle: 'Pertanyaan yang Sering Diajukan',
   faq: faqData,
-  bibliographyTitle: 'Referensi',
-  bibliography: [
-    { name: 'ISO 3758 - Simbol Perawatan Tekstil', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Panduan Pelabelan Tekstil', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

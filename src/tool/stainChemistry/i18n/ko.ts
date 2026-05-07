@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { StainChemistryUI } from '../ui';
 
 const slug = 'stain-chemical-protocol';
@@ -275,23 +276,8 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
       html: '<strong>이소프로필 알코올</strong>은 비교적 안정적이지만, 염색된 합성 원단에서는 색상 자체를 빼낼 수 있습니다. 본격적인 처리에 앞서 항상 "안쪽 시접" 부위에 먼저 테스트해보는 것을 권장합니다.',
     },
   ],
-  faqTitle: '자주 묻는 질문',
   faq: faqData,
-  bibliographyTitle: '참고 문헌',
-  bibliography: [
-    {
-      name: 'AATCC - Association for Advancing Color Technology and Chemistry',
-      url: 'https://www.aatcc.org',
-    },
-    {
-      name: 'Kissa, E. — Textile Auxiliaries',
-      url: 'https://www.springer.com/gp/book/9783642057328',
-    },
-    {
-      name: 'ISO 105 — Textiles: Tests for Colour Fastness',
-      url: 'https://www.iso.org/standard/72682.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

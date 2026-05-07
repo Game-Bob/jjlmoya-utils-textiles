@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'veracidad-textil';
@@ -260,7 +261,6 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Lavado del Revés', html: 'Protege el color y los bordados del roce con el tambor y otras prendas.' },
     { type: 'paragraph', html: '"Comprar menos, elegir mejor y hacerlo durar." — Esta calculadora es tu primer paso hacia un armario consciente y de alta calidad.' },
   ],
-  faqTitle: 'Preguntas Frecuentes',
   faq: [
     {
       question: '¿Qué es el "Greenwashing" en la moda?',
@@ -279,21 +279,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
       answer: 'Busca composiciones monomateriales (100% Algodón, 100% Lana). Las mezclas complejas suelen usarse para abaratar costes de producción y ocultan fibras sintéticas bajo nombres comerciales atractivos.',
     },
   ],
-  bibliographyTitle: 'Bibliografía',
-  bibliography: [
-    {
-      name: 'FTC - Guía de Etiquetado Textil',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Comisión Europea - Regulación Textil',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Símbolos de Cuidado Textil',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: [
     {
       name: 'Localizar la etiqueta interna',

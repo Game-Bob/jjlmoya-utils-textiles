@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'laundry-guide';
 const title = 'Textile Care Guide: How to Wash Every Fabric Type';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Grease:</strong> Use dry soap before washing. Never hot water (sets the stain).', '<strong>Ink/Pen:</strong> Isopropyl alcohol for synthetics; cold water for naturals.', '<strong>Blood:</strong> Cold water ALWAYS. Heat sets it permanently.', '<strong>Wine/Drinks:</strong> Cold water immediately, followed by salt to absorb.'] },
     { type: 'paragraph', html: '"Buy less, choose better, and make it last." A well-cared-for garment can last decades. A neglected one, months.' },
   ],
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'References',
-  bibliography: [
-    { name: 'ISO 3758 - Textile Care Symbols', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'FTC - Textile Care Labels', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

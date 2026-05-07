@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'veridicita-tessile-analisi-fibre';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Lavaggio al Rovescio', html: 'Protegge il colore e i ricami dallo sfregamento con il cestello e altri capi.' },
     { type: 'paragraph', html: '"Comprare meno, scegliere meglio e farlo durare." — Questo analizzatore è il tuo primo passo verso un armadio consapevole e di alta qualità.' },
   ],
-  faqTitle: 'Domande Frequenti',
   faq: faqData,
-  bibliographyTitle: 'Bibliografia',
-  bibliography: [
-    {
-      name: 'FTC - Guida all\'Etichettatura Tessile',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Commissione Europea - Regolamentazione Tessile',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Simboli di Manutenzione Tessile',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

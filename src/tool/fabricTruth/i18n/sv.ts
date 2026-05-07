@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { FabricTruthUI } from '../ui';
 
 const slug = 'textil-sanning-fiberanalys';
@@ -260,23 +261,8 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Tvätta ut och in', html: 'Skyddar färg och broderier från friktion mot trumman och andra plagg.' },
     { type: 'paragraph', html: '"Köp mindre, välj bättre och låt det hålla länge." — Denna analysator är ditt första steg mot en medveten garderob av hög kvalitet.' },
   ],
-  faqTitle: 'Vanliga frågor',
   faq: faqData,
-  bibliographyTitle: 'Bibliografi',
-  bibliography: [
-    {
-      name: 'FTC - Guide till textilmärkning',
-      url: 'https://www.ftc.gov/business-guidance/resources/textile-fiber-products-guides',
-    },
-    {
-      name: 'Europeiska kommissionen - Textilförordning',
-      url: 'https://ec.europa.eu/growth/tools-databases/nando/',
-    },
-    {
-      name: 'ISO 3758:2012 - Skötselsymboler för textilier',
-      url: 'https://www.iso.org/standard/60465.html',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

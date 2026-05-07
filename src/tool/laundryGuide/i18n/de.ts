@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 
 const slug = 'textilpflege-leitfaden';
 const title = 'Textilpflege Leitfaden: So waschen Sie jeden Fasertyp';
@@ -263,13 +264,8 @@ export const content: ToolLocaleContent = {
     { type: 'list', items: ['<strong>Fett:</strong> Vor dem Waschen mit Trockenreiniger behandeln. Niemals heißes Wasser (fixiert den Fleck).', '<strong>Tinte/Kugelschreiber:</strong> Isopropylalkohol für Synthetik; kaltes Wasser für Naturfasern.', '<strong>Blut:</strong> IMMER kaltes Wasser. Hitze fixiert es dauerhaft.', '<strong>Wein/Getränke:</strong> Sofort kaltes Wasser, gefolgt von Salz zur Absorption.'] },
     { type: 'paragraph', html: '"Weniger kaufen, besser wählen und dafür sorgen, dass es hält." Ein gut gepflegtes Kleidungsstück kann Jahrzehnte halten. Ein schlecht behandeltes nur Monate.' },
   ],
-  faqTitle: 'Häufig gestellte Fragen',
   faq: faqData,
-  bibliographyTitle: 'Referenzen',
-  bibliography: [
-    { name: 'ISO 3758 - Textilpflege-Symbole', url: 'https://www.iso.org/standard/60465.html' },
-    { name: 'Leitfaden zur Textilkennzeichnung', url: 'https://www.ftc.gov/' },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
 };

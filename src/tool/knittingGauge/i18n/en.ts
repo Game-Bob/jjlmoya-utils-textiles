@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { KnittingGaugeUI } from '../ui';
 
 const slug = 'knitting-gauge-calculator';
@@ -86,19 +87,8 @@ export const content: ToolLocaleContent<KnittingGaugeUI> = {
   slug,
   title,
   description,
-  faqTitle: 'Frequently Asked Questions',
   faq: faqData,
-  bibliographyTitle: 'Bibliography',
-  bibliography: [
-    {
-      name: 'The Importance of Gauge - Tin Can Knits',
-      url: 'https://blog.tincanknits.com/2013/08/17/gauge/',
-    },
-    {
-      name: 'Knitting Gauge: How to Measure Stitches and Rows',
-      url: 'https://elizabethsmithknits.com/2020/10/30/how-to-measure-your-gauge-swatch/',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [

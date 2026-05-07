@@ -1,5 +1,6 @@
 import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dts';
 import type { ToolLocaleContent } from '../../../types';
+import { bibliography } from '../bibliography';
 import type { NeedleConverterUI } from '../ui';
 
 const slug = 'knitting-needle-converter';
@@ -77,19 +78,8 @@ export const content: ToolLocaleContent<NeedleConverterUI> = {
   slug,
   title,
   description,
-  faqTitle: 'よくある質問',
   faq: faqData,
-  bibliographyTitle: '参考文献',
-  bibliography: [
-    {
-      name: 'Craft Yarn Council: Needle and Hook Size Chart',
-      url: 'https://www.craftyarncouncil.com/standards/hooks-and-needles',
-    },
-    {
-      name: 'British Standards Institution: Textiles - Marking of Knitting Needles',
-      url: 'https://knowledge.bsigroup.com/products/textile-machinery-knitting-machines-number-of-needles-for-circular-knitting-machines-of-large-nominal-diameter',
-    },
-  ],
+  bibliography: bibliography,
   howTo: howToData,
   schemas: [faqSchema, howToSchema, appSchema],
   seo: [
