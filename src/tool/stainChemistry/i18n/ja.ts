@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: '赤ワイン / 果物',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: '長時間のつけ置き' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: '長時間のつけ置き' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: '直接ペーストを塗布' },
           delicate: {
             agentId: 'vinegar',
@@ -232,13 +232,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — 制御された酸化作用',
+      title: '01: 制御された酸化作用',
       icon: 'mdi:atom',
       html: '<strong>過炭酸ナトリウム</strong>は活性酸素を放出し、色素分子（シミの色の原因）の二重結合を切断することで、シミを無色化し水に溶けやすくします。有機系のシミに最も効果的な方法です。',
     },
     {
       type: 'card',
-      title: '02 — 溶剤による溶解作用',
+      title: '02: 溶剤による溶解作用',
       icon: 'mdi:flask-outline',
       html: 'オイルやインクのようなシミは水に溶けません。<strong>イソプロピルアルコール</strong>や<strong>アセトン</strong>のような溶剤は、表面張力を下げてシミの非極性分子を引きつけ、支持媒体へと移動させることができます。',
     },

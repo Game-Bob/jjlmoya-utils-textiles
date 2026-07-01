@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Az Çoktur (Deterjan)', html: 'Aşırı sabun, kirleri çeken ve kıyafetleri sertleştiren kalıntılar bırakır.' },
     { type: 'tip', title: 'Kurutma Makinesi: Sinsi Düşman', html: 'Kurutma filtresinde gördüğünüz havlar, sürtünme ve ısı nedeniyle giysilerinizden kopan parçalardır.' },
     { type: 'tip', title: 'Tersinden Yıkama', html: 'Rengi ve nakışları tamburla ve diğer giysilerle temastan korur.' },
-    { type: 'paragraph', html: '"Az al, iyi seç ve uzun ömürlü kıl." — Bu analizör, bilinçli ve yüksek kaliteli bir gardıroba giden ilk adımınızdır.' },
+    { type: 'paragraph', html: '"Az al, iyi seç ve uzun ömürlü kıl."  -  Bu analizör, bilinçli ve yüksek kaliteli bir gardıroba giden ilk adımınızdır.' },
   ],
   faq: faqData,
   bibliography: bibliography,

@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Meno è Meglio (Detersivo)', html: 'L\'eccesso di sapone lascia residui che attirano sporco e rendono i vestiti rigidi.' },
     { type: 'tip', title: 'Asciugatrice: Il Nemico Sottile', html: 'I pelucchi che vedi nel filtro dell\'asciugatrice sono pezzi dei tuoi vestiti che si sono staccati per la frizione e il calore.' },
     { type: 'tip', title: 'Lavaggio al Rovescio', html: 'Protegge il colore e i ricami dallo sfregamento con il cestello e altri capi.' },
-    { type: 'paragraph', html: '"Comprare meno, scegliere meglio e farlo durare." — Questo analizzatore è il tuo primo passo verso un armadio consapevole e di alta qualità.' },
+    { type: 'paragraph', html: '"Comprare meno, scegliere meglio e farlo durare."  -  Questo analizzatore è il tuo primo passo verso un armadio consapevole e di alta qualità.' },
   ],
   faq: faqData,
   bibliography: bibliography,

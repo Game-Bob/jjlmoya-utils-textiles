@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Sedikit Lebih Baik (Deterjen)', html: 'Kelebihan sabun meninggalkan residu yang menarik kotoran dan membuat pakaian terasa kaku.' },
     { type: 'tip', title: 'Pengering Mesin: Musuh yang Halus', html: 'Serat halus yang Anda lihat di filter pengering adalah bagian dari pakaian Anda yang terlepas karena gesekan dan panas.' },
     { type: 'tip', title: 'Cuci dengan Posisi Terbalik', html: 'Melindungi warna dan sulaman dari gesekan dengan drum mesin cuci dan pakaian lainnya.' },
-    { type: 'paragraph', html: '"Beli lebih sedikit, pilih lebih baik, dan buat bertahan lama." — Alat analisis ini adalah langkah pertama Anda menuju lemari pakaian yang sadar dan berkualitas tinggi.' },
+    { type: 'paragraph', html: '"Beli lebih sedikit, pilih lebih baik, dan buat bertahan lama."  -  Alat analisis ini adalah langkah pertama Anda menuju lemari pakaian yang sadar dan berkualitas tinggi.' },
   ],
   faq: faqData,
   bibliography: bibliography,

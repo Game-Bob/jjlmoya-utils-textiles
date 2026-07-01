@@ -7,7 +7,7 @@ export const content: CategoryLocaleContent = {
   seo: [
     {
       type: 'title',
-      text: 'Science Textile : Analyse des Fibres et Composition des Vêtements',
+      text: 'Science Textile: Analyse des Fibres et Composition des Vêtements',
       level: 2,
     },
     {
@@ -17,16 +17,16 @@ export const content: CategoryLocaleContent = {
     {
       type: 'title',
       level: 2,
-      text: 'Vérité Textile : Détectez le Plastique Déguisé en Mode',
+      text: 'Vérité Textile: Détectez le Plastique Déguisé en Mode',
     },
     {
       type: 'paragraph',
-      html: 'L\'industrie de la mode utilise des techniques de marketing sophistiquées pour vendre des vêtements médiocres à des prix premium. Notre outil Vérité Textile analyse la composition réelle des vêtements — les pourcentages de fibres listés sur l\'étiquette — pour vous révéler des vérités inconfortables : est-ce vraiment du coton ou du "plastique cher" ? Contient-il de la vraie soie ou seulement 3 % comme appât publicitaire ? Il utilise un algorithme basé sur les normes industrielles européennes et nord-américaines qui évalue la respirabilité, la durabilité et l\'efficacité thermique.',
+      html: 'L\'industrie de la mode utilise des techniques de marketing sophistiquées pour vendre des vêtements médiocres à des prix premium. Notre outil Vérité Textile analyse la composition réelle des vêtements  -  les pourcentages de fibres listés sur l\'étiquette  -  pour vous révéler des vérités inconfortables: est-ce vraiment du coton ou du "plastique cher" ? Contient-il de la vraie soie ou seulement 3 % comme appât publicitaire ? Il utilise un algorithme basé sur les normes industrielles européennes et nord-américaines qui évalue la respirabilité, la durabilité et l\'efficacité thermique.',
     },
     {
       type: 'title',
       level: 2,
-      text: 'Maîtrise Textile : Guide Scientifique du Lavage et de l\'Entretien',
+      text: 'Maîtrise Textile: Guide Scientifique du Lavage et de l\'Entretien',
     },
     {
       type: 'paragraph',
@@ -35,7 +35,7 @@ export const content: CategoryLocaleContent = {
     {
       type: 'title',
       level: 2,
-      text: 'Chimie des Taches : Protocoles par Type de Fibre',
+      text: 'Chimie des Taches: Protocoles par Type de Fibre',
     },
     {
       type: 'paragraph',
@@ -44,11 +44,11 @@ export const content: CategoryLocaleContent = {
     {
       type: 'title',
       level: 2,
-      text: 'Test de Combustion : Identifiez les Fibres en les Brûlant',
+      text: 'Test de Combustion: Identifiez les Fibres en les Brûlant',
     },
     {
       type: 'paragraph',
-      html: 'Historiquement, les experts en textiles ont utilisé des tests de combustion pour identifier les fibres : le comportement de la flamme, l\'odeur et les résidus révèlent la nature chimique de la fibre. Les fibres naturelles (cellulose, protéine) ont des caractéristiques distinctes des fibres synthétiques (plastiques dérivés du pétrole).',
+      html: 'Historiquement, les experts en textiles ont utilisé des tests de combustion pour identifier les fibres: le comportement de la flamme, l\'odeur et les résidus révèlent la nature chimique de la fibre. Les fibres naturelles (cellulose, protéine) ont des caractéristiques distinctes des fibres synthétiques (plastiques dérivés du pétrole).',
     },
     {
       type: 'title',
@@ -57,7 +57,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Si vous êtes un amateur de couture, de tricot ou de crochet, nous disposons de calculatrices avancées : des convertisseurs d\'aiguilles aux calculs de consommation de tissu, des changeurs d\'échelle de motif qui respectent les proportions et des utilitaires de tension (gauge) qui assurent que votre projet final a exactement les dimensions souhaitées.',
+      html: 'Si vous êtes un amateur de couture, de tricot ou de crochet, nous disposons de calculatrices avancées: des convertisseurs d\'aiguilles aux calculs de consommation de tissu, des changeurs d\'échelle de motif qui respectent les proportions et des utilitaires de tension (gauge) qui assurent que votre projet final a exactement les dimensions souhaitées.',
     },
     {
       type: 'title',
@@ -70,7 +70,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Nos outils vous permettent de faire des achats plus intelligents, de mieux entretenir vos vêtements et de prolonger leur durée de vie — l\'acte le plus durable possible.',
+      html: 'Nos outils vous permettent de faire des achats plus intelligents, de mieux entretenir vos vêtements et de prolonger leur durée de vie  -  l\'acte le plus durable possible.',
     },
   ],
 };

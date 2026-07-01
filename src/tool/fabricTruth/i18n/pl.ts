@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Mniej znaczy więcej (Detergent)', html: 'Nadmiar mydła pozostawia osady, które przyciągają brud i sprawiają, że ubrania stają się sztywne.' },
     { type: 'tip', title: 'Suszarka: Subtelny wróg', html: 'Kłaczki, które widzisz w filtrze suszarki, to kawałki Twoich ubrań, które oddzieliły się w wyniku tarcia i wysokiej temperatury.' },
     { type: 'tip', title: 'Pranie na lewej stronie', html: 'Chroni kolor i hafty przed ocieraniem o bęben i inne ubrania.' },
-    { type: 'paragraph', html: '"Kupuj mniej, wybieraj lepiej i spraw, by służyło długo." — Ten analizator to Twój pierwszy krok w stronę świadomej i wysokiej jakości garderoby.' },
+    { type: 'paragraph', html: '"Kupuj mniej, wybieraj lepiej i spraw, by służyło długo."  -  Ten analizator to Twój pierwszy krok w stronę świadomej i wysokiej jakości garderoby.' },
   ],
   faq: faqData,
   bibliography: bibliography,

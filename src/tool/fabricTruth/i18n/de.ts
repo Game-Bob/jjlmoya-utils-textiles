@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Weniger ist mehr (Waschmittel)', html: 'Zu viel Seife hinterlässt Rückstände, die Schmutz anziehen und die Kleidung steif machen.' },
     { type: 'tip', title: 'Trockner: Der subtile Feind', html: 'Die Flusen, die Sie im Trocknerfilter sehen, sind Teile Ihrer Kleidung, die sich durch Reibung und Hitze gelöst haben.' },
     { type: 'tip', title: 'Auf links waschen', html: 'Schützt Farben und Stickereien vor der Reibung mit der Trommel und anderen Kleidungsstücken.' },
-    { type: 'paragraph', html: '"Weniger kaufen, besser wählen und langlebig machen." — Dieser Analysator ist Ihr erster Schritt zu einem bewussten und hochwertigen Kleiderschrank.' },
+    { type: 'paragraph', html: '"Weniger kaufen, besser wählen und langlebig machen."  -  Dieser Analysator ist Ihr erster Schritt zu einem bewussten und hochwertigen Kleiderschrank.' },
   ],
   faq: faqData,
   bibliography: bibliography,

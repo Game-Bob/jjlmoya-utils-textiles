@@ -10,7 +10,7 @@ const calcUI = ui as FabricProjectCalculatorUI;
 ---
 
 <div class="fabric-calculator-card" id="fabric-calc-app">
-  <aside class="fabric-sidebar">
+  <div class="fabric-sidebar">
     <div class="config-group">
       <h3>{calcUI.sectionProject}</h3>
       <div class="fabric-field">
@@ -59,7 +59,7 @@ const calcUI = ui as FabricProjectCalculatorUI;
       <button id="btn-clear-f" class="f-btn f-seco">{calcUI.btnClear}</button>
       <button id="btn-share-f" class="f-btn f-prim">{calcUI.btnShare}</button>
     </div>
-  </aside>
+  </div>
 
   <main class="fabric-main">
     <div id="warning-msg" class="warning-banner"></div>
@@ -371,4 +371,3 @@ const calcUI = ui as FabricProjectCalculatorUI;
   document.addEventListener('astro:page-load', init);
   init();
 </script>
-

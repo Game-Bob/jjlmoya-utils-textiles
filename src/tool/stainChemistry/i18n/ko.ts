@@ -150,7 +150,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: '레드 와인 / 과일',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: '장시간 담그기' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: '장시간 담그기' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: '페이스트 직접 도포' },
           delicate: {
             agentId: 'vinegar',
@@ -229,13 +229,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — 조절된 산화 작용',
+      title: '01: 조절된 산화 작용',
       icon: 'mdi:atom',
       html: '<strong>과탄산나트륨</strong>은 활성산소를 방출하여 색소 분자(얼룩의 색 원인)의 이중 결합을 끊어 얼룩을 무색화하고 물에 용해되기 쉬운 상태로 만듭니다. 유기물 얼룩에 가장 효과적인 방법입니다.',
     },
     {
       type: 'card',
-      title: '02 — 용제에 의한 용해',
+      title: '02: 용제에 의한 용해',
       icon: 'mdi:flask-outline',
       html: '기름이나 잉크 같은 얼룩은 물에 녹지 않습니다. <strong>이소프로필 알코올</strong>이나 <strong>아세톤</strong> 같은 용제는 표면 장력을 낮추고 얼룩의 비극성 분자를 끌어당겨 천 등으로 옮겨갈 수 있게 합니다.',
     },

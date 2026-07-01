@@ -243,7 +243,7 @@ export const content: ToolLocaleContent = {
     { type: 'paragraph', html: 'How many garments have you ruined without knowing it? An accidental shrink in wool, color fading in cotton, a stain that never comes out of silk. Most people wash their clothes without understanding that each fiber has specific needs.' },
     { type: 'paragraph', html: 'Our <strong>Laundry Guide</strong> provides scientific instructions based on the actual composition of your garment. It\'s not generic; it\'s specific. It\'s not advice; it\'s science.' },
     { type: 'title', text: 'Why Traditional Methods Fail', level: 2 },
-    { type: 'paragraph', html: 'Your grandmother probably washed everything in hot water with strong soap. It worked for the thick cotton sheets of the 1950s, but the textile world has changed. Modern fibers—from <strong>Lyocell</strong> to <strong>Elastane</strong>—require completely different protocols.' },
+    { type: 'paragraph', html: 'Your grandmother probably washed everything in hot water with strong soap. It worked for the thick cotton sheets of the 1950s, but the textile world has changed. Modern fibers - from <strong>Lyocell</strong> to <strong>Elastane</strong> - require completely different protocols.' },
     { type: 'list', items: ['<strong>Cotton</strong> tolerates hot water but needs gentle cycles to avoid shrinkage.', '<strong>Silk</strong> is fragile above 30°C and requires distilled water.', '<strong>Wool</strong> can feel like a stone if a standard washing machine processes it.', '<strong>Synthetics</strong> don\'t need much care, but they generate static and pill easily.'] },
     { type: 'title', text: 'Protocols by Fiber Type', level: 2 },
     { type: 'title', text: 'Cotton: The Resilient One', level: 3 },

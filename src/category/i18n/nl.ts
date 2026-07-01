@@ -21,7 +21,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'De mode-industrie maakt gebruik van geavanceerde marketingtechnieken om middelmatige kledingstukken tegen premiumprijzen te verkopen. Onze Textiele Waarheid-tool analyseert de werkelijke samenstelling van kledingstukken — de vezelpercentages die op het etiket staan — om ongemakkelijke waarheden te onthullen: is het echt katoen of "duur plastic"? Bevat het echte zijde of slechts 3% als reclamepraatje? De tool maakt gebruik van een algoritme gebaseerd op Europese en Noord-Amerikaanse industriestandaarden dat ademend vermogen, duurzaamheid en thermische efficiëntie evalueert.',
+      html: 'De mode-industrie maakt gebruik van geavanceerde marketingtechnieken om middelmatige kledingstukken tegen premiumprijzen te verkopen. Onze Textiele Waarheid-tool analyseert de werkelijke samenstelling van kledingstukken  -  de vezelpercentages die op het etiket staan  -  om ongemakkelijke waarheden te onthullen: is het echt katoen of "duur plastic"? Bevat het echte zijde of slechts 3% als reclamepraatje? De tool maakt gebruik van een algoritme gebaseerd op Europese en Noord-Amerikaanse industriestandaarden dat ademend vermogen, duurzaamheid en thermische efficiëntie evalueert.',
     },
     {
       type: 'title',
@@ -70,7 +70,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Onze hulpmiddelen stellen je in staat om slimmere aankopen te doen, je kleding beter te verzorgen en de levensduur ervan te verlengen — de meest duurzame handeling die mogelijk is.',
+      html: 'Onze hulpmiddelen stellen je in staat om slimmere aankopen te doen, je kleding beter te verzorgen en de levensduur ervan te verlengen  -  de meest duurzame handeling die mogelijk is.',
     },
   ],
 };

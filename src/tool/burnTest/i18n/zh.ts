@@ -154,7 +154,7 @@ export const content: ToolLocaleContent<BurnTestUI> = {
     },
     {
       type: 'paragraph',
-      html: '精确的分析需要交叉验证至少三个证据。气味是识别混纺最可靠的指标：如果一种“亚麻”织物散发出轻微的塑料香味并留下坚硬的残留物，这表明其含有未声明的聚酯成分。',
+      html: '精确的分析需要交叉验证至少三个证据。气味是识别混纺最可靠的指标：如果一种"亚麻"织物散发出轻微的塑料香味并留下坚硬的残留物，这表明其含有未声明的聚酯成分。',
     },
     {
       type: 'tip',
@@ -187,8 +187,8 @@ export const content: ToolLocaleContent<BurnTestUI> = {
       wool: { name: '羊毛 / 羊绒', icon: 'mdi:sheep', color: '#FCD34D', description: '动物蛋白质纤维，优异的绝热体，具有弹性。' },
       silk: { name: '丝绸 (真丝)', icon: 'mdi:ticket-percent', color: '#F472B6', description: '动物长丝纤维。天然光泽，手感干爽。' },
       cashmere: { name: '山羊绒', icon: 'mdi:crown', color: '#F59E0B', description: '昂贵的克什米尔山羊纤维。极其柔软、轻盈、保暖。' },
-      mohair: { name: '马海毛', icon: 'mdi:shimmer', color: '#14B8A6', description: '安哥拉山羊的“钻石纤维”。天然光泽，非常耐磨。' },
-      angora: { name: '安哥拉兔毛', icon: 'mdi:rabbit', color: '#F9FAFB', description: '安哥拉兔的毛。以其蓬松的“光环”效果和极致轻盈著称。' },
+      mohair: { name: '马海毛', icon: 'mdi:shimmer', color: '#14B8A6', description: '安哥拉山羊的"钻石纤维"。天然光泽，非常耐磨。' },
+      angora: { name: '安哥拉兔毛', icon: 'mdi:rabbit', color: '#F9FAFB', description: '安哥拉兔的毛。以其蓬松的"光环"效果和极致轻盈著称。' },
       alpaca: { name: '阿尔パカ (羊驼毛)', icon: 'mdi:image-filter-hdr', color: '#9F7AEA', description: '安第斯山的珍宝。中空纤维，保暖、防过敏、丝滑。' },
       polyester: { name: '聚酯纤维 (涤纶)', icon: 'mdi:oil', color: '#94A3B8', description: '石油基合成纤维。耐用、抗皱、不透气。' },
       nylon: { name: '尼龙 (锦纶)', icon: 'mdi:parachute', color: '#2DD4BF', description: '抗拉和耐磨性极强的合成纤维。' },

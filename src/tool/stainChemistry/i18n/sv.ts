@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: 'Rödvin / Frukt',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: 'Långvarig blötläggning' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: 'Långvarig blötläggning' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Direkt pasta' },
           delicate: {
             agentId: 'vinegar',
@@ -232,13 +232,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Kontrollerad Oxidation',
+      title: '01: Kontrollerad Oxidation',
       icon: 'mdi:atom',
       html: '<strong>Natriumperkarbonat</strong> frisläpper aktivt syre som bryter dubbelbindningarna i kromoforena (molekylerna som ansvarar för fläckens färg), vilket gör dem färglösa och vattenlösliga. Det är den mest effektiva metoden för organiska fläckar.',
     },
     {
       type: 'card',
-      title: '02 — Solubilisering med Lösningsmedel',
+      title: '02: Solubilisering med Lösningsmedel',
       icon: 'mdi:flask-outline',
       html: 'Fläckar som olja eller bläck är inte vattenlösliga. Lösningsmedel som <strong>isopropylalkohol</strong> eller <strong>aceton</strong> minskar ytspänningen och attraherar fläckens opolära molekyler, vilket gör att de kan överföras till ett bärarmaterial.',
     },

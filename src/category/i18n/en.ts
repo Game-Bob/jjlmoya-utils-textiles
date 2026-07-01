@@ -21,7 +21,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'The fashion industry uses sophisticated marketing techniques to sell mediocre garments at premium prices. Our Fabric Truthfulness tool analyzes the real composition of garments—the fiber percentages listed on the label—to reveal uncomfortable truths: Is it truly cotton or "expensive plastic"? Does it contain real silk or just 3% as a publicity hook? It uses an algorithm based on European and North American industrial standards that evaluates breathability, durability, and thermal efficiency.',
+      html: 'The fashion industry uses sophisticated marketing techniques to sell mediocre garments at premium prices. Our Fabric Truthfulness tool analyzes the real composition of garments - the fiber percentages listed on the label - to reveal uncomfortable truths: Is it truly cotton or "expensive plastic"? Does it contain real silk or just 3% as a publicity hook? It uses an algorithm based on European and North American industrial standards that evaluates breathability, durability, and thermal efficiency.',
     },
     {
       type: 'title',
@@ -70,7 +70,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Our tools empower you to make smarter purchases, better care for your garments, and extend their lifespan—the most sustainable act possible.',
+      html: 'Our tools empower you to make smarter purchases, better care for your garments, and extend their lifespan - the most sustainable act possible.',
     },
   ],
 };

@@ -32,7 +32,7 @@ const faqData = [
   {
     question: 'Do clothes shrink after washing?',
     answer:
-      '100% cotton can shrink 5–10% if washed in hot water and tumble dried. Synthetic materials hold their shape better. Always check the care label instructions.',
+      '100% cotton can shrink 5-10% if washed in hot water and tumble dried. Synthetic materials hold their shape better. Always check the care label instructions.',
   },
 ];
 

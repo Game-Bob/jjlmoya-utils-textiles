@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: 'Rode Wijn / Fruit',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: 'Langdurig weken' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: 'Langdurig weken' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Rechtstreekse pasta' },
           delicate: {
             agentId: 'vinegar',
@@ -232,13 +232,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Gecontroleerde Oxidatie',
+      title: '01: Gecontroleerde Oxidatie',
       icon: 'mdi:atom',
       html: '<strong>Natriumpercarbonaat</strong> geeft actieve zuurstof af die de dubbele bindingen van chromoforen (de moleculen die verantwoordelijk zijn voor de kleur van de vlek) breekt, waardoor ze kleurloos en in water oplosbaar worden. Het is de meest effectieve methode voor organische vlekken.',
     },
     {
       type: 'card',
-      title: '02 — Oplosbaar maken door Oplosmiddelen',
+      title: '02: Oplosbaar maken door Oplosmiddelen',
       icon: 'mdi:flask-outline',
       html: 'Vlekken zoals olie of inkt zijn niet oplosbaar in water. Oplosmiddelen zoals <strong>isopropylalcohol</strong> of <strong>aceton</strong> verlagen de oppervlaktespanning en trekken de niet-polaire moleculen van de vlek aan, waardoor ze kunnen worden overgedragen op een drager.',
     },

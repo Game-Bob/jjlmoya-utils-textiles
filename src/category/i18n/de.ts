@@ -21,7 +21,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Die Modeindustrie nutzt ausgefeilte Marketingtechniken, um mittelmäßige Kleidungsstücke zu Premiumpreisen zu verkaufen. Unser Werkzeug für textile Wahrheit analysiert die tatsächliche Zusammensetzung der Kleidung – die auf dem Etikett aufgeführten Faseranteile –, um Ihnen unangenehme Wahrheiten zu offenbaren: Ist es wirklich Baumwolle oder „teures Plastik“? Enthält es echte Seide oder nur 3 % als Werbegag? Es verwendet einen Algorithmus, der auf europäischen und nordamerikanischen Industriestandards basiert und Atmungsaktivität, Haltbarkeit und thermische Effizienz bewertet.',
+      html: 'Die Modeindustrie nutzt ausgefeilte Marketingtechniken, um mittelmäßige Kleidungsstücke zu Premiumpreisen zu verkaufen. Unser Werkzeug für textile Wahrheit analysiert die tatsächliche Zusammensetzung der Kleidung - die auf dem Etikett aufgeführten Faseranteile -, um Ihnen unangenehme Wahrheiten zu offenbaren: Ist es wirklich Baumwolle oder "teures Plastik"? Enthält es echte Seide oder nur 3 % als Werbegag? Es verwendet einen Algorithmus, der auf europäischen und nordamerikanischen Industriestandards basiert und Atmungsaktivität, Haltbarkeit und thermische Effizienz bewertet.',
     },
     {
       type: 'title',
@@ -70,7 +70,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Unsere Werkzeuge befähigen Sie dazu, intelligentere Einkäufe zu tätigen, Ihre Kleidung besser zu pflegen und ihre Lebensdauer zu verlängern – der nachhaltigste Akt überhaupt.',
+      html: 'Unsere Werkzeuge befähigen Sie dazu, intelligentere Einkäufe zu tätigen, Ihre Kleidung besser zu pflegen und ihre Lebensdauer zu verlängern - der nachhaltigste Akt überhaupt.',
     },
   ],
 };

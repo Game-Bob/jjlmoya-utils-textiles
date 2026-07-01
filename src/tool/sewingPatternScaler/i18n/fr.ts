@@ -89,7 +89,7 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Comment Mettre à l\'Échelle des Patrons de Couture : Guide Technique et Pratique',
+      text: 'Comment Mettre à l\'Échelle des Patrons de Couture: Guide Technique et Pratique',
       level: 2,
     },
     {
@@ -98,7 +98,7 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
     },
     {
       type: 'title',
-      text: 'La Clé du Succès : L\'Aisance',
+      text: 'La Clé du Succès: L\'Aisance',
       level: 3,
     },
     {

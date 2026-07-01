@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: 'Kırmızı Şarap / Meyve',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: 'Uzun süreli bekletme' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: 'Uzun süreli bekletme' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Doğrudan macun' },
           delicate: {
             agentId: 'vinegar',
@@ -232,13 +232,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Kontrollü Oksidasyon',
+      title: '01: Kontrollü Oksidasyon',
       icon: 'mdi:atom',
       html: '<strong>Sodyum perkarbonat</strong>, kromoforların (lekenin renginden sorumlu moleküller) çift bağlarını kopararak onları renksiz ve suda çözünür hale getiren aktif oksijen salar. Organik lekeler için en etkili yöntemdir.',
     },
     {
       type: 'card',
-      title: '02 — Çözücülerle Çözünürlük',
+      title: '02: Çözücülerle Çözünürlük',
       icon: 'mdi:flask-outline',
       html: 'Yağ veya mürekkep gibi lekeler suda çözünmezler. <strong>İzopropil alkol</strong> veya <strong>aseton</strong> gibi çözücüler yüzey gerilimini azaltır ve lekenin polar olmayan moleküllerini çekerek bir destek ortamına aktarılmalarını sağlar.',
     },

@@ -44,7 +44,7 @@ const howToData = [
   },
   {
     name: '执行指定方案',
-    text: '按照提供的溶剂类型、温度和方法说明进行操作。请特别留意“关键警示”部分。',
+    text: '按照提供的溶剂类型、温度和方法说明进行操作。请特别留意"关键警示"部分。',
   },
 ];
 
@@ -148,7 +148,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: '红酒 / 水果',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: '长时间浸泡' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: '长时间浸泡' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: '直接涂抹糊状物' },
           delicate: {
             agentId: 'vinegar',
@@ -227,13 +227,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 —— 受控氧化',
+      title: '01: 受控氧化',
       icon: 'mdi:atom',
       html: '<strong>过碳酸钠</strong>释放出的活性氧能断裂发色团（污渍颜色的来源分子）的双键，使其变得无色并可溶于水。这是处理有机污渍最有效的方法。',
     },
     {
       type: 'card',
-      title: '02 —— 溶剂增溶',
+      title: '02: 溶剂增溶',
       icon: 'mdi:flask-outline',
       html: '油渍或墨水等污渍不溶于水。<strong>异丙基酒精</strong>或<strong>丙酮</strong>等溶剂能降低表面张力并吸引污渍中的非极性分子，使它们能够转移至承载媒介上。',
     },
@@ -244,7 +244,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'paragraph',
-      html: '并非所有纤维都能经受同样的“侵蚀”。<strong>真丝和羊毛</strong>属于蛋白质（丝蛋白和角蛋白）。如果你盲目使用专为“吞噬蛋白质”（用于处理血渍或蛋渍）设计的酶促洗涤剂，它会开始降解纤维本身，从而破坏织物的光泽和结构。',
+      html: '并非所有纤维都能经受同样的"侵蚀"。<strong>真丝和羊毛</strong>属于蛋白质（丝蛋白和角蛋白）。如果你盲目使用专为"吞噬蛋白质"（用于处理血渍或蛋渍）设计的酶促洗涤剂，它会开始降解纤维本身，从而破坏织物的光泽和结构。',
     },
     {
       type: 'title',
@@ -253,7 +253,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'paragraph',
-      html: '最常见的错误之一是使用热水来“软化”血渍。从化学角度看，热量会导致污渍中的<strong>蛋白质凝固</strong>，从而使其永久固定在纤维的多孔结构中。蛋白质类污渍必须始终使用冷水处理。',
+      html: '最常见的错误之一是使用热水来"软化"血渍。从化学角度看，热量会导致污渍中的<strong>蛋白质凝固</strong>，从而使其永久固定在纤维的多孔结构中。蛋白质类污渍必须始终使用冷水处理。',
     },
     {
       type: 'tip',
@@ -271,7 +271,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'paragraph',
-      html: '<strong>异丙基酒精</strong>相对更稳定，但在染色的合成纤维上可能会带走色素本身。我们建议在正式处理前，始终先在“内锁边”等隐蔽区域进行测试。',
+      html: '<strong>异丙基酒精</strong>相对更稳定，但在染色的合成纤维上可能会带走色素本身。我们建议在正式处理前，始终先在"内锁边"等隐蔽区域进行测试。',
     },
   ],
   faq: faqData,

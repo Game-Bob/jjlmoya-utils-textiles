@@ -29,7 +29,7 @@ const howToData = [
   },
   {
     name: 'Skonfiguruj źródło',
-    text: 'Wprowadź rozmiar wykroju lub wymiary, które zmierzyłaś, w kolumnie „Źródło” w naszym narzędziu.',
+    text: 'Wprowadź rozmiar wykroju lub wymiary, które zmierzyłaś, w kolumnie "Źródło" w naszym narzędziu.',
   },
   {
     name: 'Wprowadź cel',
@@ -37,7 +37,7 @@ const howToData = [
   },
   {
     name: 'Zastosuj na stole krojczym',
-    text: 'Postępuj zgodnie z instrukcjami „Czynności na stole krojczym”, aby dodać lub odjąć centymetry na bokach i dołach swoich elementów.',
+    text: 'Postępuj zgodnie z instrukcjami "Czynności na stole krojczym", aby dodać lub odjąć centymetry na bokach i dołach swoich elementów.',
   },
 ];
 

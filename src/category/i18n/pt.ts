@@ -21,7 +21,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'A indústria da moda utiliza técnicas sofisticadas de marketing para vender peças medíocres a preços premium. A nossa ferramenta de Veracidade Têxtil analisa a composição real das peças — as percentagens de fibras listadas na etiqueta — para lhe revelar verdades desconfortáveis: é realmente algodão ou é "plástico caro"? Contém seda real ou apenas 3% como isco publicitário? Utiliza um algoritmo baseado em padrões industriais europeus e norte-americanos que avalia a respirabilidade, durabilidade e eficiência térmica.',
+      html: 'A indústria da moda utiliza técnicas sofisticadas de marketing para vender peças medíocres a preços premium. A nossa ferramenta de Veracidade Têxtil analisa a composição real das peças  -  as percentagens de fibras listadas na etiqueta  -  para lhe revelar verdades desconfortáveis: é realmente algodão ou é "plástico caro"? Contém seda real ou apenas 3% como isco publicitário? Utiliza um algoritmo baseado em padrões industriais europeus e norte-americanos que avalia a respirabilidade, durabilidade e eficiência térmica.',
     },
     {
       type: 'title',
@@ -70,7 +70,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'As nossas ferramentas capacitam-no para fazer compras mais inteligentes, cuidar melhor das suas peças e prolongar a sua vida útil — o ato mais sustentável possível.',
+      html: 'As nossas ferramentas capacitam-no para fazer compras mais inteligentes, cuidar melhor das suas peças e prolongar a sua vida útil  -  o ato mais sustentável possível.',
     },
   ],
 };

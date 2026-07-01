@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Menos é Mais (Detergente)', html: 'O excesso de sabão deixa resíduos que atraem sujidade e fazem com que a roupa se sinta rígida.' },
     { type: 'tip', title: 'Secadora: O Inimigo Subtil', html: 'O cotão que vê no filtro da secadora são pedaços da sua roupa que se desprenderam pela fricção e pelo calor.' },
     { type: 'tip', title: 'Lavagem do Avesso', html: 'Protege a cor e os bordados do roce com o tambor e outras peças.' },
-    { type: 'paragraph', html: '"Comprar menos, escolher melhor e fazê-lo durar." — Esta calculadora é o seu primeiro passo para um armário consciente e de alta qualidade.' },
+    { type: 'paragraph', html: '"Comprar menos, escolher melhor e fazê-lo durar."  -  Esta calculadora é o seu primeiro passo para um armário consciente e de alta qualidade.' },
   ],
   faq: faqData,
   bibliography: bibliography,

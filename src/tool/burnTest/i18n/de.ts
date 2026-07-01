@@ -154,7 +154,7 @@ export const content: ToolLocaleContent<BurnTestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Eine präzise Analyse erfordert den Abgleich von mindestens drei Beweisstücken. Der Geruch ist der zuverlässigste Indikator zur Identifizierung von Mischgeweben: Wenn ein „Leinen“-Stoff ein leichtes Kunststoffaroma verströmt und harte Rückstände hinterlässt, deutet dies auf eine nicht deklarierte Polyestermischung hin.',
+      html: 'Eine präzise Analyse erfordert den Abgleich von mindestens drei Beweisstücken. Der Geruch ist der zuverlässigste Indikator zur Identifizierung von Mischgeweben: Wenn ein "Leinen"-Stoff ein leichtes Kunststoffaroma verströmt und harte Rückstände hinterlässt, deutet dies auf eine nicht deklarierte Polyestermischung hin.',
     },
     {
       type: 'tip',
@@ -187,8 +187,8 @@ export const content: ToolLocaleContent<BurnTestUI> = {
       wool: { name: 'Wolle / Merino', icon: 'mdi:sheep', color: '#FCD34D', description: 'Tierische Proteinfaser, hervorragender Wärmeisolator und elastisch.' },
       silk: { name: 'Seide', icon: 'mdi:ticket-percent', color: '#F472B6', description: 'Tierische Endlosfaser. Natürlicher Glanz und trockener Griff.' },
       cashmere: { name: 'Kaschmir', icon: 'mdi:crown', color: '#F59E0B', description: 'Luxuriöse Kaschmirziegenfaser. Extrem weich, leicht und warm.' },
-      mohair: { name: 'Mohair', icon: 'mdi:shimmer', color: '#14B8A6', description: 'Die „Diamantfaser“ der Angora-Ziege. Natürlicher Glanz, sehr widerstandsfähig.' },
-      angora: { name: 'Angora', icon: 'mdi:rabbit', color: '#F9FAFB', description: 'Haar des Angora-Kaninchens. Bekannt für seinen flauschigen „Halo“-Effekt und extreme Leichtigkeit.' },
+      mohair: { name: 'Mohair', icon: 'mdi:shimmer', color: '#14B8A6', description: 'Die "Diamantfaser" der Angora-Ziege. Natürlicher Glanz, sehr widerstandsfähig.' },
+      angora: { name: 'Angora', icon: 'mdi:rabbit', color: '#F9FAFB', description: 'Haar des Angora-Kaninchens. Bekannt für seinen flauschigen "Halo"-Effekt und extreme Leichtigkeit.' },
       alpaca: { name: 'Alpaka', icon: 'mdi:image-filter-hdr', color: '#9F7AEA', description: 'Schatz der Anden. Hohle, thermische, hypoallergene und seidige Faser.' },
       polyester: { name: 'Polyester', icon: 'mdi:oil', color: '#94A3B8', description: 'Synthetische Faser auf Erdölbasis. Widerstandsfähig, knitterfrei, nicht atmungsaktiv.' },
       nylon: { name: 'Nylon (Polyamid)', icon: 'mdi:parachute', color: '#2DD4BF', description: 'Hochwiderstandsfähige Kunstfaser für Zugkraft und Abrieb.' },

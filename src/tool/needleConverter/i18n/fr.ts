@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Pourquoi existe-t-il différents systèmes de tailles d\'aiguilles ?',
     answer:
-      'Historiquement, chaque pays a développé son propre système. Le système métrique (mm) est la norme internationale la plus précise. Le système US utilise une numérotation progressive (0-50), tandis que le système UK utilise une numérotation inverse : plus le numéro est élevé, plus l\'aiguille est fine.',
+      'Historiquement, chaque pays a développé son propre système. Le système métrique (mm) est la norme internationale la plus précise. Le système US utilise une numérotation progressive (0-50), tandis que le système UK utilise une numérotation inverse: plus le numéro est élevé, plus l\'aiguille est fine.',
   },
   {
     question: 'Les tailles de crochet et de tricot en US sont-elles les mêmes ?',
@@ -42,7 +42,7 @@ const howToData = [
   },
   {
     name: 'Lisez les équivalences',
-    text: 'Consultez les résultats en temps réel : millimètres, taille US et taille UK, ainsi que la catégorie de fil recommandée et son WPI.',
+    text: 'Consultez les résultats en temps réel: millimètres, taille US et taille UK, ainsi que la catégorie de fil recommandée et son WPI.',
   },
 ];
 
@@ -90,7 +90,7 @@ export const content: ToolLocaleContent<NeedleConverterUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Guide Technique des Aiguilles à Tricoter et Crochets : Systèmes, Calibres et Équivalences',
+      text: 'Guide Technique des Aiguilles à Tricoter et Crochets: Systèmes, Calibres et Équivalences',
       level: 2,
     },
     {
@@ -139,8 +139,8 @@ export const content: ToolLocaleContent<NeedleConverterUI> = {
     },
     {
       type: 'tip',
-      title: 'Technique Professionnelle : Les Crochets en Acier',
-      html: '<p>Il existe une famille de crochets pour les fils de coton mercerisé extrêmement fins. Ce sont les <strong>Steel Hooks (Crochets en Acier)</strong>. Contrairement aux crochets en aluminium, leur numérotation est spécifique et inverse : un crochet en acier #14 (0,6mm) est beaucoup plus fin qu\'un #00 (3,5mm). N\'utilisez jamais le tableau standard pour ces calibres.</p>',
+      title: 'Technique Professionnelle: Les Crochets en Acier',
+      html: '<p>Il existe une famille de crochets pour les fils de coton mercerisé extrêmement fins. Ce sont les <strong>Steel Hooks (Crochets en Acier)</strong>. Contrairement aux crochets en aluminium, leur numérotation est spécifique et inverse: un crochet en acier #14 (0,6mm) est beaucoup plus fin qu\'un #00 (3,5mm). N\'utilisez jamais le tableau standard pour ces calibres.</p>',
     },
     {
       type: 'diagnostic',

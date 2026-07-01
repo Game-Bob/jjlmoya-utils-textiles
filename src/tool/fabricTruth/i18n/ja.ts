@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: '洗剤は少なめに', html: '洗剤の使いすぎは残留物を残し、汚れを引き寄せ、生地を硬くします。' },
     { type: 'tip', title: '乾燥機は「静かな敵」', html: '乾燥機のフィルターに溜まる糸くずは、摩擦と熱によって剥がれ落ちた、衣類そのものの一部です。' },
     { type: 'tip', title: '裏返して洗う', html: '色あせや刺繍を、洗濯槽や他の衣類との摩擦から守ります。' },
-    { type: 'paragraph', html: '「少なく買い、より良く選び、長持ちさせる」 —— この分析ツールは、意識的で高品質なワードローブへの第一歩です。' },
+    { type: 'paragraph', html: '「少なく買い、より良く選び、長持ちさせる」  -  -  この分析ツールは、意識的で高品質なワードローブへの第一歩です。' },
   ],
   faq: faqData,
   bibliography: bibliography,

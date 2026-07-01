@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Less is More (Detergent)', html: 'Excess soap leaves residue that attracts dirt and makes clothes feel stiff.' },
     { type: 'tip', title: 'Dryer: The Subtle Enemy', html: 'The lint you see in the dryer filter is pieces of your clothes that have come off due to friction and heat.' },
     { type: 'tip', title: 'Inside Out Washing', html: 'Protects color and embroidery from rubbing against the drum and other garments.' },
-    { type: 'paragraph', html: '"Buy less, choose better, and make it last." — This calculator is your first step towards a conscious and high-quality wardrobe.' },
+    { type: 'paragraph', html: '"Buy less, choose better, and make it last."  -  This calculator is your first step towards a conscious and high-quality wardrobe.' },
   ],
   faq: faqData,
   bibliography: bibliography,

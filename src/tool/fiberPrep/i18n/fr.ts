@@ -114,19 +114,19 @@ export const content: ToolLocaleContent<FiberPrepUI> = {
     },
     {
       type: 'card',
-      title: 'Fibres Protéiques : Laine et Soie',
+      title: 'Fibres Protéiques: Laine et Soie',
       icon: 'mdi:sheep',
       html: 'Ces fibres sont composées de chaînes d\'acides aminés avec une affinité naturelle élevée pour les métaux. La chaleur ouvre les écailles de la fibre permettant aux sels d\'alun de pénétrer profondément. La <strong>Crème de Tartre</strong> est vitale pour maintenir le pH acide qui préserve la douceur.',
     },
     {
       type: 'card',
-      title: 'Fibres Cellulosiques : Coton et Lin',
+      title: 'Fibres Cellulosiques: Coton et Lin',
       icon: 'mdi:leaf',
-      html: 'La cellulose n\'a pas de sites de liaison facilement disponibles. C\'est pourquoi nous utilisons le <strong>protocole en deux étapes</strong> : d\'abord des tanins qui se fixent à la cellulose, puis l\'alun se fixe à ces tanins. Sans ce pré-traitement, la couleur sera pâle et peu résistante au lavage.',
+      html: 'La cellulose n\'a pas de sites de liaison facilement disponibles. C\'est pourquoi nous utilisons le <strong>protocole en deux étapes</strong>: d\'abord des tanins qui se fixent à la cellulose, puis l\'alun se fixe à ces tanins. Sans ce pré-traitement, la couleur sera pâle et peu résistante au lavage.',
     },
     {
       type: 'title',
-      text: 'Contrôle du Bain : WOF, Température et pH',
+      text: 'Contrôle du Bain: WOF, Température et pH',
       level: 2,
     },
     {

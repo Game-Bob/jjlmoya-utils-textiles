@@ -152,7 +152,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: 'Red Wine / Fruit',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: 'Extended soak' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: 'Extended soak' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Direct paste' },
           delicate: {
             agentId: 'vinegar',
@@ -235,13 +235,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Controlled Oxidation',
+      title: '01: Controlled Oxidation',
       icon: 'mdi:atom',
       html: '<strong>Sodium percarbonate</strong> releases active oxygen that breaks the double bonds of chromophores (the molecules responsible for the stain\'s color), rendering them colorless and water-soluble. It is the most effective method for organic stains.',
     },
     {
       type: 'card',
-      title: '02 — Solubilization by Solvents',
+      title: '02: Solubilization by Solvents',
       icon: 'mdi:flask-outline',
       html: 'Stains like oil or ink are not water-soluble. Solvents such as <strong>isopropyl alcohol</strong> or <strong>acetone</strong> reduce surface tension and attract the non-polar molecules of the stain, allowing them to be transferred to a support medium.',
     },

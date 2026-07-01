@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: 'Rotwein / Obst',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: 'Langes Einweichen' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: 'Langes Einweichen' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Direktes Auftragen als Paste' },
           delicate: {
             agentId: 'vinegar',
@@ -232,13 +232,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Kontrollierte Oxidation',
+      title: '01: Kontrollierte Oxidation',
       icon: 'mdi:atom',
       html: '<strong>Natriumpercarbonat</strong> setzt Aktivsauerstoff frei, der die Doppelbindungen der Chromophore (die Moleküle, die für die Farbe des Flecks verantwortlich sind) aufbricht, wodurch sie farblos und wasserlöslich werden. Es ist die effektivste Methode für organische Flecken.',
     },
     {
       type: 'card',
-      title: '02 — Lösung durch Lösungsmittel',
+      title: '02: Lösung durch Lösungsmittel',
       icon: 'mdi:flask-outline',
       html: 'Flecken wie Öl oder Tinte sind nicht wasserlöslich. Lösungsmittel wie <strong>Isopropylalkohol</strong> oder <strong>Aceton</strong> verringern die Oberflächenspannung und ziehen die unpolaren Moleküle des Flecks an, sodass sie auf ein Trägermedium übertragen werden können.',
     },

@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: 'Czerwone Wino / Owoce',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: 'Długotrwałe moczenie' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: 'Długotrwałe moczenie' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Bezpośrednia pasta' },
           delicate: {
             agentId: 'vinegar',
@@ -232,13 +232,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Kontrolowane Utlenianie',
+      title: '01: Kontrolowane Utlenianie',
       icon: 'mdi:atom',
       html: '<strong>Nadwęglan sodu</strong> uwalnia aktywny tlen, który rozrywa podwójne wiązania chromoforów (cząsteczek odpowiedzialnych za kolor plamy), czyniąc je bezbarwnymi i rozpuszczalnymi w wodzie. Jest to najskuteczniejsza metoda na plamy organiczne.',
     },
     {
       type: 'card',
-      title: '02 — Solubilizacja przez Rozpuszczalniki',
+      title: '02: Solubilizacja przez Rozpuszczalniki',
       icon: 'mdi:flask-outline',
       html: 'Plamy takie jak olej czy atrament nie rozpuszczają się w wodzie. Rozpuszczalniki, takie jak <strong>alkohol izopropylowy</strong> lub <strong>aceton</strong>, zmniejszają napięcie powierzchniowe i przyciągają niepolarne cząsteczki plamy, pozwalając im przenieść się na podłoże pomocnicze.',
     },

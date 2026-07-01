@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Världen av textilier är en fascinerande skärningspunkt mellan kemi, fysik och ingenjörskonst. I den här sektionen erbjuder vi specialiserade verktyg för att du verkligen ska förstå vad du bär. Från sammansättningsanalys till beräkningar av tygåtgång och mönsterskalning – dessa verktyg är designade för proffs, DIY-entusiaster och medvetna konsumenter som vill fatta välgrundade beslut om sina plagg.',
+      html: 'Världen av textilier är en fascinerande skärningspunkt mellan kemi, fysik och ingenjörskonst. I den här sektionen erbjuder vi specialiserade verktyg för att du verkligen ska förstå vad du bär. Från sammansättningsanalys till beräkningar av tygåtgång och mönsterskalning - dessa verktyg är designade för proffs, DIY-entusiaster och medvetna konsumenter som vill fatta välgrundade beslut om sina plagg.',
     },
     {
       type: 'title',
@@ -21,7 +21,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Modeindustrin använder sofistikerade marknadsföringstekniker för att sälja mediokra plagg till premiumpriser. Vårt verktyg för textil sanning analyserar plaggens verkliga sammansättning – de fiberprocent som anges på etiketten – för att avslöja obekväma sanningar: är det verkligen bomull eller är det "dyr plast"? Innehåller det äkta silke eller bara 3 % som ett reklamknep? Det använder en algoritm baserad på europeiska och nordamerikanska industristandarder som utvärderar andningsförmåga, hållbarhet och termisk effektivitet.',
+      html: 'Modeindustrin använder sofistikerade marknadsföringstekniker för att sälja mediokra plagg till premiumpriser. Vårt verktyg för textil sanning analyserar plaggens verkliga sammansättning - de fiberprocent som anges på etiketten - för att avslöja obekväma sanningar: är det verkligen bomull eller är det "dyr plast"? Innehåller det äkta silke eller bara 3 % som ett reklamknep? Det använder en algoritm baserad på europeiska och nordamerikanska industristandarder som utvärderar andningsförmåga, hållbarhet och termisk effektivitet.',
     },
     {
       type: 'title',
@@ -70,7 +70,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Våra verktyg ger dig möjlighet att göra smartare inköp, ta bättre hand om dina plagg och förlänga deras livslängd – den mest hållbara handlingen som är möjlig.',
+      html: 'Våra verktyg ger dig möjlighet att göra smartare inköp, ta bättre hand om dina plagg och förlänga deras livslängd - den mest hållbara handlingen som är möjlig.',
     },
   ],
 };

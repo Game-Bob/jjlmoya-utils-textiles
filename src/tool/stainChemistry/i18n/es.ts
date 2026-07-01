@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: 'Vino Tinto / Fruta',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: 'Remojo prolongado' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: 'Remojo prolongado' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Pasta directa' },
           delicate: {
             agentId: 'vinegar',
@@ -232,13 +232,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Oxidación Controlada',
+      title: '01: Oxidación Controlada',
       icon: 'mdi:atom',
       html: 'El <strong>percarbonato de sodio</strong> libera oxígeno activo que rompe las dobles ligaduras de los cromóforos (las moléculas responsables del color de la mancha), volviéndolas incoloras y solubles en agua. Es el método más eficaz para manchas orgánicas.',
     },
     {
       type: 'card',
-      title: '02 — Solubilización por Solventes',
+      title: '02: Solubilización por Solventes',
       icon: 'mdi:flask-outline',
       html: 'Manchas como el aceite o la tinta no son solubles en agua. Solventes como el <strong>alcohol isopropílico</strong> o la <strong>acetona</strong> reducen la tensión superficial y atraen las moléculas no polares de la mancha, permitiendo que se transfieran a un medio de soporte.',
     },

@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: 'Anggur Merah / Buah',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: 'Perendaman lama' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: 'Perendaman lama' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Pasta langsung' },
           delicate: {
             agentId: 'vinegar',
@@ -232,13 +232,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Oksidasi Terkontrol',
+      title: '01: Oksidasi Terkontrol',
       icon: 'mdi:atom',
       html: '<strong>Natrium perkarbonat</strong> melepaskan oksigen aktif yang memecah ikatan rangkap kromofor (molekul yang bertanggung jawab atas warna noda), menjadikannya tidak berwarna dan larut dalam air. Ini adalah metode paling efektif untuk noda organik.',
     },
     {
       type: 'card',
-      title: '02 — Kelarutan oleh Pelarut',
+      title: '02: Kelarutan oleh Pelarut',
       icon: 'mdi:flask-outline',
       html: 'Noda seperti minyak atau tinta tidak larut dalam air. Pelarut seperti <strong>isopropil alkohol</strong> atau <strong>aseton</strong> mengurangi tegangan permukaan dan menarik molekul non-polar noda, memungkinkannya berpindah ke media pendukung.',
     },

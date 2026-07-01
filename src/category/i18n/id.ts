@@ -21,7 +21,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Industri fashion menggunakan teknik pemasaran yang canggih untuk menjual pakaian berkualitas biasa dengan harga premium. Alat Kebenaran Tekstil kami menganalisis komposisi asli pakaian — persentase serat yang tercantum pada label — untuk mengungkapkan kebenaran yang tidak nyaman: apakah itu benar-benar katun atau "plastik mahal"? Apakah mengandung sutra asli atau hanya 3% sebagai pemikat iklan? Alat ini menggunakan algoritme berdasarkan standar industri Eropa dan Amerika Utara yang mengevaluasi daya napas, daya tahan, dan efisiensi termal.',
+      html: 'Industri fashion menggunakan teknik pemasaran yang canggih untuk menjual pakaian berkualitas biasa dengan harga premium. Alat Kebenaran Tekstil kami menganalisis komposisi asli pakaian  -  persentase serat yang tercantum pada label  -  untuk mengungkapkan kebenaran yang tidak nyaman: apakah itu benar-benar katun atau "plastik mahal"? Apakah mengandung sutra asli atau hanya 3% sebagai pemikat iklan? Alat ini menggunakan algoritme berdasarkan standar industri Eropa dan Amerika Utara yang mengevaluasi daya napas, daya tahan, dan efisiensi termal.',
     },
     {
       type: 'title',
@@ -70,7 +70,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Alat kami memberdayakan Anda untuk berbelanja lebih cerdas, merawat pakaian dengan lebih baik, dan memperpanjang masa pakainya — tindakan paling berkelanjutan yang mungkin dilakukan.',
+      html: 'Alat kami memberdayakan Anda untuk berbelanja lebih cerdas, merawat pakaian dengan lebih baik, dan memperpanjang masa pakainya  -  tindakan paling berkelanjutan yang mungkin dilakukan.',
     },
   ],
 };

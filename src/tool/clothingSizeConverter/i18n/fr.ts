@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Comment savoir si je dois prendre une taille au-dessus ou en dessous ?',
     answer:
-      'Le meilleur moyen est de lire les avis d\'autres clients. Des expressions comme « taille petit » ou « taille grand » sont très utiles. Consultez aussi le guide des tailles spécifique de la marque.',
+      'Le meilleur moyen est de lire les avis d\'autres clients. Des expressions comme " taille petit " ou " taille grand " sont très utiles. Consultez aussi le guide des tailles spécifique de la marque.',
   },
   {
     question: 'La table de conversion des tailles est-elle exacte ?',
@@ -43,7 +43,7 @@ const howToData = [
   },
   {
     name: 'Choisir votre Système de Taille',
-    text: 'Sélectionnez le système que vous connaissez : EU, US, UK ou IT.',
+    text: 'Sélectionnez le système que vous connaissez: EU, US, UK ou IT.',
   },
   {
     name: 'Sélectionner votre Taille',
@@ -214,7 +214,7 @@ export const content: ToolLocaleContent<ClothingSizeConverterUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Convertisseur de Tailles : Guide International Complet',
+      text: 'Convertisseur de Tailles: Guide International Complet',
       level: 2,
     },
     {
@@ -304,9 +304,9 @@ export const content: ToolLocaleContent<ClothingSizeConverterUI> = {
     chestLabel: 'Poitrine (cm)',
     waistLabel: 'Taille (cm)',
     hipLabel: 'Hanches (cm)',
-    chestPlaceholder: 'Ex. : 95',
-    waistPlaceholder: 'Ex. : 85',
-    hipPlaceholder: 'Ex. : 95',
+    chestPlaceholder: 'Ex.: 95',
+    waistPlaceholder: 'Ex.: 85',
+    hipPlaceholder: 'Ex.: 95',
     recommendBtnLabel: 'Recommander une Taille',
     tipsTitle: 'Conseils de Mesure',
     tipOverClothes: 'Par-dessus les vêtements',

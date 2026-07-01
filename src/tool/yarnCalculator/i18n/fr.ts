@@ -4,7 +4,7 @@ import { bibliography } from '../bibliography';
 import type { YarnCalculatorUI } from '../ui';
 
 const slug = 'calculateur-laine';
-const title = 'Calculateur de Laine : Combien de mètres et de pelotes ?';
+const title = 'Calculateur de Laine: Combien de mètres et de pelotes ?';
 const description =
   'Calculez avec précision la quantité de laine nécessaire pour vos projets de tricot et crochet en fonction du patron et de la taille.';
 
@@ -94,12 +94,12 @@ export const content: ToolLocaleContent<YarnCalculatorUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Guide de Consommation de Laine : Comment Calculer Mètres et Pelotes',
+      text: 'Guide de Consommation de Laine: Comment Calculer Mètres et Pelotes',
       level: 2,
     },
     {
       type: 'paragraph',
-      html: 'Maîtrisez la logistique du tricot et évitez de manquer de fil grâce à notre calculateur technique de précision pour le tricot et le crochet. L\'une des plus grandes craintes des tricoteurs est le <strong>"Yarn Chicken"</strong> : ce moment critique en fin de projet où le fil semble vouloir se terminer avant de fermer les dernières mailles. Ce calculateur a été développé pour vous offrir des estimations basées sur les standards industriels de métrage et de grammage.',
+      html: 'Maîtrisez la logistique du tricot et évitez de manquer de fil grâce à notre calculateur technique de précision pour le tricot et le crochet. L\'une des plus grandes craintes des tricoteurs est le <strong>"Yarn Chicken"</strong>: ce moment critique en fin de projet où le fil semble vouloir se terminer avant de fermer les dernières mailles. Ce calculateur a été développé pour vous offrir des estimations basées sur les standards industriels de métrage et de grammage.',
     },
     {
       type: 'stats',
@@ -117,7 +117,7 @@ export const content: ToolLocaleContent<YarnCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Beaucoup de débutants font l\'erreur d\'acheter de la laine en se basant exclusivement sur le poids (ex. "6 pelotes de 100g"). Cependant, le poids est une unité de masse, pas de longueur. Deux laines de 100g peuvent avoir des longueurs radicalement différentes : une laine <strong>Bulky</strong> peut n\'avoir que 80 mètres, tandis qu\'une <strong>Fingering / Lace</strong> peut dépasser 450 mètres pour le même poids.',
+      html: 'Beaucoup de débutants font l\'erreur d\'acheter de la laine en se basant exclusivement sur le poids (ex. "6 pelotes de 100g"). Cependant, le poids est une unité de masse, pas de longueur. Deux laines de 100g peuvent avoir des longueurs radicalement différentes: une laine <strong>Bulky</strong> peut n\'avoir que 80 mètres, tandis qu\'une <strong>Fingering / Lace</strong> peut dépasser 450 mètres pour le même poids.',
     },
     {
       type: 'paragraph',

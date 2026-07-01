@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Mindre är mer (Tvättmedel)', html: 'För mycket tvättmedel lämnar rester som drar till sig smuts och gör kläderna stela.' },
     { type: 'tip', title: 'Torktumlare: Den subtila fienden', html: 'Luddet du ser i torktumlarens filter är delar av dina kläder som lossnat på grund av friktion och värme.' },
     { type: 'tip', title: 'Tvätta ut och in', html: 'Skyddar färg och broderier från friktion mot trumman och andra plagg.' },
-    { type: 'paragraph', html: '"Köp mindre, välj bättre och låt det hålla länge." — Denna analysator är ditt första steg mot en medveten garderob av hög kvalitet.' },
+    { type: 'paragraph', html: '"Köp mindre, välj bättre och låt det hålla länge."  -  Denna analysator är ditt första steg mot en medveten garderob av hög kvalitet.' },
   ],
   faq: faqData,
   bibliography: bibliography,

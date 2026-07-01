@@ -22,7 +22,7 @@ const faqData = [
   {
     question: 'Skąd mam wiedzieć, czy w danej marce powinienem wziąć rozmiar większy czy mniejszy?',
     answer:
-      'Najlepszym sposobem jest sprawdzenie opinii innych klientów. Zdania typu „było na mnie za małe” lub „duży krój” są bardzo pomocne. Sprawdź również konkretną tabelę wymiarów danej marki.',
+      'Najlepszym sposobem jest sprawdzenie opinii innych klientów. Zdania typu "było na mnie za małe" lub "duży krój" są bardzo pomocne. Sprawdź również konkretną tabelę wymiarów danej marki.',
   },
   {
     question: 'Jak dokładna jest tabela konwersji rozmiarów?',

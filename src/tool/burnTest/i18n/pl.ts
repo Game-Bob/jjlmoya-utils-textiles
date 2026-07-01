@@ -154,7 +154,7 @@ export const content: ToolLocaleContent<BurnTestUI> = {
     },
     {
       type: 'paragraph',
-      html: 'Precyzyjna analiza wymaga zestawienia co najmniej trzech dowodów. Zapach jest najbardziej wiarygodnym wskaźnikiem przy identyfikacji mieszanek: jeśli „lniana” tkanina wydziela lekki plastikowy aromat i pozostawia twarde resztki, oznacza to niezadeklarowaną domieszkę poliestru.',
+      html: 'Precyzyjna analiza wymaga zestawienia co najmniej trzech dowodów. Zapach jest najbardziej wiarygodnym wskaźnikiem przy identyfikacji mieszanek: jeśli "lniana" tkanina wydziela lekki plastikowy aromat i pozostawia twarde resztki, oznacza to niezadeklarowaną domieszkę poliestru.',
     },
     {
       type: 'tip',
@@ -187,8 +187,8 @@ export const content: ToolLocaleContent<BurnTestUI> = {
       wool: { name: 'Wełna / Merino', icon: 'mdi:sheep', color: '#FCD34D', description: 'Białkowe włókno zwierzęce, doskonały izolator termiczny i elastyczne.' },
       silk: { name: 'Jedwab', icon: 'mdi:ticket-percent', color: '#F472B6', description: 'Zwierzęce włókno ciągłe. Naturalny połysk i suchy chwyt.' },
       cashmere: { name: 'Kaszmir', icon: 'mdi:crown', color: '#F59E0B', description: 'Luksusowe włókno z kóz kaszmirskich. Ekstremalnie miękkie, lekkie i ciepłe.' },
-      mohair: { name: 'Mohair', icon: 'mdi:shimmer', color: '#14B8A6', description: '„Diamentowe włókno” z kóz angorskich. Naturalny połysk, bardzo wytrzymałe.' },
-      angora: { name: 'Angora', icon: 'mdi:rabbit', color: '#F9FAFB', description: 'Sierść krolika angorskiego. Znana z puszystego efektu „halo” i ekstremalnej lekkości.' },
+      mohair: { name: 'Mohair', icon: 'mdi:shimmer', color: '#14B8A6', description: '"Diamentowe włókno" z kóz angorskich. Naturalny połysk, bardzo wytrzymałe.' },
+      angora: { name: 'Angora', icon: 'mdi:rabbit', color: '#F9FAFB', description: 'Sierść krolika angorskiego. Znana z puszystego efektu "halo" i ekstremalnej lekkości.' },
       alpaca: { name: 'Alpaka', icon: 'mdi:image-filter-hdr', color: '#9F7AEA', description: 'Skarb Andów. Włókno puste w środku, termiczne, hipoalergiczne i jedwabiste.' },
       polyester: { name: 'Poliester', icon: 'mdi:oil', color: '#94A3B8', description: 'Syntetyczne włókno na bazie ropy naftowej. Wytrzymałe, nie gniecie się, nie oddycha.' },
       nylon: { name: 'Nylon (Poliamid)', icon: 'mdi:parachute', color: '#2DD4BF', description: 'Bardzo wytrzymałe włókno syntetyczne na rozciąganie i ścieranie.' },

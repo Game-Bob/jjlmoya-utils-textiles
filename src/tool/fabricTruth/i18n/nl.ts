@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: 'Minder is Meer (Wasmiddel)', html: 'Een overdaad aan zeep laat resten achter die vuil aantrekken en kleding stijf maken.' },
     { type: 'tip', title: 'Droger: De Subtiele Vijand', html: 'De pluisjes die je in het filter van de droger ziet, zijn stukjes van je kleding die door wrijving en hitte zijn losgekomen.' },
     { type: 'tip', title: 'Binnenstebuiten Wassen', html: 'Beschermt kleur en borduursels tegen wrijving met de trommel och andere kledingstappen.' },
-    { type: 'paragraph', html: '"Koop minder, kies beter en laat het lang meegaan." — Deze analysator is je eerste stap naar een bewuste en hoogwaardige garderobe.' },
+    { type: 'paragraph', html: '"Koop minder, kies beter en laat het lang meegaan."  -  Deze analysator is je eerste stap naar een bewuste en hoogwaardige garderobe.' },
   ],
   faq: faqData,
   bibliography: bibliography,

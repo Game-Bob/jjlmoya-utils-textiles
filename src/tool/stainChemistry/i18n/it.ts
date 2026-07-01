@@ -153,7 +153,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         id: 'wine',
         name: 'Vino Rosso / Frutta',
         protocols: {
-          natural: { agentId: 'percarbonate', temperature: '40–60°C', method: 'Ammollo prolungato' },
+          natural: { agentId: 'percarbonate', temperature: '40-60°C', method: 'Ammollo prolungato' },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Pasta diretta' },
           delicate: {
             agentId: 'vinegar',
@@ -232,13 +232,13 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Ossidazione Controllata',
+      title: '01: Ossidazione Controllata',
       icon: 'mdi:atom',
       html: 'Il <strong>percarbonato di sodio</strong> rilascia ossigeno attivo che rompe i doppi legami dei cromofori (le molecole responsabili del colore della macchia), rendendoli incolori e solubili in acqua. È il metodo più efficace per le macchie organiche.',
     },
     {
       type: 'card',
-      title: '02 — Solubilizzazione tramite Solventi',
+      title: '02: Solubilizzazione tramite Solventi',
       icon: 'mdi:flask-outline',
       html: "Macchie come l'olio o l'inchiostro non sono solubili in acqua. Solventi come l'<strong>alcol isopropilico</strong> o l'<strong>acetone</strong> riducono la tensione superficiale e attirano le molecole non polari della macchia, permettendo loro di trasferirsi su un mezzo di supporto.",
     },

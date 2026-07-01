@@ -99,12 +99,12 @@ export const content: ToolLocaleContent<ShoeSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: '鞋类世界并没有统一。从历史上看，每个地区都根据当地的测量单位（如英寸或“巴黎点”）开发了自己的系统。',
+      html: '鞋类世界并没有统一。从历史上看，每个地区都根据当地的测量单位（如英寸或"巴黎点"）开发了自己的系统。',
     },
     {
       type: 'list',
       items: [
-        '<span><strong>欧码 EU (欧洲):</strong> 基于“巴黎点”，相当于 2/3 厘米。这是中国最常用的参考系统之一。</span>',
+        '<span><strong>欧码 EU (欧洲):</strong> 基于"巴黎点"，相当于 2/3 厘米。这是中国最常用的参考系统之一。</span>',
         '<span><strong>美码 US (美国):</strong> 使用英寸，且男女鞋的起点不同。</span>',
         '<span><strong>英码 UK (英国):</strong> 同样采用英制系统，但刻度比美国低一个单位。</span>',
         '<span><strong>厘米 CM / Mondopoint:</strong> 最精确的。直接使用以厘米为单位的脚长。</span>',
@@ -131,7 +131,7 @@ export const content: ToolLocaleContent<ShoeSizeConverterUI> = {
     },
     {
       type: 'paragraph',
-      html: '为什么 Nike 穿 42 码，而在 Adidas 却穿 41 1/3 码？品牌使用自己的“鞋楦”。有些运动品牌往往尺码偏小，这迫使人们不得不购买比平时大半号的鞋子。',
+      html: '为什么 Nike 穿 42 码，而在 Adidas 却穿 41 1/3 码？品牌使用自己的"鞋楦"。有些运动品牌往往尺码偏小，这迫使人们不得不购买比平时大半号的鞋子。',
     },
   ],
   ui: {

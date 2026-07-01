@@ -21,7 +21,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'L\'industria della moda utilizza sofisticate tecniche di marketing per vendere capi mediocri a prezzi premium. Il nostro strumento Verità Tessile analizza la reale composizione dei capi — le percentuali di fibre elencate sull\'etichetta — per rivelarti verità scomode: è davvero cotone o "plastica costosa"? Contiene vera seta o solo un 3% come esca pubblicitaria? Utilizza un algoritmo basato su standard industriali europei e nordamericani che valuta traspirabilità, durata ed efficienza termica.',
+      html: 'L\'industria della moda utilizza sofisticate tecniche di marketing per vendere capi mediocri a prezzi premium. Il nostro strumento Verità Tessile analizza la reale composizione dei capi  -  le percentuali di fibre elencate sull\'etichetta  -  per rivelarti verità scomode: è davvero cotone o "plastica costosa"? Contiene vera seta o solo un 3% come esca pubblicitaria? Utilizza un algoritmo basato su standard industriali europei e nordamericani che valuta traspirabilità, durata ed efficienza termica.',
     },
     {
       type: 'title',
@@ -70,7 +70,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'I nostri strumenti ti permettono di fare acquisti più intelligenti, prenderti cura meglio dei tuoi capi e prolungarne la vita utile — l\'atto più sostenibile possibile.',
+      html: 'I nostri strumenti ti permettono di fare acquisti più intelligenti, prenderti cura meglio dei tuoi capi e prolungarne la vita utile  -  l\'atto più sostenibile possibile.',
     },
   ],
 };

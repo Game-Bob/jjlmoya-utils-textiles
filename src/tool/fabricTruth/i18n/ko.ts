@@ -259,7 +259,7 @@ export const content: ToolLocaleContent<FabricTruthUI> = {
     { type: 'tip', title: '적당량의 세제 사용', html: '세제가 과하면 잔여물이 남아 오염을 유도하고 옷감을 뻣뻣하게 만듭니다.' },
     { type: 'tip', title: '건조기: 조용한 적', html: '건조기 필터에 쌓이는 먼지는 마찰과 열에 의해 옷에서 떨어져 나간 옷감의 일부입니다.' },
     { type: 'tip', title: '뒤집어서 세탁하기', html: '세탁조나 다른 옷과의 마찰로부터 색상과 자수를 보호합니다.' },
-    { type: 'paragraph', html: '"적게 사고, 더 잘 고르고, 오래 입기." —— 이 분석 도구는 의식 있고 수준 높은 옷장을 향한 첫걸음입니다.' },
+    { type: 'paragraph', html: '"적게 사고, 더 잘 고르고, 오래 입기."  -  -  이 분석 도구는 의식 있고 수준 높은 옷장을 향한 첫걸음입니다.' },
   ],
   faq: faqData,
   bibliography: bibliography,

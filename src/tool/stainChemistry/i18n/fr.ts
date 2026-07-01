@@ -6,7 +6,7 @@ import type { StainChemistryUI } from '../ui';
 const slug = 'protocole-chimique-taches';
 const title = 'Protocole Chimique des Taches Textiles';
 const description =
-  'Protocoles scientifiques pour éliminer les taches selon le type de fibre et la nature chimique de la tache. Percarbonate, enzymes, solvants : la bonne méthode pour chaque cas.';
+  'Protocoles scientifiques pour éliminer les taches selon le type de fibre et la nature chimique de la tache. Percarbonate, enzymes, solvants: la bonne méthode pour chaque cas.';
 
 const faqData = [
   {
@@ -157,7 +157,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
         protocols: {
           natural: {
             agentId: 'percarbonate',
-            temperature: '40–60°C',
+            temperature: '40-60°C',
             method: 'Trempage prolongé',
           },
           synthetic: { agentId: 'percarbonate', temperature: '40°C', method: 'Pâte directe' },
@@ -242,19 +242,19 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'card',
-      title: '01 — Oxydation Contrôlée',
+      title: '01: Oxydation Contrôlée',
       icon: 'mdi:atom',
       html: 'Le <strong>percarbonate de sodium</strong> libère de l\'oxygène actif qui brise les doubles liaisons des chromophores (les molécules responsables de la couleur de la tache), les rendant incolores et solubles dans l\'eau. C\'est la méthode la plus efficace pour les taches organiques.',
     },
     {
       type: 'card',
-      title: '02 — Solubilisation par Solvants',
+      title: '02: Solubilisation par Solvants',
       icon: 'mdi:flask-outline',
       html: 'Les taches comme l\'huile ou l\'encre ne sont pas solubles dans l\'eau. Des solvants tels que l\'<strong>alcool isopropylique</strong> ou l\'<strong>acétone</strong> réduisent la tension de surface et attirent les molécules apolaires de la tache, leur permettant d\'être transférées sur un support.',
     },
     {
       type: 'title',
-      text: 'La Souveraineté des Fibres : Pourquoi le Type de Fibre Compte',
+      text: 'La Souveraineté des Fibres: Pourquoi le Type de Fibre Compte',
       level: 2,
     },
     {
@@ -272,7 +272,7 @@ export const content: ToolLocaleContent<StainChemistryUI> = {
     },
     {
       type: 'tip',
-      title: 'Protocole d\'Urgence : Vin Rouge',
+      title: 'Protocole d\'Urgence: Vin Rouge',
       html: '<strong>A. Absorption passive :</strong> Tamponner avec du papier absorbant, ne jamais frotter pour éviter l\'expansion mécanique.<br><strong>B. Neutralisation osmotique :</strong> Couvrir de sel fin pour attirer le liquide vers l\'extérieur du noyau de la fibre.<br><strong>C. Action chimique :</strong> Appliquer une pâte de percarbonate et d\'eau à 40°C si la fibre supporte la chaleur.',
     },
     {

@@ -89,7 +89,7 @@ export const content: ToolLocaleContent<ShoeSizeConverterUI> = {
   seo: [
     {
       type: 'title',
-      text: 'Convertisseur de Pointures : Guide International Complet',
+      text: 'Convertisseur de Pointures: Guide International Complet',
       level: 2,
     },
     {

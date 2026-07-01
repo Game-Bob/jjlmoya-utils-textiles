@@ -12,7 +12,7 @@ const faqData = [
   {
     question: 'Est-il sûr d\'effectuer un test de combustion à la maison?',
     answer:
-      "Oui, à condition de prendre des précautions extrêmes : utilisez des pinces métalliques, travaillez sur une surface ignifuge (céramique ou métal), gardez de l'eau à portée et effectuez le test dans un endroit ventilé. Vous n'avez besoin que d'un petit échantillon de 1x1 cm ou de quelques fils.",
+      "Oui, à condition de prendre des précautions extrêmes: utilisez des pinces métalliques, travaillez sur une surface ignifuge (céramique ou métal), gardez de l'eau à portée et effectuez le test dans un endroit ventilé. Vous n'avez besoin que d'un petit échantillon de 1x1 cm ou de quelques fils.",
   },
   {
     question: 'Comment sent le coton quand il brûle?',
@@ -127,7 +127,7 @@ export const content: ToolLocaleContent<BurnTestUI> = {
     },
     {
       type: 'paragraph',
-      html: "Le test de combustion est la méthode analytique la plus rapide et précise pour différencier les polymères naturels des synthétiques sans recourir au microscope électronique. En soumettant une fibre à la chaleur, son comportement moléculaire révèle son origine : depuis la cellulose végétale jusqu'aux protéines animales ou aux dérivés du pétrole.",
+      html: "Le test de combustion est la méthode analytique la plus rapide et précise pour différencier les polymères naturels des synthétiques sans recourir au microscope électronique. En soumettant une fibre à la chaleur, son comportement moléculaire révèle son origine: depuis la cellulose végétale jusqu'aux protéines animales ou aux dérivés du pétrole.",
     },
     {
       type: 'card',
@@ -154,7 +154,7 @@ export const content: ToolLocaleContent<BurnTestUI> = {
     },
     {
       type: 'paragraph',
-      html: "Une analyse précise nécessite de croiser au moins trois preuves. L'odeur est l'indicateur le plus fiable pour identifier les mélanges : si un tissu de \"lin\" dégage un léger arôme plastique et laisse des résidus durs, cela indique un mélange polyester non déclaré.",
+      html: "Une analyse précise nécessite de croiser au moins trois preuves. L'odeur est l'indicateur le plus fiable pour identifier les mélanges: si un tissu de \"lin\" dégage un léger arôme plastique et laisse des résidus durs, cela indique un mélange polyester non déclaré.",
     },
     {
       type: 'tip',

@@ -12,7 +12,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Świat tekstyliów to fascynujące połączenie chemii, fizyki i inżynierii. W tej sekcji oferujemy specjalistyczne narzędzia, dzięki którym naprawdę zrozumiesz, co nosisz. Od analizy składu po obliczenia zużycia tkanin i skalowanie wykrojów – te narzędzia są przeznaczone dla profesjonalistów, pasjonatów DIY oraz świadomych konsumentów, którzy chcą podejmować przemyślane decyzje dotyczące swojej garderoby.',
+      html: 'Świat tekstyliów to fascynujące połączenie chemii, fizyki i inżynierii. W tej sekcji oferujemy specjalistyczne narzędzia, dzięki którym naprawdę zrozumiesz, co nosisz. Od analizy składu po obliczenia zużycia tkanin i skalowanie wykrojów - te narzędzia są przeznaczone dla profesjonalistów, pasjonatów DIY oraz świadomych konsumentów, którzy chcą podejmować przemyślane decyzje dotyczące swojej garderoby.',
     },
     {
       type: 'title',
@@ -21,7 +21,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Przemysł modowy wykorzystuje wyrafinowane techniki marketingowe, aby sprzedawać przeciętną odzież w cenach premium. Nasze narzędzie Prawda o Tekstyliach analizuje rzeczywisty skład odzieży – procentową zawartość włókien podaną na metce – aby ujawnić niewygodną prawdę: czy to naprawdę bawełna, czy „drogi plastik”? Czy zawiera prawdziwy jedwab, czy tylko 3% jako chwyt reklamowy? Wykorzystuje algorytm oparty na europejskich i północnoamerykańskich standardach przemysłowych, który ocenia oddychalność, trwałość i wydajność termiczną.',
+      html: 'Przemysł modowy wykorzystuje wyrafinowane techniki marketingowe, aby sprzedawać przeciętną odzież w cenach premium. Nasze narzędzie Prawda o Tekstyliach analizuje rzeczywisty skład odzieży - procentową zawartość włókien podaną na metce - aby ujawnić niewygodną prawdę: czy to naprawdę bawełna, czy "drogi plastik"? Czy zawiera prawdziwy jedwab, czy tylko 3% jako chwyt reklamowy? Wykorzystuje algorytm oparty na europejskich i północnoamerykańskich standardach przemysłowych, który ocenia oddychalność, trwałość i wydajność termiczną.',
     },
     {
       type: 'title',
@@ -70,7 +70,7 @@ export const content: CategoryLocaleContent = {
     },
     {
       type: 'paragraph',
-      html: 'Nasze narzędzia pozwalają na dokonywanie mądrzejszych zakupów, lepszą pielęgnację odzieży i wydłużenie jej żywotności – co jest najbardziej zrównoważonym działaniem, jakie można podjąć.',
+      html: 'Nasze narzędzia pozwalają na dokonywanie mądrzejszych zakupów, lepszą pielęgnację odzieży i wydłużenie jej żywotności - co jest najbardziej zrównoważonym działaniem, jakie można podjąć.',
     },
   ],
 };

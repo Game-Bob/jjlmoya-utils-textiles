@@ -16,7 +16,7 @@ const faqData = [
   {
     question: '如果我购买不同缸号（Dye Lot）的线会怎样？',
     answer:
-      '即使在商店里看起来颜色完全一致，染色过程中极细微的化学差异也可能导致成品编织在一起时出现可见的“色差带”。强烈建议务必一次性买齐所需毛线，并确保批次代码（缸号）完全相同。',
+      '即使在商店里看起来颜色完全一致，染色过程中极细微的化学差异也可能导致成品编织在一起时出现可见的"色差带"。强烈建议务必一次性买齐所需毛线，并确保批次代码（缸号）完全相同。',
   },
   {
     question: '织片密度（gauge）如何影响最终耗线量？',
@@ -98,7 +98,7 @@ export const content: ToolLocaleContent<YarnCalculatorUI> = {
     },
     {
       type: 'paragraph',
-      html: '掌握编织物流管理，使用我们的棒针与钩针高精度技术计算器，避免“断线”尴尬。每一位编织者最大的恐惧莫过于 <strong>“绝望的最后几米（Yarn Chicken）”</strong>：在项目的末尾，似乎线就要在收掉最后几针前用完了。本计算器旨在基于工业标准的长度和克重数据为你提供准确的预估。',
+      html: '掌握编织物流管理，使用我们的棒针与钩针高精度技术计算器，避免"断线"尴尬。每一位编织者最大的恐惧莫过于 <strong>"绝望的最后几米（Yarn Chicken）"</strong>：在项目的末尾，似乎线就要在收掉最后几针前用完了。本计算器旨在基于工业标准的长度和克重数据为你提供准确的预估。',
     },
     {
       type: 'stats',
@@ -111,12 +111,12 @@ export const content: ToolLocaleContent<YarnCalculatorUI> = {
     },
     {
       type: 'title',
-      text: '为什么线团的“重量”具有欺骗性？',
+      text: '为什么线团的"重量"具有欺骗性？',
       level: 3,
     },
     {
       type: 'paragraph',
-      html: '许多初学者在购买毛线时会犯专注于重量（例如“买 6 团 100 克的线”）的错误。然而，重量是质量单位，而非长度单位。两款同样重 100 克的线，其长度可能截然不同：一款 <strong>Bulky（粗线）</strong> 类型可能只有 80 米，而同样重量的一款 <strong>Fingering / Lace（蕾丝线）</strong> 长度可能超过 450 米。',
+      html: '许多初学者在购买毛线时会犯专注于重量（例如"买 6 团 100 克的线"）的错误。然而，重量是质量单位，而非长度单位。两款同样重 100 克的线，其长度可能截然不同：一款 <strong>Bulky（粗线）</strong> 类型可能只有 80 米，而同样重量的一款 <strong>Fingering / Lace（蕾丝线）</strong> 长度可能超过 450 米。',
     },
     {
       type: 'paragraph',
@@ -168,7 +168,7 @@ export const content: ToolLocaleContent<YarnCalculatorUI> = {
         },
         {
           title: '麻花 / 纹理',
-          description: '纤维的交叉会使织片“缩短”，使消耗量增加约 25%。',
+          description: '纤维的交叉会使织片"缩短"，使消耗量增加约 25%。',
           icon: 'mdi:texture-box',
           points: ['需要更多米数', '织物更紧密、更沉重'],
           pointIcon: 'mdi:alert-circle-outline',
