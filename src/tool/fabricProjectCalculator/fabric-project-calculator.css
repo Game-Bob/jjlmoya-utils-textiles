@@ -1,92 +1,106 @@
-.fabric-calculator-card {
-  --fabric-accent: #4f46e5;
-  --fabric-accent-soft: rgba(79, 70, 229, 0.12);
-  --fabric-panel: color-mix(in srgb, var(--bg-surface) 92%, var(--fabric-accent) 8%);
+#fabric-calc-app {
+  --fpc-accent: #4f46e5;
+  --fpc-accent-soft: rgba(79, 70, 229, 0.12);
 
   width: min(100%, 1120px);
   margin: 1.5rem auto;
-  padding: 1.25rem;
+  padding: 1rem;
   display: grid;
-  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);
+  gap: 1rem;
+  color: var(--text-main);
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
-  border-radius: 1.25rem;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.14);
-  color: var(--text-main);
+  border-radius: 1rem;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.14);
+  box-sizing: border-box;
   overflow: visible;
+  isolation: isolate;
 }
 
-.fabric-sidebar,
-.fabric-main,
-.magic-result-area,
-.canvas-wrapper,
-.merch-section {
+#fabric-calc-app *,
+#fabric-calc-app *::before,
+#fabric-calc-app *::after {
+  box-sizing: border-box;
+}
+
+#fabric-calc-app .fpc-controls,
+#fabric-calc-app .fpc-main,
+#fabric-calc-app .fpc-layout,
+#fabric-calc-app .fpc-canvas,
+#fabric-calc-app .fpc-result,
+#fabric-calc-app .fpc-merch {
   min-width: 0;
+  max-width: 100%;
 }
 
-.fabric-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+#fabric-calc-app .fpc-controls,
+#fabric-calc-app .fpc-config,
+#fabric-calc-app .fpc-field,
+#fabric-calc-app .fpc-main,
+#fabric-calc-app .fpc-checklist {
+  display: grid;
+}
+
+#fabric-calc-app .fpc-controls,
+#fabric-calc-app .fpc-main {
+  gap: 1rem;
+  align-content: start;
+}
+
+#fabric-calc-app .fpc-config,
+#fabric-calc-app .fpc-result,
+#fabric-calc-app .fpc-canvas,
+#fabric-calc-app .fpc-merch {
   padding: 1rem;
   background: var(--bg-page);
   border: 1px solid var(--border-color);
-  border-radius: 1rem;
+  border-radius: 0.85rem;
 }
 
-.config-group {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+#fabric-calc-app .fpc-config,
+#fabric-calc-app .fpc-field {
+  gap: 0.85rem;
 }
 
-.config-group + .config-group {
-  padding-top: 1rem;
-  border-top: 1px solid var(--border-color);
-}
-
-.config-group h3,
-.merch-title {
+#fabric-calc-app .fpc-config h3,
+#fabric-calc-app .fpc-merch-title {
   margin: 0;
+  color: var(--fpc-accent);
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--fabric-accent);
 }
 
-.fabric-field {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
+#fabric-calc-app .fpc-field {
+  gap: 0.4rem;
 }
 
-.fabric-field label {
+#fabric-calc-app .fpc-field label,
+#fabric-calc-app .fpc-result-label {
+  color: var(--text-muted);
   font-size: 0.7rem;
-  font-weight: 800;
+  font-weight: 850;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--text-muted);
 }
 
-.fabric-select,
-.fabric-input {
+#fabric-calc-app .fpc-select,
+#fabric-calc-app .fpc-input {
   width: 100%;
-  min-width: 0;
-  min-height: 46px;
+  min-height: 44px;
   color: var(--text-main);
   background-color: var(--bg-surface);
   border: 1.5px solid var(--border-color);
-  border-radius: 0.75rem;
+  border-radius: 0.7rem;
   outline: none;
 }
 
-.fabric-select {
-  padding: 0.75rem 2.5rem 0.75rem 0.9rem;
+#fabric-calc-app .fpc-select {
+  padding: 0.75rem 2.4rem 0.75rem 0.85rem;
   font-size: 0.875rem;
   font-weight: 750;
-  cursor: pointer;
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234F46E5' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -94,194 +108,159 @@
   background-size: 1rem;
 }
 
-.fabric-select:focus,
-.fabric-input:focus {
-  border-color: var(--fabric-accent);
-  box-shadow: 0 0 0 3px var(--fabric-accent-soft);
+#fabric-calc-app .fpc-select:focus,
+#fabric-calc-app .fpc-input:focus {
+  border-color: var(--fpc-accent);
+  box-shadow: 0 0 0 3px var(--fpc-accent-soft);
 }
 
-.preset-group {
+#fabric-calc-app .fpc-size-options,
+#fabric-calc-app .fpc-actions,
+#fabric-calc-app .fpc-stepper,
+#fabric-calc-app .fpc-scheme {
   display: grid;
+}
+
+#fabric-calc-app .fpc-size-options {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.5rem;
 }
 
-.preset-pill {
-  min-height: 42px;
-  padding: 0.65rem 0.45rem;
-  border: 1.5px solid rgba(79, 70, 229, 0.28);
-  border-radius: 0.75rem;
-  background: rgba(79, 70, 229, 0.07);
-  color: var(--fabric-accent);
+#fabric-calc-app .fpc-size-option,
+#fabric-calc-app .fpc-action,
+#fabric-calc-app .fpc-copy-button,
+#fabric-calc-app .fpc-step-button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+#fabric-calc-app .fpc-size-option {
+  min-height: 40px;
+  padding: 0.6rem 0.4rem;
+  color: var(--fpc-accent);
+  background: rgba(79, 70, 229, 0.08);
+  border: 1px solid rgba(79, 70, 229, 0.28);
+  border-radius: 0.7rem;
   font-size: 0.72rem;
   font-weight: 900;
-  line-height: 1.1;
-  cursor: pointer;
 }
 
-.preset-pill.active {
+#fabric-calc-app .fpc-size-option.active,
+#fabric-calc-app .fpc-action-primary {
   color: #fff;
-  background: var(--fabric-accent);
-  border-color: var(--fabric-accent);
+  background: var(--fpc-accent);
 }
 
-.shop-stepper {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 46px minmax(0, 1fr) 46px;
-  align-items: stretch;
+#fabric-calc-app .fpc-stepper {
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
   overflow: hidden;
   background: var(--bg-surface);
   border: 1.5px solid var(--border-color);
-  border-radius: 0.75rem;
+  border-radius: 0.7rem;
 }
 
-.step-btn {
-  min-height: 46px;
-  border: 0;
+#fabric-calc-app .fpc-step-button {
+  min-height: 44px;
+  color: var(--fpc-accent);
   background: transparent;
-  color: var(--fabric-accent);
-  font-size: 1.35rem;
-  font-weight: 800;
-  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 900;
 }
 
-.step-btn:hover {
-  background: var(--fabric-accent);
-  color: #fff;
-}
-
-.fabric-input {
-  min-height: 46px;
-  border: 0;
-  border-right: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
+#fabric-calc-app .fpc-input {
+  min-height: 44px;
+  border-block: 0;
   border-radius: 0;
   text-align: center;
   font-size: 1rem;
   font-weight: 850;
-  box-shadow: none;
 }
 
-.btn-actions {
-  display: grid;
+#fabric-calc-app .fpc-actions {
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
-  margin-top: auto;
 }
 
-.f-btn,
-.copy-list-btn {
+#fabric-calc-app .fpc-action {
   min-height: 44px;
-  border: 0;
-  border-radius: 0.75rem;
+  border-radius: 0.7rem;
   font-weight: 850;
-  cursor: pointer;
 }
 
-.f-seco {
+#fabric-calc-app .fpc-action-secondary {
   color: var(--text-main);
   background: var(--bg-muted);
   border: 1px solid var(--border-color);
 }
 
-.f-prim {
-  color: #fff;
-  background: var(--fabric-accent);
-}
-
-.fabric-main {
-  display: grid;
+#fabric-calc-app .fpc-main {
   grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
-  gap: 1.25rem;
-  align-content: start;
 }
 
-.warning-banner {
+#fabric-calc-app .fpc-warning {
   grid-column: 1 / -1;
   display: none;
   padding: 0.85rem 1rem;
   color: #c2410c;
   background: #fff7ed;
   border: 1px solid #fed7aa;
-  border-radius: 0.85rem;
+  border-radius: 0.75rem;
   font-size: 0.85rem;
   font-weight: 650;
 }
 
-.magic-result-area {
-  padding: 1.5rem;
-  background: var(--fabric-panel);
-  border: 1px solid rgba(79, 70, 229, 0.16);
-  border-radius: 1rem;
-}
-
-.result-lbl {
+#fabric-calc-app .fpc-result-label {
   display: block;
-  margin-bottom: 0.4rem;
-  color: var(--text-muted);
-  font-size: 0.68rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  margin-bottom: 0.35rem;
 }
 
-.magic-result-area .val {
+#fabric-calc-app .fpc-result-value {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.4rem;
-  color: var(--fabric-accent);
-  font-size: 4.25rem;
+  gap: 0.35rem;
+  color: var(--fpc-accent);
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
   font-weight: 950;
   line-height: 0.95;
 }
 
-.magic-result-area .unit {
+#fabric-calc-app .fpc-result-unit {
   color: var(--text-muted);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 900;
 }
 
-.advice-tag {
+#fabric-calc-app .fpc-advice {
   display: inline-flex;
   max-width: 100%;
-  margin-top: 1rem;
-  padding: 0.65rem 0.9rem;
-  color: var(--fabric-accent);
-  background: rgba(79, 70, 229, 0.09);
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.85rem;
+  color: var(--fpc-accent);
+  background: rgba(79, 70, 229, 0.08);
   border: 1px solid rgba(79, 70, 229, 0.22);
   border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 850;
+  font-size: 0.88rem;
+  font-weight: 800;
   overflow-wrap: anywhere;
 }
 
-.layout-container {
-  grid-row: span 2;
-}
-
-.canvas-wrapper {
-  height: 100%;
-  padding: 1rem;
-  background: var(--bg-page);
-  border: 1px solid var(--border-color);
-  border-radius: 1rem;
-}
-
-.scheme-area {
-  display: grid;
+#fabric-calc-app .fpc-scheme {
   grid-template-columns: 38px minmax(0, 1fr);
-  gap: 0.6rem;
-  min-width: 0;
+  gap: 0.55rem;
 }
 
-.ruler {
+#fabric-calc-app .fpc-ruler,
+#fabric-calc-app .fpc-board {
+  height: 260px;
+}
+
+#fabric-calc-app .fpc-ruler {
   position: relative;
-  min-height: 260px;
 }
 
-.ruler-mark {
+#fabric-calc-app .fpc-ruler-mark {
   position: absolute;
   right: 0;
   left: 0;
@@ -290,7 +269,7 @@
   transform: translateY(-50%);
 }
 
-.ruler-mark::before {
+#fabric-calc-app .fpc-ruler-mark::before {
   content: '';
   width: 8px;
   height: 1.5px;
@@ -300,27 +279,27 @@
   flex-shrink: 0;
 }
 
-.ruler-mark span {
+#fabric-calc-app .fpc-ruler-mark span {
   color: var(--text-muted);
   font-size: 0.58rem;
   font-weight: 750;
   white-space: nowrap;
 }
 
-.fabric-board {
+#fabric-calc-app .fpc-board {
+  width: 100%;
   min-width: 0;
-  height: 260px;
   padding: 6px 6px 22px;
   display: flex;
   flex-direction: column;
   gap: 4px;
   overflow: hidden;
   background: var(--bg-surface);
-  border: 2px solid var(--fabric-accent);
+  border: 2px solid var(--fpc-accent);
   border-radius: 0.35rem;
 }
 
-.piece-row {
+#fabric-calc-app .fpc-piece-row {
   display: flex;
   gap: 4px;
   align-items: stretch;
@@ -328,7 +307,7 @@
   flex-shrink: 0;
 }
 
-.piece-block {
+#fabric-calc-app .fpc-piece {
   min-width: 0;
   padding: 4px 8px;
   display: flex;
@@ -339,7 +318,7 @@
   border-radius: 0.3rem;
 }
 
-.piece-name {
+#fabric-calc-app .fpc-piece-name {
   width: 100%;
   overflow: hidden;
   color: var(--text-main);
@@ -350,11 +329,11 @@
   white-space: nowrap;
 }
 
-.piece-fold {
-  border-left: 3px dashed rgba(79, 70, 229, 0.65);
+#fabric-calc-app .fpc-piece-fold {
+  border-left: 3px dashed rgba(79, 70, 229, 0.68);
 }
 
-.fold-indicator {
+#fabric-calc-app .fpc-fold-indicator {
   margin-top: 2px;
   color: rgba(79, 70, 229, 0.78);
   font-size: 0.48rem;
@@ -363,7 +342,7 @@
   text-transform: uppercase;
 }
 
-.board-empty-state {
+#fabric-calc-app .fpc-board-empty {
   flex: 1;
   display: flex;
   align-items: center;
@@ -375,136 +354,90 @@
   text-align: center;
 }
 
-.scheme-info {
-  margin-top: 0.6rem;
+#fabric-calc-app .fpc-scheme-info {
+  margin-top: 0.55rem;
   color: var(--text-muted);
   font-size: 0.68rem;
   font-weight: 750;
   text-align: right;
 }
 
-.merch-section {
-  padding: 1.25rem;
-  background: var(--bg-page);
-  border: 1px solid var(--border-color);
-  border-radius: 1rem;
-}
-
-.merch-header {
+#fabric-calc-app .fpc-merch-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.85rem;
 }
 
-.copy-list-btn {
+#fabric-calc-app .fpc-copy-button {
   min-height: 36px;
-  padding: 0 0.85rem;
-  color: var(--fabric-accent);
+  padding: 0 0.8rem;
+  color: var(--fpc-accent);
   background: rgba(79, 70, 229, 0.08);
   border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 0.65rem;
   font-size: 0.72rem;
+  font-weight: 850;
 }
 
-.merceria-checklist {
+#fabric-calc-app .fpc-checklist {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.5rem;
   list-style: none;
 }
 
-.merch-item {
+#fabric-calc-app .fpc-merch-item {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.5rem;
   color: var(--text-main);
   font-size: 0.875rem;
   font-weight: 650;
 }
 
-.merch-dot {
-  color: var(--fabric-accent);
+#fabric-calc-app .fpc-merch-dot {
+  color: var(--fpc-accent);
   font-size: 0.5rem;
   flex-shrink: 0;
-  opacity: 0.7;
+  opacity: 0.72;
 }
 
 @media (max-width: 900px) {
-  .fabric-calculator-card,
-  .fabric-main {
+  #fabric-calc-app,
+  #fabric-calc-app .fpc-main {
     grid-template-columns: 1fr;
   }
 
-  .layout-container {
-    grid-row: auto;
-  }
-
-  .fabric-sidebar {
-    display: grid;
+  #fabric-calc-app .fpc-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
   }
 
-  .btn-actions {
+  #fabric-calc-app .fpc-actions {
     grid-column: 1 / -1;
   }
 }
 
 @media (max-width: 600px) {
-  .fabric-calculator-card {
-    width: 100%;
+  #fabric-calc-app {
     margin: 0;
-    padding: 1rem;
-    gap: 1rem;
-    border-radius: 1rem;
+    padding: 0.85rem;
+    border-radius: 0.85rem;
   }
 
-  .fabric-sidebar {
-    grid-template-columns: 1fr;
-    padding: 0;
-    background: transparent;
-    border: 0;
-  }
-
-  .config-group {
-    padding: 1rem;
-    background: var(--bg-page);
-    border: 1px solid var(--border-color);
-    border-radius: 1rem;
-  }
-
-  .config-group + .config-group {
-    padding-top: 1rem;
-  }
-
-  .preset-group {
+  #fabric-calc-app .fpc-controls,
+  #fabric-calc-app .fpc-actions,
+  #fabric-calc-app .fpc-size-options {
     grid-template-columns: 1fr;
   }
 
-  .btn-actions {
-    grid-template-columns: 1fr;
-  }
-
-  .magic-result-area,
-  .canvas-wrapper,
-  .merch-section {
-    padding: 1rem;
-  }
-
-  .magic-result-area .val {
-    font-size: 3rem;
-  }
-
-  .scheme-area {
+  #fabric-calc-app .fpc-scheme {
     grid-template-columns: 34px minmax(0, 1fr);
   }
 
-  .ruler,
-  .fabric-board {
+  #fabric-calc-app .fpc-ruler,
+  #fabric-calc-app .fpc-board {
     height: 220px;
-    min-height: 220px;
   }
 }

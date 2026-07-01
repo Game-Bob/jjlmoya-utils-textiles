@@ -9,13 +9,13 @@ const { ui = {} } = Astro.props;
 const calcUI = ui as FabricProjectCalculatorUI;
 ---
 
-<div class="fabric-calculator-card" id="fabric-calc-app">
-  <div class="fabric-sidebar">
-    <div class="config-group">
+<div class="fpc-root" id="fabric-calc-app">
+  <div class="fpc-controls">
+    <div class="fpc-config">
       <h3>{calcUI.sectionProject}</h3>
-      <div class="fabric-field">
+      <div class="fpc-field">
         <label>{calcUI.labelGarmentType}</label>
-        <select id="garment-type" class="fabric-select">
+        <select id="garment-type" class="fpc-select">
           <option value="skirt">{calcUI.garmentSkirt}</option>
           <option value="pants">{calcUI.garmentPants}</option>
           <option value="dress">{calcUI.garmentDress}</option>
@@ -24,70 +24,70 @@ const calcUI = ui as FabricProjectCalculatorUI;
           <option value="tote">{calcUI.garmentTote}</option>
         </select>
       </div>
-      <div class="fabric-field">
+      <div class="fpc-field">
         <label>{calcUI.labelSize}</label>
-        <div class="preset-group" id="size-presets">
-          <button class="preset-pill" data-val="xs_core">{calcUI.sizeXS}</button>
-          <button class="preset-pill active" data-val="m_core">{calcUI.sizeM}</button>
-          <button class="preset-pill" data-val="xl_core">{calcUI.sizeXL}</button>
+        <div class="fpc-size-options" id="size-presets">
+          <button class="fpc-size-option" data-val="xs_core">{calcUI.sizeXS}</button>
+          <button class="fpc-size-option active" data-val="m_core">{calcUI.sizeM}</button>
+          <button class="fpc-size-option" data-val="xl_core">{calcUI.sizeXL}</button>
         </div>
       </div>
     </div>
 
-    <div class="config-group">
+    <div class="fpc-config">
       <h3>{calcUI.sectionMaterial}</h3>
-      <div class="fabric-field">
+      <div class="fpc-field">
         <label>{calcUI.labelFabricWidth}</label>
-        <select id="fabric-width" class="fabric-select">
+        <select id="fabric-width" class="fpc-select">
           <option value="90">{calcUI.width90}</option>
           <option value="115">{calcUI.width115}</option>
           <option value="140" selected>{calcUI.width140}</option>
           <option value="150">{calcUI.width150}</option>
         </select>
       </div>
-      <div class="fabric-field">
+      <div class="fpc-field">
         <label>{calcUI.labelSeamAllowance}</label>
-        <div class="shop-stepper">
-          <button class="step-btn" id="sub-allow">−</button>
-          <input type="number" id="seam-allowance" class="fabric-input" value="1.5" step="0.5" min="0" max="5" />
-          <button class="step-btn" id="add-allow">+</button>
+        <div class="fpc-stepper">
+          <button class="fpc-step-button" id="sub-allow">−</button>
+          <input type="number" id="seam-allowance" class="fpc-input" value="1.5" step="0.5" min="0" max="5" />
+          <button class="fpc-step-button" id="add-allow">+</button>
         </div>
       </div>
     </div>
 
-    <div class="btn-actions">
-      <button id="btn-clear-f" class="f-btn f-seco">{calcUI.btnClear}</button>
-      <button id="btn-share-f" class="f-btn f-prim">{calcUI.btnShare}</button>
+    <div class="fpc-actions">
+      <button id="btn-clear-f" class="fpc-action fpc-action-secondary">{calcUI.btnClear}</button>
+      <button id="btn-share-f" class="fpc-action fpc-action-primary">{calcUI.btnShare}</button>
     </div>
   </div>
 
-  <div class="fabric-main">
-    <div id="warning-msg" class="warning-banner"></div>
+  <div class="fpc-main">
+    <div id="warning-msg" class="fpc-warning"></div>
 
-    <section class="magic-result-area">
-      <span class="result-lbl">{calcUI.resultLabel}</span>
-      <div class="val"><span id="main-meters">1.40</span><span class="unit">{calcUI.resultUnit}</span></div>
-      <div class="advice-tag" id="shop-advice"></div>
+    <section class="fpc-result">
+      <span class="fpc-result-label">{calcUI.resultLabel}</span>
+      <div class="fpc-result-value"><span id="main-meters">1.40</span><span class="fpc-result-unit">{calcUI.resultUnit}</span></div>
+      <div class="fpc-advice" id="shop-advice"></div>
     </section>
 
-    <div class="layout-container">
-      <div class="canvas-wrapper">
-        <div class="scheme-area">
-          <div class="ruler" id="ruler-col"></div>
-          <div id="fabric-board-box" class="fabric-board">
-            <div class="board-empty-state">{calcUI.boardEmpty}</div>
+    <div class="fpc-layout">
+      <div class="fpc-canvas">
+        <div class="fpc-scheme">
+          <div class="fpc-ruler" id="ruler-col"></div>
+          <div id="fabric-board-box" class="fpc-board">
+            <div class="fpc-board-empty">{calcUI.boardEmpty}</div>
           </div>
         </div>
-        <div class="scheme-info" id="board-desc"></div>
+        <div class="fpc-scheme-info" id="board-desc"></div>
       </div>
     </div>
 
-    <section class="merch-section">
-      <div class="merch-header">
-        <h3 class="merch-title">{calcUI.merchTitle}</h3>
-        <button id="copy-list-btn" class="copy-list-btn">{calcUI.btnCopyList}</button>
+    <section class="fpc-merch">
+      <div class="fpc-merch-header">
+        <h3 class="fpc-merch-title">{calcUI.merchTitle}</h3>
+        <button id="copy-list-btn" class="fpc-copy-button">{calcUI.btnCopyList}</button>
       </div>
-      <ul id="check-list" class="merceria-checklist"></ul>
+      <ul id="check-list" class="fpc-checklist"></ul>
     </section>
   </div>
 </div>
@@ -157,17 +157,17 @@ const calcUI = ui as FabricProjectCalculatorUI;
 
   function buildPieceEl(nameKey: string, w: number, fold: boolean, col: number): HTMLDivElement {
     const el = document.createElement('div');
-    el.className = `piece-block${fold ? ' piece-fold' : ''}`;
+    el.className = `fpc-piece${fold ? ' fpc-piece-fold' : ''}`;
     el.style.width = `${w * 100}%`;
     el.style.background = PIECE_COLORS[col];
     el.style.borderColor = PIECE_BORDERS[col];
     const nameEl = document.createElement('span');
-    nameEl.className = 'piece-name';
+    nameEl.className = 'fpc-piece-name';
     nameEl.textContent = window.__toolUI.pieceNames[nameKey as PieceNameKey] || nameKey;
     el.appendChild(nameEl);
     if (fold) {
       const foldEl = document.createElement('div');
-      foldEl.className = 'fold-indicator';
+      foldEl.className = 'fpc-fold-indicator';
       foldEl.textContent = window.__toolUI.foldLabel;
       el.appendChild(foldEl);
     }
@@ -176,7 +176,7 @@ const calcUI = ui as FabricProjectCalculatorUI;
 
   function buildRowEl(row: PieceRow): HTMLDivElement {
     const rowEl = document.createElement('div');
-    rowEl.className = 'piece-row';
+    rowEl.className = 'fpc-piece-row';
     rowEl.style.flex = `0 0 ${row.h * 100}%`;
     row.pieces.forEach((spec) => {
       rowEl.appendChild(buildPieceEl(spec.nameKey, spec.w, spec.fold ?? false, spec.col));
@@ -189,7 +189,7 @@ const calcUI = ui as FabricProjectCalculatorUI;
     const rows = PIECE_ROWS[type];
     if (!rows?.length) {
       const empty = document.createElement('div');
-      empty.className = 'board-empty-state';
+      empty.className = 'fpc-board-empty';
       empty.textContent = window.__toolUI.boardEmpty;
       board.appendChild(empty);
       return;
@@ -205,7 +205,7 @@ const calcUI = ui as FabricProjectCalculatorUI;
     let mark = 0;
     while (mark <= totalMeters + 0.001) {
       const markEl = document.createElement('div');
-      markEl.className = 'ruler-mark';
+      markEl.className = 'fpc-ruler-mark';
       markEl.style.top = `${(mark / totalMeters) * 100}%`;
       const label = document.createElement('span');
       label.textContent = `${mark.toFixed(step < 0.5 ? 2 : 1)}m`;
@@ -252,8 +252,8 @@ const calcUI = ui as FabricProjectCalculatorUI;
     checks.innerHTML = '';
     items.forEach((text) => {
       const li = document.createElement('li');
-      li.className = 'merch-item';
-      li.innerHTML = `<span class="merch-dot" aria-hidden="true">◆</span>${text}`;
+      li.className = 'fpc-merch-item';
+      li.innerHTML = `<span class="fpc-merch-dot" aria-hidden="true">◆</span>${text}`;
       checks.appendChild(li);
     });
   }
@@ -285,9 +285,9 @@ const calcUI = ui as FabricProjectCalculatorUI;
   }
 
   function handleSizeClick(e: Event): void {
-    const btn = (e.target as HTMLElement).closest('.preset-pill');
+    const btn = (e.target as HTMLElement).closest('.fpc-size-option');
     if (!btn) return;
-    document.getElementById('size-presets')?.querySelectorAll('.preset-pill').forEach((b) => {
+    document.getElementById('size-presets')?.querySelectorAll('.fpc-size-option').forEach((b) => {
       b.classList.remove('active');
     });
     btn.classList.add('active');
@@ -311,7 +311,7 @@ const calcUI = ui as FabricProjectCalculatorUI;
     if (width) width.value = '140';
     if (allow) allow.value = '1.5';
     activeSize = 'm_core';
-    document.getElementById('size-presets')?.querySelectorAll('.preset-pill').forEach((b) => {
+    document.getElementById('size-presets')?.querySelectorAll('.fpc-size-option').forEach((b) => {
       b.classList.toggle('active', b.getAttribute('data-val') === 'm_core');
     });
     calculate();
@@ -319,7 +319,7 @@ const calcUI = ui as FabricProjectCalculatorUI;
 
   function handleCopyList(): void {
     const checks = document.getElementById('check-list');
-    const lines = Array.from(checks?.querySelectorAll('.merch-item') || [])
+    const lines = Array.from(checks?.querySelectorAll('.fpc-merch-item') || [])
       .map((li) => '• ' + (li.textContent || '').replace('◆', '').trim());
     navigator.clipboard.writeText(lines.join('\n'));
     flashBtn('copy-list-btn', window.__toolUI.btnCopied);
@@ -340,7 +340,7 @@ const calcUI = ui as FabricProjectCalculatorUI;
   function restoreSize(q: URLSearchParams): void {
     if (!q.has('s')) return;
     activeSize = q.get('s') || 'm_core';
-    document.getElementById('size-presets')?.querySelectorAll('.preset-pill').forEach((b) => {
+    document.getElementById('size-presets')?.querySelectorAll('.fpc-size-option').forEach((b) => {
       b.classList.toggle('active', b.getAttribute('data-val') === activeSize);
     });
   }
