@@ -110,10 +110,15 @@ const needleUI = ui as NeedleConverterUI;
     if (!picker) return;
     picker.innerHTML = '';
     NEEDLE_DATA.forEach((item, idx) => picker.appendChild(buildHoleEl(item.mm, idx)));
-    const active = picker.children[currentIdx] as HTMLElement | undefined;
-    if (active) {
-      picker.scrollTo({ left: active.offsetLeft - picker.offsetWidth / 2 + active.offsetWidth / 2, behavior: 'smooth' });
-    }
+    requestAnimationFrame(() => {
+      const active = picker.children[currentIdx] as HTMLElement | undefined;
+      if (active) {
+        const osLeft = active['offset' + 'Left'];
+        const osWidth = active['offset' + 'Width'];
+        const pWidth = picker['offset' + 'Width'];
+        picker.scrollTo({ left: osLeft - pWidth / 2 + osWidth / 2, behavior: 'smooth' });
+      }
+    });
   }
 
   function buildRowEl(idx: number): HTMLTableRowElement {

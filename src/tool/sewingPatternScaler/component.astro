@@ -27,13 +27,13 @@ const SIZES = ['36', '38', '40', '42', '44', '46'];
       <div id="standard-grid">
         <div class="input-grid">
           <div class="input-group">
-            <label class="label-tiny">{scalerUI.labelPatternSize}</label>
+            <label class="label-tiny" for="origin-size">{scalerUI.labelPatternSize}</label>
             <select id="origin-size" class="form-input form-select">
               {SIZES.map((s) => <option value={s} selected={s === '38'}>{scalerUI.sizePrefix} {s}</option>)}
             </select>
           </div>
           <div class="input-group">
-            <label class="label-tiny">{scalerUI.labelTargetSize}</label>
+            <label class="label-tiny" for="target-size">{scalerUI.labelTargetSize}</label>
             <select id="target-size" class="form-input form-select">
               {SIZES.map((s) => <option value={s} selected={s === '42'}>{scalerUI.sizePrefix} {s}</option>)}
             </select>
@@ -44,22 +44,22 @@ const SIZES = ['36', '38', '40', '42', '44', '46'];
       <div id="custom-grid" class="hidden">
         <span class="label-tiny">{scalerUI.labelOriginMeasures}</span>
         <div class="input-grid">
-          <div class="input-item"><label class="label-tiny">{scalerUI.labelChest}</label><input type="number" id="origin-chest" class="form-input" value="88" /></div>
-          <div class="input-item"><label class="label-tiny">{scalerUI.labelWaist}</label><input type="number" id="origin-waist" class="form-input" value="68" /></div>
-          <div class="input-item"><label class="label-tiny">{scalerUI.labelHips}</label><input type="number" id="origin-hips" class="form-input" value="94" /></div>
-          <div class="input-item"><label class="label-tiny">{scalerUI.labelLength}</label><input type="number" id="origin-length" class="form-input" value="60" /></div>
+          <div class="input-item"><label class="label-tiny" for="origin-chest">{scalerUI.labelChest}</label><input type="number" id="origin-chest" class="form-input" value="88" /></div>
+          <div class="input-item"><label class="label-tiny" for="origin-waist">{scalerUI.labelWaist}</label><input type="number" id="origin-waist" class="form-input" value="68" /></div>
+          <div class="input-item"><label class="label-tiny" for="origin-hips">{scalerUI.labelHips}</label><input type="number" id="origin-hips" class="form-input" value="94" /></div>
+          <div class="input-item"><label class="label-tiny" for="origin-length">{scalerUI.labelLength}</label><input type="number" id="origin-length" class="form-input" value="60" /></div>
         </div>
         <span class="label-tiny target-lbl">{scalerUI.labelTargetMeasures}</span>
         <div class="input-grid">
-          <div class="input-item"><label class="label-tiny">{scalerUI.labelChest}</label><input type="number" id="target-chest" class="form-input" value="96" /></div>
-          <div class="input-item"><label class="label-tiny">{scalerUI.labelWaist}</label><input type="number" id="target-waist" class="form-input" value="76" /></div>
-          <div class="input-item"><label class="label-tiny">{scalerUI.labelHips}</label><input type="number" id="target-hips" class="form-input" value="102" /></div>
-          <div class="input-item"><label class="label-tiny">{scalerUI.labelLength}</label><input type="number" id="target-length" class="form-input" value="62" /></div>
+          <div class="input-item"><label class="label-tiny" for="target-chest">{scalerUI.labelChest}</label><input type="number" id="target-chest" class="form-input" value="96" /></div>
+          <div class="input-item"><label class="label-tiny" for="target-waist">{scalerUI.labelWaist}</label><input type="number" id="target-waist" class="form-input" value="76" /></div>
+          <div class="input-item"><label class="label-tiny" for="target-hips">{scalerUI.labelHips}</label><input type="number" id="target-hips" class="form-input" value="102" /></div>
+          <div class="input-item"><label class="label-tiny" for="target-length">{scalerUI.labelLength}</label><input type="number" id="target-length" class="form-input" value="62" /></div>
         </div>
       </div>
 
       <div class="ease-group">
-        <label class="label-tiny">{scalerUI.labelEase}</label>
+        <label class="label-tiny" for="ease-val">{scalerUI.labelEase}</label>
         <input type="number" id="ease-val" class="form-input" value="4" />
       </div>
     </div>

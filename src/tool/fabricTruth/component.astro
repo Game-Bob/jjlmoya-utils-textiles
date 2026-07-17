@@ -120,11 +120,11 @@ const fibers = Object.entries(fiberData)
 
 <template id="fiber-row-template">
   <div class="fiber-row">
-    <select class="fiber-select">
+    <select class="fiber-select" aria-label="Fiber Type">
       {fibers.map((f) => <option value={f.id}>{f.name}</option>)}
     </select>
     <div class="fiber-perc-wrapper">
-      <input type="number" min="0" max="100" step="1" placeholder="0" list="perc-list" class="fiber-perc" />
+      <input type="number" min="0" max="100" step="1" placeholder="0" list="perc-list" class="fiber-perc" aria-label="Fiber Percentage" />
       <span class="perc-symbol">%</span>
     </div>
     <button class="remove-row-btn">

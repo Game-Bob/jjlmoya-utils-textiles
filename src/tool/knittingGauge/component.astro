@@ -15,7 +15,7 @@ const gaugeUI = ui as unknown as KnittingGaugeUI;
       <h3>{gaugeUI.sectionOriginalGauge}</h3>
       <div class="input-grid">
         <div class="gauge-field">
-          <label>{gaugeUI.labelStitches} <span class="label-sub">({gaugeUI.labelWidth})</span></label>
+          <label for="pattern-sts">{gaugeUI.labelStitches} <span class="label-sub">({gaugeUI.labelWidth})</span></label>
           <div class="stepper-container">
             <button class="stepper-btn" data-step="-0.5" data-for="pattern-sts">−</button>
             <input type="number" id="pattern-sts" class="gauge-input" value="20" step="0.5" />
@@ -23,7 +23,7 @@ const gaugeUI = ui as unknown as KnittingGaugeUI;
           </div>
         </div>
         <div class="gauge-field">
-          <label>{gaugeUI.labelRows} <span class="label-sub">({gaugeUI.labelLength})</span></label>
+          <label for="pattern-rows">{gaugeUI.labelRows} <span class="label-sub">({gaugeUI.labelLength})</span></label>
           <div class="stepper-container">
             <button class="stepper-btn" data-step="-0.5" data-for="pattern-rows">−</button>
             <input type="number" id="pattern-rows" class="gauge-input" value="28" step="0.5" />
@@ -32,7 +32,7 @@ const gaugeUI = ui as unknown as KnittingGaugeUI;
         </div>
       </div>
       <div class="gauge-field">
-        <label>{gaugeUI.labelUnit}</label>
+        <label for="gauge-unit">{gaugeUI.labelUnit}</label>
         <select id="gauge-unit" class="gauge-select">
           <option value="10">{gaugeUI.unitEU}</option>
           <option value="10.16">{gaugeUI.unitUS}</option>
@@ -44,7 +44,7 @@ const gaugeUI = ui as unknown as KnittingGaugeUI;
       <h3>{gaugeUI.sectionMyGauge}</h3>
       <div class="input-grid">
         <div class="gauge-field">
-          <label>{gaugeUI.labelStitches} <span class="label-sub">({gaugeUI.labelWidth})</span></label>
+          <label for="my-sts">{gaugeUI.labelStitches} <span class="label-sub">({gaugeUI.labelWidth})</span></label>
           <div class="stepper-container">
             <button class="stepper-btn" data-step="-0.5" data-for="my-sts">−</button>
             <input type="number" id="my-sts" class="gauge-input" value="22" step="0.5" />
@@ -52,7 +52,7 @@ const gaugeUI = ui as unknown as KnittingGaugeUI;
           </div>
         </div>
         <div class="gauge-field">
-          <label>{gaugeUI.labelRows} <span class="label-sub">({gaugeUI.labelLength})</span></label>
+          <label for="my-rows">{gaugeUI.labelRows} <span class="label-sub">({gaugeUI.labelLength})</span></label>
           <div class="stepper-container">
             <button class="stepper-btn" data-step="-0.5" data-for="my-rows">−</button>
             <input type="number" id="my-rows" class="gauge-input" value="30" step="0.5" />
@@ -62,11 +62,11 @@ const gaugeUI = ui as unknown as KnittingGaugeUI;
       </div>
       <div class="input-grid">
         <div class="gauge-field">
-          <label>{gaugeUI.labelNeedleMm}</label>
+          <label for="my-needle">{gaugeUI.labelNeedleMm}</label>
           <input type="number" id="my-needle" class="gauge-input gauge-input-bordered" value="4.0" step="0.25" />
         </div>
         <div class="gauge-field">
-          <label>{gaugeUI.labelWeight} <span class="label-sub">{gaugeUI.labelWeightOptional}</span></label>
+          <label for="sample-weight">{gaugeUI.labelWeight} <span class="label-sub">{gaugeUI.labelWeightOptional}</span></label>
           <input type="number" id="sample-weight" class="gauge-input gauge-input-bordered" placeholder="5" />
         </div>
       </div>
@@ -76,16 +76,16 @@ const gaugeUI = ui as unknown as KnittingGaugeUI;
       <h3>{gaugeUI.sectionProject}</h3>
       <div class="input-grid">
         <div class="gauge-field">
-          <label>{gaugeUI.labelPatternSts}</label>
+          <label for="target-sts">{gaugeUI.labelPatternSts}</label>
           <input type="number" id="target-sts" class="gauge-input gauge-input-bordered" value="100" />
         </div>
         <div class="gauge-field">
-          <label>{gaugeUI.labelPatternRows}</label>
+          <label for="target-rows">{gaugeUI.labelPatternRows}</label>
           <input type="number" id="target-rows" class="gauge-input gauge-input-bordered" value="140" />
         </div>
       </div>
       <div class="gauge-field">
-        <label>{gaugeUI.labelMultiples} <span class="label-sub">{gaugeUI.labelMultiplesExample}</span></label>
+        <label for="pattern-multiples">{gaugeUI.labelMultiples} <span class="label-sub">{gaugeUI.labelMultiplesExample}</span></label>
         <input
           type="text"
           id="pattern-multiples"
