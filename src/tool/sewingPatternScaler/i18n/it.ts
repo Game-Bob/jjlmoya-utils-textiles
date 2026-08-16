@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: "Lo <strong>sviluppo delle taglie</strong> (o <em>grading</em>) è una delle competenze più critiche nel mondo della confezione. Non si tratta semplicemente di ingrandire o ridurre un disegno in modo proporzionale; si tratta di adattare una struttura bidimensionale alle complesse curve e proporzioni del corpo umano, che non cresce in modo lineare.",
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'Offline', label: 'Calcoli Locali', icon: 'mdi:calculator' },
-        { value: 'Differenziale', label: 'Sviluppo Proporzionale', icon: 'mdi:resize' },
-        { value: '100%', label: 'Sicuro e Privato', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: "Cos'è esattamente lo sviluppo delle taglie?",
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         "<strong>Vestibilità di movimento:</strong> i centimetri extra necessari per respirare, sedersi e muovere le braccia senza che il tessuto si rompa.",
         "<strong>Vestibilità di design:</strong> i centimetri che il designer ha aggiunto per creare una silhouette specifica (ad esempio, un cappotto oversize o una blusa vaporosa).",
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Sviluppo Orizzontale vs. Verticale',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        "<strong>Asse Orizzontale (Circonferenze):</strong> Torace, Vita, Fianchi. Richiede maggiore regolazione. Si divide in quarti per ogni pezzo del cartamodello.",
-        "<strong>Asse Verticale (Lunghezze):</strong> Lunghezza davanti, lunghezza schiena, lunghezza totale. Influisce sulla posizione delle riprese e sulla linea della vita. Minore variazione tra taglie contigue.",
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Come usare lo Sviluppatore di Cartamodelli',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        "<strong>Misura il tuo modello:</strong> prendi il pezzo di carta e misura da bordo a bordo sulle linee di torace, vita e fianchi.",
-        "<strong>Inserisci le misure d'origine:</strong> scrivi quelle misure nella colonna di sinistra e indica quale taglia rappresenta quel cartamodello.",
-        "<strong>Inserisci le tue misure o la taglia di destinazione:</strong> nella colonna di destra, metti le tue misure reali o la taglia che vuoi raggiungere.",
-        "<strong>Interpreta i risultati:</strong> la calcolatrice ti mostrerà quanto devi aggiungere o togliere in ogni zona specifica.",
       ],
     },
     {

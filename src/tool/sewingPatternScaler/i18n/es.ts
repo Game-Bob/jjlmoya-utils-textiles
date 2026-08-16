@@ -97,15 +97,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: 'El <strong>escalado de patrones</strong> es una de las habilidades más críticas en el mundo de la confección. No se trata simplemente de agrandar o reducir un dibujo de forma proporcional; se trata de adaptar una estructura bidimensional a las complejas curvas y proporciones del cuerpo humano, que no crece de forma lineal.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'Offline', label: 'Cálculos Locales', icon: 'mdi:calculator' },
-        { value: 'Diferencial', label: 'Escalado Proporcional', icon: 'mdi:resize' },
-        { value: '100%', label: 'Seguro y Privado', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: '¿Qué es exactamente el escalado de patrones?',
       level: 3,
@@ -124,32 +115,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>Holgura de movimiento:</strong> Los centímetros extra necesarios para que puedas respirar, sentarte y mover los brazos sin que la tela se rompa.',
         '<strong>Holgura de diseño:</strong> Los centímetros que el diseñador ha añadido para crear una silueta específica (por ejemplo, un abrigo oversize o una blusa vaporosa).',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Escalado Horizontal vs. Vertical',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Eje Horizontal (Contornos):</strong> Pecho, Cintura, Cadera. Requiere mayor ajuste. Se divide en cuartos para cada pieza del patrón.',
-        '<strong>Eje Vertical (Largos):</strong> Talle delantero, Talle espalda, Largo total. Afecta a la posición de pinzas y línea de cintura. Menor variación entre tallas contiguas.',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Cómo usar el Escalador de Patrones',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Mide tu patrón:</strong> Coge la pieza de papel y mide de borde a borde en las líneas de pecho, cintura y cadera.',
-        '<strong>Introduce las medidas origen:</strong> Escribe esas medidas en la columna izquierda e indica qué talla representa ese patrón.',
-        '<strong>Introduce tus medidas o talla destino:</strong> En la columna derecha, pon tus medidas reales o la talla a la que quieres llegar.',
-        '<strong>Interpreta los resultados:</strong> La calculadora te mostrará cuánto debes añadir o quitar en cada zona específica.',
       ],
     },
     {

@@ -98,6 +98,15 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
     },
     {
       type: 'title',
+      text: 'Qu\'est-ce que la mise à l\'échelle des patrons ?',
+      level: 3,
+    },
+    {
+      type: 'paragraph',
+      html: 'La gradation est le processus technique qui consiste à agrandir ou réduire un patron de base pour créer plusieurs tailles. Contrairement à un simple zoom, elle tient compte du fait que certaines parties du corps évoluent davantage que d\'autres, afin de conserver l\'équilibre du vêtement.',
+    },
+    {
+      type: 'title',
       text: 'La Clé du Succès: L\'Aisance',
       level: 3,
     },

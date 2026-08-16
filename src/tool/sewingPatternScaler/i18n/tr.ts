@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: '<strong>Kalıp ölçeklendirme</strong> (grading), konfeksiyon dünyasındaki en kritik becerilerden biridir. Bu sadece bir çizimi orantılı olarak büyütmek veya küçültmek değildir; iki boyutlu bir yapıyı, doğrusal olarak büyümeyen insan vücudunun karmaşık kıvrımlarına ve oranlarına uyarlamakla ilgilidir.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'Çevrimdışı', label: 'Yerel Hesaplamalar', icon: 'mdi:calculator' },
-        { value: 'Diferansiyel', label: 'Orantılı Ölçeklendirme', icon: 'mdi:resize' },
-        { value: '100%', label: 'Güvenli ve Özel', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: 'Kalıp ölçeklendirme tam olarak nedir?',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>Hareket rahatlığı:</strong> Nefes alabilmeniz, oturabilmeniz ve kollarınızı hareket ettirebilmeniz için kumaşın yırtılmamasını sağlayan fazladan santimetreler.',
         '<strong>Tasarım rahatlığı:</strong> Tasarımcının belirli bir siluet (örneğin, oversize bir palto veya dökümlü bir bluz) oluşturmak için eklediği santimetreler.',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Yatay ve Dikey Ölçeklendirme',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Yatay Eksen (Çevreler):</strong> Göğüs, Bel, Kalça. En büyük ayarlamayı gerektirir. Her bir kalıp parçası için dörde bölünür.',
-        '<strong>Dikey Eksen (Boylar):</strong> Ön boy, arka boy, toplam boy. Penslerin konumunu ve bel hattını etkiler. Ardışık bedenler arasındaki varyasyon daha düşüktür.',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Kalıp Ölçeklendirici Nasıl Kullanılır',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Kalıbınızı ölçün:</strong> Kağıt kalıp parçasını alın ve göğüs, bel ve kalça çizgilerinde kenardan kenara ölçün.',
-        '<strong>Kaynak ölçüleri girin:</strong> Bu ölçüleri sol sütuna yazın ve bu kalıbın hangi bedeni temsil ettiğini belirtin.',
-        '<strong>Kendi ölçülerinizi veya hedef bedeni girin:</strong> Sağ sütuna gerçek ölçülerinizi veya ulaşmak istediğiniz bedeni girin.',
-        '<strong>Sonuçları yorumlayın:</strong> Hesaplayıcı, her bir spesifik alanda ne kadar ekleme veya çıkarma yapmanız gerektiğini gösterecektir.',
       ],
     },
     {

@@ -2,44 +2,40 @@ import type { WithContext, FAQPage, HowTo, SoftwareApplication } from 'schema-dt
 import type { ToolLocaleContent } from '../../../types';
 import { bibliography } from '../bibliography';
 
-const slug = 'guide-lavage-textile';
-const title = 'Dimensionneur de Patron de Couture en Ligne';
-const description = 'Ajustez n\'importe quel patron de couture à vos mesures réelles. Calculateur de mise à l\'échelle différentielle avec prévisualisation du patron mis à jour.';
+const slug = 'guide-entretien-textile';
+const title = 'Guide d\'entretien textile, comment laver chaque type de fibre';
+const description = 'Guide scientifique pour laver et entretenir le coton, la laine, la soie, le lin et les fibres synthétiques. Évitez le rétrécissement, la décoloration et les dommages grâce aux bons gestes.';
 
 const faqData = [
   {
-    question: 'Pourquoi l\'épaule ne grandit-elle pas autant que la poitrine ?',
+    question: 'Comment éviter que les couleurs ne ternissent ?',
     answer:
-      'Le corps humain n\'est pas une sphère. Alors que le volume du torse peut varier significativement, le squelette et les points d\'articulation comme l\'épaule sont beaucoup plus statiques. Une mise à l\'échelle professionnelle applique des facteurs différenciés pour ne pas déséquilibrer le vêtement.',
+      'Lavez à l\'eau froide, à 30 °C maximum, retournez les vêtements et utilisez une lessive pour couleurs foncées. Évitez aussi le soleil direct pendant le séchage.',
   },
   {
-    question: 'Qu\'est-ce que l\'aisance ?',
+    question: 'Puis-je laver la laine en machine ?',
     answer:
-      'C\'est l\'espace supplémentaire entre votre corps et le tissu. Sans aisance, vous ne pourriez pas vous déplacer. Notre calculateur maintient cette aisance pour que le vêtement vous aille exactement comme le designer l\'a conçu, mais adapté à vos contours réels.',
+      'Oui, avec un cycle laine à l\'eau froide et une agitation douce. Utilisez une lessive spéciale laine et jamais un cycle classique.',
   },
   {
-    question: 'Puis-je mettre à l\'échelle un patron en maille ou jersey ?',
+    question: 'Pourquoi la soie présente-t-elle des auréoles après lavage ?',
     answer:
-      'Oui, mais gardez à l\'esprit que les tissus extensibles ont généralement une aisance négative. Si le patron est très ajusté, assurez-vous que le facteur d\'élasticité est le même dans le nouveau tissu que vous choisissez.',
+      'La soie réagit aux minéraux de l\'eau. Utilisez si possible de l\'eau distillée pour le dernier rinçage et évitez de frotter la zone humide.',
   },
 ];
 
 const howToData = [
   {
-    name: 'Mesurez votre patron',
-    text: 'Mesurez les lignes horizontales clés (poitrine, taille et hanches) sur les pièces en papier de votre patron original, couture à couture.',
+    name: 'Vérifiez l\'étiquette',
+    text: 'Lisez toujours les symboles d\'entretien du vêtement avant de choisir un programme de lavage.',
   },
   {
-    name: 'Configurez l\'origine',
-    text: 'Entrez la taille du patron ou les mesures que vous avez prises dans la colonne "Origine" de notre outil.',
+    name: 'Triez par type de fibre',
+    text: 'Séparez autant que possible les fibres naturelles des matières synthétiques et regroupez les couleurs compatibles.',
   },
   {
-    name: 'Entrez la destination',
-    text: 'Mettez vos mesures réelles ou la taille que vous souhaitez atteindre. L\'outil calculera la différence exacte par zone.',
-  },
-  {
-    name: 'Appliquez à la table',
-    text: 'Suivez les instructions "Actions à la Table de Coupe" pour ajouter ou retirer des centimètres sur les côtés et les ourlets de vos pièces.',
+    name: 'Choisissez la température',
+    text: 'Utilisez l\'eau froide pour les tissus délicats et l\'eau chaude seulement pour les matières robustes qui le permettent.',
   },
 ];
 

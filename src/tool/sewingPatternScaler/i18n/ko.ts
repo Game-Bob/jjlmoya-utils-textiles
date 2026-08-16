@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: '패턴 <strong>그레이딩(Grading, 스케일링)</strong>은 의류 제작에서 가장 중요한 기술 중 하나입니다. 단순히 도면을 비율대로 확대하거나 축소하는 것이 아니라, 선형적으로 변하지 않는 인체의 복잡한 곡선과 비율에 맞춰 2차원 구조를 적응시키는 과정입니다.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: '오프라인', label: '브라우저 계산', icon: 'mdi:calculator' },
-        { value: '부위별', label: '비례 스케일링', icon: 'mdi:resize' },
-        { value: '100%', label: '보안 및 비공개', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: '패턴 그레이딩이란 정확히 무엇인가요?',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>활동 여유분:</strong> 옷감이 찢어지지 않고 숨을 쉬거나 앉거나 팔을 움직이는 데 필요한 추가적인 공간입니다.',
         '<strong>디자인 여유분:</strong> 특정 실루엣(예: 오버사이즈 코트나 풍성한 블라우스)을 만들기 위해 디자이너가 의도적으로 추가한 여유분입니다.',
-      ],
-    },
-    {
-      type: 'title',
-      text: '가로 스케일링 vs 세로 스케일링',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>가로축 (둘레):</strong> 가슴, 허리, 엉덩이. 가장 많은 조정이 필요하며, 각 패턴 조각을 4분의 1로 나누어 계산합니다.',
-        '<strong>세로축 (길이):</strong> 앞길이, 등길이, 총길이. 다트 위치와 허리선에 영향을 미칩니다. 인접한 사이즈 간의 변화량은 상대적으로 적습니다.',
-      ],
-    },
-    {
-      type: 'title',
-      text: '패턴 스케일러 사용법',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>패턴 측정:</strong> 종이 패턴 조각을 가슴, 허리, 엉덩이 라인에서 끝에서 끝까지 측정하세요.',
-        '<strong>원본 수치 입력:</strong> 왼쪽 열에 측정한 치수를 적고, 해당 패턴이 어떤 사이즈를 나타내는지 선택하세요.',
-        '<strong>자신의 치수 또는 목표 사이즈 입력:</strong> 오른쪽 열에 실제 신체 치수나 원하는 사이즈를 입력하세요.',
-        '<strong>결과 해석:</strong> 계산기가 각 특정 부위에서 얼마나 더하거나 빼야 하는지를 보여줍니다.',
       ],
     },
     {

@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: 'Das <strong>Skalieren von Schnittmustern</strong> ist eine der kritischsten Fähigkeiten in der Welt der Konfektion. Es geht nicht einfach darum, eine Zeichnung proportional zu vergrößern oder zu verkleinern; es geht darum, eine zweidimensionale Struktur an die komplexen Kurven und Proportionen des menschlichen Körpers anzupassen, der nicht linear wächst.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'Offline', label: 'Lokale Berechnungen', icon: 'mdi:calculator' },
-        { value: 'Differenziell', label: 'Proportionale Skalierung', icon: 'mdi:resize' },
-        { value: '100%', label: 'Sicher und Privat', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: 'Was genau ist Schnittmuster-Skalierung?',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>Bewegungszugabe:</strong> Die zusätzlichen Zentimeter, die nötig sind, damit Sie atmen, sitzen und Ihre Arme bewegen können, ohne dass der Stoff reißt.',
         '<strong>Designzugabe:</strong> Die Zentimeter, die der Designer hinzugefügt hat, um eine bestimmte Silhouette zu kreieren (z. B. ein Oversize-Mantel oder eine duftige Bluse).',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Horizontale vs. Vertikale Skalierung',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Horizontale Achse (Umfänge):</strong> Brust, Taille, Hüfte. Erfordert die meiste Anpassung. Wird für jedes Musterteil in Viertel unterteilt.',
-        '<strong>Vertikale Achse (Längen):</strong> Vorderlänge, Rückenlänge, Gesamtlänge. Beeinflusst die Position von Abnähern und der Taillenlinie. Geringere Variation zwischen benachbarten Größen.',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Anwendung des Schnittmuster-Skalierers',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Muster ausmessen:</strong> Nehmen Sie das Papierteil und messen Sie von Kante zu Kante an den Linien von Brust, Taille und Hüfte.',
-        '<strong>Ursprungsmaße eingeben:</strong> Tragen Sie diese Maße in die linke Spalte ein und geben Sie an, welche Größe dieses Muster repräsentiert.',
-        '<strong>Zielmaße oder Zielgröße eingeben:</strong> Tragen Sie in der rechten Spalte Ihre realen Maße oder die gewünschte Zielgröße ein.',
-        '<strong>Ergebnisse interpretieren:</strong> Der Rechner zeigt Ihnen an, wie viel Sie in jedem spezifischen Bereich hinzufügen oder wegnehmen müssen.',
       ],
     },
     {

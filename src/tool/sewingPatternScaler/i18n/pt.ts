@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: 'O <strong>escalonamento de moldes</strong> (ou <em>grading</em>) é uma das competências mais críticas no mundo da confecção. Não se trata simplesmente de aumentar ou reduzir um desenho de forma proporcional; trata-se de adaptar uma estrutura bidimensional às complexas curvas e proporções do corpo humano, que não cresce de forma linear.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'Offline', label: 'Cálculos Locais', icon: 'mdi:calculator' },
-        { value: 'Diferencial', label: 'Escalado Proporcional', icon: 'mdi:resize' },
-        { value: '100%', label: 'Seguro e Privado', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: 'O que é exactamente o escalonamento de moldes?',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>Folga de movimento:</strong> os centímetros extra necessários para que possa respirar, sentar-se e mover os braços sem que o tecido se rasgue.',
         '<strong>Folga de design:</strong> os centímetros que o designer adicionou para criar uma silhueta específica (por exemplo, um casaco oversize ou uma blusa vaporosa).',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Escalonamento Horizontal vs. Vertical',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Eixo Horizontal (Contornos):</strong> Peito, Cintura, Anca. Requer maior ajuste. Divide-se em quartos para cada peça do molde.',
-        '<strong>Eixo Vertical (Comprimentos):</strong> Comprimento frente, comprimento costas, comprimento total. Afecta a posição de pinças e linha de cintura. Menor variação entre tamanhos contíguos.',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Como usar o Escalador de Moldes',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Meça o seu molde:</strong> pegue na peça de papel e meça de borda a borda nas linhas de peito, cintura e anca.',
-        '<strong>Introduza as medidas origem:</strong> escreva essas medidas na coluna esquerda e indique que tamanho representa esse molde.',
-        '<strong>Introduza as suas medidas ou tamanho destino:</strong> na coluna direita, coloque as suas medidas reais ou o tamanho que pretende atingir.',
-        '<strong>Interprete os resultados:</strong> a calculadora mostrar-lhe-á quanto deve adicionar ou retirar em cada zona específica.',
       ],
     },
     {

@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: '<strong>Skalowanie wykrojów</strong> (grading) jest jedną z najbardziej krytycznych umiejętności w świecie krawiectwa. Nie polega ono po prostu na proporcjonalnym powiększeniu lub pomniejszeniu rysunku; chodzi o dostosowanie dwuwymiarowej struktury do złożonych krzywizn i proporcji ludzkiego ciała, które nie rośnie liniowo.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'Offline', label: 'Obliczenia Lokalne', icon: 'mdi:calculator' },
-        { value: 'Różnicowy', label: 'Skalowanie Proporcjonalne', icon: 'mdi:resize' },
-        { value: '100%', label: 'Bezpieczne i Prywatne', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: 'Czym dokładnie jest skalowanie wykrojów?',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>Luz ruchowy:</strong> dodatkowe centymetry niezbędne, abyś mogła oddychać, siedzieć i ruszać rękami bez rozrywania materiału.',
         '<strong>Luz modelowy:</strong> centymetry dodane przez projektanta w celu stworzenia konkretnej sylwetki (na przykład płaszcz typu oversize lub zwiewna bluzka).',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Skalowanie Poziome vs Pionowe',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Oś Pozioma (Obwody):</strong> Klatka piersiowa, Talia, Biodra. Wymaga największego dopasowania. Dzieli się na ćwiartki dla każdego elementu wykroju.',
-        '<strong>Oś Pionowa (Długości):</strong> Długość przodu, długość tyłu, długość całkowita. Wpływa na położenie zaszewek i linii talii. Mniejsza zmienność między sąsiednimi rozmiarami.',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Jak korzystać ze skaler wykrojów',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Zmierz swój wykrój:</strong> weź papierowy element i zmierz od krawędzi do krawędzi na liniach klatki piersiowej, talii i bioder.',
-        '<strong>Wprowadź wymiary źródłowe:</strong> wpisz te wymiary w lewej kolumnie i wskaż, jaki rozmiar reprezentuje ten wykrój.',
-        '<strong>Wprowadź swoje wymiary lub rozmiar docelowy:</strong> w prawej kolumnie wpisz swoje rzeczywiste wymiary lub rozmiar, który chcesz uzyskać.',
-        '<strong>Zinterpretuj wyniki:</strong> kalkulator pokaże Ci, ile należy dodać lub odjąć w każdej konkretnej strefie.',
       ],
     },
     {

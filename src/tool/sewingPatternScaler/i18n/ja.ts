@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: '型紙の<strong>スケーリング（グレーディング）</strong>は、服作りにおいて最も重要なスキルの一つです。単に図面を比例させて拡大・縮小するのではなく、二次元の構造を、直線的には成長しない複雑な人体の曲線や比率に適応させる作業です。',
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'オフライン', label: 'ブラウザで計算', icon: 'mdi:calculator' },
-        { value: '部位別', label: '比例スケーリング', icon: 'mdi:resize' },
-        { value: '100%', label: '安全・非公開', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: '「型紙スケーリング」とは正確には何ですか？',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>運動ゆとり：</strong> 呼吸、着席、腕の動きなどを妨げず、生地が破れないために必要な余分のセンチメートル。',
         '<strong>デザインゆとり：</strong> 特徴的なシルエット（オーバーサイズコートやふんわりしたブラウスなど）を作るためにデザイナーが付加したセンチメートル。',
-      ],
-    },
-    {
-      type: 'title',
-      text: '水平スケーリング vs 垂直スケーリング',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>水平軸（周り）：</strong> バスト、ウエスト、ヒップ。最も調整が必要な部分。各パーツを4分の1に分割して計算します。',
-        '<strong>垂直軸（丈）：</strong> 前丈、後ろ丈、総丈。ダーツの位置やウエストラインに影響します。隣接するサイズ間の変化は比較的小さいです。',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'パターンスケーラーの使い方',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>型紙を測る：</strong> 紙のパーツを用意し、バスト、ウエスト、ヒップのラインを端から端まで測ります。',
-        '<strong>元の数値を入力：</strong> ツールの左側の列に計測値を入力し、その型紙が何号サイズかを選択します。',
-        '<strong>目標値を入力：</strong> 右側の列に、ご自身の実際のサイズ、または目標のサイズを入力します。',
-        '<strong>結果を解釈：</strong> ツールが各部位で何センチ追加したり削ったりすべきかを表示します。',
       ],
     },
     {

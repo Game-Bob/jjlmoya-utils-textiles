@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: 'Het <strong>schalen van patronen</strong> is een van de meest kritische vaardigheden in de modewereld. Het gaat niet alleen om het proportioneel vergroten of verkleinen van een tekening; het gaat om het aanpassen van een tweedimensionale structuur aan de complexe rondingen und proporties van het menselijk lichaam, dat niet lineair groeit.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'Offline', label: 'Lokale Berekeningen', icon: 'mdi:calculator' },
-        { value: 'Differentieel', label: 'Proportionele Schaling', icon: 'mdi:resize' },
-        { value: '100%', label: 'Veilig en Privé', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: 'Wat is patronen schalen precies?',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>Bewegingsruimte:</strong> de extra centimeters die nodig zijn zodat je kunt ademen, zitten en je armen kunt bewegen zonder dat de stof scheurt.',
         '<strong>Designoverwijdte:</strong> de centimeters die de ontwerper heeft toegevoegd om een specifiek silhouet te creëren (bijvoorbeeld een oversized jas of een zwierige bloes).',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Horizontale vs. Verticale Schaling',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Horizontale as (Omtrekken):</strong> Borst, Taille, Heup. Vereist de meeste aanpassing. Wordt in vieren gedeeld voor elk patroondeel.',
-        '<strong>Verticale as (Lengtes):</strong> Voorlengte, ruglengte, totale lengte. Beïnvloedt de positie van coupenaden en de taillelijn. Minder variatie tussen opeenvolgende maten.',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Hoe de Patroon Skalierer te gebruiken',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Meet je patroon:</strong> neem het papieren deel en meet van rand tot rand op de lijnen van borst, taille en heup.',
-        '<strong>Voer de oorsprongmaten in:</strong> schrijf die maten in de linker kolom en geef aan welke maat dat patroon vertegenwoordigt.',
-        '<strong>Voer je eigen maten of doelmaat in:</strong> in de rechter kolom voer je je werkelijke maten in of de maat die je wilt bereiken.',
-        '<strong>Interpreteer de resultaten:</strong> de calculator laat zien hoeveel je moet toevoegen of verwijderen in elke specifieke zone.',
       ],
     },
     {

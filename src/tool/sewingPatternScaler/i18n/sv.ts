@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: '<strong>Mönsterskalning</strong> (grading) är en av de mest kritiska färdigheterna i konfektionsvärlden. Det handlar inte bara om att förstora eller förminska en ritning proportionellt; det handlar om att anpassa en tvådimensionell struktur till de komplexa kurvorna och proportionerna hos människokroppen, som inte växer linjärt.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'Offline', label: 'Lokala beräkningar', icon: 'mdi:calculator' },
-        { value: 'Differentiell', label: 'Proportionell skalning', icon: 'mdi:resize' },
-        { value: '100%', label: 'Säkert och privat', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: 'Vad är egentligen mönsterskalning?',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>Funktionell rörelsevidd:</strong> de extra centimetrarna som krävs för att du ska kunna andas, sitta och röra armarna utan att tyget spricker.',
         '<strong>Designvidd:</strong> de centimetrar som designern har lagt till för att skapa en specifik silhuett (till exempel en oversize-kappa eller en flortunn blus).',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Horisontell vs. Vertikal skalning',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Horisontell axel (Omfång):</strong> Byst, Midja, Höft. Kräver störst justering. Delas upp i fjärdedelar för varje mönsterdel.',
-        '<strong>Vertikal axel (Längder):</strong> Framlängd, rygglängd, totallängd. Påverkar placeringen av insnitt och midjelinje. Mindre variation mellan intilliggande storlekar.',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Hur man använder mönsterskalaren',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Mät ditt mönster:</strong> ta pappersdelen och mät från kant till kant på linjerna för byst, midja och höft.',
-        '<strong>Ange ursprungsmått:</strong> skriv in de måtten i den vänstra kolumnen och ange vilken storlek mönstret representerar.',
-        '<strong>Ange dina mått eller målstorlek:</strong> i den högra kolumnen anger du dina verkliga mått eller storleken du vill uppnå.',
-        '<strong>Tolka resultaten:</strong> kalkylatorn visar hur mycket du ska lägga till eller ta bort i varje specifik zon.',
       ],
     },
     {

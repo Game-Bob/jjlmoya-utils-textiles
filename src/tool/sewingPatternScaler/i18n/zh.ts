@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: '<strong>纸样放码</strong> (pattern grading) 是服装制作界最关键的技能之一。这不仅仅是按比例放大或缩小图稿；而是要将二维结构调整以适应非线性生长的复杂人体曲线和比例。',
     },
     {
-      type: 'stats',
-      items: [
-        { value: '离线', label: '本地计算', icon: 'mdi:calculator' },
-        { value: '差异化', label: '比例缩放', icon: 'mdi:resize' },
-        { value: '100%', label: '安全私密', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: '纸样放码到底是什么？',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>活动松量：</strong> 为了让您能够呼吸、坐下以及活动手臂而又不至于撕裂面料所需的额外厘米数。',
         '<strong>设计松量：</strong> 设计师为了创造特定廓形（例如廓形大衣或飘逸的上衣）而增加的厘米数。',
-      ],
-    },
-    {
-      type: 'title',
-      text: '水平放码 vs 垂直放码',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>水平轴（围度）：</strong> 胸围、腰围、臀围。需要最大的调整。每个纸样块被分为四分之一进行计算。',
-        '<strong>垂直轴（长度）：</strong> 前衣长、背长、总长。影响省道位置和腰线。相邻尺码间的变化量较小。',
-      ],
-    },
-    {
-      type: 'title',
-      text: '如何使用纸样缩放工具',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>测量您的纸样：</strong> 拿着纸样块，测量胸围、腰围和臀围线上的边缘到边缘距离。',
-        '<strong>输入源数据尺寸：</strong> 在左列写下这些测量值，并指明该纸样代表的尺码。',
-        '<strong>输入您的尺寸或目标尺码：</strong> 在右列中输入您的实际测量值或您想要达到的尺码。',
-        '<strong>翻译结果：</strong> 计算器将向您显示在每个特定区域应增加或减少的数值。',
       ],
     },
     {

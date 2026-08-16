@@ -93,15 +93,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       html: '<strong>Penskalaan pola</strong> (pattern grading) adalah salah satu keterampilan paling krusial dalam dunia konfeksi. Ini bukan sekadar memperbesar atau memperkecil gambar secara proporsional; ini adalah tentang mengadaptasi struktur dua dimensi ke kurva dan proporsi tubuh manusia yang kompleks, yang tidak tumbuh secara linier.',
     },
     {
-      type: 'stats',
-      items: [
-        { value: 'Luring', label: 'Perhitungan Lokal', icon: 'mdi:calculator' },
-        { value: 'Diferensial', label: 'Skala Proporsional', icon: 'mdi:resize' },
-        { value: '100%', label: 'Aman dan Privat', icon: 'mdi:lock' },
-      ],
-      columns: 3,
-    },
-    {
       type: 'title',
       text: 'Apa Sebenarnya Penskalaan Pola Itu?',
       level: 3,
@@ -120,32 +111,6 @@ export const content: ToolLocaleContent<SewingPatternScalerUI> = {
       items: [
         '<strong>Kelonggaran gerak (Wearing Ease):</strong> Sentimeter ekstra yang diperlukan agar Anda dapat bernapas, duduk, dan menggerakkan lengan tanpa membuat kain robek.',
         '<strong>Kelonggaran desain (Design Ease):</strong> Sentimeter yang ditambahkan desainer untuk menciptakan siluet tertentu (misalnya, mantel oversize atau blus yang melambai).',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Penskalaan Horizontal vs. Vertikal',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Sumbu Horizontal (Lekuk Tubuh):</strong> Dada, Pinggang, Pinggul. Memerlukan penyesuaian terbesar. Dibagi menjadi seperempat untuk setiap bagian pola.',
-        '<strong>Sumbu Vertikal (Panjang):</strong> Panjang depan, panjang belakang, panjang total. Memengaruhi posisi kupnat (dart) dan garis pinggang. Variasi antar ukuran yang berdekatan lebih kecil.',
-      ],
-    },
-    {
-      type: 'title',
-      text: 'Cara Menggunakan Pengubah Skala Pola',
-      level: 3,
-    },
-    {
-      type: 'list',
-      items: [
-        '<strong>Ukur pola Anda:</strong> Ambil potongan pola kertas dan ukur dari tepi ke tepi pada garis dada, pinggang, dan pinggul.',
-        '<strong>Masukkan ukuran asal:</strong> Tulis ukuran tersebut di kolom kiri dan tentukan ukuran apa yang diwakili oleh pola tersebut.',
-        '<strong>Masukkan ukuran atau target ukuran Anda:</strong> Di kolom kanan, masukkan ukuran tubuh asli Anda atau ukuran yang ingin dituju.',
-        '<strong>Interpretaskan hasil:</strong> Kalkulator akan menunjukkan berapa banyak yang harus ditambah atau dikurangi pada setiap area spesifik.',
       ],
     },
     {
