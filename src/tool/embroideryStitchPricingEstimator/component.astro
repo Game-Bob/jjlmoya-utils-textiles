@@ -1,0 +1,111 @@
+---
+import type { EmbroideryStitchPricingEstimatorUI } from './ui';
+
+interface Props {
+  ui?: Record<string, unknown>;
+}
+
+const { ui = {} } = Astro.props;
+const toolUI = ui as unknown as EmbroideryStitchPricingEstimatorUI;
+---
+
+<div class="embroider-tool" id="embroidery-stitch-pricing-estimator">
+  <div class="embroider-intro">
+    <span class="embroider-eyebrow">{toolUI.stageLabel}</span>
+    <p>{toolUI.intro}</p>
+  </div>
+  <div class="embroider-workbench">
+    <section class="embroider-stage" aria-label={toolUI.stageLabel}>
+      <div class="embroider-stage-header">
+        <span>{toolUI.canvasAlt}</span>
+        <span class="embroider-status" id="embroider-status-badge">INPUT NEEDED</span>
+      </div>
+      <svg id="embroider-canvas" class="embroider-canvas" viewBox="0 0 400 200" role="img" aria-label={toolUI.canvasAlt}></svg>
+      <div class="embroider-stage-caption">
+        <span id="embroider-result-status">{toolUI.emptyResult}</span>
+        <span id="embroider-notice" class="embroider-notice" hidden></span>
+      </div>
+    </section>
+    <section class="embroider-controls" aria-label={toolUI.controlsLabel}>
+      <div class="embroider-control-heading">
+        <span class="embroider-eyebrow">{toolUI.controlsLabel}</span>
+        <button class="embroider-reset" id="embroider-reset" type="button">{toolUI.reset}</button>
+      </div>
+      <div class="embroider-grid">
+        <label class="embroider-field">
+          <span>{toolUI.widthLabel}</span>
+          <input id="embroider-width" class="embroider-input" type="number" min="0.1" step="0.1" inputmode="decimal" />
+          <small>{toolUI.widthHint}</small>
+        </label>
+        <label class="embroider-field">
+          <span>{toolUI.heightLabel}</span>
+          <input id="embroider-height" class="embroider-input" type="number" min="0.1" step="0.1" inputmode="decimal" />
+          <small>{toolUI.heightHint}</small>
+        </label>
+        <label class="embroider-field">
+          <span>{toolUI.densityLabel}</span>
+          <input id="embroider-density" class="embroider-input" type="number" min="0.1" max="20" step="0.1" inputmode="decimal" />
+          <small>{toolUI.densityHint}</small>
+        </label>
+        <label class="embroider-field">
+          <span>{toolUI.coloursLabel}</span>
+          <input id="embroider-colours" class="embroider-input" type="number" min="1" max="30" step="1" inputmode="numeric" />
+          <small>{toolUI.coloursHint}</small>
+        </label>
+        <label class="embroider-field">
+          <span>{toolUI.speedLabel}</span>
+          <input id="embroider-speed" class="embroider-input" type="number" min="1" step="50" inputmode="numeric" />
+          <small>{toolUI.speedHint}</small>
+        </label>
+        <label class="embroider-field">
+          <span>{toolUI.rateLabel}</span>
+          <input id="embroider-rate" class="embroider-input" type="number" min="0.01" step="0.5" inputmode="decimal" />
+          <small>{toolUI.rateHint}</small>
+        </label>
+      </div>
+      <div class="embroider-select">
+        <span class="embroider-field-label">{toolUI.stitchLabel}</span>
+        <button id="embroider-stitch-trigger" class="embroider-select-trigger" type="button" aria-expanded="false" aria-controls="embroider-stitch-menu">{toolUI.selectStitch}</button>
+        <div id="embroider-stitch-menu" class="embroider-select-menu" hidden role="listbox">
+          <button type="button" data-stitch-option="running" data-note={toolUI.stitchRunningNote} role="option">{toolUI.stitchRunning}</button>
+          <button type="button" data-stitch-option="satin" data-note={toolUI.stitchSatinNote} role="option">{toolUI.stitchSatin}</button>
+          <button type="button" data-stitch-option="fill" data-note={toolUI.stitchFillNote} role="option">{toolUI.stitchFill}</button>
+          <button type="button" data-stitch-option="tatami" data-note={toolUI.stitchTatamiNote} role="option">{toolUI.stitchTatami}</button>
+        </div>
+        <small id="embroider-stitch-note">{toolUI.stitchSatinNote}</small>
+      </div>
+    </section>
+  </div>
+  <section class="embroider-result" aria-label={toolUI.resultLabel}>
+    <div class="embroider-result-main">
+      <span class="embroider-eyebrow">{toolUI.resultLabel}</span>
+      <strong id="embroider-price">--</strong>
+      <span>{toolUI.priceUnit}</span>
+    </div>
+    <div class="embroider-result-metrics">
+      <div><span>{toolUI.effectiveLabel}</span><strong id="embroider-effective">--</strong></div>
+      <div><span>{toolUI.productionLabel}</span><strong id="embroider-duration">--</strong></div>
+    </div>
+    <button id="embroider-copy" class="embroider-copy" type="button">{toolUI.copySummary}</button>
+  </section>
+  <section class="embroider-breakdown">
+    <div><span>{toolUI.areaLabel}</span><strong id="embroider-area">--</strong></div>
+    <div><span>{toolUI.stitchTimeLabel}</span><strong id="embroider-stitch-time">--</strong></div>
+    <div><span>{toolUI.setupLabel}</span><strong id="embroider-setup-time">--</strong></div>
+    <div><span>{toolUI.changesLabel}</span><strong id="embroider-colour-changes">--</strong></div>
+  </section>
+  <section class="embroider-explainer">
+    <div><h3>{toolUI.formulaTitle}</h3><p>{toolUI.formulaText}</p></div>
+    <div><h3>{toolUI.noteTitle}</h3><p>{toolUI.noteText}</p></div>
+  </section>
+</div>
+
+<script id="embroidery-tool-data" type="application/json" is:inline set:html={JSON.stringify(toolUI)}></script>
+
+<script>
+  import { mountEmbroideryEstimator } from './controller';
+  import type { EmbroideryStitchPricingEstimatorUI } from './ui';
+
+  const data = document.getElementById('embroidery-tool-data');
+  if (data?.textContent) mountEmbroideryEstimator(JSON.parse(data.textContent) as EmbroideryStitchPricingEstimatorUI);
+</script>

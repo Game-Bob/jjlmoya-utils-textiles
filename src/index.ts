@@ -13,6 +13,7 @@ export { FABRIC_PROJECT_CALCULATOR_TOOL } from './tool/fabricProjectCalculator';
 export { SEWING_PATTERN_SCALER_TOOL } from './tool/sewingPatternScaler';
 export { NEEDLE_CONVERTER_TOOL } from './tool/needleConverter';
 export { YARN_CALCULATOR_TOOL } from './tool/yarnCalculator';
+export { EMBROIDERY_STITCH_PRICING_ESTIMATOR_TOOL } from './tool/embroideryStitchPricingEstimator';
 
 export type {
   KnownLocale,
@@ -29,4 +30,3 @@ export type {
 } from './types';
 
 export { ALL_ENTRIES, ALL_TOOLS } from './tools';
-

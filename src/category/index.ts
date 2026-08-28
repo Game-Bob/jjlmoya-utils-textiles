@@ -11,6 +11,7 @@ import { fabricProjectCalculator } from '../tool/fabricProjectCalculator/entry';
 import { sewingPatternScaler } from '../tool/sewingPatternScaler/entry';
 import { needleConverter } from '../tool/needleConverter/entry';
 import { yarnCalculator } from '../tool/yarnCalculator/entry';
+import { embroideryStitchPricingEstimator } from '../tool/embroideryStitchPricingEstimator/entry';
 
 export const textilesCategory: TextilesCategoryEntry = {
   icon: 'mdi:texture',
@@ -27,6 +28,7 @@ export const textilesCategory: TextilesCategoryEntry = {
     sewingPatternScaler,
     needleConverter,
     yarnCalculator,
+    embroideryStitchPricingEstimator,
   ],
   i18n: {
     es: () => import('./i18n/es').then((m) => m.content),

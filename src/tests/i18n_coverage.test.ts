@@ -12,9 +12,11 @@ describe('I18n Coverage Validation', () => {
 
   ALL_TOOLS.forEach(({ entry }: { entry: any }) => {
     describe(`Tool: ${entry.id}`, () => {
+      const localesToCheck = EXPECTED_LOCALES;
+
       it('should have all 15 required locales', () => {
         const registeredLocales = Object.keys(entry.i18n);
-        EXPECTED_LOCALES.forEach((locale) => {
+        localesToCheck.forEach((locale) => {
           expect(
             registeredLocales,
             `Tool "${entry.id}" is missing locale "${locale}"`,
@@ -23,7 +25,7 @@ describe('I18n Coverage Validation', () => {
       });
 
       it('all locale loaders should be functions', () => {
-        EXPECTED_LOCALES.forEach((locale) => {
+        localesToCheck.forEach((locale) => {
           const loader = entry.i18n[locale as keyof typeof entry.i18n];
           expect(
             typeof loader,
