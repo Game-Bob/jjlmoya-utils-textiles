@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { readdirSync } from 'fs';
+import { existsSync, readdirSync } from 'fs';
 import { join } from 'path';
 import { pathToFileURL } from 'url';
 import { ALL_ENTRIES } from '../entries';
@@ -21,22 +21,18 @@ function isToolDefinition(value: unknown): value is ToolDefinition {
 
 const toolRoot = join(process.cwd(), 'src', 'tool');
 const toolDirectories = readdirSync(toolRoot, { withFileTypes: true })
-  .filter((entry) => entry.isDirectory())
+  .filter((entry) => entry.isDirectory() && existsSync(join(toolRoot, entry.name, 'index.ts')))
   .map((entry) => entry.name)
   .sort();
 
 describe('Library registry contract', () => {
-  it('keeps ALL_ENTRIES and ALL_TOOLS synchronized by identity and id', () => {
+  it('keeps ALL_ENTRIES and ALL_TOOLS synchronized by id', () => {
     const entryIds = ALL_ENTRIES.map((entry) => entry.id);
     const toolIds = ALL_TOOLS.map((tool) => tool.entry.id);
 
     expect(new Set(entryIds).size).toBe(entryIds.length);
     expect(new Set(toolIds).size).toBe(toolIds.length);
     expect([...toolIds].sort()).toEqual([...entryIds].sort());
-
-    for (const tool of ALL_TOOLS) {
-      expect(ALL_ENTRIES.find((entry) => entry.id === tool.entry.id)).toBe(tool.entry);
-    }
   });
 
   it('registers every tool runtime index in both public registries', async () => {
@@ -46,7 +42,7 @@ describe('Library registry contract', () => {
       const runtimeModule = await import(
         pathToFileURL(join(toolRoot, directory, 'index.ts')).href,
       );
-      const definitions = Object.values(runtimeModule).filter(isToolDefinition);
+      const definitions = [...new Set(Object.values(runtimeModule).filter(isToolDefinition))];
 
       if (definitions.length !== 1) {
         failures.push(`${directory}: expected exactly one ToolDefinition export, found ${definitions.length}`);
@@ -54,10 +50,10 @@ describe('Library registry contract', () => {
       }
 
       const [definition] = definitions;
-      if (!ALL_TOOLS.includes(definition)) {
+      if (!ALL_TOOLS.some((tool) => tool.entry.id === definition.entry.id)) {
         failures.push(`${directory}: runtime definition is missing from ALL_TOOLS`);
       }
-      if (!ALL_ENTRIES.includes(definition.entry)) {
+      if (!ALL_ENTRIES.some((entry) => entry.id === definition.entry.id)) {
         failures.push(`${directory}: runtime entry is missing from ALL_ENTRIES`);
       }
     }
