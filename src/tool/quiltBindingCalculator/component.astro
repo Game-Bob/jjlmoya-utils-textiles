@@ -1,0 +1,110 @@
+---
+import { renderIdleScene } from './dom-views';
+import type { QuiltBindingCalculatorUI } from './ui';
+import './quilt-binding-length-and-strip-calculator.css';
+
+const { ui } = Astro.props as { ui: QuiltBindingCalculatorUI };
+const serializedUI = JSON.stringify(ui).replace(/</g, '\\u003c');
+const metric = { width: '90', length: '120', stripWidth: '6.5', fabricWidth: '110', seam: '0.6' };
+---
+
+<div class="qb-tool" data-qb-tool data-ui={serializedUI}>
+  <div class="qb-layout">
+    <section class="qb-stage" aria-labelledby="qb-stage-label">
+      <div class="qb-stage-head">
+        <span id="qb-stage-label" class="qb-stage-label">{ui.stageLabel}</span>
+        <span class="qb-unit-readout" data-output="unit">{ui.metricLabel}</span>
+      </div>
+      <div class="qb-scene" data-scene set:html={renderIdleScene()}></div>
+      <p class="qb-scene-note">{ui.canvasAlt}</p>
+    </section>
+
+    <section class="qb-workbench" aria-labelledby="qb-controls-label">
+      <div class="qb-workbench-head">
+        <h2 id="qb-controls-label">{ui.controlsLabel}</h2>
+        <div class="qb-unit-toggle" role="group" aria-label={ui.unitLabel}>
+          <button type="button" class="qb-unit-button is-active" data-unit="metric">{ui.metricLabel}</button>
+          <button type="button" class="qb-unit-button" data-unit="imperial">{ui.imperialLabel}</button>
+        </div>
+      </div>
+
+      <fieldset class="qb-fieldset">
+        <legend>{ui.dimensionsLabel}</legend>
+        <div class="qb-fields">
+          <label class="qb-field"><span>{ui.widthLabel}</span><input data-field="quiltWidth" type="number" min="0.1" step="0.1" value={metric.width} /><small>{ui.widthHint}</small></label>
+          <label class="qb-field"><span>{ui.lengthLabel}</span><input data-field="quiltLength" type="number" min="0.1" step="0.1" value={metric.length} /><small>{ui.lengthHint}</small></label>
+          <label class="qb-field"><span>{ui.cornersLabel}</span><input data-field="cornerCount" type="number" min="0" max="100" step="1" value="4" /><small>{ui.cornersHint}</small></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="qb-fieldset">
+        <legend>{ui.fabricLabel}</legend>
+        <div class="qb-fields">
+          <label class="qb-field"><span>{ui.stripWidthLabel}</span><input data-field="stripWidth" type="number" min="0.1" step="0.1" value={metric.stripWidth} /><small>{ui.stripWidthHint}</small></label>
+          <label class="qb-field"><span>{ui.fabricWidthLabel}</span><input data-field="fabricWidth" type="number" min="0.1" step="0.1" value={metric.fabricWidth} /><small>{ui.fabricWidthHint}</small></label>
+          <label class="qb-field"><span>{ui.seamAllowanceLabel}</span><input data-field="seamAllowance" type="number" min="0.1" step="0.1" value={metric.seam} /><small>{ui.seamAllowanceHint}</small></label>
+        </div>
+      </fieldset>
+
+      <div class="qb-choice-row">
+        <div class="qb-choice" data-select="joinMethod">
+          <span class="qb-choice-label">{ui.methodLabel}</span>
+          <button type="button" data-select-trigger aria-haspopup="listbox" aria-expanded="false">{ui.diagonalLabel}</button>
+          <div class="qb-options" data-select-options hidden role="listbox">
+            <button type="button" data-value="diagonal" class="is-active" role="option">{ui.diagonalLabel}</button>
+            <button type="button" data-value="straight" role="option">{ui.straightLabel}</button>
+          </div>
+          <input data-field="joinMethod" type="hidden" value="diagonal" />
+        </div>
+        <div class="qb-choice" data-select="safetyPercent">
+          <span class="qb-choice-label">{ui.safetyLabel}</span>
+          <button type="button" data-select-trigger aria-haspopup="listbox" aria-expanded="false">{ui.safetyTen}</button>
+          <div class="qb-options" data-select-options hidden role="listbox">
+            <button type="button" data-value="0.05" role="option">{ui.safetyFive}</button>
+            <button type="button" data-value="0.1" class="is-active" role="option">{ui.safetyTen}</button>
+            <button type="button" data-value="0.15" role="option">{ui.safetyFifteen}</button>
+          </div>
+          <input data-field="safetyPercent" type="hidden" value="0.1" />
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="qb-result" aria-labelledby="qb-result-label" aria-live="polite">
+    <div class="qb-result-head">
+      <h2 id="qb-result-label">{ui.resultLabel}</h2>
+      <span class="qb-status" data-status><span data-output="status">{ui.emptyResult}</span></span>
+    </div>
+    <div class="qb-result-body is-empty" data-result-body>
+      <p class="qb-empty" data-output="empty">{ui.emptyResult}</p>
+      <div class="qb-metrics">
+        <div><span>{ui.perimeterLabel}</span><strong data-output="perimeter">-</strong></div>
+        <div><span>{ui.requiredLabel}</span><strong data-output="required">-</strong></div>
+        <div><span>{ui.stripsLabel}</span><strong data-output="strips">-</strong></div>
+        <div><span>{ui.cutSizeLabel}</span><strong data-output="cutSize">-</strong></div>
+        <div><span>{ui.joinedLengthLabel}</span><strong data-output="joined">-</strong></div>
+        <div><span>{ui.surplusLabel}</span><strong data-output="surplus">-</strong></div>
+        <div><span>{ui.joinsLabel}</span><strong data-output="joins">-</strong></div>
+      </div>
+      <p class="qb-plan"><span>{ui.cuttingPlanLabel}</span><strong data-output="plan">-</strong></p>
+      <p class="qb-warning" data-output="warning"></p>
+    </div>
+    <div class="qb-result-foot">
+      <p class="qb-feedback" data-output="feedback"></p>
+      <div class="qb-actions"><button type="button" class="qb-secondary" data-reset>{ui.reset}</button><button type="button" class="qb-primary" data-copy>{ui.copySummary}</button></div>
+    </div>
+  </section>
+
+  <details class="qb-notes">
+    <summary>{ui.formulaTitle}</summary>
+    <p>{ui.formulaText}</p>
+    <p><strong>{ui.noteTitle}</strong> {ui.noteText}</p>
+  </details>
+</div>
+
+<script>
+  import { createQuiltBindingController } from './controller';
+
+  const root = document.querySelector<HTMLElement>('[data-qb-tool]');
+  if (root) createQuiltBindingController(root);
+</script>

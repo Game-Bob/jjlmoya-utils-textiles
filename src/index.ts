@@ -14,6 +14,7 @@ export { SEWING_PATTERN_SCALER_TOOL } from './tool/sewingPatternScaler';
 export { NEEDLE_CONVERTER_TOOL } from './tool/needleConverter';
 export { YARN_CALCULATOR_TOOL } from './tool/yarnCalculator';
 export { EMBROIDERY_STITCH_PRICING_ESTIMATOR_TOOL } from './tool/embroideryStitchPricingEstimator';
+export { QUILT_BINDING_CALCULATOR_TOOL } from './tool/quiltBindingCalculator';
 
 export type {
   KnownLocale,

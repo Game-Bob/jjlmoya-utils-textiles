@@ -23,6 +23,8 @@ export { yarnCalculator } from './tool/yarnCalculator/entry';
 export type { YarnCalculatorLocaleContent } from './tool/yarnCalculator/entry';
 export { embroideryStitchPricingEstimator } from './tool/embroideryStitchPricingEstimator/entry';
 export type { EmbroideryStitchPricingEstimatorLocaleContent } from './tool/embroideryStitchPricingEstimator/entry';
+export { quiltBindingCalculator } from './tool/quiltBindingCalculator/entry';
+export type { QuiltBindingCalculatorLocaleContent } from './tool/quiltBindingCalculator/entry';
 export { textilesCategory } from './category';
 import { burnTest } from './tool/burnTest/entry';
 import { clothingSizeConverter } from './tool/clothingSizeConverter/entry';
