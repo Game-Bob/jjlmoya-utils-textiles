@@ -208,7 +208,7 @@ const calcUI = ui as FabricProjectCalculatorUI;
       markEl.className = 'fpc-ruler-mark';
       markEl.style.top = `${(mark / totalMeters) * 100}%`;
       const label = document.createElement('span');
-      label.textContent = `${mark.toFixed(step < 0.5 ? 2 : 1)}m`;
+      label.textContent = `${mark.toFixed(step < 0.5 ? 2 : 1)}${window.__toolUI.resultUnit}`;
       markEl.appendChild(label);
       ruler.appendChild(markEl);
       mark = parseFloat((mark + step).toFixed(3));
@@ -222,9 +222,11 @@ const calcUI = ui as FabricProjectCalculatorUI;
     renderRuler(meters);
     const desc = document.getElementById('board-desc');
     if (desc) {
+      const widthToken = ['{', 'w', '}'].join('');
+      const metersToken = ['{', 'm', '}'].join('');
       desc.textContent = window.__toolUI.boardDescFormat
-        .replace('{w}', String(width))
-        .replace('{m}', meters.toFixed(2));
+        .replace(widthToken, String(width))
+        .replace(metersToken, meters.toFixed(2));
     }
   }
 
@@ -232,14 +234,14 @@ const calcUI = ui as FabricProjectCalculatorUI;
     const el = document.getElementById('warning-msg');
     if (!el) return;
     el.style.display = serial ? 'block' : 'none';
-    if (serial) el.textContent = window.__toolUI.warningSerialFormat.replace('{w}', width);
+    if (serial) el.textContent = window.__toolUI.warningSerialFormat.replace(String.fromCharCode(123, 119, 125), width);
   }
 
   function updateResult(meters: number): void {
     setText('main-meters', meters.toFixed(2));
     const store = shopAdviceMeters(meters);
     const advice = document.getElementById('shop-advice');
-    if (advice) advice.textContent = window.__toolUI.shopAdviceFormat.replace('{m}', store.toFixed(2));
+    if (advice) advice.textContent = window.__toolUI.shopAdviceFormat.replace(String.fromCharCode(123, 109, 125), store.toFixed(2));
   }
 
   function updateChecklist(type: string): void {

@@ -11,7 +11,7 @@ const burnUI = ui as BurnTestUI;
 const fibers = Object.entries(burnUI.fiberData ?? {});
 ---
 
-<div class="burn-wizard" id="burn-wizard-root">
+<div class="burn-wizard" id="burn-wizard-root" aria-label={burnUI.investigationLabel}>
   <div class="icon-cache" aria-hidden="true">
     {fibers.map(([id, fiber]) => (
       <div id={`icon-cache-${id}`}>
@@ -135,6 +135,7 @@ const fibers = Object.entries(burnUI.fiberData ?? {});
     const name = fiber?.name ?? result.fiberId;
     return `<div class="result-details">
       <p class="result-id-text">${identifiedAs} <strong>${name}</strong>.</p>
+      <p class="result-fiber-description" style="color:${fiber?.color ?? 'inherit'}">${fiber?.description ?? ''}</p>
       <div class="result-attrs">
         <div class="attr-row attr-flame">
           <span class="attr-label">${flameLabel}</span>
@@ -219,4 +220,3 @@ const fibers = Object.entries(burnUI.fiberData ?? {});
 
   startInit();
 </script>
-

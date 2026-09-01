@@ -23,7 +23,7 @@ const fibers = Object.entries(ui.fiberData)
   .sort((a, b) => a.name.localeCompare(b.name));
 ---
 
-<div class="stain-chemistry-container" id="stain-chemistry-root">
+<div class="stain-chemistry-container" id="stain-chemistry-root" aria-label={ui.toolTitle}>
   <div class="card-wrapper">
     <div class="selectors-section">
       <div class="selectors-grid">
@@ -113,7 +113,7 @@ const fibers = Object.entries(ui.fiberData)
             <div class="warning-card-inner">
               <Icon name="mdi:shield-alert-outline" class="warning-icon" />
               <div>
-                <p class="warning-label">{ui.criticalWarningLabel}</p>
+                <p class="warning-label" title={ui.criticalWarning}>{ui.criticalWarningLabel}</p>
                 <p id="warning-text" class="warning-text"></p>
               </div>
             </div>
@@ -125,6 +125,7 @@ const fibers = Object.entries(ui.fiberData)
               <div>
                 <p class="note-label">{ui.technicalNote}</p>
                 <p class="note-text">{ui.technicalNoteText}</p>
+                <p id="protocol-notes" class="note-text"></p>
               </div>
             </div>
           </div>
@@ -183,6 +184,7 @@ const fibers = Object.entries(ui.fiberData)
     setText('protocol-agent-desc', agent.description);
     setText('protocol-temp', protocol.temperature);
     setText('protocol-method', protocol.method);
+    setText('protocol-notes', protocol.notes ?? '');
     renderWarning(ctx);
   }
 
@@ -235,4 +237,3 @@ const fibers = Object.entries(ui.fiberData)
 
   startInit();
 </script>
-

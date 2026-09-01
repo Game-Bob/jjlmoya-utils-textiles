@@ -1,5 +1,5 @@
 import type { EmbroideryCalculation, EmbroideryInput } from './logic';
-import { formatMinutes, formatNumber } from './logic';
+import { formatNumber } from './logic';
 import type { EmbroideryStitchPricingEstimatorUI } from './ui';
 import type { EstimateEvaluation } from './evaluator';
 
@@ -13,6 +13,13 @@ interface RenderContext {
 function setText(id: string, value: string): void {
   const element = document.getElementById(id);
   if (element) element.textContent = value;
+}
+
+function formatDuration(value: number, ui: EmbroideryStitchPricingEstimatorUI): string {
+  if (value < 60) return `${formatNumber(value, 1)} ${ui.minutesUnit}`;
+  const hours = Math.floor(value / 60);
+  const minutes = Math.round(value % 60);
+  return `${hours} ${ui.hoursUnit} ${minutes} ${ui.minutesUnit}`;
 }
 
 function makeSvgElement<K extends keyof SVGElementTagNameMap>(tag: K, attrs: Record<string, string>): SVGElementTagNameMap[K] {
@@ -55,11 +62,11 @@ function renderValues(calculation: EmbroideryCalculation | null, ui: EmbroideryS
   }
   setText('embroider-result-status', ui.estimateBadge);
   setText('embroider-effective', `${formatNumber(calculation.effectiveStitches)} ${ui.stitchesUnit}`);
-  setText('embroider-duration', formatMinutes(calculation.totalMinutes));
+  setText('embroider-duration', formatDuration(calculation.totalMinutes, ui));
   setText('embroider-price', calculation.basePrice.toFixed(2));
   setText('embroider-area', `${formatNumber(calculation.areaCm2, 1)} cm2`);
-  setText('embroider-stitch-time', formatMinutes(calculation.stitchMinutes));
-  setText('embroider-setup-time', formatMinutes(calculation.setupMinutes));
+  setText('embroider-stitch-time', formatDuration(calculation.stitchMinutes, ui));
+  setText('embroider-setup-time', formatDuration(calculation.setupMinutes, ui));
   setText('embroider-colour-changes', formatNumber(calculation.colourChanges));
 }
 
@@ -90,5 +97,5 @@ export function renderEmbroidery(ctx: RenderContext): void {
 
 export function copyableSummary(ctx: RenderContext): string {
   if (!ctx.calculation) return ctx.ui.invalidMessage;
-  return `${ctx.ui.resultLabel}: ${formatNumber(ctx.calculation.effectiveStitches)} ${ctx.ui.stitchesUnit}, ${formatMinutes(ctx.calculation.totalMinutes)}, ${ctx.calculation.basePrice.toFixed(2)} ${ctx.ui.priceUnit}`;
+  return `${ctx.ui.resultLabel}: ${formatNumber(ctx.calculation.effectiveStitches)} ${ctx.ui.stitchesUnit}, ${formatDuration(ctx.calculation.totalMinutes, ctx.ui)}, ${ctx.calculation.basePrice.toFixed(2)} ${ctx.ui.priceUnit}`;
 }

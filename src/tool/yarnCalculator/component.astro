@@ -186,9 +186,9 @@ const initLabels = yarnUI.sizeLabels?.sweater ?? ['S', 'M', 'L', 'XL'];
       <path class="scheme-item filled" d="M140 40 L170 100 L150 110 L140 60 Z"/>
     `;
     els.lblLeft.style.cssText = 'opacity:1; top:10%; left:5%';
-    els.lblLeft.innerHTML = `<span>${ui.schemeSleeveLabel}</span><strong>${sMTotal}m</strong><em>${Math.round(sMTotal / 2)}m ${ui.schemeSleeveEach}</em>`;
+    els.lblLeft.innerHTML = `<span>${ui.schemeSleeveLabel}</span><strong>${sMTotal}${ui.statSuffix}</strong><em>${Math.round(sMTotal / 2)}${ui.statSuffix} ${ui.schemeSleeveEach}</em>`;
     els.lblRight.style.cssText = 'opacity:1; top:50%; right:5%';
-    els.lblRight.innerHTML = `<span>${ui.schemeBodyLabel}</span><strong>${bM}m</strong>`;
+    els.lblRight.innerHTML = `<span>${ui.schemeBodyLabel}</span><strong>${bM}${ui.statSuffix}</strong>`;
   }
 
   function setHatScheme(els: SchemeEls, total: number) {
@@ -198,7 +198,7 @@ const initLabels = yarnUI.sizeLabels?.sweater ?? ['S', 'M', 'L', 'XL'];
       <path class="scheme-item filled" d="M60 130 Q 60 40, 100 40 Q 140 40, 140 130 Z"/>
     `;
     els.lblRight.style.cssText = 'opacity:1; top:25%; right:10%';
-    els.lblRight.innerHTML = `<span>${ui.schemeTotalHat}</span><strong>${total}m</strong>`;
+    els.lblRight.innerHTML = `<span>${ui.schemeTotalHat}</span><strong>${total}${ui.statSuffix}</strong>`;
   }
 
   function setFlatScheme(els: SchemeEls, total: number) {
@@ -208,7 +208,7 @@ const initLabels = yarnUI.sizeLabels?.sweater ?? ['S', 'M', 'L', 'XL'];
       <rect class="scheme-item filled" x="40" y="60" width="120" height="60"/>
     `;
     els.lblRight.style.cssText = 'opacity:1; top:20%; right:10%';
-    els.lblRight.innerHTML = `<span>${ui.schemeTotalFlat}</span><strong>${total}m</strong>`;
+    els.lblRight.innerHTML = `<span>${ui.schemeTotalFlat}</span><strong>${total}${ui.statSuffix}</strong>`;
   }
 
   function setSocksScheme(els: SchemeEls, total: number) {
@@ -218,7 +218,7 @@ const initLabels = yarnUI.sizeLabels?.sweater ?? ['S', 'M', 'L', 'XL'];
       <path class="scheme-item filled" d="M80 40 L80 120 L120 120 L120 100 L100 100 L100 40 Z"/>
     `;
     els.lblRight.style.cssText = 'opacity:1; top:15%; right:10%';
-    els.lblRight.innerHTML = `<span>${ui.schemeTotalSocks}</span><strong>${total}m</strong>`;
+    els.lblRight.innerHTML = `<span>${ui.schemeTotalSocks}</span><strong>${total}${ui.statSuffix}</strong>`;
   }
 
   function drawScheme(total: number, parts: { body: number; sleeves: number }) {
@@ -343,4 +343,3 @@ const initLabels = yarnUI.sizeLabels?.sweater ?? ['S', 'M', 'L', 'XL'];
   document.addEventListener('astro:page-load', init);
   init();
 </script>
-

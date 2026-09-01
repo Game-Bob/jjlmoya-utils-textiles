@@ -3,7 +3,7 @@ import type { BibliographyEntry } from '../../types';
 export const bibliography: BibliographyEntry[] = [
     {
       name: 'AATCC - Association for Advancing Color Technology and Chemistry',
-      url: 'https://www.aatcc.org',
+      url: 'https://www.aatcc.org/testing/standards',
     },
     {
       name: 'Kissa, E.  -  Textile Auxiliaries',

@@ -17,7 +17,7 @@ const fibers = Object.entries(fiberData)
   .sort((a, b) => a.name.localeCompare(b.name));
 ---
 
-<div class="fabric-truth-container" id="fabric-truth-root">
+<div class="fabric-truth-container" id="fabric-truth-root" aria-label={ui.toolTitle}>
   <div class="card-wrapper">
     <div class="composition-section">
       <h2 class="section-title">
@@ -98,6 +98,7 @@ const fibers = Object.entries(fiberData)
           <div>
             <h4>{ui.careWarning}</h4>
             <p id="care-warning">Sigue siempre las instrucciones de la etiqueta.</p>
+            <p class="special-care-warning">{ui.specialCareWarning}</p>
           </div>
         </div>
 
@@ -277,4 +278,3 @@ const fibers = Object.entries(fiberData)
 
   startInit();
 </script>
-

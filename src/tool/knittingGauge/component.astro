@@ -62,7 +62,7 @@ const gaugeUI = ui as unknown as KnittingGaugeUI;
       </div>
       <div class="input-grid">
         <div class="gauge-field">
-          <label for="my-needle">{gaugeUI.labelNeedleMm}</label>
+          <label for="my-needle">{gaugeUI.labelNeedleMm} <span class="label-sub">({gaugeUI.labelNeedle})</span></label>
           <input type="number" id="my-needle" class="gauge-input gauge-input-bordered" value="4.0" step="0.25" />
         </div>
         <div class="gauge-field">
@@ -367,4 +367,3 @@ const gaugeUI = ui as unknown as KnittingGaugeUI;
   document.addEventListener('astro:page-load', init);
   init();
 </script>
-

@@ -18,7 +18,7 @@ const toolUI = ui as unknown as EmbroideryStitchPricingEstimatorUI;
     <section class="embroider-stage" aria-label={toolUI.stageLabel}>
       <div class="embroider-stage-header">
         <span>{toolUI.canvasAlt}</span>
-        <span class="embroider-status" id="embroider-status-badge">INPUT NEEDED</span>
+        <span class="embroider-status" id="embroider-status-badge">{toolUI.attentionBadge}</span>
       </div>
       <svg id="embroider-canvas" class="embroider-canvas" viewBox="0 0 400 200" role="img" aria-label={toolUI.canvasAlt}></svg>
       <div class="embroider-stage-caption">
@@ -78,7 +78,7 @@ const toolUI = ui as unknown as EmbroideryStitchPricingEstimatorUI;
   </div>
   <section class="embroider-result" aria-label={toolUI.resultLabel}>
     <div class="embroider-result-main">
-      <span class="embroider-eyebrow">{toolUI.resultLabel}</span>
+      <span class="embroider-eyebrow">{toolUI.basePriceLabel}</span>
       <strong id="embroider-price">--</strong>
       <span>{toolUI.priceUnit}</span>
     </div>
