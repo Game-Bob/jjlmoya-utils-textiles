@@ -39,4 +39,5 @@ import { shoeSizeConverter } from './tool/shoeSizeConverter/entry';
 import { stainChemistry } from './tool/stainChemistry/entry';
 import { yarnCalculator } from './tool/yarnCalculator/entry';
 import { embroideryStitchPricingEstimator } from './tool/embroideryStitchPricingEstimator/entry';
-export const ALL_ENTRIES = [burnTest, clothingSizeConverter, fabricProjectCalculator, fabricTruth, fiberPrep, knittingGauge, laundryGuide, needleConverter, sewingPatternScaler, shoeSizeConverter, stainChemistry, yarnCalculator, embroideryStitchPricingEstimator];
+import { quiltBindingCalculator } from './tool/quiltBindingCalculator/entry';
+export const ALL_ENTRIES = [burnTest, clothingSizeConverter, fabricProjectCalculator, fabricTruth, fiberPrep, knittingGauge, laundryGuide, needleConverter, sewingPatternScaler, shoeSizeConverter, stainChemistry, yarnCalculator, embroideryStitchPricingEstimator, quiltBindingCalculator];
