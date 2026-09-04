@@ -1,905 +1,905 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-04T06:57:33.658Z",
+  "generatedAt": "2026-09-04T09:06:12.626Z",
   "pages": {
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/faservorbereitung-pigmentierung/": {
-      "hash": "16e9c0e230517ba7fff2ac960a851f562b8c3fcf62fbde4d3bd28457f8bf0763",
+      "hash": "a6d7b224f4debfa80adb9df3fc6b10fe154c058076951d5a101848c1700a703b",
       "route": "/de/werkzeuge/kategorien/textilien/faservorbereitung-pigmentierung/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/": {
-      "hash": "8aac1c11bed70ff8811334aa18de617d8a151d77e815db641e59e53cff2944d3",
+      "hash": "006e714d781148295d7c8ea91b4e771b4d95004e92aa019185ad3e3b0f3f4295",
       "route": "/de/werkzeuge/kategorien/textilien/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/internationaler-konverter-konfektionsgroessen/": {
-      "hash": "e2d3644b8665441c24da539e4abb8d4ed234eff3c7810f723cc06661049b2641",
+      "hash": "e473243d4faaba20245b3f22382e3758dfbcda3d452dd288c71114090dc2156e",
       "route": "/de/werkzeuge/kategorien/textilien/internationaler-konverter-konfektionsgroessen/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/quilt-einfasslaenge-und-streifen-rechner/": {
-      "hash": "7bf4a427824cc68ae28b9c0d6f9deb46d7bdb2e2938920563e1a122cb2f4d17f",
+      "hash": "8cb65c8ec9514c61c8d56c84f1edf0c17825aaa487c521ed3b01ea3f78f189f5",
       "route": "/de/werkzeuge/kategorien/textilien/quilt-einfasslaenge-und-streifen-rechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/schnittmuster-skalierer/": {
-      "hash": "3493dd8f804f89c2f9ba10609ec45cb26903664bdce5c57985d0b0797f177295",
+      "hash": "c156ccdfa8a0d6a2f4693d9db9565540108b5cb54bba22ff1d37e27896d1a869",
       "route": "/de/werkzeuge/kategorien/textilien/schnittmuster-skalierer/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/schuhgroessen-umrechner/": {
-      "hash": "0fd5aa27586e49ed958ca36286663534142c169dc4cca1dcd2a74fb37774f9e7",
+      "hash": "da14d8fe4b805efa0992a2bb00df38ef2309a1da85131bda271eb1821fb8cb07",
       "route": "/de/werkzeuge/kategorien/textilien/schuhgroessen-umrechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/stickzahl-und-preis-kalkulator-stickerei/": {
-      "hash": "de1a620c455d8b6dee086af4baaaf5ecf0fd0dd53c895d05511889761312cc90",
+      "hash": "f4d38d0642a54bf686d62997cf885a22a849573cda1a2f945be36a2eaf01c2be",
       "route": "/de/werkzeuge/kategorien/textilien/stickzahl-und-preis-kalkulator-stickerei/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/stoffverbrauchsrechner-projekt/": {
-      "hash": "07ca4496b539e54c04911f699f76aea539374184f7797d999bb3a67059b3d800",
+      "hash": "e1bb12f924941636397f0d70fe9578de88e163a0d76aedb1eaeaaab29dc84866",
       "route": "/de/werkzeuge/kategorien/textilien/stoffverbrauchsrechner-projekt/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/stricknadel-umrechner/": {
-      "hash": "c7509a445bbc1b71e0354fde00404b733176b8cad842a0500caf2cd37f22eaad",
+      "hash": "c10a8e4ede326be0e6484cc08d88183cfcf706aa0366e209e2a23400828b95b5",
       "route": "/de/werkzeuge/kategorien/textilien/stricknadel-umrechner/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/strickrechner-maschenprobe-spannung/": {
-      "hash": "8485e2b9bef9486a9607313f4e1dc41c39594aedb55a5b79583fafa262e3dcc1",
+      "hash": "27857d41ef4fb1e22630ca42412f1169140da8852a7018d8b23671a47ad21d07",
       "route": "/de/werkzeuge/kategorien/textilien/strickrechner-maschenprobe-spannung/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/textil-wahrheit-faseranalyse/": {
-      "hash": "d5751fa7fddd893edb94f582cfb51eb12d40be541734654488b781deb8edd813",
+      "hash": "73c8a06c1f71a367cded3a3189d35679ebcea195e80955cf9da39b6ded697dbb",
       "route": "/de/werkzeuge/kategorien/textilien/textil-wahrheit-faseranalyse/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/textilflecken-chemie-protokoll/": {
-      "hash": "64533e8cdc35efd1b112b5aaf569bfdf0c0065b7be0c1b37f800de82131d1d8a",
+      "hash": "fbede622d7b14a0936b1965185d88a9951f8676463c27e4222b2e7b447f5d508",
       "route": "/de/werkzeuge/kategorien/textilien/textilflecken-chemie-protokoll/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/textilien-brennprobe/": {
-      "hash": "27a348ea21d94eaaba830ecb312c7a9dab64d35cbf9eb5a079d63b6e37f5136b",
+      "hash": "d845217b2d1aa33b17c7916fa7b812b358a609486747b39941e2a8ac535d745b",
       "route": "/de/werkzeuge/kategorien/textilien/textilien-brennprobe/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/textilpflege-leitfaden/": {
-      "hash": "144d0d1def4257144d591e01150afd2e3a9bf0cb49233d845de0bf1e99bd0602",
+      "hash": "ffc8feaf681832464c4a1a7a41912065c9ad2a11e255b4e70ce3e7fbcfbbf613",
       "route": "/de/werkzeuge/kategorien/textilien/textilpflege-leitfaden/"
     },
     "https://www.gamebob.dev/de/werkzeuge/kategorien/textilien/wollrechner-garnverbrauch/": {
-      "hash": "d871cfea435ed671185a1832b7ca2bdf196c9767fa32f311c67233279268c0bb",
+      "hash": "68a6d0b7e1e018c1a4b10061de3fc4cefd8ce7a43858f77fb0eb529f4d7275d9",
       "route": "/de/werkzeuge/kategorien/textilien/wollrechner-garnverbrauch/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/clothing-size-converter/": {
-      "hash": "202574e9f355f4acd3ea82f8d828fa8eee5762ff9343a6d7322f009fc12f0117",
+      "hash": "b3d7c79c036c649dbbf2d5bd2b802b34708005a39d7f5b1e45ad8cf506a6c885",
       "route": "/en/utilities/categories/textiles/clothing-size-converter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/embroidery-stitch-count-pricing-estimator/": {
-      "hash": "3b74a51fd4d730c13551fb06f22d8cdfc28592a6d48ae80c28b4abf121326975",
+      "hash": "f5b010a02b9f05c6de0cde4e3c6675d9f197f5e9a630116ed31580641f775c5b",
       "route": "/en/utilities/categories/textiles/embroidery-stitch-count-pricing-estimator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/fabric-project-calculator/": {
-      "hash": "f8673388304d37b3878861679df8c77cde176aac98c7b80d7849c3b802675c78",
+      "hash": "5647e5c696801c441d2b8365c741ee6e7232b2a08bbef4e99aabbf3c4548c7ac",
       "route": "/en/utilities/categories/textiles/fabric-project-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/fabric-truthfulness/": {
-      "hash": "56e2a0f6aca0bf6fd3c6e0df51f73ed998f2c9fcefd353add29a19eeb9b4e90b",
+      "hash": "cc7a96e3b2602a1a2070c297ad0b7eb0652a24f2b4c8174e28834f2d4a7c1dd1",
       "route": "/en/utilities/categories/textiles/fabric-truthfulness/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/fiber-preparation-natural-dyeing/": {
-      "hash": "ee15dab0d0f314ab43d38072480bbd4bf91125ba4cc0b199a352743ece60631b",
+      "hash": "cfd0e67cf77b5b5e9701fb0e428b8ada24c066fa7e26ca3a848da3af940a139f",
       "route": "/en/utilities/categories/textiles/fiber-preparation-natural-dyeing/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/": {
-      "hash": "2f2f42037a3f25621b8baf94a0e102aab80b6955d4e38266fc24bba01f661457",
+      "hash": "f4d4edacba8c2e08ac1bcecec8ffaa290a32cf4ae1a85165458ffa78bfaa849c",
       "route": "/en/utilities/categories/textiles/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/knitting-gauge-calculator/": {
-      "hash": "df995b75d650f1c08198244831a36fc04b7dbad9f94076228df5ac9e68bd7a92",
+      "hash": "dbb5a538f732929b657d18f64b169ffd9a73bf5f63be564d7fa1d10d92c53027",
       "route": "/en/utilities/categories/textiles/knitting-gauge-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/knitting-needle-converter/": {
-      "hash": "578d45abb552d0fb253527487535c241134934c9cb42b1e392af65c17f140412",
+      "hash": "108a3d2aaacc6225763706a2af7648b19dd7a94d8282e20b92ede951cd3a4234",
       "route": "/en/utilities/categories/textiles/knitting-needle-converter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/laundry-guide/": {
-      "hash": "660e5b4692aca3095d59f10d119225b421c9a493113dd78891fd03fad2581c2c",
+      "hash": "d2284361c5d54140cd8cec1e400d4457ffbac4d85564b547cbbab1b6017c35d1",
       "route": "/en/utilities/categories/textiles/laundry-guide/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/quilt-binding-length-and-strip-calculator/": {
-      "hash": "ea01ec5a9edc4d25ff0a1e92c14dfda2337957f7fff08569bf048640f9aaf491",
+      "hash": "2dcaebda212782eae8d4b4194aca47c1b721aaf792da751e1f92f37929d08b8c",
       "route": "/en/utilities/categories/textiles/quilt-binding-length-and-strip-calculator/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/sewing-pattern-scaler/": {
-      "hash": "2beb2e914a89379232e19f7e800be0e586f35cf16f8f7f02051ae24baa72507d",
+      "hash": "5313a59ebc30cdb40f5da43f4641d551c3598cd82888aa561d82c8a8ae31a3d2",
       "route": "/en/utilities/categories/textiles/sewing-pattern-scaler/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/shoe-size-converter/": {
-      "hash": "de595eaab3546deb8e2fc64cc71ab7fdccfd8e7dda995a65793b047c2ca885f9",
+      "hash": "9f56e508a7c7c9e039a76a584e57653e07eb2caa6a3aef89f092621a00a22b2c",
       "route": "/en/utilities/categories/textiles/shoe-size-converter/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/stain-chemical-protocol/": {
-      "hash": "93f95b8c0111b87a9d719ce7c4c3452673ec50e08c071ed99fba38c5e4868113",
+      "hash": "4302b533fa17717db1a5092c0bc36fc459675691492a9e540cfb3677bc50da5e",
       "route": "/en/utilities/categories/textiles/stain-chemical-protocol/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/textile-burn-test/": {
-      "hash": "d4e301f53964d8a4d74496a7ef82e4ee9bd8e531784b63a77780dff4a97a9a54",
+      "hash": "cacac2bbe9fa3a134bb7d26547481136b79408b1a2d839ac3825a6edaddc2f0f",
       "route": "/en/utilities/categories/textiles/textile-burn-test/"
     },
     "https://www.gamebob.dev/en/utilities/categories/textiles/yarn-calculator/": {
-      "hash": "6771de59ce6eb1072b436e17b9e5d6da45b7d3113b24f02b571af16db64b65d9",
+      "hash": "43cf384a94164f54546665f274e329db9847c51d69b2a6c1e57c17a10157d78a",
       "route": "/en/utilities/categories/textiles/yarn-calculator/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/calculateur-laine/": {
-      "hash": "b9924414a0ee8985564ff6cec812477529d88c9ffc5ee876f4fd527fbf862f1c",
+      "hash": "003c848fa5bbfa0968bf7e2c97fd6335df14dd68d513eb5c78cd2e00c97a2a36",
       "route": "/fr/utilitaires/categories/textiles/calculateur-laine/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/calculateur-longueur-et-bandes-de-biais-pour-quilt/": {
-      "hash": "bbaa711f9d12974d171e3077d5b2497bf894baa637328a990494678843e267fe",
+      "hash": "34769eb657972bf1b0a4561529100de1d2eb5fd272f368b071cca1cd50c5d5ab",
       "route": "/fr/utilitaires/categories/textiles/calculateur-longueur-et-bandes-de-biais-pour-quilt/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/calculateur-tension-tricot/": {
-      "hash": "a5aac96dd88ea60fa292dd73c356b41ce584d7569a9c2b2d71b7ee8598c43880",
+      "hash": "36993c5c1e8e529e3e8baeaa5dcd752353aa28e4f0f4ade21467f7cf37717bf2",
       "route": "/fr/utilitaires/categories/textiles/calculateur-tension-tricot/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/calculateur-tissu-projet/": {
-      "hash": "1c0f8ae11c1ff17f9e01ace5b6267545e31da8151f312d0b59a3140744e0761f",
+      "hash": "12efdb47ed6d188e45c97e8917c00309ab211abe7e8e2dcf5390349177782d8c",
       "route": "/fr/utilitaires/categories/textiles/calculateur-tissu-projet/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/convertisseur-aiguilles-tricot/": {
-      "hash": "ac7ba8d3d996a41a6483ef0410c87023dc74352e786a0c22a7a0f57387560361",
+      "hash": "352c34d46045e6f5bed9b72952ee1e4d8ad449cdd4e6a91b1000e512f58c58b7",
       "route": "/fr/utilitaires/categories/textiles/convertisseur-aiguilles-tricot/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/convertisseur-pointures-chaussures/": {
-      "hash": "d702f9b4f82a9fd4c9f62d01e77634ef4acfdb87774e14240d47f097eab64009",
+      "hash": "8889f46b3913a93a1bed6742d5f70c2e9d2e2e02807ab199dc21a4b873f21c2d",
       "route": "/fr/utilitaires/categories/textiles/convertisseur-pointures-chaussures/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/convertisseur-tailles-vetements/": {
-      "hash": "e67b42953e05198e140deb6f54dc2acd8b7fe279bbc4b59fc17b023321b1063c",
+      "hash": "96664ce89067d51682c0e9dc9e9ab6d03daa1365aff5f50bfeeae4e41c847cac",
       "route": "/fr/utilitaires/categories/textiles/convertisseur-tailles-vetements/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/dimensionneur-patron-couture/": {
-      "hash": "a997af3565eddd66dc3e8b0a706abd1236d36d6ebdc0aaff91a0afa437725edb",
+      "hash": "856e043fda1bac5218c1a0bba6833e3e3d298489f293c20bde0b2af580e18b11",
       "route": "/fr/utilitaires/categories/textiles/dimensionneur-patron-couture/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/estimateur-points-prix-broderie/": {
-      "hash": "e484d96e54f17f2709c0b680c9aea495743993f1fe5416b475063f5f9cac73ff",
+      "hash": "c35b753924e8d5cc3dfd7e51986f1707306a13f6da33e7c897ad9eac1c948892",
       "route": "/fr/utilitaires/categories/textiles/estimateur-points-prix-broderie/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/guide-entretien-textile/": {
-      "hash": "8144f3325a5315bc6fd52e857a0b2c7c51008f7e4dd2866880ed6b4a4acea18f",
+      "hash": "d5624c678c8c2620e5b52367a89fde3bc4bcf4afff671d08df706e8956d8b3cf",
       "route": "/fr/utilitaires/categories/textiles/guide-entretien-textile/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/": {
-      "hash": "65243f37ccf4e2b0b921cb71df11d60550ae418c3108b971c74a9e9ce63e149d",
+      "hash": "89118ec0ada9af468e25a4ba83feccd7201479c7c70194878aa77b55829306e8",
       "route": "/fr/utilitaires/categories/textiles/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/preparation-fibres-teinture-naturelle/": {
-      "hash": "0bc40950893664edadc4024890e898fd835afb8a66579b6fd724c85af7c37f65",
+      "hash": "1b937a0628a5bc53e4e86e7a7785ebd01bb8e2e34d738c46d986ea4e4552e0c9",
       "route": "/fr/utilitaires/categories/textiles/preparation-fibres-teinture-naturelle/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/protocole-chimique-taches/": {
-      "hash": "ddcd65c43a753e2d6f3da0c46ffa8a7a98c5022526b0933708474fd853d50950",
+      "hash": "2bbc1a1f834c6a51ef76a989e7709884086fb6a2cfed29bdd4d5bda1673d15a5",
       "route": "/fr/utilitaires/categories/textiles/protocole-chimique-taches/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/test-combustion-textile/": {
-      "hash": "e2229e48d87894206d54058befc616b541a381b33c72b37da3c48126e4ee3aa7",
+      "hash": "f9c2135001a9357b52819d7f626ffb0aa08c42f4197494a4f3a5fda206ed9def",
       "route": "/fr/utilitaires/categories/textiles/test-combustion-textile/"
     },
     "https://www.gamebob.dev/fr/utilitaires/categories/textiles/verite-textile/": {
-      "hash": "1d44c636b46eec93cd245cb34cd7e0d131f8564adc03f1e366b5951501e9b48e",
+      "hash": "98b6fe5adfa883e9052513fb49dcfa679f7bb0afd49b530a385534444b7d0471",
       "route": "/fr/utilitaires/categories/textiles/verite-textile/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/": {
-      "hash": "5a67eecd2c150c355ed9b623f3bbabf9dbd13c59674e29cae000224d2c31639d",
+      "hash": "a928498ec33a05c9237fce8107ae4a1139ed1376f5e7b4a70e3a67eb20fd6dfd",
       "route": "/id/utilitas/kategori/tekstil/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/kalkulator-benang-rajut/": {
-      "hash": "932d6389c4d0e8a12b2441630600e32f8bad991724de506a3283fa66f7d0cc61",
+      "hash": "032b7d032dcad8ea81012d324bc865efe5a82d3a04365c26859fa9a1dc8eb615",
       "route": "/id/utilitas/kategori/tekstil/kalkulator-benang-rajut/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/kalkulator-gauge-tegangan-rajut/": {
-      "hash": "2331658467fbfc92fd8df452eceed9651e3cbef0a074f1b4157e554cc48032f8",
+      "hash": "08b53e4e9061f589e138d66b60440b6c166347525905d32455a3c0658a73e249",
       "route": "/id/utilitas/kategori/tekstil/kalkulator-gauge-tegangan-rajut/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/kalkulator-jumlah-tusuk-harga-bordir/": {
-      "hash": "a262664c158bf4d75b9d15c5c40650ad22f17b6343bb7058b3dff5cfbe8bb30b",
+      "hash": "923809fa1ebf49b4b9de42d0d0d90b32244514bfc387e636a1ef74ccb1b381be",
       "route": "/id/utilitas/kategori/tekstil/kalkulator-jumlah-tusuk-harga-bordir/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/kalkulator-kain-proyek/": {
-      "hash": "c02548708c91f055f48862b697da8970230b091e6a518a51cf91fc3089e5ee88",
+      "hash": "47869eab758f2a0b2032185afc1c811d92d267111fa7043258b441bbbea84372",
       "route": "/id/utilitas/kategori/tekstil/kalkulator-kain-proyek/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/kalkulator-panjang-dan-strip-binding-quilt/": {
-      "hash": "49137944e5255fcedc947997fa6f829ce0962218b8487bbf377b8623a8a56681",
+      "hash": "e574b87f11c69dbbd9692c25c6a06d1a693bab032375d54d8d4a42b8d181fdd5",
       "route": "/id/utilitas/kategori/tekstil/kalkulator-panjang-dan-strip-binding-quilt/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/kejujuran-tekstil-analisis-serat/": {
-      "hash": "ab1e3086b8a669a68cb4932d062b9ff003d1123425f000a7015c710493f47d8f",
+      "hash": "0e8821ba457ec90417ddeb37c7c482958a65221d5a51f98ebb07d18f16ab4ea4",
       "route": "/id/utilitas/kategori/tekstil/kejujuran-tekstil-analisis-serat/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/konversi-ukuran-sepatu/": {
-      "hash": "ebaf893d594a1edea0a0be456b32611f0aada3808000e527e0ea695bdc817e9d",
+      "hash": "e5b4819de16129044304a7cdc0fb0e5b771e4990da823f0b3ca7b919cba73996",
       "route": "/id/utilitas/kategori/tekstil/konversi-ukuran-sepatu/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/konverter-jarum-rajut/": {
-      "hash": "e089f307331f725dc62da43192783cdea349c5448e79abb57ddf529210c207a1",
+      "hash": "f44d5530aa9bf0312d04e0b39111a5106793b5a6e6413d333e6886663fd143df",
       "route": "/id/utilitas/kategori/tekstil/konverter-jarum-rajut/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/konverter-ukuran-pakaian-internasional/": {
-      "hash": "37c8758c6866fc08d758d31532bccdfa5b15f3e2c27950ebc5a815ff2649507b",
+      "hash": "e09756f951c2e0850976bf154055d37b4dac96d14ecbe0b0a7cca613a3b10939",
       "route": "/id/utilitas/kategori/tekstil/konverter-ukuran-pakaian-internasional/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/panduan-mencuci-tekstil/": {
-      "hash": "f582ae48bcb2fa168902a0ad785bfe449fe5902c85bf0e1ac68a51a3b5bcabed",
+      "hash": "23ec5239116967f9dc853458eb685ae1feaf4a66ab9b08cb254df71014ff3e6c",
       "route": "/id/utilitas/kategori/tekstil/panduan-mencuci-tekstil/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/pengubah-skala-pola-jahit/": {
-      "hash": "4c87ea7ce98cd6423c6b5dfb55197fe0591b50411a7eeb74828b4e5718209b80",
+      "hash": "dc3dac589f701eb77dcaec3aed9308b3eb61259ccd426c58446f9dd849258142",
       "route": "/id/utilitas/kategori/tekstil/pengubah-skala-pola-jahit/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/persiapan-serat-pewarnaan/": {
-      "hash": "e73f1d38c15a8a601d25278665640f81b2b3972a6253c8070facb88cc2f26f0c",
+      "hash": "f40ac4826b4acceaf6b8f2ac5ffe97e1d5407a5d02de535921eee0b3fed207e0",
       "route": "/id/utilitas/kategori/tekstil/persiapan-serat-pewarnaan/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/protokol-kimia-noda-tekstil/": {
-      "hash": "94f9fa5674d69a5fd488a6b1569a9d41cb4529a061cf4789bf8be3a9132517cf",
+      "hash": "33ecca7c7813b94577760473742c41dc5eba1cb6fa82736e6f06eae70f4d8efc",
       "route": "/id/utilitas/kategori/tekstil/protokol-kimia-noda-tekstil/"
     },
     "https://www.gamebob.dev/id/utilitas/kategori/tekstil/uji-bakar-tekstil/": {
-      "hash": "691c5e925870a5db5540a61529d081b27fdd6a0d0d8d5e5d4faaea6e11a8a2c3",
+      "hash": "14717c205ae75e2c0ca601a1f33e216e41a9387a26ab72e72090acca1e69eb9d",
       "route": "/id/utilitas/kategori/tekstil/uji-bakar-tekstil/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/calcolatore-lunghezza-e-strisce-binding-quilt/": {
-      "hash": "d6ed2bad6ce59b6fa5aa275a2dcba5b814e3cf8b1e17f893f3bbbedf603af03c",
+      "hash": "d75f9371925cebf97657893c04ef7dbe35df41154325b7fecb82345f1f9ae04a",
       "route": "/it/utilita/categorie/tessuti/calcolatore-lunghezza-e-strisce-binding-quilt/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/calcolatore-punti-prezzo-ricamo/": {
-      "hash": "ba848dd28369e2a0110368a5185c7bef11d84b454f315371785c2de853c59756",
+      "hash": "d031c29ce0c26d0f635db86a9b46c3663e4e592ab34282945d4ae08228c79eb7",
       "route": "/it/utilita/categorie/tessuti/calcolatore-punti-prezzo-ricamo/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/calcolatrice-gauge-tensione-maglia/": {
-      "hash": "848635fee0c770b8f3ffb1674847b77483cb442a59d18ef76585a627efbeaedb",
+      "hash": "d991eef0e4f84a810955052c709cf37484e4d4ee0f8da95eda24c0a1ac07c4f6",
       "route": "/it/utilita/categorie/tessuti/calcolatrice-gauge-tensione-maglia/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/calcolatrice-lana-filato/": {
-      "hash": "c87678d633753322314ac10440294c9f9bd4e3ac6250ceb76e26fa62bb3859da",
+      "hash": "8f4070f69430210893026fc781e359b0fb35a87353f3decc09b6f8691cd7bba3",
       "route": "/it/utilita/categorie/tessuti/calcolatrice-lana-filato/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/calcolatrice-tessuto-progetto/": {
-      "hash": "297fce66ad1a72f3e5e7b96f15fe5f55c05101d9b3c9088f28aaead88570ed9a",
+      "hash": "d5371adc9495e842bd1fdf93651645dc5f4a6d027939663308205c8b6afe9ed6",
       "route": "/it/utilita/categorie/tessuti/calcolatrice-tessuto-progetto/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/convertitore-aghi-maglia/": {
-      "hash": "7e64f41ae36a04978b3b61f521f272a03af97108739eff4b4a4d67c46dfd9530",
+      "hash": "15568c057f5889641b2ff1efbe2ec4dcc36ec28abffad50a0c941050e1a4da91",
       "route": "/it/utilita/categorie/tessuti/convertitore-aghi-maglia/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/convertitore-taglie-abbigliamento-internazionale/": {
-      "hash": "bb2973e3d34cc06bdeaac6e9be4f4b701e16c6da3fce43b3719a2f030051510d",
+      "hash": "7e90d07edc2ae61b379414099b3807cd9aba787cf1b9803a4c9df36940f78aa2",
       "route": "/it/utilita/categorie/tessuti/convertitore-taglie-abbigliamento-internazionale/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/convertitore-taglie-scarpe/": {
-      "hash": "0e6a9cf0e517aa1b27f299ffa5f21bfde91ee3d3592753ff001ef4a4e1c0885e",
+      "hash": "c4cee8d651ed9596e015cd2ce2a20c4fc4aef5c88c2b937aa644cce399cb6b64",
       "route": "/it/utilita/categorie/tessuti/convertitore-taglie-scarpe/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/guida-lavaggio-tessile/": {
-      "hash": "d68ba52e0d94d4a374a88d722d5bf9309c27fb88d4412c5cc5aeb0d5cb883bac",
+      "hash": "196aa158f94e414946a90c00e940a25255aea008d277caeee595cb0455ce3058",
       "route": "/it/utilita/categorie/tessuti/guida-lavaggio-tessile/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/": {
-      "hash": "c92166f1436a82f6148baa8e09e930446c566b7393379790bcebbeaa4cdfccc6",
+      "hash": "c5898fc2849bb4e31c5db592f4d8ce59d203c1226701384f778eda377fc65e85",
       "route": "/it/utilita/categorie/tessuti/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/preparazione-fibre-tintura/": {
-      "hash": "d4bdc55364548c815b4850c53982992ff9feefb179e4786b07059ee54237f0cb",
+      "hash": "49d6c5d0d36fff6392d7ab3a5b2f7f9cbaf48e91a8b9b7533828d2720b0b2e81",
       "route": "/it/utilita/categorie/tessuti/preparazione-fibre-tintura/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/protocollo-chimico-macchie-tessili/": {
-      "hash": "6b9a337ef6c7b6b26e7dbe431744f5279d133707ce66f8611ad556b8f807a12c",
+      "hash": "5e2d229b75b3be892b20045504751fe91b9f2ec1fc8c00eeb7143f8b488a128f",
       "route": "/it/utilita/categorie/tessuti/protocollo-chimico-macchie-tessili/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/sviluppo-taglie-cartamodelli/": {
-      "hash": "dc1b4f0051349214e08411467274ba7e8bcb27e507e303faad8e90fb410e96c0",
+      "hash": "3b118ec486096c6fc645e0830f2a040df420d831c58997b0b60c5993d309cfc8",
       "route": "/it/utilita/categorie/tessuti/sviluppo-taglie-cartamodelli/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/test-combustione-tessile/": {
-      "hash": "e5c68243af3fafcb63885d6cbf81106468a5a03153807dd9d259d5f14e743def",
+      "hash": "b2854acee53f5d9d09fb6870a3d792249510cc4e182a97eb60d5690969369507",
       "route": "/it/utilita/categorie/tessuti/test-combustione-tessile/"
     },
     "https://www.gamebob.dev/it/utilita/categorie/tessuti/veridicita-tessile-analisi-fibre/": {
-      "hash": "39f097d0c9b2c42c68d114a65c02ddea6c207062f265dedc246821d7916417bb",
+      "hash": "8a22c4891bb6126b7dd1aee64e950d3447579e5472ff71022e924189f0c03cc7",
       "route": "/it/utilita/categorie/tessuti/veridicita-tessile-analisi-fibre/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/clothing-size-converter/": {
-      "hash": "c2bd31fc878fbd82c50ba1bc4e473b31c55cb23e4d8d2955ed2ab9c12e765a3d",
+      "hash": "f8e6dcf4825b6bb2819cd810c20a580ff6954af0a1cc91854cb6986ad81da491",
       "route": "/ja/utilities/categories/textiles/clothing-size-converter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/embroidery-stitch-count-pricing-estimator/": {
-      "hash": "90a615496aa7e9dc92fcbf091e4d224f16abb6bac6c7aa081f4c7ae7e9df3de4",
+      "hash": "88428691b084204222c8b8c4f976508f58948709fb65a0277fe50cc37096e51a",
       "route": "/ja/utilities/categories/textiles/embroidery-stitch-count-pricing-estimator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/fabric-project-calculator/": {
-      "hash": "3c8416baea4cd68cd3f0686dc52d88bc5aeef05eff919da49cee589d193b6ee2",
+      "hash": "7c43a5815c44ebb6b0049a2b4b1ee6666f8494a60cc3e6b572b95e6d6a2aecf4",
       "route": "/ja/utilities/categories/textiles/fabric-project-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/fabric-truthfulness/": {
-      "hash": "6c67172bd02de2d66359a8f023a9c735ff01c88c65a95a03f6c953d40adfc4f1",
+      "hash": "e9641b2db129dc1c8f6db8aa439e88faf3aec85b64930a7463dfdb1bca14eb9a",
       "route": "/ja/utilities/categories/textiles/fabric-truthfulness/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/fiber-preparation-natural-dyeing/": {
-      "hash": "cf0a14144631f48cd634ffe0347b417422c1c668a0256fc9072a0642129e17d3",
+      "hash": "8958ff906f1955278ddf5a6c83f79e85033942e1c389a5641a7c9445a6e2afa2",
       "route": "/ja/utilities/categories/textiles/fiber-preparation-natural-dyeing/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/": {
-      "hash": "39bd34c4f008ee4d80b0f6ad3faa16a506e020d0991463763dd9439cdca1dd59",
+      "hash": "587e6a256a88df99a2754d04e387f6078cfc5039814bac69e19fc84b1b790774",
       "route": "/ja/utilities/categories/textiles/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/knitting-gauge-calculator/": {
-      "hash": "abe504d42305ba84708177662c469311c67ae63bba76e904e86f925fb73a0602",
+      "hash": "cd7a3c6d9e5c4e4b7d4dfa7d23c98aaf005e33c12c2ca89e3a9a0342fcdea0f9",
       "route": "/ja/utilities/categories/textiles/knitting-gauge-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/knitting-needle-converter/": {
-      "hash": "0608b9b9d44892ee5a219f966d16c81a6f656a6552b9c781112fc6447bb5d877",
+      "hash": "72e8882c09d437403834d2ef1936a5e45113fb65052693b64c5e18d8d8735e00",
       "route": "/ja/utilities/categories/textiles/knitting-needle-converter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/laundry-guide/": {
-      "hash": "980762904f24ad3a79d4121fbfb205410a88874f1872f16398bb2a2cc271d950",
+      "hash": "ca43052dfa3d802c4b5bd895ae639e610b7bd933409bbd59d2004686c5cfa0ab",
       "route": "/ja/utilities/categories/textiles/laundry-guide/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/quilt-binding-length-and-strip-calculator/": {
-      "hash": "1ee67e4082e51c4c90a36e1abc9c44b59a5168499d039843fdae174304a87592",
+      "hash": "ecb69617cb0eb59819069fb7e8f2bf82bbebf84cfc30683f5e45ca523c771974",
       "route": "/ja/utilities/categories/textiles/quilt-binding-length-and-strip-calculator/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/sewing-pattern-scaler/": {
-      "hash": "a83052f46958fa62efac5ab8b79df9603e41bed4d4999c82b6e8ce5deafbe24a",
+      "hash": "e528d1d4e069200d4616befa1eb6e15331f10f1f7ced0ab74cb985ff07ba3f74",
       "route": "/ja/utilities/categories/textiles/sewing-pattern-scaler/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/shoe-size-converter/": {
-      "hash": "2251c48527ec7f54e62b5b23cdd381813dab202eece0961fe99dae7a78acbaa7",
+      "hash": "ff22a12620e4fcf84a737ef97afe92415417ef732913b59253cd6d4ab520689c",
       "route": "/ja/utilities/categories/textiles/shoe-size-converter/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/stain-chemical-protocol/": {
-      "hash": "2764c713b0c62e1ab340d2d0eb864effc23c5ce533573e9f744f49e3dbea6f9e",
+      "hash": "6e0f7eeb97e7543129cc671e7197ca9f43f836d3c989abcdf672127e37dde9e3",
       "route": "/ja/utilities/categories/textiles/stain-chemical-protocol/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/textile-burn-test/": {
-      "hash": "250dd4c5db842a568e7751d32c28bb67a4bdd7cdaaaebda921417c3ad8edc8d3",
+      "hash": "d35525ba86ca2f1ed8aed117782fb12cfa4976e7c72045ba5b080c3303cb15be",
       "route": "/ja/utilities/categories/textiles/textile-burn-test/"
     },
     "https://www.gamebob.dev/ja/utilities/categories/textiles/yarn-calculator/": {
-      "hash": "2128944ffcabe715ded706853203e081bde9033b5be43ebd52b26050d7396091",
+      "hash": "10c84c1d5ab599415786498573938fe43e61c6c4246f40ff9725b392a8f56f88",
       "route": "/ja/utilities/categories/textiles/yarn-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/clothing-size-converter/": {
-      "hash": "301a49f90a40b06e98f1a092b0d0cdf5efafa2078667b6ce73a12c72f8bfe6d9",
+      "hash": "cca0f008d3738789c469d90a1393229fd60bf696aae1df486aa114c360437f9c",
       "route": "/ko/utilities/categories/textiles/clothing-size-converter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/embroidery-stitch-count-pricing-estimator/": {
-      "hash": "1e195df6112104b3447c15bf8b182157b27c71b7b4dadd05c54bcc7753b66ef8",
+      "hash": "db363935b253f5cf1012eb7463d3dfc74e1ffe577e605d197cfb1f4a36ca0883",
       "route": "/ko/utilities/categories/textiles/embroidery-stitch-count-pricing-estimator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/fabric-project-calculator/": {
-      "hash": "bc29fc6abe724805c525fc42b772d75378ca23f1eeb7329511bc020dd43f309b",
+      "hash": "9b2c52b1198caf01faaa4a4f8a83911bca8c5caefaebf7c6a93f4f8bd97673e8",
       "route": "/ko/utilities/categories/textiles/fabric-project-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/fabric-truthfulness/": {
-      "hash": "80d294d5e2c202249bd87bde8edd5db1a948ce8d81f625b0f22fbdb10aa4938e",
+      "hash": "6157ca54d51307146679593bc64a49be7c512df13275e63b5d934988bf1bc913",
       "route": "/ko/utilities/categories/textiles/fabric-truthfulness/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/fiber-preparation-natural-dyeing/": {
-      "hash": "8f9ec62c87f918717a99575294a1e89d61a1f1dedb3f1d051897953952bd2ab5",
+      "hash": "ca1a9ebbb05efc72460742b779a1f235ec044577d57d303c5c21e0a762db8b61",
       "route": "/ko/utilities/categories/textiles/fiber-preparation-natural-dyeing/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/": {
-      "hash": "001c9d70e0f7660266594dcf6d0a0708f9c2476148f5ee0f48ba4dc8fa129f0c",
+      "hash": "d9016927324f5b00db17a95ad62669abeaa1fc556e4a03652d5c22e6550e1255",
       "route": "/ko/utilities/categories/textiles/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/knitting-gauge-calculator/": {
-      "hash": "e27c0ba87b5052a3efd560b070bc20e6708fa14622948dadc314d4d84545cff4",
+      "hash": "8e644af1a80e6eb13be6a11c088e12a280afba8f2433e4de4510739de5a51130",
       "route": "/ko/utilities/categories/textiles/knitting-gauge-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/knitting-needle-converter/": {
-      "hash": "739ae01d9ebc26970ccb6c55748bc787979450a1114143b5f3ef397c756e5a12",
+      "hash": "d9d82c68503cc4add69d23725e873ad4c4eee2ec216179342048692c78cde0cb",
       "route": "/ko/utilities/categories/textiles/knitting-needle-converter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/laundry-guide/": {
-      "hash": "8d5d792558ad8dba951e7426ce2f6452bd1ffad9d7f34a0b1bcb344653d8cafd",
+      "hash": "9498ee701c82cb529b319ec168a001ba9327844af1c44a28d5a3bd3f5d27100c",
       "route": "/ko/utilities/categories/textiles/laundry-guide/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/quilt-binding-length-and-strip-calculator/": {
-      "hash": "4cd2eb31f7d3e514d0ebe749e1b98071000576a2422bf29b2b0f44526925b6d2",
+      "hash": "679fdb8aadd6ec0d6223e39d8336477eac2db60864faa6e36404cdc9247c9ebc",
       "route": "/ko/utilities/categories/textiles/quilt-binding-length-and-strip-calculator/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/sewing-pattern-scaler/": {
-      "hash": "3ce290141645f5eb66b67e31be0ecdeea18ca155ed958ea178e0cfb0e2fcdd4c",
+      "hash": "b6dd1a88f3fc7143db0cb9b125e1d09382bd67e8e96cd2e54130a53cf899bce4",
       "route": "/ko/utilities/categories/textiles/sewing-pattern-scaler/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/shoe-size-converter/": {
-      "hash": "62c628a7a30af38bc64b988e5afa30116ba50e313760fd0c591cfc970fefec02",
+      "hash": "025fac1681c0053e87207ce6e28da67d8a326bda7eb7d59d53d5a97f09e89250",
       "route": "/ko/utilities/categories/textiles/shoe-size-converter/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/stain-chemical-protocol/": {
-      "hash": "4b6a6c8d4890b62bf0e87ef082dd32d9378dc1d1a63fa4226fc3327b17eb26d2",
+      "hash": "e6421acea7bbf0c097b6abfa387836efe34b90f4e62869a534cda846771a104b",
       "route": "/ko/utilities/categories/textiles/stain-chemical-protocol/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/textile-burn-test/": {
-      "hash": "13de98adba75cb7c0dfc85d46f4141bdab7288a41c243f6578af1ced55867fa8",
+      "hash": "f6fd8ee77c06ad0a0540295616073e76305580e75d00ca574f2c67ef9d7fe0e9",
       "route": "/ko/utilities/categories/textiles/textile-burn-test/"
     },
     "https://www.gamebob.dev/ko/utilities/categories/textiles/yarn-calculator/": {
-      "hash": "e6684f060d192c32ca52a05d14507f2bec51fd1ee7c85f37e96be14c3b24122a",
+      "hash": "10838a3d3a27b61e68ab20676a847dbf6b2bcec549bcb571b9bf5c4def3c69aa",
       "route": "/ko/utilities/categories/textiles/yarn-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/breimachine-gauge-spanning-calculator/": {
-      "hash": "d9c40c20de748c36ced9aa14d50fd7da4d7cd5739b05c86a7376d5ed924eaba7",
+      "hash": "1f7d8f103714b584f287760ae63a8c08a4909afbf6eed5a4e49a6e52b6ec4560",
       "route": "/nl/hulpmiddelen/categorieen/textiel/breimachine-gauge-spanning-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/breinaalden-omzetter/": {
-      "hash": "25a90693099a82695f514973a9124e3fb3005ca28cffe138ff7ce13df30a4df6",
+      "hash": "1e23ad966109c7dc7afed508dfaa6d4bd89c13e581feeb9b2d08d1e0711a4b55",
       "route": "/nl/hulpmiddelen/categorieen/textiel/breinaalden-omzetter/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/": {
-      "hash": "711ebaa3804b12ab9bffde086f5490ee78660b8e429e51af29537dff955a5c1c",
+      "hash": "840d7e9622cb1027f3c79df5804b53574cd0bf57d257238f49ac9afca4e2e5da",
       "route": "/nl/hulpmiddelen/categorieen/textiel/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/internationale-kledingmaten-omzetter/": {
-      "hash": "2d346e2bed821cd51939064d0ad3d70bd3db7121b99695e3fe82da3956722087",
+      "hash": "60797999c285a82bcb0d399d6495ad794e98aef447ed7ffed3000ac2d12b9dbc",
       "route": "/nl/hulpmiddelen/categorieen/textiel/internationale-kledingmaten-omzetter/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/naaipatroon-skalierer/": {
-      "hash": "5bb52339a6e408d4e99ff36d38cda8c25506a4c87818788adfec78d6421a5622",
+      "hash": "434968a212ab5901d7da7f11bb1a9c3d89a4567ed411855a9b67011a1c255370",
       "route": "/nl/hulpmiddelen/categorieen/textiel/naaipatroon-skalierer/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/quilt-bindlengte-en-stroken-calculator/": {
-      "hash": "1a94116631cf24e4ff8aac962963d4aa20118bf1ba605dec1c25a47c77d229e1",
+      "hash": "0d25ceb4e57b4e03c6a77d2a586fd1d92176bb30459a1d1ee24bc82d1ce56d6d",
       "route": "/nl/hulpmiddelen/categorieen/textiel/quilt-bindlengte-en-stroken-calculator/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/schatting-steekenaantal-prijs-borduren/": {
-      "hash": "4c43f279265aaea927cfb8759117b90be20ec8cad469dcdcc0e2bb7785ba349e",
+      "hash": "a7e855f805c7e09466a86bb0ce6ca6d779126186bc7ce9168ded7a2a57cfd1c3",
       "route": "/nl/hulpmiddelen/categorieen/textiel/schatting-steekenaantal-prijs-borduren/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/schoenmaat-omrekenen/": {
-      "hash": "4af7cd8597d134dac94f2339b7d2ff2130e484d3fb2332165b4422cb608d8673",
+      "hash": "51b2f90e9a557850e4286d3800e91a1f9e23b8be911afe9ec7942fcf4450e1ec",
       "route": "/nl/hulpmiddelen/categorieen/textiel/schoenmaat-omrekenen/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/stofverbruik-calculator-project/": {
-      "hash": "9b7bb9836fd5eba928f22c25e6d9aad23514952bb33b1645a24b1f093fb8ba28",
+      "hash": "a54849a6ed556b278fbe0e6f0da0e5c4766371b00255d607181669db41c82bf3",
       "route": "/nl/hulpmiddelen/categorieen/textiel/stofverbruik-calculator-project/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/textiel-brandproef/": {
-      "hash": "4142ab275160fe9633791a96433add60140603f81959f0c6b7364fe4b972e177",
+      "hash": "8eb42b98fe11de43381287a68f97523871c35be7c77006e1349cf71e78e64326",
       "route": "/nl/hulpmiddelen/categorieen/textiel/textiel-brandproef/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/textiel-waarheid-vezelkwaliteit-analyse/": {
-      "hash": "a3de744697db3c7db925520993e958e43bc05e62a368e6ea0b82a04d366b872d",
+      "hash": "76304fc9125d8722ec77370da90154468f020ed559e48f8648e673b5e65047f6",
       "route": "/nl/hulpmiddelen/categorieen/textiel/textiel-waarheid-vezelkwaliteit-analyse/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/textielverzorgingsgids/": {
-      "hash": "c5301533d996b51341dac0d9084741aeb5d44489cfd05f104c957c9869f8cdb7",
+      "hash": "e456e4f89399a1f650042b198bfbd0b9becf09e02d58f606c163069fe8c04884",
       "route": "/nl/hulpmiddelen/categorieen/textiel/textielverzorgingsgids/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/textielvlekken-chemisch-protocol/": {
-      "hash": "89f90956937c9beb6976c9561deb8348670599523ec7c9b091cfbe90c98f3efb",
+      "hash": "d29ffdc5beefc704c50e0c317a7cfa4dde19b3b5dd92a2fa749a7cc68678ddda",
       "route": "/nl/hulpmiddelen/categorieen/textiel/textielvlekken-chemisch-protocol/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/vezelvoorbereiding-verven/": {
-      "hash": "fbcc1b7af3a8c6dbb75313951d930adfd14b5a1f1b80e6edb0c895081afbd3d2",
+      "hash": "f7587b2074b871f8e68e7e5c2ae6229befe0640b378ea29337072aa2d030e911",
       "route": "/nl/hulpmiddelen/categorieen/textiel/vezelvoorbereiding-verven/"
     },
     "https://www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/wolcalculator-breien-haken/": {
-      "hash": "228f1c251e92d8b152ba4228c20ca23b0c740cbd36d6bcd3b9c4af9fa83ec4e4",
+      "hash": "9303da7da1dae4260f771b301d371070c9c4053d1da9c0b6ea8f0160c650a7d9",
       "route": "/nl/hulpmiddelen/categorieen/textiel/wolcalculator-breien-haken/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/chemiczny-protokol-plam-tekstylnych/": {
-      "hash": "d96c01a2e555a9475a68a9c352fed3c9748454c500a52e76a187a629056c7ccd",
+      "hash": "b1c7c132e3a1593c52f77f54afefded2ebb5764955c44a6814ea891a8d6c4f9d",
       "route": "/pl/narzedzia/kategorie/tekstylia/chemiczny-protokol-plam-tekstylnych/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/": {
-      "hash": "b31d72ce9143ce7ab34afafe24264cdea476db2da7e0b864a9b7deca12e3edd3",
+      "hash": "d63a2382019d40020202d4e1fe45313f5f21b0f805f95c1610ad07e62fe2befc",
       "route": "/pl/narzedzia/kategorie/tekstylia/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/kalkulator-dlugosci-i-paskow-lamowki-do-quiltu/": {
-      "hash": "0c7783747f0d4cadfa8491ae5f9b2ca3d5f7f39c612a2e005d64f67f3df3058e",
+      "hash": "57e3f4a97628615d8674bf196b475425202b5d4d823700e32eeb4925bc5274d2",
       "route": "/pl/narzedzia/kategorie/tekstylia/kalkulator-dlugosci-i-paskow-lamowki-do-quiltu/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/kalkulator-gauge-naprezenia-dzianiny/": {
-      "hash": "cbce5011476ac604fedb2ca342448993522000318b7b87755f2c7e54d14c1eee",
+      "hash": "944c3418be7218cba86a03ba69e34d65ffdea3ae4508e57aec727b375fc24982",
       "route": "/pl/narzedzia/kategorie/tekstylia/kalkulator-gauge-naprezenia-dzianiny/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/kalkulator-liczby-sciegow-ceny-haftu/": {
-      "hash": "6db422ce5b08b0b866440da5a3e0ad1fdacc938990869591012459b36a8c92f8",
+      "hash": "b466ef4ba217575c7628cc5f7466127c96c6bb8ed6cd2ee0e427e8510b1b33b9",
       "route": "/pl/narzedzia/kategorie/tekstylia/kalkulator-liczby-sciegow-ceny-haftu/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/kalkulator-tkaniny-projekt/": {
-      "hash": "043bb133d80846053c21e8af927e9c6031c83d73a2749aba65e671bc807473f7",
+      "hash": "ea0a67ce68f44ba07f6d770ef442b26803a3ff9ad787c6ad89330f30a4b818a1",
       "route": "/pl/narzedzia/kategorie/tekstylia/kalkulator-tkaniny-projekt/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/kalkulator-wloczki-dzierganie/": {
-      "hash": "8f4c3cfca3b02b5bca595ef042c3503f11be15bf86718d4fda00b07eaa68cdde",
+      "hash": "41196cf69296dda76da08b1df2f63b3b2d4e8022f554e1dda103af18da86a5d8",
       "route": "/pl/narzedzia/kategorie/tekstylia/kalkulator-wloczki-dzierganie/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/konwerter-drutow-i-szydelek/": {
-      "hash": "00a2d4295af65ad9b699b1bd566a9646a6c4bdbb260fe32f86e04b39128655af",
+      "hash": "4641e5ba2db91090f0dae05b0cdcf9a82b11df119c40188dd606b3834721a2d4",
       "route": "/pl/narzedzia/kategorie/tekstylia/konwerter-drutow-i-szydelek/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/miedzynarodowy-konwerter-rozmiarow-odziezy/": {
-      "hash": "c6e7fc4552a6198906f43e0a2a0d916f6e172eb906f066848d05fa32d2ffc93f",
+      "hash": "3340d261dc71d6f7d81e03ed9a1d5965233bb548ed35ef2bc9b5c361620b332f",
       "route": "/pl/narzedzia/kategorie/tekstylia/miedzynarodowy-konwerter-rozmiarow-odziezy/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/prawda-tekstylna-analiza-wlokien/": {
-      "hash": "8a29b649ed1fdd8b8ebeafb4dcf83710998f3f8baabde2407251fd0ed0c59989",
+      "hash": "f55f08192d784080b86e09e773a9059dce822c5acb3f564380764d021650cf4c",
       "route": "/pl/narzedzia/kategorie/tekstylia/prawda-tekstylna-analiza-wlokien/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/przelicznik-rozmiarow-butow/": {
-      "hash": "a7c933cebb97a5e676354dd3d4563f2233327d970fedae657f3408a808c2ef84",
+      "hash": "1b6d87c67fdf7eb811f20ab65450738864a9c32242a25eebe608e53f98040f35",
       "route": "/pl/narzedzia/kategorie/tekstylia/przelicznik-rozmiarow-butow/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/przewodnik-pielegnacji-tekstyliow/": {
-      "hash": "788fda7f988e688bc10b78c768fa7dd755341f258713083ad02638a0d98e3434",
+      "hash": "dfd6e1a4e526c8d9030fa9e3be069b1ead3d03f1181bf897aa176a04bd5b200c",
       "route": "/pl/narzedzia/kategorie/tekstylia/przewodnik-pielegnacji-tekstyliow/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/przygotowanie-wlokien-farbowanie/": {
-      "hash": "66fbbeb79e125239590a30dd53177f71bbbeaa28bb105c78d6ce3ec5d5a3bf00",
+      "hash": "a85a4bac4cfa2ee88872d9cf749467610cdc130c13eb83d9d10eb6c127957736",
       "route": "/pl/narzedzia/kategorie/tekstylia/przygotowanie-wlokien-farbowanie/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/skalowanie-wykrojow-krawieckich/": {
-      "hash": "4ba9f3eedde5cccf98ffd7c8b2364ed36a401bd8c392a6558c7fdbadf5517d9b",
+      "hash": "488a7b3798990ad69a2a5a6cb71b3483defc8f84a3605efee3b8cde7cc28dc84",
       "route": "/pl/narzedzia/kategorie/tekstylia/skalowanie-wykrojow-krawieckich/"
     },
     "https://www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/test-spalania-tekstyliow/": {
-      "hash": "14efd02dd17d11ed7a249a534f3a72464d1b571064fd7890eb5ce7eaffb63078",
+      "hash": "978e71d4a96e4670e948bbf33f5549737b8333c6194dcc03708391252c5d59e0",
       "route": "/pl/narzedzia/kategorie/tekstylia/test-spalania-tekstyliow/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/calculadora-comprimento-e-tiras-de-vies-para-quilt/": {
-      "hash": "95370b7487d4ce80981cafd30d305b3fa3973c0df1440fc6741077c3df51c301",
+      "hash": "5e52abc8c387e40a814e6a80ecde02339412f149d49672ab9f1f608458e55438",
       "route": "/pt/utilidades/categorias/texteis/calculadora-comprimento-e-tiras-de-vies-para-quilt/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/calculadora-gauge-tensao-tricot/": {
-      "hash": "8891ca14d7c1d286f8a15742fe8ce081dfc95da4a9ea549e52088b0484f5f79b",
+      "hash": "b291640537ed1635f75349097fd74b7ca97e7027e98ffb7ee293ace90fa6ae78",
       "route": "/pt/utilidades/categorias/texteis/calculadora-gauge-tensao-tricot/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/calculadora-la-tricot-crochet/": {
-      "hash": "34ba80991d34170e172caffd3924e7f717f6b2d8b6ed209105781c2fb1554339",
+      "hash": "aec0b7ce10fe7f519bc3e4d0d3ce2b5b96b3a0aad1af34ac8b4a0be3750cbc72",
       "route": "/pt/utilidades/categorias/texteis/calculadora-la-tricot-crochet/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/calculadora-pontos-preco-bordado/": {
-      "hash": "0ed7021128c7f83ec4336ee228581e36c93e6fbdccab45352e37988790d6c4cb",
+      "hash": "237372ed0d77b5590a22ab9365704d51520c03d576f94497a1b28ff30bd8aaa0",
       "route": "/pt/utilidades/categorias/texteis/calculadora-pontos-preco-bordado/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/calculadora-tecido-projeto/": {
-      "hash": "c80029178368d6f3d122d1b7cdaaacca74549ff456d3ead7e2c521cfd526d43b",
+      "hash": "be18ebbcc6fc3be6e5473ca23563a17c8b972ac11dd3855b282847698a3c09f4",
       "route": "/pt/utilidades/categorias/texteis/calculadora-tecido-projeto/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/conversor-agulhas-tricot/": {
-      "hash": "ce7c7a45deb5d0a41518b01ba3a0e2c0e021ae3ba5822530b5d12f010f626482",
+      "hash": "0e54cf0354dd7079ab0932725f43d1660de0eac00b439e2bd813b8a868e6372c",
       "route": "/pt/utilidades/categorias/texteis/conversor-agulhas-tricot/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/conversor-tamanhos-roupa-internacional/": {
-      "hash": "c9d39e8b96697c8a245d82b193cbdc767747130b8c2afe15c07efd711429e487",
+      "hash": "682ed23b2cbcc66401886cd3dbabf33ebbda2e6a3a2acccf6cc3a5804e3408c4",
       "route": "/pt/utilidades/categorias/texteis/conversor-tamanhos-roupa-internacional/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/conversor-tamanhos-sapatos/": {
-      "hash": "dd44e339c3c320504c9e88cc63fab0c3ca549468319d8e6ffdbfcbaa581d665f",
+      "hash": "ebb01a4df65bc2841834efc6177f007bc55f58720c838031481cfee6248f27fe",
       "route": "/pt/utilidades/categorias/texteis/conversor-tamanhos-sapatos/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/escalador-molde-costura/": {
-      "hash": "4b8855ec5b728ad3c08b04c88e30517202ac51f2fbefbe76ea70abf97a956e0f",
+      "hash": "31d863b9032d4568c111e43335ed4c0cfe3bafc094900c843cbabcc409fd0db7",
       "route": "/pt/utilidades/categorias/texteis/escalador-molde-costura/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/guia-lavagem-textil/": {
-      "hash": "30da2b3a1c325daa689bac4054640524f64b3a4d2567d1ec21e37aebc557a6de",
+      "hash": "5f7e4d580830fd02544d2f397e1c50980898c542e0d61b587ec48e0b4f783b44",
       "route": "/pt/utilidades/categorias/texteis/guia-lavagem-textil/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/": {
-      "hash": "6ade59faae4f6e425399a904b045cb531f880fc34a95ac527baf182bedbfaa4c",
+      "hash": "d829cc48cb266bb73c11bdfcef39cecdcb19af2e213fe18da6257e76aadc9588",
       "route": "/pt/utilidades/categorias/texteis/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/preparacao-fibras-tingimento/": {
-      "hash": "2df7f2337c0dd92fa088604008617f9346384384af7f18957fcb58de9083f860",
+      "hash": "4b21fedbd70d07587caf2d465611ad7d6ed7aa650aafb9ef7570f9c7f06be736",
       "route": "/pt/utilidades/categorias/texteis/preparacao-fibras-tingimento/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/protocolo-quimico-manchas-texteis/": {
-      "hash": "756aec241f8805f553bd7c0920bdf5e629af34614c2973627ab444a9ca0fd032",
+      "hash": "a33050c1c32770e52e1daddfb830768e9b74fa553ade0d1691ae14a8450d424b",
       "route": "/pt/utilidades/categorias/texteis/protocolo-quimico-manchas-texteis/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/teste-combustao-textil/": {
-      "hash": "f78b191800078cfd969a6618c34c5c18ce7e6dd0fc4eba12c932ea6fa7a8268d",
+      "hash": "c80f5c1fddb6cf20fcdd57c3531f63bcc2c3f6cce4a7167ebfe376ee098f2315",
       "route": "/pt/utilidades/categorias/texteis/teste-combustao-textil/"
     },
     "https://www.gamebob.dev/pt/utilidades/categorias/texteis/veracidade-textil-analise-fibras/": {
-      "hash": "c88fc1516a1724ab9e3a256b4677e4108a73576ea02cdac46cf5cc4dde64e474",
+      "hash": "fa1c3e8431af019980463102f70fc491d3c57fbf6bc8cebb7e21521a2db03b54",
       "route": "/pt/utilidades/categorias/texteis/veracidade-textil-analise-fibras/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/": {
-      "hash": "228c2aab81b6ffe20ba2a6d326f3978dd3fb829ca7f78047d920c4650a96b045",
+      "hash": "087010d468fa7f7c19017f4ac7fbe02680719090e54826a9f0b6b591e3223063",
       "route": "/ru/instrumenty/kategorii/textiles/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/kalkulyator-dliny-polos-okantovki-kvilta/": {
-      "hash": "b4590f98534b979158867fdf163f39d4a4aac077b621066d41425de5f6bdde02",
+      "hash": "40f5c9d16b60229c2e16555f40def996583db37f0e3faa73e610fd66d77d9315",
       "route": "/ru/instrumenty/kategorii/textiles/kalkulyator-dliny-polos-okantovki-kvilta/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/kalkulyator-kolichestva-stitchkov-stoimosti-vyshivki/": {
-      "hash": "e11cd867be1a9ad7937e515092694866c4d63dbe107a4dca36026d60eacb9744",
+      "hash": "cdb26b28bf11f85d9f7e83f4ced6b6b3ef02f15347d56ee214f5afebe72c6ed8",
       "route": "/ru/instrumenty/kategorii/textiles/kalkulyator-kolichestva-stitchkov-stoimosti-vyshivki/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/kalkulyator-plotnosti-vyazaniya-gauge/": {
-      "hash": "15148da2d6ccf3a64ee86c19ba2a28ac8e100fcaedfce45aeade94dd2c0292fc",
+      "hash": "58da0182cecede5407d046b9efdbbac45d31c90c0b867dbc7168117a1a354aad",
       "route": "/ru/instrumenty/kategorii/textiles/kalkulyator-plotnosti-vyazaniya-gauge/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/kalkulyator-pryazhi-vyazanie/": {
-      "hash": "21cb671e1ab6e67739caaec81ce8d94e972d042cd53d0ca169c12ac770161c5e",
+      "hash": "03c0fd202294da594ce653b3812783855521a443481fc17066468981121903b1",
       "route": "/ru/instrumenty/kategorii/textiles/kalkulyator-pryazhi-vyazanie/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/kalkulyator-tkani-proekt/": {
-      "hash": "38620b9e075860b99be57fc2276a631ae7ca05dffee447b8b0467cf09f804d10",
+      "hash": "73b68560f0abbdf579299819527fade6f345094e8583b58c1749380ece1d18c5",
       "route": "/ru/instrumenty/kategorii/textiles/kalkulyator-tkani-proekt/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/khimicheskij-protokol-udaleniya-pyaten/": {
-      "hash": "da256857ae73056e71e38ce11c6ccb72c89393e9bcb48462bbc94a365a6c56a1",
+      "hash": "66c0800e0ea2dd184dbc570c384b63bfccbfcd5900c1530ffa5dfa25ee46cb67",
       "route": "/ru/instrumenty/kategorii/textiles/khimicheskij-protokol-udaleniya-pyaten/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/konverter-razmerov-spic/": {
-      "hash": "43651d13a7b8d2771ef874c082252fb1c637692cf0940714eb7a2b537fab64f0",
+      "hash": "2f6cdbeb6c00aac543f09aaa19038e25b45d03ea542be09c53d5e6b400e6d2cc",
       "route": "/ru/instrumenty/kategorii/textiles/konverter-razmerov-spic/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/mezhdunarodnyj-konverter-razmerov-odezhdy/": {
-      "hash": "374025fd6018b12c5b7012b26f466f39efd73353728dc38ea92b47a13c560230",
+      "hash": "dac2ddc1ee0bd38506fff3df6f4adcde47aa4b67d27cc27839b666cb9ebc6c52",
       "route": "/ru/instrumenty/kategorii/textiles/mezhdunarodnyj-konverter-razmerov-odezhdy/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/podgotovka-volokon-krashenie/": {
-      "hash": "7240dc3d5ed9eb656267da132043edc112de7aad7772c098e99c70a15fbab20b",
+      "hash": "011242fc9622be2ff224ddafc80d35659427a70f4f4b72dd6ee954f8e9e70914",
       "route": "/ru/instrumenty/kategorii/textiles/podgotovka-volokon-krashenie/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/pravda-o-tkani-analiz-kachestva-volokon/": {
-      "hash": "0cf31e8d566e7b32c8ecef823f1ee6a71d04e4326cc934b819325671d234a5f5",
+      "hash": "0111814c9229c73a743da1b0cfb8bdfb399bd7ccb31e825d9cd6945598829197",
       "route": "/ru/instrumenty/kategorii/textiles/pravda-o-tkani-analiz-kachestva-volokon/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/rukovodstvo-po-uhodu-za-tekstilem/": {
-      "hash": "9e6ef94fe6d02d3fabf9b6b14e3c5117f4f24f63a0f5d7777f49d3e591925512",
+      "hash": "172011104d42263dda2299937d11b1e601f74746d9e6b10c91437fbe490e68d4",
       "route": "/ru/instrumenty/kategorii/textiles/rukovodstvo-po-uhodu-za-tekstilem/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/skalirovaniye-vykroyki-shit-ye/": {
-      "hash": "eb325b7decb84a8fd94f21b9e948ea3f8321e4d86b1b8e9201ed3f1522b89640",
+      "hash": "28f9252ac5a8fe879c7e5b770514d2a6991688931cef96592b361ad27c097833",
       "route": "/ru/instrumenty/kategorii/textiles/skalirovaniye-vykroyki-shit-ye/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/tablica-razmerov-obuvi/": {
-      "hash": "9a87ac493e6d653610e672f4837b14d4b95099e6a6c47dc787511cb39c593e17",
+      "hash": "184e108ca9b3113887ca274d950b1723347fa64fcb30d5dfe62b78ba97ca7c4f",
       "route": "/ru/instrumenty/kategorii/textiles/tablica-razmerov-obuvi/"
     },
     "https://www.gamebob.dev/ru/instrumenty/kategorii/textiles/test-na-gorenie-textilya/": {
-      "hash": "915d6ba200708090c012041a5618e84130258bdd3238ec8d8653a78af40e7e70",
+      "hash": "b936425498f933f27f6b6f173a9f9a57e0ceee4de25f75ed758505d09637949f",
       "route": "/ru/instrumenty/kategorii/textiles/test-na-gorenie-textilya/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/fiberberedning-fargning/": {
-      "hash": "4ed7c7f019b32983dae4ab1f15ae45a29f4a033b19742b1d63aeca4cf01b01a6",
+      "hash": "7960e2d6bb8b88d388500bcf850fe3be35a0e9df1069a8758c4d05797786882a",
       "route": "/sv/verktyg/kategorier/textilier/fiberberedning-fargning/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/garnkalkylator-stickning-virkning/": {
-      "hash": "ac669370837dfb75411e5cd68cccfdc40cfee54577f9fd3faa7403f9c8b44bcd",
+      "hash": "19883d508c46d3560b35a41ec1a1c87095c9cc2b32d465166b0492de58697d2c",
       "route": "/sv/verktyg/kategorier/textilier/garnkalkylator-stickning-virkning/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/": {
-      "hash": "67b1fbb1a48408f8313d5b29db2542dca589f6706966fb0c2fe2c5a0e005480d",
+      "hash": "7b286cdb4391c0c49a5b3dac42033cd8c07eb3168879a9234195be8a4d351e7a",
       "route": "/sv/verktyg/kategorier/textilier/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/internationell-storlekskonverterare-klader/": {
-      "hash": "ab51ef954470fe4e5fc687abeca191260ca433d28132ad9ac43b45294fadc833",
+      "hash": "793303bd256480f28ac0f7fc1d011bbed7d426b1d8e106f479d036c6f1d79ab3",
       "route": "/sv/verktyg/kategorier/textilier/internationell-storlekskonverterare-klader/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/kalkylator-quiltkant-langd-och-remsor/": {
-      "hash": "3e5cf6b6f7f96ab9107de52690904e42398ec614324809195c11ba421783554e",
+      "hash": "13952df018496f02ea0b9a68d2d2ecc33d91d993d92007db3c91616768496a85",
       "route": "/sv/verktyg/kategorier/textilier/kalkylator-quiltkant-langd-och-remsor/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/kalkylator-stygnadsantal-pris-broderi/": {
-      "hash": "d2c95198a133d26bd865b9f6e8f3328e4f62d5c770a21541f2d70e4529619bb1",
+      "hash": "c88fd89c67324e3492fd6c519fe37fafc2e1e3107eff7c6ae567ed985b11236a",
       "route": "/sv/verktyg/kategorier/textilier/kalkylator-stygnadsantal-pris-broderi/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/kemiskt-protokoll-textilflackar/": {
-      "hash": "8fc813357e4f98f29547cd900a748dff0eca9d29c315de549bf44f1eb8f51616",
+      "hash": "4c21cf6541b13af9d5133cfd396d5b8683d0cd399a0bc9736015e54e9bc96762",
       "route": "/sv/verktyg/kategorier/textilier/kemiskt-protokoll-textilflackar/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/skalning-symonster/": {
-      "hash": "af96cf4dd0ddf12d6a779ff4d8acc79d6399847b5ab9afd6af5ae3a4949748f3",
+      "hash": "b391089a7298eae319aa8472ba08b4a43f9fc1bffc1692efd668b5c7075a0067",
       "route": "/sv/verktyg/kategorier/textilier/skalning-symonster/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/skostorleks-konverterare/": {
-      "hash": "a933b5d36ee7709d12b729e0ccff29dd613536dd5b0959ace0b776e675dfc06a",
+      "hash": "0adc7ed5fb165e1eaa5b84791cbdde84333b64788fc7414a627c565e9066e608",
       "route": "/sv/verktyg/kategorier/textilier/skostorleks-konverterare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/stick-virknals-konverterare/": {
-      "hash": "f9948effc04e3f6526fb1b35dc92b1ba6147c72e74bebf445a9301e7437fdae3",
+      "hash": "4f2dcf1b43b14c4397a731c2d7344cd339f369e6076b3e0b861660fa13d320fe",
       "route": "/sv/verktyg/kategorier/textilier/stick-virknals-konverterare/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/stickfasthet-gauge-kalkylator/": {
-      "hash": "caf10847877bd938bcce5394ea0b901182a390fab3e91d650b6d750e33dd99b9",
+      "hash": "0e21dd24402c6b90333650e4ae04868a6c4fb4f43d9ccf7be2b8ad3cf53a70ca",
       "route": "/sv/verktyg/kategorier/textilier/stickfasthet-gauge-kalkylator/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/textil-branntest/": {
-      "hash": "8a047ad486fd7d657ff9a9ac2bed50ee27ca2056292ddd06f174ffae3adae37a",
+      "hash": "68bc91d63d24b656bb4ed153f5fbb834aa0e3435fa7cc853cfdb3672ee56aba7",
       "route": "/sv/verktyg/kategorier/textilier/textil-branntest/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/textil-sanning-fiberanalys/": {
-      "hash": "6c2bdfe23d4bc6a233e507d5d6f41f23324c17887c27aa7baca2be847d7f7979",
+      "hash": "9fba4860781285835be871dd80e34f8f36d59953ff675279c6aa5ffab14d2013",
       "route": "/sv/verktyg/kategorier/textilier/textil-sanning-fiberanalys/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/textil-tvattrad/": {
-      "hash": "735051d5a73c27a4b24355fb0c628fd79e85d7a5d05fff518fd54593b80d4f9c",
+      "hash": "e5bc444f984eeb482ff250bd48b8deb31971a9ab89ee3f6271b6ebdc57aa373c",
       "route": "/sv/verktyg/kategorier/textilier/textil-tvattrad/"
     },
     "https://www.gamebob.dev/sv/verktyg/kategorier/textilier/tygatatgangskalkylator-projekt/": {
-      "hash": "a1431f38e99717265845aa789244f775c2c71a04760129f17047b503c6df0cd9",
+      "hash": "472f3679894fd0db72b974388641e4ddeec8943b2b7b440c032cac615ed88065",
       "route": "/sv/verktyg/kategorier/textilier/tygatatgangskalkylator-projekt/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/ayakkabi-numarasi-donusturucu/": {
-      "hash": "d6dd08d8ba860d70f1984b57fda4abf5471c1d251d7de1a028cef013b447e63b",
+      "hash": "ad53038e4b6fc67ade9ee70dfbde4fae1365b187c14d3e3d686f0ea5e669dd15",
       "route": "/tr/araclar/kategoriler/tekstil/ayakkabi-numarasi-donusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/dikis-kalibi-olceklendirici/": {
-      "hash": "ec9f5e9b1c8b7741b7ba52c3f4771e83a880e0493e6d0a4caedfe1921949526c",
+      "hash": "68ae9d9b213632d8e1613b0eaa88601866b4041988f44428e3bbaffeae51759b",
       "route": "/tr/araclar/kategoriler/tekstil/dikis-kalibi-olceklendirici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/elyaflarin-boyamaya-hazirlanmasi/": {
-      "hash": "7455770cbffb674b5f00b172d38c10ceb39eb965fc3c79efc258aa92eef3baa6",
+      "hash": "a1320213a559be9df2021740dcbf8a1373d73da5f081c0a63a1a24d6a4fe462b",
       "route": "/tr/araclar/kategoriler/tekstil/elyaflarin-boyamaya-hazirlanmasi/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/": {
-      "hash": "121578e0d1a2d76459cb651c403d7757edb2ccb7d60cb12f43c17462aeca48bd",
+      "hash": "5c3cbf25a99d89ac7c721bbce470a904cb51ea31eb0c399df9e84e9d5bcd11e1",
       "route": "/tr/araclar/kategoriler/tekstil/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/kumas-ihtiyaci-hesaplama-proje/": {
-      "hash": "22b7f70e61fabd58bfc7b783d2383bd2b819b7737b41382abbcc4aa844e32aaa",
+      "hash": "ea856db0fa811f5c52e304c4956d31f8eab9f494bce6b1f18e58248cf45a1ed8",
       "route": "/tr/araclar/kategoriler/tekstil/kumas-ihtiyaci-hesaplama-proje/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/nakis-dikis-sayisi-fiyat-tahminleyici/": {
-      "hash": "ab9926c9ba97dc271ec85be484d1bab86cd5635228be5b950e54329b0161ada8",
+      "hash": "6950908a07e3681f21ea9e018c9548520405fba2880ff1c2d7034fdd133e100d",
       "route": "/tr/araclar/kategoriler/tekstil/nakis-dikis-sayisi-fiyat-tahminleyici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/orgu-gauge-ilmek-gerginlik-hesaplayici/": {
-      "hash": "562c41e2081aa36932e166a5c73e0f969a62a244e8601858dd8548b0355fdb23",
+      "hash": "6aa395b9007ba629ed776dcaea16b25376f8d7b173efed762225ea4479512039",
       "route": "/tr/araclar/kategoriler/tekstil/orgu-gauge-ilmek-gerginlik-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/orgu-sisi-tig-donusturucu/": {
-      "hash": "ece4925bb2a2c3656deaaf3f667b7abfc7e7a0a245ea01639be49a14cf48ef83",
+      "hash": "8021336614a24acf28fa1745a340e1db0acb9e47a2e3150357f24d2bbb48ea4f",
       "route": "/tr/araclar/kategoriler/tekstil/orgu-sisi-tig-donusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/tekstil-bakim-kilavuzu/": {
-      "hash": "f2681a3cc3bd221b83211cb579cff9957fb0508987bfd3fd8fb992775ef59c60",
+      "hash": "7ff35e425bec9058a3fd08ac453ae119f63a7fc06d593c0291f20ab86fff36ef",
       "route": "/tr/araclar/kategoriler/tekstil/tekstil-bakim-kilavuzu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/tekstil-gercekleri-elyaf-analizi/": {
-      "hash": "b022325388c44fb3ee250e1d9c0fc999f3ca05368f9971317402330a0b586c48",
+      "hash": "110bcb77be0f60c9b947a2aab0c8a8871022ec51bfb5f786add1ae764e1955a6",
       "route": "/tr/araclar/kategoriler/tekstil/tekstil-gercekleri-elyaf-analizi/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/tekstil-leke-kimyasi-protokolu/": {
-      "hash": "c55c1f57662fde720d19f89c02718e813a829652161204212f394bfed9fe33d9",
+      "hash": "62bc46d9af6a81746a49111dc801a04af49d9aba8ca2ff40a972a7b2123656d4",
       "route": "/tr/araclar/kategoriler/tekstil/tekstil-leke-kimyasi-protokolu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/tekstil-yakma-testi/": {
-      "hash": "e1fc69779e33a7aa9d25849e25deb0f048bc94ebe513c03f8c9657b1f181055a",
+      "hash": "c66695ebdfe2022893c9c39b4ae0892926caff3aa9504079956ee7ad51f01ff3",
       "route": "/tr/araclar/kategoriler/tekstil/tekstil-yakma-testi/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/uluslararasi-giysi-beden-donusturucu/": {
-      "hash": "6fe5af78c7af32f97585435fd24b782995175fd602b3c0c0fc53f1853cc265a6",
+      "hash": "8125795d699ee45faa2538a08bf4ea3ac8cca8bc7691bc16e39ecc96a00fcc2f",
       "route": "/tr/araclar/kategoriler/tekstil/uluslararasi-giysi-beden-donusturucu/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/yorgan-bi-yesi-uzunluk-ve-serit-hesaplayici/": {
-      "hash": "7c7bc61c5f9e040252ae00ce5e37c0443c12a77737236fe41a1f7acccb87b07f",
+      "hash": "2e75c5f19b71fa0686a8a2b55d82e9be89362707c1ffcdf4db4f6a467df3c681",
       "route": "/tr/araclar/kategoriler/tekstil/yorgan-bi-yesi-uzunluk-ve-serit-hesaplayici/"
     },
     "https://www.gamebob.dev/tr/araclar/kategoriler/tekstil/yun-hesaplama-orgu-metik/": {
-      "hash": "cf5df692ff109518042164a207c20bb15191aa9a39293d47727bf9c2dc6a7047",
+      "hash": "b91e0579f63bb82e4a213699aa584125bf4ac1b817aacde64a3fade776e3a0e4",
       "route": "/tr/araclar/kategoriler/tekstil/yun-hesaplama-orgu-metik/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-gauge-tension-punto/": {
-      "hash": "15c6c9e12629f8418782546c87b45a3a3176cf34a23930be0db9ca04eebc314e",
+      "hash": "c1a6ca0f69ae0f22699cb2cfc19a67b2bcab8509fc9b228f1aa0e63000d50793",
       "route": "/utilidades/calculadora-gauge-tension-punto/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-lana-tejido/": {
-      "hash": "243f9c3f033daaded1ff5b467ae4046e9a6de55fe784e399f887c88a1d3b5db8",
+      "hash": "eb203f1fe11b9dbde29f56e5981ab6c150e7b887727672b7b5f062b4974dc60f",
       "route": "/utilidades/calculadora-lana-tejido/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-longitud-y-tiras-de-bies-para-quilt/": {
-      "hash": "8afe6c97edd18d632ddf90cc9089a57c0651136e646579d48ac449c755247ef3",
+      "hash": "7592c5b1f2374de29ad1b81791c09a6e008b941f0cad4fd54e3b006e0a6c6c7b",
       "route": "/utilidades/calculadora-longitud-y-tiras-de-bies-para-quilt/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-puntadas-precio-bordado/": {
-      "hash": "8a1f173a2d4822b73b41a28343b14ceb777804ac9d419647cc3f2a556dfa4e2e",
+      "hash": "ecb0fb22278077b2168366879fc7c803cf99679a1dd0d2c60ecd3c3558898906",
       "route": "/utilidades/calculadora-puntadas-precio-bordado/"
     },
     "https://www.jjlmoya.es/utilidades/calculadora-tela-proyecto/": {
-      "hash": "c5374ffd578304d4fddfc52382d4a097940e96e80b8cec444947b031a6ba3aef",
+      "hash": "d867a1c6036d21d287028881c7c07841a40a00b166c4df0954d17d427ed65cb9",
       "route": "/utilidades/calculadora-tela-proyecto/"
     },
     "https://www.jjlmoya.es/utilidades/categorias/textiles/": {
-      "hash": "d0efa84654bbba2b5a05480e1cec47d0b165f18b3a874f866808eb31cd8b3583",
+      "hash": "6e47d7d663efcc0ed774639ecc8cf860e1172d3f3ce6d958b73ebdb6978f3317",
       "route": "/utilidades/categorias/textiles/"
     },
     "https://www.jjlmoya.es/utilidades/conversor-agujas-punto/": {
-      "hash": "f7cc5f828bb93f4f6b66bedfdffeba4f9c9c1d448dbbb21f73681390458c4959",
+      "hash": "c09441ba86594c4551b2047a78826a884feaaef74aaca38b66495e016ef5f166",
       "route": "/utilidades/conversor-agujas-punto/"
     },
     "https://www.jjlmoya.es/utilidades/conversor-tallas-ropa/": {
-      "hash": "dd723a8ce3e3de95d2e8f9fed12763eda8341c4a4f671e12825dfef1cf9c571e",
+      "hash": "b229a21d16e767a224099cf9860dacf3109e37d903508dd4217fbeddd6f6e865",
       "route": "/utilidades/conversor-tallas-ropa/"
     },
     "https://www.jjlmoya.es/utilidades/conversor-tallas-zapatos/": {
-      "hash": "0f6e99c7e457254d92e98f6fb30ec3b1a1975fbca16428a3b985f3b11fd8323f",
+      "hash": "58a6233f3a4c33cf1114ec1e2fb4ccd8251219713f39203fa8258fffcd3963c6",
       "route": "/utilidades/conversor-tallas-zapatos/"
     },
     "https://www.jjlmoya.es/utilidades/escalador-patron-costura/": {
-      "hash": "970b03c51bd91c5c7ad04b127511f672b7019f061bd140b4380aad9dcc9c1e34",
+      "hash": "61ca17060154bb7f086f933351dae1d15745be8ec6a5274b28a39253aa70539d",
       "route": "/utilidades/escalador-patron-costura/"
     },
     "https://www.jjlmoya.es/utilidades/guia-lavado-textil/": {
-      "hash": "78d87565cc5134923f01617e8b9117bc274be62df709361ea5f277e00c71a4b0",
+      "hash": "3463a3ea8b851c1042e9a4d3f95a8d55f669b6645dbf8c93ec17ed7759a6d425",
       "route": "/utilidades/guia-lavado-textil/"
     },
     "https://www.jjlmoya.es/utilidades/identificador-fibras-combustion/": {
-      "hash": "30b6abbe08453b2c0d19db174f45f14428e9ed0a4d9b5d2a3b5cb33b1ac92321",
+      "hash": "37d7329aa389172c3a8cb1591e88e62f437b24c9d971497d186b31274ecb7935",
       "route": "/utilidades/identificador-fibras-combustion/"
     },
     "https://www.jjlmoya.es/utilidades/preparacion-fibras-pigmentar/": {
-      "hash": "17c6a35a67e75c67f0ac8c232949ff5fc2b11288a54511967f3e634726a4d768",
+      "hash": "93075e79cf9208ad41fd5f2211fa7fac72a2a7a5819de71b2f3dd3f171541c6d",
       "route": "/utilidades/preparacion-fibras-pigmentar/"
     },
     "https://www.jjlmoya.es/utilidades/protocolo-quimico-manchas/": {
-      "hash": "46e596e09fd50406869afa09c77bae3e733731cd133da329e010683d18fd28a2",
+      "hash": "7014a06c0805db00a7697bef1a70c3265f6eeac0c25ea782176ebbe32143bbfb",
       "route": "/utilidades/protocolo-quimico-manchas/"
     },
     "https://www.jjlmoya.es/utilidades/veracidad-textil/": {
-      "hash": "be73c89360f4ef4848e9622c4d308d91ff19c9d495316c703b7b5145334b54ef",
+      "hash": "13885cdcb3a51c8681b6a1125d4e27393dcc88b3e4c2944e81b4f6a58aef1843",
       "route": "/utilidades/veracidad-textil/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/clothing-size-converter/": {
-      "hash": "af91ad24ce1f901aee603e5c1b44ca06ab229e2e40ed47af9b40a40d9a05df98",
+      "hash": "ef88e2335cd579ae5f02ee12868a542ef1c7b1b6e687952387449c2f7e9f2d2c",
       "route": "/zh/utilities/categories/textiles/clothing-size-converter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/embroidery-stitch-count-pricing-estimator/": {
-      "hash": "73824ee9769f5d6edaf267e3d86f99f9df785341e8fac5245775c34db0d79685",
+      "hash": "5d5789ed9fb5220cacdeb228e224f0a9156fe041f8e47a7c0034f25e80bbbb29",
       "route": "/zh/utilities/categories/textiles/embroidery-stitch-count-pricing-estimator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/fabric-project-calculator/": {
-      "hash": "95c3f7d3bb9b3ec19ac17a8c3ca7b8c2a4143278eaa2b3b33a92b8e799a5d7c7",
+      "hash": "f013a04a07ffb949955ed61593ecb3d694d7e86f124f5f3cc64e3f5c758b1d4d",
       "route": "/zh/utilities/categories/textiles/fabric-project-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/fabric-truthfulness/": {
-      "hash": "1f88bfdc79179e493d0ef3486fcf576a404b4b55ee470c34a8f44ba204342a0f",
+      "hash": "a68cefdd808d6c456bac6ffd2cda846632fa7677b47cd4fbba4c75a948f0fdfe",
       "route": "/zh/utilities/categories/textiles/fabric-truthfulness/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/fiber-preparation-natural-dyeing/": {
-      "hash": "6fcbf7c08ff7317d2203cd7fe502bcfe8c24c7940a422a7087da2ce747074f7f",
+      "hash": "26ff107e21a14ad075cd537988f5393c8b29a9fd457af246b0e4968096701d35",
       "route": "/zh/utilities/categories/textiles/fiber-preparation-natural-dyeing/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/": {
-      "hash": "87115b77713963d2566a52945d91a5cb46ab35d1c205ec136d276ea9f74c2970",
+      "hash": "773e6adef484020bc56bbf20331f9e027f3c07481cccecbbce1d5712feaf00c3",
       "route": "/zh/utilities/categories/textiles/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/knitting-gauge-calculator/": {
-      "hash": "f7e1acdda8fe6f3f05675f08a6a3412a530af8524afca9c8e38ca8bdc13101c1",
+      "hash": "00223626c016bffc4a46d6a7bf5da35b9480a7fb7f595a1ba04b513cc88f9356",
       "route": "/zh/utilities/categories/textiles/knitting-gauge-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/knitting-needle-converter/": {
-      "hash": "db981d09c180210397734df53e0b9171a54b77dde9e89793c5de7a39a787f8c3",
+      "hash": "79e0b7bdc50bd879d7dd73a1eb5ddf4df8b98bec1aec213c78498adff5e89f74",
       "route": "/zh/utilities/categories/textiles/knitting-needle-converter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/laundry-guide/": {
-      "hash": "216db556e43bc0eb9709af24857775d91b42187ff753a55842a6af65c9680773",
+      "hash": "2c6b2460b66f88b004f7ab8cf8ddd99dcdf87e1e11381671087889d2c6b315de",
       "route": "/zh/utilities/categories/textiles/laundry-guide/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/quilt-binding-length-and-strip-calculator/": {
-      "hash": "102442b8899b39ebc44c3396640265845e150ae4943ec8e6d881da065efbb9c6",
+      "hash": "7340ffeb9f38950bb7230ff515b8260463be429f7f9dadfb91abeb756414334f",
       "route": "/zh/utilities/categories/textiles/quilt-binding-length-and-strip-calculator/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/sewing-pattern-scaler/": {
-      "hash": "41ee5fad434b14ada51f8ada612f6ddb945f771dc7b82295014b62501e61b64d",
+      "hash": "dca12b17b9b4305cfd976be4c4b1080881750d41a189504b3452f801b993512b",
       "route": "/zh/utilities/categories/textiles/sewing-pattern-scaler/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/shoe-size-converter/": {
-      "hash": "7e7693a577a632e2424a73622aa39ef74a512241ec6667f8ce5ce9f6f8489f1f",
+      "hash": "39d2d38ded9974cfab0519a309c065f9898b4722c3e67f377f341509a2dcbac1",
       "route": "/zh/utilities/categories/textiles/shoe-size-converter/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/stain-chemical-protocol/": {
-      "hash": "ad83e5d99137244fba670e24d41e0a7c78e18f381a322cf68de626a3b083f66a",
+      "hash": "62a2f1e9d6d77a2d94e667de656e476e930ad281e159003d1aba1af71b63185c",
       "route": "/zh/utilities/categories/textiles/stain-chemical-protocol/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/textile-burn-test/": {
-      "hash": "4691a4a8ae9f7052092bf3bfb13c1ac3504a4e35a3c63e0bd72b3c70e120735b",
+      "hash": "2fda57ac59cb88af505beab640e9989ffa7405d1bb1da094425cb5b7c682b812",
       "route": "/zh/utilities/categories/textiles/textile-burn-test/"
     },
     "https://www.gamebob.dev/zh/utilities/categories/textiles/yarn-calculator/": {
-      "hash": "97809c89b739e30482f1f8f28e023a5968cff72160a438bcb6c7749cd88a6bb8",
+      "hash": "7c252b60e33d440c6affaf6a283723846e9ce0c506533bf00c67787395e077cf",
       "route": "/zh/utilities/categories/textiles/yarn-calculator/"
     }
   }
