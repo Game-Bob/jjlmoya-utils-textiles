@@ -7,235 +7,119 @@
     "preview_urls": true,
     "routes": [
         {
-            "pattern": "www.jjlmoya.es/utilidades/categorias/textiles",
+            "pattern": "www.jjlmoya.es/utilidades/categorias/textiles*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/categorias/textiles/*",
+            "pattern": "www.jjlmoya.es/utilidades/identificador-fibras-combustion*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/identificador-fibras-combustion",
+            "pattern": "www.jjlmoya.es/utilidades/conversor-tallas-ropa*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/identificador-fibras-combustion/*",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-puntadas-precio-bordado*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/conversor-tallas-ropa",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-tela-proyecto*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/conversor-tallas-ropa/*",
+            "pattern": "www.jjlmoya.es/utilidades/veracidad-textil*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-puntadas-precio-bordado",
+            "pattern": "www.jjlmoya.es/utilidades/preparacion-fibras-pigmentar*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-puntadas-precio-bordado/*",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-gauge-tension-punto*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-tela-proyecto",
+            "pattern": "www.jjlmoya.es/utilidades/guia-lavado-textil*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-tela-proyecto/*",
+            "pattern": "www.jjlmoya.es/utilidades/conversor-agujas-punto*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/veracidad-textil",
+            "pattern": "www.jjlmoya.es/utilidades/quilt-binding-length-and-strip-calculator*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/veracidad-textil/*",
+            "pattern": "www.jjlmoya.es/utilidades/escalador-patron-costura*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/preparacion-fibras-pigmentar",
+            "pattern": "www.jjlmoya.es/utilidades/conversor-tallas-zapatos*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/preparacion-fibras-pigmentar/*",
+            "pattern": "www.jjlmoya.es/utilidades/protocolo-quimico-manchas*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-gauge-tension-punto",
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-lana-tejido*",
             "zone_name": "jjlmoya.es"
         },
         {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-gauge-tension-punto/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/guia-lavado-textil",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/guia-lavado-textil/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/conversor-agujas-punto",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/conversor-agujas-punto/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/quilt-binding-length-and-strip-calculator",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/quilt-binding-length-and-strip-calculator/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/escalador-patron-costura",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/escalador-patron-costura/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/conversor-tallas-zapatos",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/conversor-tallas-zapatos/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/protocolo-quimico-manchas",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/protocolo-quimico-manchas/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-lana-tejido",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.jjlmoya.es/utilidades/calculadora-lana-tejido/*",
-            "zone_name": "jjlmoya.es"
-        },
-        {
-            "pattern": "www.gamebob.dev/en/utilities/categories/textiles",
+            "pattern": "www.gamebob.dev/en/utilities/categories/textiles*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/en/utilities/categories/textiles/*",
+            "pattern": "www.gamebob.dev/fr/utilitaires/categories/textiles*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/fr/utilitaires/categories/textiles",
+            "pattern": "www.gamebob.dev/de/werkzeuge/kategorien/textilien*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/fr/utilitaires/categories/textiles/*",
+            "pattern": "www.gamebob.dev/it/utilita/categorie/tessuti*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/de/werkzeuge/kategorien/textilien",
+            "pattern": "www.gamebob.dev/pt/utilidades/categorias/texteis*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/de/werkzeuge/kategorien/textilien/*",
+            "pattern": "www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/it/utilita/categorie/tessuti",
+            "pattern": "www.gamebob.dev/sv/verktyg/kategorier/textilier*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/it/utilita/categorie/tessuti/*",
+            "pattern": "www.gamebob.dev/pl/narzedzia/kategorie/tekstylia*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/pt/utilidades/categorias/texteis",
+            "pattern": "www.gamebob.dev/id/utilitas/kategori/tekstil*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/pt/utilidades/categorias/texteis/*",
+            "pattern": "www.gamebob.dev/tr/araclar/kategoriler/tekstil*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel",
+            "pattern": "www.gamebob.dev/ru/instrumenty/kategorii/textiles*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/nl/hulpmiddelen/categorieen/textiel/*",
+            "pattern": "www.gamebob.dev/ja/utilities/categories/textiles*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/sv/verktyg/kategorier/textilier",
+            "pattern": "www.gamebob.dev/ko/utilities/categories/textiles*",
             "zone_name": "gamebob.dev"
         },
         {
-            "pattern": "www.gamebob.dev/sv/verktyg/kategorier/textilier/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/pl/narzedzia/kategorie/tekstylia",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/pl/narzedzia/kategorie/tekstylia/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/id/utilitas/kategori/tekstil",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/id/utilitas/kategori/tekstil/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/tr/araclar/kategoriler/tekstil",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/tr/araclar/kategoriler/tekstil/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ru/instrumenty/kategorii/textiles",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ru/instrumenty/kategorii/textiles/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ja/utilities/categories/textiles",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ja/utilities/categories/textiles/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ko/utilities/categories/textiles",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/ko/utilities/categories/textiles/*",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/zh/utilities/categories/textiles",
-            "zone_name": "gamebob.dev"
-        },
-        {
-            "pattern": "www.gamebob.dev/zh/utilities/categories/textiles/*",
+            "pattern": "www.gamebob.dev/zh/utilities/categories/textiles*",
             "zone_name": "gamebob.dev"
         },
         {
