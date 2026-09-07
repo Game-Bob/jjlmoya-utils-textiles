@@ -51,6 +51,10 @@
             "zone_name": "jjlmoya.es"
         },
         {
+            "pattern": "www.jjlmoya.es/utilidades/calculadora-longitud-y-tiras-de-bies-para-quilt*",
+            "zone_name": "jjlmoya.es"
+        },
+        {
             "pattern": "www.jjlmoya.es/utilidades/escalador-patron-costura*",
             "zone_name": "jjlmoya.es"
         },
