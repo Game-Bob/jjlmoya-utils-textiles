@@ -1,6 +1,10 @@
 {
     "name": "@jjlmoya/utils-textiles",
+<<<<<<< HEAD
     "version": "1.35.0",
+=======
+    "version": "1.34.0",
+>>>>>>> bda9d369643b925ab5ee38d0d0f294cff4c0ffbd
     "type": "module",
     "main": "./src/index.ts",
     "types": "./src/index.ts",
