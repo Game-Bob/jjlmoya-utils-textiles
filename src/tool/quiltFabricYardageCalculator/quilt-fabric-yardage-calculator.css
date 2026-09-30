@@ -1,0 +1,501 @@
+:root {
+  --n-qy-paper: #f4efe7;
+  --n-qy-surface: #fffdf9;
+  --n-qy-ink: #2d2830;
+  --n-qy-muted: #766c72;
+  --n-qy-line: #d8c8bb;
+  --n-qy-accent: #7b4058;
+  --n-qy-accent-soft: #ead5dd;
+  --n-qy-green: #527364;
+  --n-qy-gold: #b27a40;
+  --n-qy-rose: #c47a83;
+  --n-qy-blue: #7894a1;
+  --n-qy-success: #3f6d52;
+  --n-qy-warning: #965d22;
+  --n-qy-error: #9b3c3c;
+  --n-qy-shadow: #35252d1a;
+}
+
+.theme-dark .qy-tool {
+  --n-qy-paper: #18171b;
+  --n-qy-surface: #262329;
+  --n-qy-ink: #f6eee8;
+  --n-qy-muted: #c8b9bf;
+  --n-qy-line: #50464e;
+  --n-qy-accent: #e2a2bb;
+  --n-qy-accent-soft: #4a3440;
+  --n-qy-green: #7ea08f;
+  --n-qy-gold: #d3a66f;
+  --n-qy-rose: #db929b;
+  --n-qy-blue: #91afbd;
+  --n-qy-success: #9fd3af;
+  --n-qy-warning: #efbb78;
+  --n-qy-error: #ffaaa0;
+  --n-qy-shadow: #0004;
+}
+
+.qy-tool {
+  --n-card: var(--n-qy-surface);
+  --n-card-ink: var(--n-qy-ink);
+  --n-card-muted: var(--n-qy-muted);
+  --n-card-line: var(--n-qy-line);
+  --n-card-accent: var(--n-qy-accent);
+
+  box-sizing: border-box;
+  width: min(100%, calc(100vw - 4rem));
+  max-width: min(100%, calc(100vw - 4rem));
+  border: 1px solid var(--n-card-line);
+  border-radius: 1.6rem;
+  overflow: visible;
+  color: var(--n-card-ink);
+  background: var(--n-qy-paper);
+  box-shadow: 0 1rem 2.5rem var(--n-qy-shadow);
+}
+
+main:has(.qy-tool) { min-width: 0; }
+
+.tool-page.tool-page:has(.qy-tool),
+.section-tool.section-tool:has(.qy-tool) {
+  box-sizing: border-box;
+  width: min(100%, calc(100vw - 4rem));
+  max-width: min(1200px, calc(100vw - 4rem));
+  min-width: 0;
+}
+
+.qy-layout {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.95fr) minmax(22rem, 1.05fr);
+  min-width: 0;
+}
+
+.qy-stage,
+.qy-workbench,
+.qy-result,
+.qy-notes {
+  min-width: 0;
+  background: var(--n-card);
+}
+
+.qy-stage {
+  padding: 1.35rem;
+  border-right: 1px solid var(--n-card-line);
+  border-radius: 1.6rem 0 0;
+}
+
+.qy-stage-head,
+.qy-workbench-head,
+.qy-result-head,
+.qy-result-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.qy-stage-label,
+.qy-choice-label,
+.qy-metrics span {
+  color: var(--n-card-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.qy-unit-readout {
+  color: var(--n-card-accent);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.qy-scene { margin: 1rem 0 0.5rem; }
+.qy-scene svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.qy-scene-note {
+  margin: 0;
+  color: var(--n-card-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.qy-scene-paper {
+  fill: var(--n-qy-paper);
+  stroke: var(--n-card-line);
+}
+
+.qy-idle-quilt {
+  fill: var(--n-qy-accent-soft);
+  stroke: var(--n-card-accent);
+  stroke-width: 2;
+}
+
+.qy-idle-roll {
+  fill: var(--n-qy-blue);
+  opacity: 0.45;
+}
+
+.qy-quilt-outline {
+  fill: none;
+  stroke: var(--n-card-ink);
+  stroke-width: 2;
+}
+
+.qy-patch-0 { fill: var(--n-qy-accent); }
+.qy-patch-1 { fill: var(--n-qy-green); }
+.qy-patch-2 { fill: var(--n-qy-gold); }
+.qy-patch-3 { fill: var(--n-qy-rose); }
+
+.qy-backing-panel {
+  fill: var(--n-qy-blue);
+  stroke: var(--n-card-ink);
+  stroke-width: 0.6;
+}
+
+.qy-roll-edge {
+  fill: none;
+  stroke: var(--n-card-accent);
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+.qy-scene-title,
+.qy-scene-caption {
+  fill: var(--n-card-ink);
+  text-anchor: middle;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.qy-scene-caption {
+  fill: var(--n-card-muted);
+  font-size: 6px;
+  font-weight: 500;
+}
+
+.qy-workbench {
+  padding: 1.35rem;
+  border-radius: 0 1.6rem 0 0;
+}
+
+.qy-workbench h2,
+.qy-result h2 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.qy-unit-toggle {
+  display: inline-flex;
+  padding: 0.2rem;
+  border: 1px solid var(--n-card-line);
+  border-radius: 999px;
+}
+
+.qy-unit-button,
+.qy-presets button,
+.qy-primary,
+.qy-secondary,
+.qy-choice > button,
+.qy-options button {
+  border: 0;
+  color: var(--n-card-ink);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.qy-unit-button {
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  color: var(--n-card-muted);
+  font-size: 0.73rem;
+}
+
+.qy-unit-button.is-active {
+  color: var(--n-card);
+  background: var(--n-card-accent);
+}
+
+.qy-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 1.1rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--n-card-line);
+}
+
+.qy-presets button {
+  padding: 0.38rem 0.62rem;
+  border: 1px solid var(--n-card-line);
+  border-radius: 999px;
+  color: var(--n-card-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.qy-presets button:hover,
+.qy-presets button.is-active {
+  color: var(--n-card-accent);
+  border-color: var(--n-card-accent);
+  background: var(--n-qy-accent-soft);
+}
+
+.qy-custom-label {
+  margin: 0.9rem 0 0;
+  color: var(--n-card-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.qy-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.55rem;
+}
+
+.qy-field {
+  display: grid;
+  gap: 0.3rem;
+  color: var(--n-card-ink);
+  font-size: 0.76rem;
+}
+
+.qy-field input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 2.6rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--n-card-line);
+  border-radius: 0.65rem;
+  color: var(--n-card-ink);
+  background: var(--n-qy-paper);
+  font: inherit;
+}
+
+.qy-field small {
+  color: var(--n-card-muted);
+  font-size: 0.65rem;
+  line-height: 1.25;
+}
+
+.qy-field input:focus,
+.qy-unit-button:focus,
+.qy-presets button:focus,
+.qy-primary:focus,
+.qy-secondary:focus,
+.qy-choice > button:focus,
+.qy-options button:focus {
+  outline: 3px solid var(--n-qy-accent-soft);
+  outline-offset: 2px;
+}
+
+.qy-choice {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr minmax(9rem, 0.7fr);
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.qy-choice > button {
+  min-height: 2.6rem;
+  padding: 0.55rem 2rem 0.55rem 0.7rem;
+  border: 1px solid var(--n-card-line);
+  border-radius: 0.65rem;
+  background: var(--n-qy-paper);
+  text-align: left;
+}
+
+.qy-choice > button::after {
+  content: '';
+  position: absolute;
+  right: 0.85rem;
+  bottom: 1rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-right: 2px solid var(--n-card-accent);
+  border-bottom: 2px solid var(--n-card-accent);
+  transform: rotate(45deg);
+}
+
+.qy-options {
+  position: absolute;
+  z-index: 3;
+  top: 3rem;
+  right: 0;
+  width: min(13rem, 100%);
+  padding: 0.3rem;
+  border: 1px solid var(--n-card-line);
+  border-radius: 0.65rem;
+  background: var(--n-card);
+  box-shadow: 0 0.8rem 1.4rem var(--n-qy-shadow);
+}
+
+.qy-options[hidden] { display: none; }
+
+.qy-options button {
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  text-align: left;
+}
+
+.qy-options button:hover,
+.qy-options button.is-active {
+  color: var(--n-card-accent);
+  background: var(--n-qy-accent-soft);
+}
+
+.qy-result {
+  padding: 1.35rem;
+  border-top: 1px solid var(--n-card-line);
+  border-radius: 0 0 1.6rem;
+}
+
+.qy-status {
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  color: var(--n-card-muted);
+  background: var(--n-qy-accent-soft);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.qy-status.is-ready { color: var(--n-qy-success); }
+.qy-status.is-review { color: var(--n-qy-warning); }
+.qy-status.is-error { color: var(--n-qy-error); }
+.qy-result-body { margin-top: 1rem; }
+
+.qy-result-body.is-empty .qy-metrics,
+.qy-result-body.is-empty .qy-warning { display: none; }
+
+.qy-empty {
+  margin: 0;
+  color: var(--n-card-muted);
+}
+.qy-result-body:not(.is-empty) .qy-empty { display: none; }
+
+.qy-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border: 1px solid var(--n-card-line);
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.qy-metrics div {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+  padding: 0.8rem;
+  border-right: 1px solid var(--n-card-line);
+  border-bottom: 1px solid var(--n-card-line);
+}
+
+.qy-metrics div:nth-child(4n) { border-right: 0; }
+.qy-metrics strong {
+  overflow-wrap: anywhere;
+  font-size: 1rem;
+}
+
+.qy-metrics .qy-feature strong {
+  color: var(--n-card-accent);
+  font-size: 1.25rem;
+}
+
+.qy-metrics .qy-total {
+  grid-column: 1 / -1;
+  border-right: 0;
+  border-bottom: 0;
+  color: var(--n-card);
+  background: var(--n-card-accent);
+}
+
+.qy-metrics .qy-total span {
+  color: var(--n-card);
+  opacity: 0.8;
+}
+.qy-metrics .qy-total strong { font-size: 1.35rem; }
+
+.qy-warning {
+  margin: 0.8rem 0 0;
+  color: var(--n-qy-warning);
+  font-size: 0.8rem;
+}
+
+.qy-result-foot { margin-top: 1rem; }
+
+.qy-feedback {
+  min-height: 1.2rem;
+  margin: 0;
+  color: var(--n-qy-success);
+  font-size: 0.78rem;
+}
+
+.qy-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.qy-primary,
+.qy-secondary {
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.qy-primary {
+  color: var(--n-card);
+  background: var(--n-card-accent);
+}
+.qy-secondary { border: 1px solid var(--n-card-line); }
+
+.qy-notes {
+  padding: 1rem 1.35rem;
+  border-top: 1px solid var(--n-card-line);
+  color: var(--n-card-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.qy-notes summary {
+  color: var(--n-card-ink);
+  cursor: pointer;
+  font-weight: 800;
+}
+.qy-notes p { margin: 0.8rem 0 0; }
+
+@media (max-width: 48rem) {
+  .qy-layout { grid-template-columns: 1fr; }
+  .qy-stage {
+    border-right: 0;
+    border-bottom: 1px solid var(--n-card-line);
+    border-radius: 1.6rem 1.6rem 0 0;
+  }
+  .qy-workbench { border-radius: 0; }
+  .qy-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .qy-metrics div:nth-child(4n) { border-right: 1px solid var(--n-card-line); }
+  .qy-metrics div:nth-child(2n) { border-right: 0; }
+}
+
+@media (max-width: 32rem) {
+  .qy-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .qy-workbench-head,
+  .qy-result-head,
+  .qy-result-foot {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .qy-actions { width: 100%; }
+  .qy-actions button { flex: 1; }
+}

@@ -1,0 +1,99 @@
+---
+import { renderIdleScene } from './dom-views';
+import type { QuiltFabricYardageCalculatorUI } from './ui';
+import './quilt-fabric-yardage-calculator.css';
+
+const { ui } = Astro.props as { ui: QuiltFabricYardageCalculatorUI };
+const serializedUI = JSON.stringify(ui).replace(/</g, '\\u003c');
+---
+
+<div class="qy-tool" data-qy-tool data-ui={serializedUI}>
+  <div class="qy-layout">
+    <section class="qy-stage" aria-labelledby="qy-stage-label">
+      <div class="qy-stage-head">
+        <span id="qy-stage-label" class="qy-stage-label">{ui.stageLabel}</span>
+        <span class="qy-unit-readout" data-output="unit">{ui.metricLabel}</span>
+      </div>
+      <div class="qy-scene" data-scene set:html={renderIdleScene()}></div>
+      <p class="qy-scene-note">{ui.canvasAlt}</p>
+    </section>
+
+    <section class="qy-workbench" aria-labelledby="qy-controls-label">
+      <div class="qy-workbench-head">
+        <h2 id="qy-controls-label">{ui.controlsLabel}</h2>
+        <div class="qy-unit-toggle" role="group" aria-label={ui.unitLabel}>
+          <button type="button" class="qy-unit-button is-active" data-unit="metric">{ui.metricLabel}</button>
+          <button type="button" class="qy-unit-button" data-unit="imperial">{ui.imperialLabel}</button>
+        </div>
+      </div>
+
+      <div class="qy-presets" role="group" aria-label={ui.presetLabel}>
+        <button type="button" data-preset="crib">{ui.cribPreset}</button>
+        <button type="button" data-preset="throw">{ui.throwPreset}</button>
+        <button type="button" data-preset="twin">{ui.twinPreset}</button>
+        <button type="button" data-preset="queen">{ui.queenPreset}</button>
+        <button type="button" data-preset="king">{ui.kingPreset}</button>
+      </div>
+
+      <p class="qy-custom-label">{ui.customPreset}</p>
+      <div class="qy-fields">
+        <label class="qy-field"><span>{ui.quiltWidthLabel}</span><input data-field="quiltWidth" type="number" min="0.1" step="0.1" value="150" /><small>{ui.widthHint}</small></label>
+        <label class="qy-field"><span>{ui.quiltLengthLabel}</span><input data-field="quiltLength" type="number" min="0.1" step="0.1" value="200" /><small>{ui.lengthHint}</small></label>
+        <label class="qy-field"><span>{ui.blockSizeLabel}</span><input data-field="blockSize" type="number" min="0.1" step="0.1" value="25" /><small>{ui.blockHint}</small></label>
+        <label class="qy-field"><span>{ui.fabricWidthLabel}</span><input data-field="fabricWidth" type="number" min="0.1" step="0.1" value="110" /><small>{ui.fabricHint}</small></label>
+        <label class="qy-field"><span>{ui.seamAllowanceLabel}</span><input data-field="seamAllowance" type="number" min="0" step="0.1" value="0.7" /><small>{ui.seamHint}</small></label>
+        <label class="qy-field"><span>{ui.backingExtraLabel}</span><input data-field="backingExtra" type="number" min="0" step="0.1" value="10" /><small>{ui.backingHint}</small></label>
+      </div>
+
+      <div class="qy-choice" data-select="wastePercent">
+        <span class="qy-choice-label">{ui.wasteLabel}</span>
+        <button type="button" data-select-trigger aria-haspopup="listbox" aria-expanded="false">{ui.wasteTen}</button>
+        <div class="qy-options" data-select-options hidden role="listbox">
+          <button type="button" data-waste-value="0.05" role="option">{ui.wasteFive}</button>
+          <button type="button" data-waste-value="0.1" class="is-active" role="option">{ui.wasteTen}</button>
+          <button type="button" data-waste-value="0.15" role="option">{ui.wasteFifteen}</button>
+        </div>
+        <input data-field="wastePercent" type="hidden" value="0.1" />
+      </div>
+    </section>
+  </div>
+
+  <section class="qy-result" aria-labelledby="qy-result-label" aria-live="polite">
+    <div class="qy-result-head">
+      <h2 id="qy-result-label">{ui.resultLabel}</h2>
+      <span class="qy-status" data-status><span data-output="status">{ui.emptyResult}</span></span>
+    </div>
+    <div class="qy-result-body is-empty" data-result-body>
+      <p class="qy-empty" data-output="empty">{ui.emptyResult}</p>
+      <div class="qy-metrics">
+        <div><span>{ui.blocksLabel}</span><strong data-output="blocks">-</strong></div>
+        <div><span>{ui.gridLabel}</span><strong data-output="grid">-</strong></div>
+        <div><span>{ui.cutSquareLabel}</span><strong data-output="cutSquare">-</strong></div>
+        <div><span>{ui.piecesAcrossLabel}</span><strong data-output="piecesAcross">-</strong></div>
+        <div class="qy-feature"><span>{ui.topYardageLabel}</span><strong data-output="topYardage">-</strong></div>
+        <div class="qy-feature"><span>{ui.backingYardageLabel}</span><strong data-output="backingYardage">-</strong></div>
+        <div><span>{ui.backingPanelsLabel}</span><strong data-output="backingPanels">-</strong></div>
+        <div><span>{ui.backingLayoutLabel}</span><strong data-output="backingLayout">-</strong></div>
+        <div class="qy-total"><span>{ui.totalYardageLabel}</span><strong data-output="totalYardage">-</strong></div>
+      </div>
+      <p class="qy-warning" data-output="warning"></p>
+    </div>
+    <div class="qy-result-foot">
+      <p class="qy-feedback" data-output="feedback"></p>
+      <div class="qy-actions"><button type="button" class="qy-secondary" data-reset>{ui.reset}</button><button type="button" class="qy-primary" data-copy>{ui.copyPlan}</button></div>
+    </div>
+  </section>
+
+  <details class="qy-notes">
+    <summary>{ui.formulaTitle}</summary>
+    <p>{ui.formulaText}</p>
+    <p><strong>{ui.boundaryTitle}</strong> {ui.boundaryText}</p>
+  </details>
+</div>
+
+<script>
+  import { createQuiltFabricYardageController } from './controller';
+
+  const root = document.querySelector<HTMLElement>('[data-qy-tool]');
+  if (root) createQuiltFabricYardageController(root);
+</script>

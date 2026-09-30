@@ -1,0 +1,52 @@
+import { createSeo, type QuiltLocaleCopy } from '../create-content';
+import { makeUi } from '../locale-ui';
+
+export const es: QuiltLocaleCopy = {
+  slug: 'calculadora-tela-colcha-bloques-trasera',
+  title: 'Calculadora de tela para colchas de bloques y trasera',
+  description: 'Calcula la tela para bloques cuadrados y paneles de trasera con margen de costura, merma de corte y unidades métricas o imperiales.',
+  ui: makeUi([
+    'Sistema de medida', 'Métrico cm', 'Imperial in', 'Mapa de corte', 'Planifica la colcha', 'Tamaños habituales', 'Personalizado',
+    'Cuna', 'Sofá', 'Individual', 'Queen', 'King', 'Anchura terminada', 'Longitud terminada', 'Bloque cuadrado terminado',
+    'Anchura útil de la tela', 'Margen de costura', 'Extra de trasera por lado', 'Margen de corte del top', 'de borde terminado a borde terminado',
+    'de borde terminado a borde terminado', 'tamaño visible del bloque', 'después de retirar orillos', 'en cada borde del bloque',
+    'extra en los cuatro lados', '5 por ciento', '10 por ciento', '15 por ciento', 'Plan de compra de tela',
+    'Introduce medidas positivas para dibujar el mapa de corte.', 'Bloques que cortar', 'Cuadrícula de bloques', 'Cuadrado de corte',
+    'Cuadrados a lo ancho', 'Tela para el top', 'Tela para la trasera', 'Paneles de trasera', 'Orientación de la trasera',
+    'Paneles longitudinales', 'Paneles transversales', 'Total de top y trasera', 'Plan de corte listo', 'Revisa el plan',
+    'Las medidas terminadas no son múltiplos exactos del bloque. La fila o columna exterior necesita bloques recortados o un borde.',
+    'Solo cabe un cuadrado en la anchura útil. Una tela más ancha o un bloque menor puede reducir la cantidad.',
+    'Usa medidas positivas y una tela donde quepa al menos un cuadrado de corte.', 'Restablecer ejemplo', 'Copiar plan de compra',
+    'Plan de compra copiado', 'Abrir notas de cálculo', 'Las columnas y filas se redondean hacia arriba al dividir las medidas terminadas entre el tamaño del bloque. El cuadrado de corte suma dos márgenes de costura. La trasera compara dos orientaciones tras descontar las costuras de unión.',
+    'Límite de la planificación.', 'Este modelo supone bloques cuadrados iguales cortados de una sola tela para el top. No incluye sashing, bordes, varios colores, estampados direccionales, guata ni bies.',
+    'Una cuadrícula de patchwork aparece junto a la disposición más eficiente de paneles para la trasera.',
+  ]),
+  faq: [
+    { question: '¿Qué tela calcula esta calculadora para colchas?', answer: 'Calcula una tela para todos los bloques cuadrados del top y otra tela para la trasera. No combina colores ni calcula guata o bies.' },
+    { question: '¿Por qué el cuadrado de corte es mayor que el bloque terminado?', answer: 'El bloque terminado es la parte visible tras coser. El corte añade el margen elegido a los dos lados de cada dimensión.' },
+    { question: '¿Cómo se calculan los paneles de la trasera?', answer: 'Se añade el extra alrededor de la colcha, se descuenta la tela perdida en costuras y se comparan disposiciones longitudinales y transversales.' },
+    { question: '¿Puedo calcular varias telas en un mismo patchwork?', answer: 'Calcula cada grupo de color por separado usando el mismo cuadrado de corte y el número de bloques que corresponda a esa tela.' },
+    { question: '¿Debo comprar exactamente la cantidad mostrada?', answer: 'Redondea al incremento que venda la tienda. Los estampados direccionales, el rapport, el encogimiento y los errores pueden exigir más tela.' },
+  ],
+  howTo: [
+    { name: 'Define el tamaño terminado', text: 'Elige un tamaño habitual o introduce anchura y longitud terminadas.' },
+    { name: 'Describe los bloques y la tela', text: 'Introduce el bloque terminado, la anchura útil sin orillos y el margen de costura.' },
+    { name: 'Configura los márgenes', text: 'Indica el extra de trasera y elige una merma del cinco, diez o quince por ciento.' },
+    { name: 'Lee las dos compras', text: 'Usa por separado la cantidad del top y la trasera y redondea ambas a la unidad de venta.' },
+  ],
+  seo: createSeo({
+    overviewTitle: 'Calcula la tela antes de elegir el metraje',
+    overview: 'El top y la trasera responden a cortes diferentes. El top necesita suficientes filas de cuadrados para completar todos los bloques, mientras que la trasera puede requerir varios paneles largos unidos. La calculadora separa ambas compras y muestra también el total para preparar el presupuesto.',
+    methodTitle: 'Cómo se calcula la tela de los bloques',
+    method: 'El tamaño terminado no es el tamaño de corte. Se añade el margen en los dos lados y se calcula cuántos cuadrados caben en la anchura útil. El número de bloques se divide entre esa capacidad y se redondea a pasadas completas. La merma se aplica después de conocer el trazado.',
+    tableHeaders: ['Dato', 'Qué controla', 'Cómo medirlo'],
+    tableRows: [['Tamaño de colcha', 'Filas y columnas', 'Medida cosida final'], ['Bloque terminado', 'Número y tamaño de corte', 'Sin margen'], ['Anchura útil', 'Cuadrados por pasada', 'Sin orillos'], ['Extra de trasera', 'Espacio de trabajo', 'En cada lado']],
+    backingTitle: 'Por qué puede girarse la trasera',
+    backing: 'Cuando la trasera supera la anchura de la tela hay que unir paneles. La calculadora prueba paneles siguiendo la longitud y paneles girados, descuenta la pérdida de las costuras y selecciona la opción que consume menos longitud del rollo.',
+    advice: ['Mide la anchura útil sin orillos.', 'Redondea cada compra a la fracción vendida por la tienda.', 'Añade reserva para estampados direccionales y encogimiento.', 'Resuelve los bloques parciales antes de cortar.'],
+    patternTitle: 'Contrasta la estimación con el patrón',
+    pattern: 'La estimación funciona mejor con una cuadrícula sencilla de bloques cuadrados iguales y una sola tela. Un patrón real puede repartir colores, añadir sashing o bordes y exigir una posición concreta para la costura de la trasera. Compara siempre el resultado con su lista de corte.',
+    limitTitle: 'Qué no puede garantizar el resultado',
+    limit: 'Cada tela encoge de forma distinta, las tiendas venden incrementos diferentes y los motivos pueden obligar a cortes menos eficientes. El resultado ofrece una base transparente, pero no sustituye el diagrama de corte de un patrón específico.',
+  }),
+};
