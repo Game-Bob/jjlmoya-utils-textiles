@@ -25,6 +25,8 @@ export { embroideryStitchPricingEstimator } from './tool/embroideryStitchPricing
 export type { EmbroideryStitchPricingEstimatorLocaleContent } from './tool/embroideryStitchPricingEstimator/entry';
 export { quiltBindingCalculator } from './tool/quiltBindingCalculator/entry';
 export type { QuiltBindingCalculatorLocaleContent } from './tool/quiltBindingCalculator/entry';
+export { quiltFabricYardageCalculator } from './tool/quiltFabricYardageCalculator/entry';
+export type { QuiltFabricYardageCalculatorLocaleContent } from './tool/quiltFabricYardageCalculator/entry';
 export { textilesCategory } from './category';
 import { burnTest } from './tool/burnTest/entry';
 import { clothingSizeConverter } from './tool/clothingSizeConverter/entry';
@@ -40,4 +42,5 @@ import { stainChemistry } from './tool/stainChemistry/entry';
 import { yarnCalculator } from './tool/yarnCalculator/entry';
 import { embroideryStitchPricingEstimator } from './tool/embroideryStitchPricingEstimator/entry';
 import { quiltBindingCalculator } from './tool/quiltBindingCalculator/entry';
-export const ALL_ENTRIES = [burnTest, clothingSizeConverter, fabricProjectCalculator, fabricTruth, fiberPrep, knittingGauge, laundryGuide, needleConverter, sewingPatternScaler, shoeSizeConverter, stainChemistry, yarnCalculator, embroideryStitchPricingEstimator, quiltBindingCalculator];
+import { quiltFabricYardageCalculator } from './tool/quiltFabricYardageCalculator/entry';
+export const ALL_ENTRIES = [burnTest, clothingSizeConverter, fabricProjectCalculator, fabricTruth, fiberPrep, knittingGauge, laundryGuide, needleConverter, sewingPatternScaler, shoeSizeConverter, stainChemistry, yarnCalculator, embroideryStitchPricingEstimator, quiltBindingCalculator, quiltFabricYardageCalculator];

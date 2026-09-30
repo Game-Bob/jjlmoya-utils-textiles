@@ -1,0 +1,52 @@
+import { createSeo, type QuiltLocaleCopy } from '../create-content';
+import { makeUi } from '../locale-ui';
+
+export const de: QuiltLocaleCopy = {
+  slug: 'stoffbedarf-patchworkdecke-bloecke-rueckseite-berechnen',
+  title: 'Stoffbedarf für Patchworkdecke und Rückseite berechnen',
+  description: 'Berechne Stoff für quadratische Quiltblöcke und Rückseitenbahnen mit Nahtzugabe, Verschnitt sowie metrischen und imperialen Einheiten.',
+  ui: makeUi([
+    'Maßsystem', 'Metrisch cm', 'Imperial in', 'Schnittplan', 'Quilt planen', 'Gängige Quiltgrößen', 'Eigene Größe',
+    'Babydecke', 'Sofadecke', 'Einzelbett', 'Doppelbett', 'Kingsize', 'Fertige Breite', 'Fertige Länge',
+    'Fertiger quadratischer Block', 'Nutzbare Stoffbreite', 'Nahtzugabe', 'Mehrzugabe je Rückseitenkante', 'Verschnitt für Oberseite',
+    'fertig von Kante zu Kante', 'fertig von Kante zu Kante', 'sichtbare Blockgröße', 'nach Entfernen der Webkanten',
+    'an jeder Blockkante', 'an allen vier Seiten', '5 Prozent', '10 Prozent', '15 Prozent', 'Stoffeinkaufsplan',
+    'Gib positive Maße ein, um den Schnittplan zu zeichnen.', 'Zu schneidende Blöcke', 'Blockraster', 'Zuschnittquadrat',
+    'Quadrate über die Stoffbreite', 'Stoff für die Oberseite', 'Stoff für die Rückseite', 'Rückseitenbahnen',
+    'Ausrichtung der Rückseite', 'Bahnen in Längsrichtung', 'Bahnen in Querrichtung', 'Oberseite und Rückseite gesamt',
+    'Schnittplan bereit', 'Plan prüfen', 'Die fertigen Maße sind keine ganzen Vielfachen der Blockgröße. Außen sind zugeschnittene Blöcke oder ein Rand nötig.',
+    'Über die nutzbare Stoffbreite passt nur ein Quadrat. Breiterer Stoff oder kleinere Blöcke können den Bedarf senken.',
+    'Verwende positive Maße und Stoff, der mindestens ein Zuschnittquadrat aufnimmt.', 'Beispiel zurücksetzen', 'Einkaufsplan kopieren',
+    'Einkaufsplan kopiert', 'Berechnungshinweise öffnen', 'Spalten und Reihen werden aus den fertigen Quiltmaßen geteilt durch die fertige Blockgröße aufgerundet. Das Zuschnittquadrat enthält zweimal die Nahtzugabe. Für die Rückseite werden zwei Bahnausrichtungen nach Nahtverlust verglichen.',
+    'Grenzen der Planung.', 'Das Modell gilt für gleich große quadratische Blöcke aus einem Oberstoff. Zwischenstreifen, Ränder, mehrere Farben, Musterrapporte, Volumenvlies und Einfassung sind nicht enthalten.',
+    'Ein Patchworkraster steht neben der sparsamsten Anordnung der Rückseitenbahnen.',
+  ]),
+  faq: [
+    { question: 'Welche Stoffe berechnet dieser Quilt Rechner?', answer: 'Er berechnet einen Stoff für alle quadratischen Blöcke der Oberseite und einen getrennten Stoff für die Rückseite. Volumenvlies und Einfassung sind nicht enthalten.' },
+    { question: 'Warum ist das Zuschnittquadrat größer als der fertige Block?', answer: 'Der fertige Block ist nach dem Nähen sichtbar. Das Zuschnittmaß enthält die gewählte Nahtzugabe an beiden gegenüberliegenden Kanten.' },
+    { question: 'Wie werden die Rückseitenbahnen berechnet?', answer: 'Die Berechnung ergänzt den Überstand, berücksichtigt Stoffverlust in Verbindungsnähten und wählt die sparsamere Längs- oder Queranordnung.' },
+    { question: 'Kann ich mehrere Stoffe in einem Patchwork berechnen?', answer: 'Berechne jede Farbgruppe getrennt mit derselben Zuschnittgröße und der Zahl der Blöcke, die aus diesem Stoff entstehen sollen.' },
+    { question: 'Soll ich genau die angezeigte Menge kaufen?', answer: 'Runde auf die Verkaufseinheit des Geschäfts auf. Gerichtete Drucke, große Rapporte, Einlaufen und Fehler können mehr Stoff erfordern.' },
+  ],
+  howTo: [
+    { name: 'Fertige Quiltgröße festlegen', text: 'Wähle eine Vorgabe oder gib fertige Breite und Länge im aktiven Maßsystem ein.' },
+    { name: 'Blöcke und Stoff beschreiben', text: 'Gib fertige Blockgröße, nutzbare Stoffbreite und Nahtzugabe je Kante ein.' },
+    { name: 'Zugaben wählen', text: 'Lege den Überstand der Rückseite und fünf, zehn oder fünfzehn Prozent Verschnitt fest.' },
+    { name: 'Einkaufsmengen ablesen', text: 'Nutze die getrennten Mengen für Oberseite und Rückseite und runde beide auf die Verkaufseinheit auf.' },
+  ],
+  seo: createSeo({
+    overviewTitle: 'Stoffmenge vor dem Kauf planen',
+    overview: 'Oberseite und Rückseite folgen unterschiedlichen Schnittplänen. Die Oberseite braucht genügend Reihen von Quadraten für alle Blöcke. Die Rückseite kann aus mehreren langen Bahnen bestehen. Der Rechner hält beide Mengen getrennt und zeigt zusätzlich die Gesamtsumme.',
+    methodTitle: 'So entsteht der Bedarf für quadratische Blöcke',
+    method: 'Zur fertigen Blockgröße kommt die Nahtzugabe an zwei Kanten. Danach wird geprüft, wie viele Quadrate über die nutzbare Stoffbreite passen. Die Blockzahl wird durch diese Kapazität geteilt und auf ganze Schnittdurchgänge aufgerundet. Erst danach wird der gewählte Verschnitt ergänzt.',
+    tableHeaders: ['Eingabe', 'Wirkung', 'Richtig messen'],
+    tableRows: [['Fertige Quiltgröße', 'Reihen und Spalten', 'Genähtes Endmaß'], ['Fertiger Block', 'Blockzahl und Zuschnittmaß', 'Ohne Nahtzugabe'], ['Nutzbare Stoffbreite', 'Quadrate je Durchgang', 'Webkanten abziehen'], ['Rückseitenzugabe', 'Arbeitsrand', 'Je Seite eingeben']],
+    backingTitle: 'Warum die Rückseite gedreht werden kann',
+    backing: 'Ist die Rückseite breiter als der Stoff, müssen Bahnen verbunden werden. Der Rechner prüft Bahnen entlang der Quiltlänge und eine gedrehte Anordnung. An den Verbindungen wird die Nahtzugabe abgezogen und die Variante mit geringerem Stoffverbrauch gewählt.',
+    advice: ['Nutzbare Breite ohne Webkanten messen.', 'Jede Menge auf die Verkaufseinheit aufrunden.', 'Bei gerichteten Drucken und großen Rapporten mehr Reserve einplanen.', 'Warnungen zu Teilblöcken vor dem Zuschnitt klären.'],
+    patternTitle: 'Schätzung und Schnittliste abgleichen',
+    pattern: 'Die Schätzung ist für ein einfaches Raster aus gleich großen Quadraten und einem Oberstoff am stärksten. Ein Muster kann mehrere Stoffe, Zwischenstreifen, Ränder oder eine bestimmte Lage der Rückseitennaht verlangen. Vergleiche deshalb das Ergebnis mit der Schnittliste des Musters.',
+    limitTitle: 'Was das Ergebnis nicht garantieren kann',
+    limit: 'Stoffe laufen unterschiedlich ein, Motive können ineffiziente Schnitte erzwingen und Geschäfte verkaufen in verschiedenen Schritten. Die Berechnung ist eine nachvollziehbare Ausgangsmenge, kein Ersatz für den Schnittplan eines konkreten Musters.',
+  }),
+};
